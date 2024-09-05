@@ -1,13 +1,13 @@
 ---
 title: Routeur VPN
-description: Voici une procédure complète pour mettre en place un routeur VPN à partir d'un Raspberry Pi.
+description: Une procédure complète pour mettre en place un routeur VPN à partir d'un Raspberry Pi.
 date: 2024-09-05T13:25:06.970Z
 preview: ""
 draft: true
 tags:
-    - network
-    - raspberry
-    - vpn
+  - network
+  - raspberry
+  - vpn
 categories: []
 ---
 

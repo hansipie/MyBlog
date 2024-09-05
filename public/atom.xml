@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
     <title type="text">AnsiCode&#39;s Blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2024-09-05T16:54:44&#43;03:00</updated>
+    <updated>2024-09-05T17:13:34&#43;03:00</updated>
     <id>http://localhost:1313/</id>
     <link rel="alternate" type="text/html" href="http://localhost:1313/" />
     <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/atom.xml" />
@@ -20,14 +20,14 @@
             <title type="text">Routeur VPN</title>
             <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2024-09-05-routeur-vpn/" />
             <id>http://localhost:1313/posts/2024-09-05-routeur-vpn/</id>
-            <updated>2024-09-05T16:44:57&#43;03:00</updated>
+            <updated>2024-09-05T17:13:34&#43;03:00</updated>
             <published>2024-09-05T13:25:06&#43;00:00</published>
             <author>
                     <name>AnsiCode</name>
                     <uri>https://ansicode.fr/</uri>
                     <email>ansicode@ansicode.fr</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Voici une procédure complète pour mettre en place un routeur VPN à partir d&#39;un Raspberry Pi.</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Une procédure complète pour mettre en place un routeur VPN à partir d&#39;un Raspberry Pi.</summary>
             
                 <content type="html">&lt;h1 id=&#34;0-matériel&#34;&gt;0. Matériel:&lt;/h1&gt;
 &lt;ul&gt;
