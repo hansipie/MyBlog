@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Posts - Blog AnsiCode</title>
+<title>Hello World - Blog AnsiCode</title>
+<meta name="description" content="Bonjour le monde">
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -28,9 +29,58 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/world\/",
+          "name": "Hello world"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Hello World",
+  "description" : "Bonjour le monde",
+  "inLanguage" : "en",
+  "wordCount":  14 ,
+  "datePublished" : "2024-09-05T09:56:36",
+  "dateModified" : "2024-09-05T09:56:36",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "tag1, tag2" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/world\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="Posts" />
-<meta property="og:url" content="http://localhost:1313/posts/" />
+<meta property="og:title" content="Hello World" />
+<meta property="og:description" content="Bonjour le monde">
+<meta property="og:url" content="http://localhost:1313/posts/world/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Blog AnsiCode" />
 <link rel="apple-touch-icon" sizes="180x180" href=" http://localhost:1313/favicon/apple-touch-icon.png">
@@ -111,12 +161,17 @@
               
 
               
-
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Hello World
+                
+              </h1>
               
               
 
               
 
+              
+              
               
             </div>
           </div>
@@ -133,125 +188,131 @@
     
 <div class="container" role="main">
   <div class="row">
-    <div class="col-md-12">
-      
-      <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
         
-          
-<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
-    <a href="http://localhost:1313/posts/2024-09-05-routeur-vpn/">
-        <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
-            <div class="card-body">
-                <h3 class="fw-bold post-title">Routeur VPN</h3>
-                
-
-                <p class="post-meta">
-                    <span class="post-meta text-muted">
-  
-  
-
-  September 5, 2024
-
-  
-
-  
-
-  
-
-  
-</span>
-
-                </p>
-                
-
-                <div class="post-entry">
-                    
-                    Voici une procédure complète pour mettre en place un routeur VPN à partir d&#39;un Raspberry Pi.
-
-                    
-                </div>
-
-                <div class="read-more-section">
-                    
-                    <h6 class="text-muted link-underline">Read More <i class="bi bi-arrow-right"></i></h6>
-                </div>
-            </div>
-
-            
-
-            
-        </div>
-    </a>
-</div>
-
-
         
-          
-<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  mb-4">
-    <a href="http://localhost:1313/posts/world/">
-        <div class="card h-100 single-post-card shadow-effect bg-faded-light border">
-            <div class="card-body">
-                <h3 class="fw-bold post-title">Hello World</h3>
-                
-
-                <p class="post-meta">
-                    <span class="post-meta text-muted">
-  
-  
-
-  September 5, 2024
-
-  
-
-  
-
-  
-
-  
-</span>
-
-                </p>
-                
-
-                <div class="post-entry">
-                    
-                    Bonjour le monde
-
-                    
-                </div>
-
-                <div class="read-more-section">
-                    
-                    <h6 class="text-muted link-underline">Read More <i class="bi bi-arrow-right"></i></h6>
-                </div>
-            </div>
-
-            
-
-            
-        </div>
-    </a>
-</div>
 
 
         
       </div>
     </div>
-  </div>
-</div>
 
-<div class="container">
- <div class="row font-sans">
-   <div class="col-md-12 mt-10">
-      <nav aria-label="Page navigation">
-      <ul class= "pagination justify-content-end">
-      
-      </ul>
-      </nav>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <h1 id="titre">Titre</h1>
+<h2 id="sous-titre">Sous-titre</h2>
+<h3 id="liste">liste:</h3>
+<ul>
+<li>item1</li>
+<li>item2</li>
+<li>item3</li>
+</ul>
+<h3 id="tableau">tableau:</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">colonne1</th>
+          <th style="text-align: left">colonne2</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">cellule1</td>
+          <td style="text-align: left">cellule2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">cellule3</td>
+          <td style="text-align: left">cellule4</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="image">image:</h3>
+<p><img src="/Designer.jpeg" alt=""></p>
+<pre tabindex="0"><code></code></pre>
+      </article>
     </div>
   </div>
+
+  
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr class="m-0"/>
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+      
+      <div class="blog-tags">
+        
+        <a href="http://localhost:1313/tags/tag1/">tag1</a>
+        
+        <a href="http://localhost:1313/tags/tag2/">tag2</a>
+        
+      </div>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+    </div>
+
+    
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+
+          
+
+
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+              <p class="p-0 m-0"><small class="text-muted">Written By</small></p>
+              <p class="card-text fs-5 m-0">
+                 
+                
+                
+                
+
+              </p>
+
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-1 pt-4">
+      
+      <ul class="list-group list-group-horizontal" style="flex-direction: row">
+        
+
+
+        
+        <li class="list-group-item ms-auto b-0 p-0">
+          <a type="button" class="btn btn-dark" role="button" href="http://localhost:1313/posts/2024-09-05-routeur-vpn/"
+            data-toggle="tooltip" data-placement="top" title="Routeur VPN">Next Post
+            &rarr;</a>
+        </li>
+        
+      </ul>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+    </div>
+  </div>
+  
 </div>
 
+<div class="">
+  
+  
+
+  
+
+</div>
 
     
 

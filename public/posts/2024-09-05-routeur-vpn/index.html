@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Routeur VPN - Blog AnsiCode</title>
+<meta name="description" content="Voici une procédure complète pour mettre en place un routeur VPN à partir d&#39;un Raspberry Pi.">
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Blog AnsiCode",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/2024-09-05-routeur-vpn\/",
+          "name": "Routeur VPN"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Routeur VPN",
+  "description" : "Voici une procédure complète pour mettre en place un routeur VPN à partir d\u0027un Raspberry Pi.",
+  "inLanguage" : "en",
+  "wordCount":  578 ,
+  "datePublished" : "2024-09-05T13:25:06",
+  "dateModified" : "2024-09-05T13:25:06",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/2024-09-05-routeur-vpn\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Routeur VPN" />
+<meta property="og:description" content="Voici une procédure complète pour mettre en place un routeur VPN à partir d&#39;un Raspberry Pi.">
+<meta property="og:url" content="http://localhost:1313/posts/2024-09-05-routeur-vpn/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Blog AnsiCode" />
+<link rel="apple-touch-icon" sizes="180x180" href=" http://localhost:1313/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon/favicon-16x16.png">
+
+
+<meta name="generator" content="Hugo 0.134.0">
+<link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Blog AnsiCode">
+<script src="http://localhost:1313/js/dark-mode.js"></script><link rel="stylesheet" href="/style.min.css">
+
+
+
+
+
+
+
+  </head>
+  <body>
+    
+<div class="container fixed-top mw-100">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top p-0">
+        <div class="container">
+
+          <a class="navbar-brand fw-bold" href="http://localhost:1313/">Blog AnsiCode</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0 align-items-baseline">
+              
+
+              <li class="nav-item nav-link">
+                <a id="dark-mode-toggle" class="bi bi-moon-stars" role="button"></a>
+              </li>
+
+              
+            </ul>
+
+            
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+<header class="header-section ">
+
+  <div class="intro-header no-img mt-10">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+
+          
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            
+
+            <div class="posts-heading">
+              
+
+              
+
+              
+              <h1 class="fw-semibold display-5 lh-1 mb-3"> 
+                Routeur VPN
+                
+              </h1>
+              
+              
+
+              
+
+              
+              
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        
+    </div>
+  </div>
+</header>
+
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ">
+
+      <div class="card-image card-image-blog p-0">
+        
+        
+
+
+        
+      </div>
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      <article role="main" class="blog-post">
+        <h1 id="0-matériel">0. Matériel:</h1>
+<ul>
+<li>1 Raspberry Pi</li>
+<li>1 carte SD</li>
+<li>1 dongle USB Wifi</li>
+</ul>
+<h1 id="1-installation-de-los-sur-le-raspberry-pi">1. Installation de l&rsquo;OS sur le Raspberry Pi</h1>
+<h2 id="a-téléchargement-de-raspberry-pi-os">a. Téléchargement de Raspberry Pi OS</h2>
+<ol>
+<li><strong>Téléchargez</strong> Raspberry Pi OS (Lite version recommandée pour un usage de routeur) depuis le site officiel <a href="https://www.raspberrypi.org/software/operating-systems/">Raspberry Pi</a>.</li>
+<li><strong>Flash l&rsquo;image</strong> sur une carte microSD en utilisant un outil comme <strong>Raspberry Pi Imager</strong> ou <strong>Balena Etcher</strong>.</li>
+</ol>
+<h2 id="b-configuration-initiale">b. Configuration initiale</h2>
+<ol>
+<li><strong>Insérez</strong> la carte microSD dans le Raspberry Pi et démarrez-le.</li>
+<li><strong>Connectez-vous</strong> via SSH (ou directement avec clavier et écran) :
+<ul>
+<li>Par défaut, le nom d&rsquo;utilisateur est <code>pi</code> et le mot de passe est <code>raspberry</code>.</li>
+</ul>
+</li>
+<li><strong>Changez le mot de passe</strong> par défaut pour des raisons de sécurité :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>passwd
+</span></span></code></pre></div></li>
+<li><strong>Mettez à jour</strong> les packages du système :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update <span style="color:#f92672">&amp;&amp;</span> sudo apt-get upgrade -y
+</span></span></code></pre></div></li>
+</ol>
+<h1 id="2-installation-du-daemon-openvpn">2. Installation du daemon OpenVPN</h1>
+<h2 id="a-installation-dopenvpn">a. Installation d&rsquo;OpenVPN</h2>
+<ol>
+<li><strong>Installez OpenVPN</strong> :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install openvpn -y
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="b-configuration-dopenvpn">b. Configuration d&rsquo;OpenVPN</h2>
+<ol>
+<li><strong>Copiez</strong> ou créez un fichier de configuration <code>.ovpn</code> pour le serveur VPN auquel vous souhaitez vous connecter.</li>
+<li><strong>Placez le fichier</strong> de configuration dans le répertoire <code>/etc/openvpn/</code> et renommez-le en <code>client.conf</code> pour qu&rsquo;OpenVPN le détecte automatiquement :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp /path/to/your/client.ovpn /etc/openvpn/client.conf
+</span></span></code></pre></div></li>
+<li><strong>Démarrez OpenVPN</strong> :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl start openvpn@client
+</span></span></code></pre></div></li>
+<li><strong>Vérifiez le statut</strong> d&rsquo;OpenVPN pour vous assurer qu&rsquo;il est connecté :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl status openvpn@client
+</span></span></code></pre></div></li>
+</ol>
+<h1 id="3-mise-en-place-du-routage">3. Mise en place du routage</h1>
+<h2 id="a-activer-le-routage-ip">a. Activer le routage IP</h2>
+<ol>
+<li><strong>Activez le routage IP</strong> sur le Raspberry Pi :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -w net.ipv4.ip_forward<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div></li>
+<li><strong>Rendre la configuration permanente</strong> en modifiant <code>/etc/sysctl.conf</code> :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/sysctl.conf
+</span></span></code></pre></div>Ajoutez ou décommentez la ligne suivante :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net.ipv4.ip_forward <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div></li>
+<li><strong>Rechargez la configuration</strong> :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -p
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="b-configurer-le-nat-avec-iptables">b. Configurer le NAT avec iptables</h2>
+<ol>
+<li><strong>Configurez le NAT</strong> pour permettre le routage du trafic sortant via l&rsquo;interface VPN (<code>tun0</code>) :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo iptables -t nat -A POSTROUTING -o tun0 -j MASQUERADE
+</span></span></code></pre></div></li>
+<li><strong>Permettez le trafic</strong> entre <code>eth0</code> et <code>tun0</code> :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo iptables -A FORWARD -i eth0 -o tun0 -j ACCEPT
+</span></span><span style="display:flex;"><span>sudo iptables -A FORWARD -i tun0 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+</span></span></code></pre></div></li>
+<li><strong>Sauvegardez les règles iptables</strong> pour qu&rsquo;elles persistent après un redémarrage :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sh -c <span style="color:#e6db74">&#34;iptables-save &gt; /etc/iptables/rules.v4&#34;</span>
+</span></span></code></pre></div></li>
+</ol>
+<h1 id="4-installation-du-serveur-dhcp">4. Installation du serveur DHCP</h1>
+<h2 id="a-installation-du-serveur-dhcp">a. Installation du serveur DHCP</h2>
+<ol>
+<li><strong>Installez ISC DHCP Server</strong> :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install isc-dhcp-server -y
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="b-configuration-du-serveur-dhcp">b. Configuration du serveur DHCP</h2>
+<ol>
+<li><strong>Configurez</strong> le fichier <code>/etc/dhcp/dhcpd.conf</code> :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/dhcp/dhcpd.conf
+</span></span></code></pre></div>Ajoutez les paramètres suivants pour le réseau <code>eth0</code> :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>default-lease-time 600;
+</span></span><span style="display:flex;"><span>max-lease-time 7200;
+</span></span><span style="display:flex;"><span>option domain-name <span style="color:#e6db74">&#34;localhost.local&#34;</span>;
+</span></span><span style="display:flex;"><span>option domain-name-servers 8.8.8.8, 8.8.4.4;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>subnet 192.168.1.0 netmask 255.255.255.0 <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    range 192.168.1.10 192.168.1.50;
+</span></span><span style="display:flex;"><span>    option routers 192.168.1.1;
+</span></span><span style="display:flex;"><span>    option broadcast-address 192.168.1.255;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="c-configurer-linterface-eth0-pour-dhcp">c. Configurer l&rsquo;interface <code>eth0</code> pour DHCP</h2>
+<ol>
+<li><strong>Définissez</strong> <code>eth0</code> comme l&rsquo;interface pour le serveur DHCP :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/default/isc-dhcp-server
+</span></span></code></pre></div>Modifiez la ligne suivante :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>INTERFACESv4<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eth0&#34;</span>
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="d-démarrer-le-serveur-dhcp">d. Démarrer le serveur DHCP</h2>
+<ol>
+<li><strong>Démarrez</strong> le serveur DHCP et configurez-le pour démarrer au boot :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl start isc-dhcp-server
+</span></span><span style="display:flex;"><span>sudo systemctl enable isc-dhcp-server
+</span></span></code></pre></div></li>
+</ol>
+<h1 id="5-configuration-de-linterface-eth0-avec-ladresse-ip-19216811">5. Configuration de l&rsquo;interface <code>eth0</code> avec l&rsquo;adresse IP <code>192.168.1.1</code></h1>
+<h2 id="a-configurer-ladresse-ip-de-linterface-eth0">a. Configurer l&rsquo;adresse IP de l&rsquo;interface <code>eth0</code></h2>
+<ol>
+<li><strong>Attribuez l&rsquo;adresse IP</strong> <code>192.168.1.1</code> à <code>eth0</code> de manière permanente :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/dhcpcd.conf
+</span></span></code></pre></div>Ajoutez à la fin du fichier :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>interface eth0
+</span></span><span style="display:flex;"><span>static ip_address<span style="color:#f92672">=</span>192.168.1.1/24
+</span></span></code></pre></div></li>
+<li><strong>Redémarrez le service réseau</strong> pour appliquer la configuration :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart dhcpcd
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h2 id="résumé">Résumé</h2>
+<p>Cette procédure couvre toutes les étapes nécessaires pour transformer votre Raspberry Pi en un routeur VPN fonctionnel avec DHCP. Vous commencez par installer et configurer le système d&rsquo;exploitation, configurez OpenVPN pour établir le tunnel VPN, mettez en place le routage pour permettre à d&rsquo;autres appareils de se connecter via le VPN, et enfin configurez un serveur DHCP pour attribuer des adresses IP aux appareils connectés à <code>eth0</code>.</p>
+
+      </article>
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+      <hr class="m-0"/>
+    </div>
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+      
+    </div>
+
+    
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-3">
+      <div class="card">
+        <div class="row no-gutters">
+
+          
+
+
+          <div class="col-md-10">
+            <div class="card-body p-1.1">
+              <p class="p-0 m-0"><small class="text-muted">Written By</small></p>
+              <p class="card-text fs-5 m-0">
+                 
+                
+                
+                
+
+              </p>
+
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-1 pt-4">
+      
+      <ul class="list-group list-group-horizontal" style="flex-direction: row">
+        
+        <li class="list-group-item b-0 p-0">
+
+          <a type="button" class="btn btn-dark" role="button" href="http://localhost:1313/posts/world/"
+            data-toggle="tooltip" data-placement="top" title="Hello World">&larr;
+            Previous Post</a>
+        </li>
+        
+
+
+        
+      </ul>
+      
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-4">
+    </div>
+  </div>
+  
+</div>
+
+<div class="">
+  
+  
+
+  
+
+</div>
+
+    
+
+
+<footer>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul
+          class="list-inline list-group list-group-horizontal text-center footer-links d-flex justify-content-center flex-row">
+
+          
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+          2024
+          
+
+          
+          &nbsp;&bull;&nbsp;
+          <a href="http://localhost:1313/">Blog AnsiCode</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/binokochumolvarghese/lightbi-hugo">Lightbi.</a>&nbsp; Made with ❤ by <a href="https://binovarghese.com">Bino</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categorie1 on Blog AnsiCode</title>
+    <link>http://localhost:1313/categories/categorie1/</link>
+    <description>Recent content in Categorie1 on Blog AnsiCode</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Thu, 05 Sep 2024 09:56:36 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/categorie1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/posts/world/</link>
+      <pubDate>Thu, 05 Sep 2024 09:56:36 +0000</pubDate>
+      <guid>http://localhost:1313/posts/world/</guid>
+      <description>&lt;h1 id=&#34;titre&#34;&gt;Titre&lt;/h1&gt;&#xA;&lt;h2 id=&#34;sous-titre&#34;&gt;Sous-titre&lt;/h2&gt;&#xA;&lt;h3 id=&#34;liste&#34;&gt;liste:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;item1&lt;/li&gt;&#xA;&lt;li&gt;item2&lt;/li&gt;&#xA;&lt;li&gt;item3&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;tableau&#34;&gt;tableau:&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;colonne1&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;colonne2&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;cellule1&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;cellule2&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;cellule3&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;cellule4&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;image&#34;&gt;image:&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Designer.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
