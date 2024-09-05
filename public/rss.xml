@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>AnsiCode&#39;s Blog</title>
-        <link>http://localhost:1313/</link>
+        <link>https://ansicode.fr/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
         <generator>Hugo 0.134.0 https://gohugo.io/</generator>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 05 Sep 2024 18:48:23 &#43;0300</lastBuildDate>
+        <lastBuildDate>Thu, 05 Sep 2024 19:11:20 &#43;0300</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="http://localhost:1313/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://ansicode.fr/rss.xml" />
         
         
             <item>
                 <title>Routeur VPN</title>
-                <link>http://localhost:1313/posts/2024-09-05-routeur-vpn/</link>
-                <guid isPermaLink="true">http://localhost:1313/posts/2024-09-05-routeur-vpn/</guid>
+                <link>https://ansicode.fr/posts/2024-09-05-routeur-vpn/</link>
+                <guid isPermaLink="true">https://ansicode.fr/posts/2024-09-05-routeur-vpn/</guid>
                 <pubDate>Thu, 05 Sep 2024 13:25:06 &#43;0000</pubDate>
                 
                     <author>ansicode@ansicode.fr (AnsiCode)</author>
@@ -348,19 +348,19 @@
                                 
                                 
                                 
-                                    <category domain="http://localhost:1313/tags/network/">network</category>
+                                    <category domain="https://ansicode.fr/tags/network/">network</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="http://localhost:1313/tags/raspberry/">raspberry</category>
+                                    <category domain="https://ansicode.fr/tags/raspberry/">raspberry</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="http://localhost:1313/tags/vpn/">vpn</category>
+                                    <category domain="https://ansicode.fr/tags/vpn/">vpn</category>
                                 
                             
                         
@@ -370,8 +370,8 @@
         
             <item>
                 <title>Hello World</title>
-                <link>http://localhost:1313/posts/world/</link>
-                <guid isPermaLink="true">http://localhost:1313/posts/world/</guid>
+                <link>https://ansicode.fr/posts/world/</link>
+                <guid isPermaLink="true">https://ansicode.fr/posts/world/</guid>
                 <pubDate>Thu, 05 Sep 2024 09:56:36 &#43;0000</pubDate>
                 
                     <author>ansicode@ansicode.fr (AnsiCode)</author>
@@ -406,7 +406,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;image&#34;&gt;image:&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Designer.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ansicode.fr/Designer.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
                 
                 
@@ -419,7 +419,7 @@
                                 
                                 
                                 
-                                    <category domain="http://localhost:1313/categories/categorie1/">categorie1</category>
+                                    <category domain="https://ansicode.fr/categories/categorie1/">categorie1</category>
                                 
                             
                         
@@ -429,13 +429,13 @@
                                 
                                 
                                 
-                                    <category domain="http://localhost:1313/tags/tag1/">tag1</category>
+                                    <category domain="https://ansicode.fr/tags/tag1/">tag1</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="http://localhost:1313/tags/tag2/">tag2</category>
+                                    <category domain="https://ansicode.fr/tags/tag2/">tag2</category>
                                 
                             
                         

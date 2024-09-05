@@ -4,13 +4,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
     <title type="text">AnsiCode&#39;s Blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2024-09-05T18:48:23&#43;03:00</updated>
-    <id>http://localhost:1313/</id>
-    <link rel="alternate" type="text/html" href="http://localhost:1313/" />
-    <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/atom.xml" />
+    <updated>2024-09-05T19:11:20&#43;03:00</updated>
+    <id>https://ansicode.fr/</id>
+    <link rel="alternate" type="text/html" href="https://ansicode.fr/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://ansicode.fr/atom.xml" />
     <author>
             <name>AnsiCode</name>
-            <uri>http://localhost:1313/</uri>
+            <uri>https://ansicode.fr/</uri>
             
                 <email>ansicode@ansicode.fr</email>
             </author>
@@ -18,8 +18,8 @@
     <generator uri="https://gohugo.io/" version="0.134.0">Hugo</generator>
         <entry>
             <title type="text">Routeur VPN</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2024-09-05-routeur-vpn/" />
-            <id>http://localhost:1313/posts/2024-09-05-routeur-vpn/</id>
+            <link rel="alternate" type="text/html" href="https://ansicode.fr/posts/2024-09-05-routeur-vpn/" />
+            <id>https://ansicode.fr/posts/2024-09-05-routeur-vpn/</id>
             <updated>2024-09-05T18:48:11&#43;03:00</updated>
             <published>2024-09-05T13:25:06&#43;00:00</published>
             <author>
@@ -339,19 +339,19 @@
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/network/" term="network" label="network" />
+                                <category scheme="https://ansicode.fr/tags/network/" term="network" label="network" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/raspberry/" term="raspberry" label="raspberry" />
+                                <category scheme="https://ansicode.fr/tags/raspberry/" term="raspberry" label="raspberry" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/vpn/" term="vpn" label="vpn" />
+                                <category scheme="https://ansicode.fr/tags/vpn/" term="vpn" label="vpn" />
                             
                         
                     
@@ -361,8 +361,8 @@
     
         <entry>
             <title type="text">Hello World</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/world/" />
-            <id>http://localhost:1313/posts/world/</id>
+            <link rel="alternate" type="text/html" href="https://ansicode.fr/posts/world/" />
+            <id>https://ansicode.fr/posts/world/</id>
             <updated>2024-09-05T18:48:23&#43;03:00</updated>
             <published>2024-09-05T09:56:36&#43;00:00</published>
             <author>
@@ -400,7 +400,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;image&#34;&gt;image:&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Designer.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ansicode.fr/Designer.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</content>
             
             
@@ -413,7 +413,7 @@
                             
                             
                             
-                                <category scheme="http://localhost:1313/categories/categorie1/" term="categorie1" label="categorie1" />
+                                <category scheme="https://ansicode.fr/categories/categorie1/" term="categorie1" label="categorie1" />
                             
                         
                     
@@ -423,13 +423,13 @@
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/tag1/" term="tag1" label="tag1" />
+                                <category scheme="https://ansicode.fr/tags/tag1/" term="tag1" label="tag1" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/tag2/" term="tag2" label="tag2" />
+                                <category scheme="https://ansicode.fr/tags/tag2/" term="tag2" label="tag2" />
                             
                         
                     
