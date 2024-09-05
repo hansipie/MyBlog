@@ -4,7 +4,10 @@ description: Voici une procédure complète pour mettre en place un routeur VPN 
 date: 2024-09-05T13:25:06.970Z
 preview: ""
 draft: true
-tags: []
+tags:
+    - network
+    - raspberry
+    - vpn
 categories: []
 ---
 
