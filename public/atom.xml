@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
     <title type="text">AnsiCode&#39;s Blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2024-09-05T17:13:34&#43;03:00</updated>
+    <updated>2024-09-05T18:48:23&#43;03:00</updated>
     <id>http://localhost:1313/</id>
     <link rel="alternate" type="text/html" href="http://localhost:1313/" />
     <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">Routeur VPN</title>
             <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2024-09-05-routeur-vpn/" />
             <id>http://localhost:1313/posts/2024-09-05-routeur-vpn/</id>
-            <updated>2024-09-05T17:13:34&#43;03:00</updated>
+            <updated>2024-09-05T18:48:11&#43;03:00</updated>
             <published>2024-09-05T13:25:06&#43;00:00</published>
             <author>
                     <name>AnsiCode</name>
@@ -363,7 +363,7 @@
             <title type="text">Hello World</title>
             <link rel="alternate" type="text/html" href="http://localhost:1313/posts/world/" />
             <id>http://localhost:1313/posts/world/</id>
-            <updated>2024-09-05T16:23:12&#43;03:00</updated>
+            <updated>2024-09-05T18:48:23&#43;03:00</updated>
             <published>2024-09-05T09:56:36&#43;00:00</published>
             <author>
                     <name>AnsiCode</name>
