@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>AnsiCode&#39;s Blog</title>
-        <link>https://ansicode.fr/</link>
+        <link>http://localhost:1313/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
         <generator>Hugo 0.134.0 https://gohugo.io/</generator>
         
@@ -23,28 +23,34 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 05 Sep 2024 19:11:20 &#43;0300</lastBuildDate>
+        <lastBuildDate>Wed, 11 Sep 2024 12:18:57 &#43;0300</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://ansicode.fr/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="http://localhost:1313/rss.xml" />
         
         
             <item>
                 <title>Routeur VPN</title>
-                <link>https://ansicode.fr/posts/2024-09-05-routeur-vpn/</link>
-                <guid isPermaLink="true">https://ansicode.fr/posts/2024-09-05-routeur-vpn/</guid>
+                <link>http://localhost:1313/posts/2024-09-05-routeur-vpn/</link>
+                <guid isPermaLink="true">http://localhost:1313/posts/2024-09-05-routeur-vpn/</guid>
                 <pubDate>Thu, 05 Sep 2024 13:25:06 &#43;0000</pubDate>
                 
                     <author>ansicode@ansicode.fr (AnsiCode)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
                 
-                    <description>&lt;h1 id=&#34;0-matériel&#34;&gt;0. Matériel:&lt;/h1&gt;
+                    <description>&lt;p&gt;Il existe dans le commerce des routeurs VPN prêts à l&amp;rsquo;emploi (exemple: le Asus RT-AX86U Pro), mais ils peuvent être coûteux et ne pas offrir autant de flexibilité que la création de votre propre routeur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi, à moindre coût.&lt;/p&gt;
+&lt;p&gt;Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un client VPN matériel. Cette configuration vous permettra de router tout le trafic réseau de vos appareils à travers un serveur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202024-09-11%20090234.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;pré-requis&#34;&gt;Pré-requis:&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;1 Raspberry Pi&lt;/li&gt;
-&lt;li&gt;1 carte SD&lt;/li&gt;
-&lt;li&gt;1 dongle USB Wifi&lt;/li&gt;
+&lt;li&gt;Un Raspberry Pi&lt;/li&gt;
+&lt;li&gt;Un carte microSD (8GB ou plus) pour Raspbian OS&lt;/li&gt;
+&lt;li&gt;Un dongle USB Wifi&lt;/li&gt;
+&lt;li&gt;Un accès internet&lt;/li&gt;
+&lt;li&gt;Un fournisseur de VPN avec un fichier de configuration &lt;code&gt;.ovpn&lt;/code&gt; (Un serveur OpenVPN auto-hébergé ou un service comme NordVPN, CyberGhost, etc.)
+&lt;img src=&#34;http://localhost:1313/20240910_154853.jpg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;1-installation-de-los-sur-le-raspberry-pi&#34;&gt;1. Installation de l&amp;rsquo;OS sur le Raspberry Pi&lt;/h1&gt;
+&lt;h1 id=&#34;etape-1-installation-de-los-sur-le-raspberry-pi&#34;&gt;Etape 1. Installation de l&amp;rsquo;OS sur le Raspberry Pi&lt;/h1&gt;
 &lt;h2 id=&#34;a-téléchargement-de-raspberry-pi-os&#34;&gt;a. Téléchargement de Raspberry Pi OS&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Téléchargez&lt;/strong&gt; Raspberry Pi OS (Lite version recommandée pour un usage de routeur) depuis le site officiel &lt;a href=&#34;https://www.raspberrypi.org/software/operating-systems/&#34;&gt;Raspberry Pi&lt;/a&gt;.&lt;/li&gt;
@@ -79,7 +85,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;2-installation-du-daemon-openvpn&#34;&gt;2. Installation du daemon OpenVPN&lt;/h1&gt;
+&lt;h1 id=&#34;etape-2-installation-du-daemon-openvpn&#34;&gt;Etape 2. Installation du daemon OpenVPN&lt;/h1&gt;
 &lt;h2 id=&#34;a-installation-dopenvpn&#34;&gt;a. Installation d&amp;rsquo;OpenVPN&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Installez OpenVPN&lt;/strong&gt; :
@@ -95,7 +101,7 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;b-configuration-dopenvpn&#34;&gt;b. Configuration d&amp;rsquo;OpenVPN&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Copiez&lt;/strong&gt; ou créez un fichier de configuration &lt;code&gt;.ovpn&lt;/code&gt; pour le serveur VPN auquel vous souhaitez vous connecter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Copiez&lt;/strong&gt; ou créez un fichier de configuration &lt;code&gt;.ovpn&lt;/code&gt; pour le serveur VPN auquel vous souhaitez vous connecter. Ce fichier contient les paramètres de connexion, les certificats et les clés nécessaires. Il est fourni par votre fournisseur de VPN.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Placez le fichier&lt;/strong&gt; de configuration dans le répertoire &lt;code&gt;/etc/openvpn/&lt;/code&gt; et renommez-le en &lt;code&gt;client.conf&lt;/code&gt; pour qu&amp;rsquo;OpenVPN le détecte automatiquement :
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -127,7 +133,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;3-mise-en-place-du-routage&#34;&gt;3. Mise en place du routage&lt;/h1&gt;
+&lt;h1 id=&#34;etape-3-mise-en-place-du-routage&#34;&gt;Etape 3. Mise en place du routage&lt;/h1&gt;
+&lt;p&gt;Pour permettre au Raspberry Pi de router le trafic entre les interfaces &lt;code&gt;eth0&lt;/code&gt; (le réseau local) et &lt;code&gt;tun0&lt;/code&gt; (connexion VPN), nous devons activer le routage IP et configurer le NAT (Network Address Translation).&lt;/p&gt;
 &lt;h2 id=&#34;a-activer-le-routage-ip&#34;&gt;a. Activer le routage IP&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Activez le routage IP&lt;/strong&gt; sur le Raspberry Pi :
@@ -205,7 +212,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;4-installation-du-serveur-dhcp&#34;&gt;4. Installation du serveur DHCP&lt;/h1&gt;
+&lt;h1 id=&#34;etape-4-installation-du-serveur-dhcp&#34;&gt;Etape 4. Installation du serveur DHCP&lt;/h1&gt;
+&lt;p&gt;Pour attribuer des adresses IP aux appareils connectés au Raspberry Pi, nous allons installer un serveur DHCP (Dynamic Host Configuration Protocol).&lt;/p&gt;
 &lt;h2 id=&#34;a-installation-du-serveur-dhcp&#34;&gt;a. Installation du serveur DHCP&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Installez ISC DHCP Server&lt;/strong&gt; :
@@ -296,8 +304,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;5-configuration-de-linterface-eth0-avec-ladresse-ip-19216811&#34;&gt;5. Configuration de l&amp;rsquo;interface &lt;code&gt;eth0&lt;/code&gt; avec l&amp;rsquo;adresse IP &lt;code&gt;192.168.1.1&lt;/code&gt;&lt;/h1&gt;
-&lt;h2 id=&#34;a-configurer-ladresse-ip-de-linterface-eth0&#34;&gt;a. Configurer l&amp;rsquo;adresse IP de l&amp;rsquo;interface &lt;code&gt;eth0&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;e-attribition-dun-adresse-fixe-à-linterface-eth0&#34;&gt;e. Attribition d&amp;rsquo;un adresse fixe à l&amp;rsquo;interface &lt;code&gt;eth0&lt;/code&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Attribuez l&amp;rsquo;adresse IP&lt;/strong&gt; &lt;code&gt;192.168.1.1&lt;/code&gt; à &lt;code&gt;eth0&lt;/code&gt; de manière permanente :
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -332,8 +339,9 @@
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;résumé&#34;&gt;Résumé&lt;/h2&gt;
-&lt;p&gt;Cette procédure couvre toutes les étapes nécessaires pour transformer votre Raspberry Pi en un routeur VPN fonctionnel avec DHCP. Vous commencez par installer et configurer le système d&amp;rsquo;exploitation, configurez OpenVPN pour établir le tunnel VPN, mettez en place le routage pour permettre à d&amp;rsquo;autres appareils de se connecter via le VPN, et enfin configurez un serveur DHCP pour attribuer des adresses IP aux appareils connectés à &lt;code&gt;eth0&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Voilà! Votre Raspberry Pi est maintenant configuré en tant que client VPN matériel. Tous les appareils connectés au Raspberry Pi via l&amp;rsquo;interface &lt;code&gt;eth0&lt;/code&gt; utiliseront la connexion VPN pour accéder à Internet de manière sécurisée.
+&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202024-09-11%20090302.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
                 
                 
@@ -348,19 +356,19 @@
                                 
                                 
                                 
-                                    <category domain="https://ansicode.fr/tags/network/">network</category>
+                                    <category domain="http://localhost:1313/tags/network/">network</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://ansicode.fr/tags/raspberry/">raspberry</category>
+                                    <category domain="http://localhost:1313/tags/raspberry/">raspberry</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://ansicode.fr/tags/vpn/">vpn</category>
+                                    <category domain="http://localhost:1313/tags/vpn/">vpn</category>
                                 
                             
                         
@@ -370,8 +378,8 @@
         
             <item>
                 <title>Hello World</title>
-                <link>https://ansicode.fr/posts/world/</link>
-                <guid isPermaLink="true">https://ansicode.fr/posts/world/</guid>
+                <link>http://localhost:1313/posts/world/</link>
+                <guid isPermaLink="true">http://localhost:1313/posts/world/</guid>
                 <pubDate>Thu, 05 Sep 2024 09:56:36 &#43;0000</pubDate>
                 
                     <author>ansicode@ansicode.fr (AnsiCode)</author>
@@ -406,7 +414,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;image&#34;&gt;image:&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://ansicode.fr/Designer.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Designer.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
                 
                 
@@ -419,7 +427,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ansicode.fr/categories/categorie1/">categorie1</category>
+                                    <category domain="http://localhost:1313/categories/categorie1/">categorie1</category>
                                 
                             
                         
@@ -429,13 +437,13 @@
                                 
                                 
                                 
-                                    <category domain="https://ansicode.fr/tags/tag1/">tag1</category>
+                                    <category domain="http://localhost:1313/tags/tag1/">tag1</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://ansicode.fr/tags/tag2/">tag2</category>
+                                    <category domain="http://localhost:1313/tags/tag2/">tag2</category>
                                 
                             
                         

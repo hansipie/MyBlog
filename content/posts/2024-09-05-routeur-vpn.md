@@ -3,7 +3,7 @@ title: Routeur VPN
 description: Une procédure complète pour mettre en place un routeur VPN à partir d'un Raspberry Pi.
 date: 2024-09-05T13:25:06.970Z
 preview: ""
-draft: true
+draft: false
 tags:
    - network
    - raspberry
@@ -11,13 +11,21 @@ tags:
 categories: []
 ---
 
-# 0. Matériel:
-- 1 Raspberry Pi
-- 1 carte SD
-- 1 dongle USB Wifi
+Il existe dans le commerce des routeurs VPN prêts à l'emploi (exemple: le Asus RT-AX86U Pro), mais ils peuvent être coûteux et ne pas offrir autant de flexibilité que la création de votre propre routeur VPN à l'aide d'un Raspberry Pi, à moindre coût.
 
+Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un client VPN matériel. Cette configuration vous permettra de router tout le trafic réseau de vos appareils à travers un serveur VPN à l'aide d'un Raspberry Pi.
 
-# 1. Installation de l'OS sur le Raspberry Pi
+![](/Capture%20d'écran%202024-09-11%20090234.png)
+
+# Pré-requis:
+- Un Raspberry Pi
+- Un carte microSD (8GB ou plus) pour Raspbian OS
+- Un dongle USB Wifi
+- Un accès internet
+- Un fournisseur de VPN avec un fichier de configuration `.ovpn` (Un serveur OpenVPN auto-hébergé ou un service comme NordVPN, CyberGhost, etc.)
+![](/20240910_154853.jpg)
+
+# Etape 1. Installation de l'OS sur le Raspberry Pi
 
 ## a. Téléchargement de Raspberry Pi OS
 1. **Téléchargez** Raspberry Pi OS (Lite version recommandée pour un usage de routeur) depuis le site officiel [Raspberry Pi](https://www.raspberrypi.org/software/operating-systems/).
@@ -37,7 +45,7 @@ categories: []
    ```
 
 
-# 2. Installation du daemon OpenVPN
+# Etape 2. Installation du daemon OpenVPN
 
 ## a. Installation d'OpenVPN
 1. **Installez OpenVPN** :
@@ -46,7 +54,7 @@ categories: []
    ```
 
 ## b. Configuration d'OpenVPN
-1. **Copiez** ou créez un fichier de configuration `.ovpn` pour le serveur VPN auquel vous souhaitez vous connecter.
+1. **Copiez** ou créez un fichier de configuration `.ovpn` pour le serveur VPN auquel vous souhaitez vous connecter. Ce fichier contient les paramètres de connexion, les certificats et les clés nécessaires. Il est fourni par votre fournisseur de VPN.
 2. **Placez le fichier** de configuration dans le répertoire `/etc/openvpn/` et renommez-le en `client.conf` pour qu'OpenVPN le détecte automatiquement :
    ```bash
    sudo cp /path/to/your/client.ovpn /etc/openvpn/client.conf
@@ -61,7 +69,9 @@ categories: []
    ```
 
 
-# 3. Mise en place du routage
+# Etape 3. Mise en place du routage
+
+Pour permettre au Raspberry Pi de router le trafic entre les interfaces `eth0` (le réseau local) et `tun0` (connexion VPN), nous devons activer le routage IP et configurer le NAT (Network Address Translation).
 
 ## a. Activer le routage IP
 1. **Activez le routage IP** sur le Raspberry Pi :
@@ -97,7 +107,9 @@ categories: []
    ```
 
 
-# 4. Installation du serveur DHCP
+# Etape 4. Installation du serveur DHCP
+
+Pour attribuer des adresses IP aux appareils connectés au Raspberry Pi, nous allons installer un serveur DHCP (Dynamic Host Configuration Protocol).
 
 ## a. Installation du serveur DHCP
 1. **Installez ISC DHCP Server** :
@@ -142,9 +154,8 @@ categories: []
    ```
 
 
-# 5. Configuration de l'interface `eth0` avec l'adresse IP `192.168.1.1`
+## e. Attribition d'un adresse fixe à l'interface `eth0`
 
-## a. Configurer l'adresse IP de l'interface `eth0`
 1. **Attribuez l'adresse IP** `192.168.1.1` à `eth0` de manière permanente :
    ```bash
    sudo nano /etc/dhcpcd.conf
@@ -161,6 +172,7 @@ categories: []
 
 ---
 
-## Résumé
+## Conclusion
 
-Cette procédure couvre toutes les étapes nécessaires pour transformer votre Raspberry Pi en un routeur VPN fonctionnel avec DHCP. Vous commencez par installer et configurer le système d'exploitation, configurez OpenVPN pour établir le tunnel VPN, mettez en place le routage pour permettre à d'autres appareils de se connecter via le VPN, et enfin configurez un serveur DHCP pour attribuer des adresses IP aux appareils connectés à `eth0`.
+Voilà! Votre Raspberry Pi est maintenant configuré en tant que client VPN matériel. Tous les appareils connectés au Raspberry Pi via l'interface `eth0` utiliseront la connexion VPN pour accéder à Internet de manière sécurisée.
+![](/Capture%20d'écran%202024-09-11%20090302.png)
