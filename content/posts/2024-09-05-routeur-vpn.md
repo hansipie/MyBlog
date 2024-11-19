@@ -13,7 +13,7 @@ categories: []
 
 Il existe dans le commerce des routeurs VPN prêts à l'emploi (exemple: le Asus RT-AX86U Pro), mais ils peuvent être coûteux et ne pas offrir autant de flexibilité que la création de votre propre routeur VPN à l'aide d'un Raspberry Pi, à moindre coût.
 
-Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un client VPN matériel. Cette configuration vous permettra de router tout le trafic réseau de vos appareils à travers un serveur VPN à l'aide d'un Raspberry Pi.
+Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un client VPN matériel. Cette configuration vous permettra de router le trafic réseau de tous vos appareils à travers un serveur VPN à l'aide d'un Raspberry Pi.
 
 ![](/Capture%20d'écran%202024-09-11%20090234.png)
 
