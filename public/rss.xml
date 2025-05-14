@@ -8,9 +8,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>AnsiCode&#39;s Blog</title>
-        <link>http://localhost:1313/</link>
+        <link>https://ansicode.fr/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
-        <generator>Hugo 0.134.0 https://gohugo.io/</generator>
+        <generator>Hugo 0.135.0 https://gohugo.io/</generator>
         
             <language>fr</language>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Wed, 11 Sep 2024 12:18:57 &#43;0300</lastBuildDate>
+        <lastBuildDate>Wed, 14 May 2025 21:56:01 &#43;0300</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="http://localhost:1313/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://ansicode.fr/rss.xml" />
         
         
             <item>
                 <title>Routeur VPN</title>
-                <link>http://localhost:1313/posts/2024-09-05-routeur-vpn/</link>
-                <guid isPermaLink="true">http://localhost:1313/posts/2024-09-05-routeur-vpn/</guid>
+                <link>https://ansicode.fr/posts/2024-09-05-routeur-vpn/</link>
+                <guid isPermaLink="true">https://ansicode.fr/posts/2024-09-05-routeur-vpn/</guid>
                 <pubDate>Thu, 05 Sep 2024 13:25:06 &#43;0000</pubDate>
                 
                     <author>ansicode@ansicode.fr (AnsiCode)</author>
@@ -39,8 +39,8 @@
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
                 
                     <description>&lt;p&gt;Il existe dans le commerce des routeurs VPN prêts à l&amp;rsquo;emploi (exemple: le Asus RT-AX86U Pro), mais ils peuvent être coûteux et ne pas offrir autant de flexibilité que la création de votre propre routeur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi, à moindre coût.&lt;/p&gt;
-&lt;p&gt;Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un client VPN matériel. Cette configuration vous permettra de router tout le trafic réseau de vos appareils à travers un serveur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202024-09-11%20090234.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un client VPN matériel. Cette configuration vous permettra de router le trafic réseau de tous vos appareils à travers un serveur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ansicode.fr/Capture%20d&#39;%C3%A9cran%202024-09-11%20090234.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;pré-requis&#34;&gt;Pré-requis:&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Un Raspberry Pi&lt;/li&gt;
@@ -48,7 +48,7 @@
 &lt;li&gt;Un dongle USB Wifi&lt;/li&gt;
 &lt;li&gt;Un accès internet&lt;/li&gt;
 &lt;li&gt;Un fournisseur de VPN avec un fichier de configuration &lt;code&gt;.ovpn&lt;/code&gt; (Un serveur OpenVPN auto-hébergé ou un service comme NordVPN, CyberGhost, etc.)
-&lt;img src=&#34;http://localhost:1313/20240910_154853.jpg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https://ansicode.fr/20240910_154853.jpg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;etape-1-installation-de-los-sur-le-raspberry-pi&#34;&gt;Etape 1. Installation de l&amp;rsquo;OS sur le Raspberry Pi&lt;/h1&gt;
 &lt;h2 id=&#34;a-téléchargement-de-raspberry-pi-os&#34;&gt;a. Téléchargement de Raspberry Pi OS&lt;/h2&gt;
@@ -341,7 +341,7 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Voilà! Votre Raspberry Pi est maintenant configuré en tant que client VPN matériel. Tous les appareils connectés au Raspberry Pi via l&amp;rsquo;interface &lt;code&gt;eth0&lt;/code&gt; utiliseront la connexion VPN pour accéder à Internet de manière sécurisée.
-&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202024-09-11%20090302.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://ansicode.fr/Capture%20d&#39;%C3%A9cran%202024-09-11%20090302.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
                 
                 
@@ -356,19 +356,19 @@
                                 
                                 
                                 
-                                    <category domain="http://localhost:1313/tags/network/">network</category>
+                                    <category domain="https://ansicode.fr/tags/network/">network</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="http://localhost:1313/tags/raspberry/">raspberry</category>
+                                    <category domain="https://ansicode.fr/tags/raspberry/">raspberry</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="http://localhost:1313/tags/vpn/">vpn</category>
+                                    <category domain="https://ansicode.fr/tags/vpn/">vpn</category>
                                 
                             
                         
@@ -378,44 +378,21 @@
         
             <item>
                 <title>Hello World</title>
-                <link>http://localhost:1313/posts/world/</link>
-                <guid isPermaLink="true">http://localhost:1313/posts/world/</guid>
+                <link>https://ansicode.fr/posts/world/</link>
+                <guid isPermaLink="true">https://ansicode.fr/posts/world/</guid>
                 <pubDate>Thu, 05 Sep 2024 09:56:36 &#43;0000</pubDate>
                 
                     <author>ansicode@ansicode.fr (AnsiCode)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
                 
-                    <description>&lt;h1 id=&#34;titre&#34;&gt;Titre&lt;/h1&gt;
-&lt;h2 id=&#34;sous-titre&#34;&gt;Sous-titre&lt;/h2&gt;
-&lt;h3 id=&#34;liste&#34;&gt;liste:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;item1&lt;/li&gt;
-&lt;li&gt;item2&lt;/li&gt;
-&lt;li&gt;item3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;tableau&#34;&gt;tableau:&lt;/h3&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;colonne1&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;colonne2&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cellule1&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cellule2&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cellule3&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cellule4&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;image&#34;&gt;image:&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Designer.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+                    <description>&lt;h1 id=&#34;hello-world&#34;&gt;Hello World!&lt;/h1&gt;
+&lt;p&gt;Bienvenue sur mon blog !&lt;br&gt;
+Ceci est mon tout premier article. J’ai créé ce blog pour partager mes idées, mes découvertes et mes projets autour du développement, de la technologie et bien plus encore.&lt;/p&gt;
+&lt;p&gt;Dans les prochains articles, je parlerai de sujets variés, partagerai des tutoriels, des astuces et des retours d’expérience.&lt;br&gt;
+N’hésitez pas à laisser un commentaire ou à me contacter si vous avez des questions ou des suggestions.&lt;/p&gt;
+&lt;p&gt;Merci de votre visite et à très bientôt pour de nouveaux articles !&lt;/p&gt;
+</description>
                 
                 
                 
@@ -427,7 +404,7 @@
                                 
                                 
                                 
-                                    <category domain="http://localhost:1313/categories/categorie1/">categorie1</category>
+                                    <category domain="https://ansicode.fr/categories/divers/">Divers</category>
                                 
                             
                         
@@ -437,13 +414,7 @@
                                 
                                 
                                 
-                                    <category domain="http://localhost:1313/tags/tag1/">tag1</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="http://localhost:1313/tags/tag2/">tag2</category>
+                                    <category domain="https://ansicode.fr/tags/pr%C3%A9sentation/">Présentation</category>
                                 
                             
                         

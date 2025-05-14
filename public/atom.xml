@@ -4,23 +4,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
     <title type="text">AnsiCode&#39;s Blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2024-09-11T12:18:57&#43;03:00</updated>
-    <id>http://localhost:1313/</id>
-    <link rel="alternate" type="text/html" href="http://localhost:1313/" />
-    <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/atom.xml" />
+    <updated>2025-05-14T21:56:01&#43;03:00</updated>
+    <id>https://ansicode.fr/</id>
+    <link rel="alternate" type="text/html" href="https://ansicode.fr/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://ansicode.fr/atom.xml" />
     <author>
             <name>AnsiCode</name>
-            <uri>http://localhost:1313/</uri>
+            <uri>https://ansicode.fr/</uri>
             
                 <email>ansicode@ansicode.fr</email>
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
-    <generator uri="https://gohugo.io/" version="0.134.0">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.135.0">Hugo</generator>
         <entry>
             <title type="text">Routeur VPN</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2024-09-05-routeur-vpn/" />
-            <id>http://localhost:1313/posts/2024-09-05-routeur-vpn/</id>
-            <updated>2024-09-11T12:18:57&#43;03:00</updated>
+            <link rel="alternate" type="text/html" href="https://ansicode.fr/posts/2024-09-05-routeur-vpn/" />
+            <id>https://ansicode.fr/posts/2024-09-05-routeur-vpn/</id>
+            <updated>2024-11-19T11:14:40&#43;02:00</updated>
             <published>2024-09-05T13:25:06&#43;00:00</published>
             <author>
                     <name>AnsiCode</name>
@@ -30,8 +30,8 @@
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Une procédure complète pour mettre en place un routeur VPN à partir d&#39;un Raspberry Pi.</summary>
             
                 <content type="html">&lt;p&gt;Il existe dans le commerce des routeurs VPN prêts à l&amp;rsquo;emploi (exemple: le Asus RT-AX86U Pro), mais ils peuvent être coûteux et ne pas offrir autant de flexibilité que la création de votre propre routeur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi, à moindre coût.&lt;/p&gt;
-&lt;p&gt;Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un client VPN matériel. Cette configuration vous permettra de router tout le trafic réseau de vos appareils à travers un serveur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202024-09-11%20090234.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un client VPN matériel. Cette configuration vous permettra de router le trafic réseau de tous vos appareils à travers un serveur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ansicode.fr/Capture%20d&#39;%C3%A9cran%202024-09-11%20090234.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;pré-requis&#34;&gt;Pré-requis:&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Un Raspberry Pi&lt;/li&gt;
@@ -39,7 +39,7 @@
 &lt;li&gt;Un dongle USB Wifi&lt;/li&gt;
 &lt;li&gt;Un accès internet&lt;/li&gt;
 &lt;li&gt;Un fournisseur de VPN avec un fichier de configuration &lt;code&gt;.ovpn&lt;/code&gt; (Un serveur OpenVPN auto-hébergé ou un service comme NordVPN, CyberGhost, etc.)
-&lt;img src=&#34;http://localhost:1313/20240910_154853.jpg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https://ansicode.fr/20240910_154853.jpg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;etape-1-installation-de-los-sur-le-raspberry-pi&#34;&gt;Etape 1. Installation de l&amp;rsquo;OS sur le Raspberry Pi&lt;/h1&gt;
 &lt;h2 id=&#34;a-téléchargement-de-raspberry-pi-os&#34;&gt;a. Téléchargement de Raspberry Pi OS&lt;/h2&gt;
@@ -332,7 +332,7 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Voilà! Votre Raspberry Pi est maintenant configuré en tant que client VPN matériel. Tous les appareils connectés au Raspberry Pi via l&amp;rsquo;interface &lt;code&gt;eth0&lt;/code&gt; utiliseront la connexion VPN pour accéder à Internet de manière sécurisée.
-&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202024-09-11%20090302.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://ansicode.fr/Capture%20d&#39;%C3%A9cran%202024-09-11%20090302.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </content>
             
             
@@ -347,19 +347,19 @@
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/network/" term="network" label="network" />
+                                <category scheme="https://ansicode.fr/tags/network/" term="network" label="network" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/raspberry/" term="raspberry" label="raspberry" />
+                                <category scheme="https://ansicode.fr/tags/raspberry/" term="raspberry" label="raspberry" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/vpn/" term="vpn" label="vpn" />
+                                <category scheme="https://ansicode.fr/tags/vpn/" term="vpn" label="vpn" />
                             
                         
                     
@@ -369,9 +369,9 @@
     
         <entry>
             <title type="text">Hello World</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/world/" />
-            <id>http://localhost:1313/posts/world/</id>
-            <updated>2024-09-05T18:48:23&#43;03:00</updated>
+            <link rel="alternate" type="text/html" href="https://ansicode.fr/posts/world/" />
+            <id>https://ansicode.fr/posts/world/</id>
+            <updated>2025-05-14T21:54:45&#43;03:00</updated>
             <published>2024-09-05T09:56:36&#43;00:00</published>
             <author>
                     <name>AnsiCode</name>
@@ -380,36 +380,13 @@
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Bonjour le monde</summary>
             
-                <content type="html">&lt;h1 id=&#34;titre&#34;&gt;Titre&lt;/h1&gt;
-&lt;h2 id=&#34;sous-titre&#34;&gt;Sous-titre&lt;/h2&gt;
-&lt;h3 id=&#34;liste&#34;&gt;liste:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;item1&lt;/li&gt;
-&lt;li&gt;item2&lt;/li&gt;
-&lt;li&gt;item3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;tableau&#34;&gt;tableau:&lt;/h3&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;colonne1&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;colonne2&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cellule1&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cellule2&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cellule3&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;cellule4&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;image&#34;&gt;image:&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Designer.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</content>
+                <content type="html">&lt;h1 id=&#34;hello-world&#34;&gt;Hello World!&lt;/h1&gt;
+&lt;p&gt;Bienvenue sur mon blog !&lt;br&gt;
+Ceci est mon tout premier article. J’ai créé ce blog pour partager mes idées, mes découvertes et mes projets autour du développement, de la technologie et bien plus encore.&lt;/p&gt;
+&lt;p&gt;Dans les prochains articles, je parlerai de sujets variés, partagerai des tutoriels, des astuces et des retours d’expérience.&lt;br&gt;
+N’hésitez pas à laisser un commentaire ou à me contacter si vous avez des questions ou des suggestions.&lt;/p&gt;
+&lt;p&gt;Merci de votre visite et à très bientôt pour de nouveaux articles !&lt;/p&gt;
+</content>
             
             
             
@@ -421,7 +398,7 @@
                             
                             
                             
-                                <category scheme="http://localhost:1313/categories/categorie1/" term="categorie1" label="categorie1" />
+                                <category scheme="https://ansicode.fr/categories/divers/" term="Divers" label="Divers" />
                             
                         
                     
@@ -431,13 +408,7 @@
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/tag1/" term="tag1" label="tag1" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="http://localhost:1313/tags/tag2/" term="tag2" label="tag2" />
+                                <category scheme="https://ansicode.fr/tags/pr%C3%A9sentation/" term="Présentation" label="Présentation" />
                             
                         
                     
