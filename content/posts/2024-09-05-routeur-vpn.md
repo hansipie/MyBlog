@@ -8,7 +8,8 @@ tags:
    - network
    - raspberry
    - vpn
-categories: []
+categories:
+   - DIY
 ---
 
 Il existe dans le commerce des routeurs VPN prêts à l'emploi (exemple: le Asus RT-AX86U Pro), mais ils peuvent être coûteux et ne pas offrir autant de flexibilité que la création de votre propre routeur VPN à l'aide d'un Raspberry Pi, à moindre coût.
