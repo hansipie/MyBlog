@@ -4,23 +4,194 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
     <title type="text">AnsiCode&#39;s Blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2025-05-14T22:25:14&#43;03:00</updated>
-    <id>https://ansicode.fr/</id>
-    <link rel="alternate" type="text/html" href="https://ansicode.fr/" />
-    <link rel="self" type="application/atom&#43;xml" href="https://ansicode.fr/atom.xml" />
+    <updated>2025-06-17T08:40:44&#43;03:00</updated>
+    <id>http://localhost:1313/</id>
+    <link rel="alternate" type="text/html" href="http://localhost:1313/" />
+    <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/atom.xml" />
     <author>
             <name>AnsiCode</name>
-            <uri>https://ansicode.fr/</uri>
+            <uri>http://localhost:1313/</uri>
             
                 <email>ansicode@ansicode.fr</email>
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.135.0">Hugo</generator>
         <entry>
+            <title type="text">Privacy Policy for Papimathic</title>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-06-16-privacy-policy-for-papimathic/" />
+            <id>http://localhost:1313/posts/2025-06-16-privacy-policy-for-papimathic/</id>
+            <updated>2025-06-16T22:07:24&#43;03:00</updated>
+            <published>2025-06-16T19:04:19&#43;00:00</published>
+            <author>
+                    <name>AnsiCode</name>
+                    <uri>https://ansicode.fr/</uri>
+                    <email>ansicode@ansicode.fr</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;h2 id=&#34;papimathic-privacy-policy&#34;&gt;Papimathic Privacy Policy&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Effective Date:&lt;/strong&gt; June 16, 2025
+&lt;strong&gt;Developer:&lt;/strong&gt; Hansi PIERRE
+&lt;strong&gt;Company:&lt;/strong&gt; ansicode&lt;/p&gt;
+&lt;p&gt;This Privacy Policy outlines how the Papimathic mobile application (&amp;ldquo;the App&amp;rdquo;) handles user information.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;data-collection&#34;&gt;Data Collection&lt;/h3&gt;
+&lt;p&gt;The Papimathic App is designed to help children learn math. While the App itself &lt;strong&gt;does not directly collect any personal data&lt;/strong&gt; from users, such as names, email addresses, or unique device identifiers managed by us, we do use &lt;strong&gt;Google AdMob&lt;/strong&gt;, a third-party advertising service, to display advertisements within the App.&lt;/p&gt;</summary>
+            
+                <content type="html">&lt;h2 id=&#34;papimathic-privacy-policy&#34;&gt;Papimathic Privacy Policy&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Effective Date:&lt;/strong&gt; June 16, 2025
+&lt;strong&gt;Developer:&lt;/strong&gt; Hansi PIERRE
+&lt;strong&gt;Company:&lt;/strong&gt; ansicode&lt;/p&gt;
+&lt;p&gt;This Privacy Policy outlines how the Papimathic mobile application (&amp;ldquo;the App&amp;rdquo;) handles user information.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;data-collection&#34;&gt;Data Collection&lt;/h3&gt;
+&lt;p&gt;The Papimathic App is designed to help children learn math. While the App itself &lt;strong&gt;does not directly collect any personal data&lt;/strong&gt; from users, such as names, email addresses, or unique device identifiers managed by us, we do use &lt;strong&gt;Google AdMob&lt;/strong&gt;, a third-party advertising service, to display advertisements within the App.&lt;/p&gt;
+&lt;p&gt;AdMob may collect certain information to provide and improve its advertising services. This information can include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Device identifiers&lt;/strong&gt; (e.g., Android Advertising ID).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IP address&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Device type and operating system&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Information about user interactions with advertisements&lt;/strong&gt; (e.g., clicks, impressions).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Other data&lt;/strong&gt; related to user activity on ads.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This data is collected by AdMob for the purpose of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Measuring the effectiveness of advertising campaigns.&lt;/li&gt;
+&lt;li&gt;Preventing fraudulent activity.&lt;/li&gt;
+&lt;li&gt;Performing advertising-related analytics.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;data-sharing&#34;&gt;Data Sharing&lt;/h3&gt;
+&lt;p&gt;Since the Papimathic App does not directly collect personal data, we do not share any such data with third parties.&lt;/p&gt;
+&lt;p&gt;However, by integrating Google AdMob, certain data (as described above) may be &lt;strong&gt;shared with Google&lt;/strong&gt; and its advertising partners. This sharing is solely for the purpose of enabling advertising services and is governed by Google&amp;rsquo;s Privacy Policy. We do not independently share any personal data collected by our App with any external entities, organizations, or companies.&lt;/p&gt;
+&lt;p&gt;For more information on how Google AdMob collects and processes data, please refer to &lt;a href=&#34;https://policies.google.com/privacy&#34;&gt;Google&amp;rsquo;s Privacy Policy&lt;/a&gt; and &lt;a href=&#34;https://policies.google.com/technologies/partner-sites&#34;&gt;How Google uses information from sites or apps that use our services&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;childrens-privacy&#34;&gt;Children&amp;rsquo;s Privacy&lt;/h3&gt;
+&lt;p&gt;The Papimathic App is intended for educational use, including by children. Consistent with our commitment to privacy and in compliance with regulations such as the &lt;strong&gt;General Data Protection Regulation (GDPR)&lt;/strong&gt; and the &lt;strong&gt;Children&amp;rsquo;s Online Privacy Protection Act (COPPA)&lt;/strong&gt;, we have configured our AdMob implementation to &lt;strong&gt;serve non-personalized ads only&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This means that all ad requests from our App are treated as child-directed. AdMob will &lt;strong&gt;not collect or use personal data for the purpose of personalized advertising&lt;/strong&gt; for users of the Papimathic App, ensuring a safe and private learning environment free from targeted advertising for our young users.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;changes-to-this-privacy-policy&#34;&gt;Changes to This Privacy Policy&lt;/h3&gt;
+&lt;p&gt;We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &amp;ldquo;Effective Date&amp;rdquo; at the top. We encourage users to periodically review this Privacy Policy for any updates.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;contact-us&#34;&gt;Contact Us&lt;/h3&gt;
+&lt;p&gt;If you have any questions or suggestions about this Privacy Policy, please do not hesitate to contact us at &lt;a href=&#34;mailto:ansicode@ansicode.fr&#34;&gt;ansicode@ansicode.fr&lt;/a&gt;.&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Privacy Policy for Papimathic</title>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-05-16-privacy-policy-for-papimathic/" />
+            <id>http://localhost:1313/posts/2025-05-16-privacy-policy-for-papimathic/</id>
+            <updated>2025-06-17T08:39:18&#43;03:00</updated>
+            <published>2025-05-16T20:05:15&#43;00:00</published>
+            <author>
+                    <name>AnsiCode</name>
+                    <uri>https://ansicode.fr/</uri>
+                    <email>ansicode@ansicode.fr</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;&lt;strong&gt;Effective Date&lt;/strong&gt;: 2025/05/16&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Developer&lt;/strong&gt;: Hansi PIERRE &lt;strong&gt;Company&lt;/strong&gt;: ansicode&lt;/p&gt;
+&lt;p&gt;This Privacy Policy outlines how the Papimathic mobile application (referred to as &amp;ldquo;the App&amp;rdquo;) handles user information.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Data Collection&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Based on the information provided for the Google Play Store Data Safety section, &lt;strong&gt;the Papimathic app does not collect any personal data&lt;/strong&gt; from its users. The App is designed to function without requiring or gathering any personal information.&lt;/p&gt;</summary>
+            
+                <content type="html">&lt;p&gt;&lt;strong&gt;Effective Date&lt;/strong&gt;: 2025/05/16&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Developer&lt;/strong&gt;: Hansi PIERRE &lt;strong&gt;Company&lt;/strong&gt;: ansicode&lt;/p&gt;
+&lt;p&gt;This Privacy Policy outlines how the Papimathic mobile application (referred to as &amp;ldquo;the App&amp;rdquo;) handles user information.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Data Collection&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Based on the information provided for the Google Play Store Data Safety section, &lt;strong&gt;the Papimathic app does not collect any personal data&lt;/strong&gt; from its users. The App is designed to function without requiring or gathering any personal information.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Data Sharing&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Based on the information provided for the Google Play Store Data Safety section, &lt;strong&gt;the Papimathic app does not share any personal data with third parties&lt;/strong&gt;. Since no data is collected by the App, there is no personal data to share with any external entities, organizations, or companies.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Children&amp;rsquo;s Privacy&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The Papimathic App is intended for educational use, including by children. Consistent with our commitment to privacy and the declarations made for platforms like the Google Play Store, we ensure that the App adheres to a strict no-data-collection policy, providing a safe and private environment for children to learn and practice math skills.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Changes to This Privacy Policy&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Contact Us&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you have any questions or suggestions about this Privacy Policy, please do not hesitate to contact us at &lt;a href=&#34;mailto:ansicode@ansicode.fr&#34;&gt;ansicode@ansicode.fr&lt;/a&gt;.&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">SmartComments</title>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-05-14-smartcomments/" />
+            <id>http://localhost:1313/posts/2025-05-14-smartcomments/</id>
+            <updated>2025-05-14T22:17:36&#43;03:00</updated>
+            <published>2025-05-14T18:47:19&#43;00:00</published>
+            <author>
+                    <name>AnsiCode</name>
+                    <uri>https://ansicode.fr/</uri>
+                    <email>ansicode@ansicode.fr</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;&lt;img src=&#34;http://localhost:1313/SmatComments/titre.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</summary>
+            
+                <content type="html">&lt;p&gt;&lt;img src=&#34;http://localhost:1313/SmatComments/titre.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/categories/application/" term="application" label="application" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/tags/dev/" term="Dev" label="Dev" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/tags/expo/" term="Expo" label="Expo" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/tags/typescript/" term="TypeScript" label="TypeScript" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">Routeur VPN</title>
-            <link rel="alternate" type="text/html" href="https://ansicode.fr/posts/2024-09-05-routeur-vpn/" />
-            <id>https://ansicode.fr/posts/2024-09-05-routeur-vpn/</id>
-            <updated>2025-05-14T22:21:15&#43;03:00</updated>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2024-09-05-routeur-vpn/" />
+            <id>http://localhost:1313/posts/2024-09-05-routeur-vpn/</id>
+            <updated>2025-06-17T08:39:13&#43;03:00</updated>
             <published>2024-09-05T13:25:06&#43;00:00</published>
             <author>
                     <name>AnsiCode</name>
@@ -31,7 +202,7 @@
             
                 <content type="html">&lt;p&gt;Il existe dans le commerce des routeurs VPN prêts à l&amp;rsquo;emploi (exemple: le Asus RT-AX86U Pro), mais ils peuvent être coûteux et ne pas offrir autant de flexibilité que la création de votre propre routeur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi, à moindre coût.&lt;/p&gt;
 &lt;p&gt;Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un client VPN matériel. Cette configuration vous permettra de router le trafic réseau de tous vos appareils à travers un serveur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://ansicode.fr/Capture%20d&#39;%C3%A9cran%202024-09-11%20090234.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202024-09-11%20090234.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;pré-requis&#34;&gt;Pré-requis:&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Un Raspberry Pi&lt;/li&gt;
@@ -39,7 +210,7 @@
 &lt;li&gt;Un dongle USB Wifi&lt;/li&gt;
 &lt;li&gt;Un accès internet&lt;/li&gt;
 &lt;li&gt;Un fournisseur de VPN avec un fichier de configuration &lt;code&gt;.ovpn&lt;/code&gt; (Un serveur OpenVPN auto-hébergé ou un service comme NordVPN, CyberGhost, etc.)
-&lt;img src=&#34;https://ansicode.fr/20240910_154853.jpg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;http://localhost:1313/20240910_154853.jpg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;etape-1-installation-de-los-sur-le-raspberry-pi&#34;&gt;Etape 1. Installation de l&amp;rsquo;OS sur le Raspberry Pi&lt;/h1&gt;
 &lt;h2 id=&#34;a-téléchargement-de-raspberry-pi-os&#34;&gt;a. Téléchargement de Raspberry Pi OS&lt;/h2&gt;
@@ -332,7 +503,7 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Voilà! Votre Raspberry Pi est maintenant configuré en tant que client VPN matériel. Tous les appareils connectés au Raspberry Pi via l&amp;rsquo;interface &lt;code&gt;eth0&lt;/code&gt; utiliseront la connexion VPN pour accéder à Internet de manière sécurisée.
-&lt;img src=&#34;https://ansicode.fr/Capture%20d&#39;%C3%A9cran%202024-09-11%20090302.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202024-09-11%20090302.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </content>
             
             
@@ -345,7 +516,7 @@
                             
                             
                             
-                                <category scheme="https://ansicode.fr/categories/diy/" term="DIY" label="DIY" />
+                                <category scheme="http://localhost:1313/categories/diy/" term="DIY" label="DIY" />
                             
                         
                     
@@ -355,19 +526,19 @@
                             
                             
                             
-                                <category scheme="https://ansicode.fr/tags/network/" term="network" label="network" />
+                                <category scheme="http://localhost:1313/tags/network/" term="network" label="network" />
                             
                         
                             
                             
                             
-                                <category scheme="https://ansicode.fr/tags/raspberry/" term="raspberry" label="raspberry" />
+                                <category scheme="http://localhost:1313/tags/raspberry/" term="raspberry" label="raspberry" />
                             
                         
                             
                             
                             
-                                <category scheme="https://ansicode.fr/tags/vpn/" term="vpn" label="vpn" />
+                                <category scheme="http://localhost:1313/tags/vpn/" term="vpn" label="vpn" />
                             
                         
                     
@@ -377,8 +548,8 @@
     
         <entry>
             <title type="text">Hello World</title>
-            <link rel="alternate" type="text/html" href="https://ansicode.fr/posts/world/" />
-            <id>https://ansicode.fr/posts/world/</id>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/world/" />
+            <id>http://localhost:1313/posts/world/</id>
             <updated>2025-05-14T21:54:45&#43;03:00</updated>
             <published>2024-09-05T09:56:36&#43;00:00</published>
             <author>
@@ -406,7 +577,7 @@ N’hésitez pas à laisser un commentaire ou à me contacter si vous avez des q
                             
                             
                             
-                                <category scheme="https://ansicode.fr/categories/divers/" term="Divers" label="Divers" />
+                                <category scheme="http://localhost:1313/categories/divers/" term="Divers" label="Divers" />
                             
                         
                     
@@ -416,7 +587,7 @@ N’hésitez pas à laisser un commentaire ou à me contacter si vous avez des q
                             
                             
                             
-                                <category scheme="https://ansicode.fr/tags/pr%C3%A9sentation/" term="Présentation" label="Présentation" />
+                                <category scheme="http://localhost:1313/tags/pr%C3%A9sentation/" term="Présentation" label="Présentation" />
                             
                         
                     
