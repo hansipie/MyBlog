@@ -5,14 +5,10 @@ date: 2025-06-23T05:01:19.916Z
 preview: ""
 draft: false
 tags:
-    - Papimathic
-    - calcul mental
-    - éducation
-    - application mobile
+    - Dev
+    - Expo
 categories:
-    - Papimathic
-    - éducation
-    - applications mobiles
+    - application
 ---
 
 🧠 **Le calcul mental, une compétence essentielle… et en déclin !** 🧠

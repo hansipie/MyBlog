@@ -7,7 +7,6 @@ draft: true
 tags:
     - Dev
     - Expo
-    - TypeScript
 categories:
     - application
 ---
