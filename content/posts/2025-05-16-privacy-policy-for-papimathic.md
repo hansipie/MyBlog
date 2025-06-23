@@ -3,7 +3,7 @@ title: Privacy Policy for Papimathic
 description: ""
 date: 2025-05-16T20:05:15.410Z
 preview: ""
-draft: false
+draft: true
 tags: []
 categories: []
 ---
