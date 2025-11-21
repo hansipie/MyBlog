@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
     <title type="text">AnsiCode&#39;s Blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2025-06-23T08:21:57&#43;03:00</updated>
+    <updated>2025-11-21T22:15:54&#43;02:00</updated>
     <id>http://localhost:1313/</id>
     <link rel="alternate" type="text/html" href="http://localhost:1313/" />
     <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/atom.xml" />
@@ -17,10 +17,179 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.135.0">Hugo</generator>
         <entry>
+            <title type="text">Mon retour sur le Vibe Coding</title>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-11-21-mon-retour-sur-le-vibe-coding/" />
+            <id>http://localhost:1313/posts/2025-11-21-mon-retour-sur-le-vibe-coding/</id>
+            <updated>2025-11-21T22:15:54&#43;02:00</updated>
+            <published>2025-11-21T17:10:57&#43;00:00</published>
+            <author>
+                    <name>AnsiCode</name>
+                    <uri>https://ansicode.fr/</uri>
+                    <email>ansicode@ansicode.fr</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;h1 id=&#34;jai-développé-un-client-ftp-en-rust-en-une-semaine-sans-connaître-rust--retour-dexpérience-sur-le-vibe-coding&#34;&gt;J&amp;rsquo;ai développé un client FTP en Rust en une semaine (sans connaître Rust) : Retour d&amp;rsquo;expérience sur le &amp;ldquo;Vibe Coding&amp;rdquo;&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Novembre 2025 - Expérimentation avec l&amp;rsquo;IA générative&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;introduction--le-pari-du-débutant-complet&#34;&gt;Introduction : Le pari du débutant complet&lt;/h2&gt;
+&lt;p&gt;Et si je vous disais qu&amp;rsquo;il est possible de développer un client FTP/FTPS/SFTP complet et fonctionnel en Rust&amp;hellip; en une semaine&amp;hellip; sans avoir jamais écrit une ligne de Rust auparavant ?&lt;/p&gt;</summary>
+            
+                <content type="html">&lt;h1 id=&#34;jai-développé-un-client-ftp-en-rust-en-une-semaine-sans-connaître-rust--retour-dexpérience-sur-le-vibe-coding&#34;&gt;J&amp;rsquo;ai développé un client FTP en Rust en une semaine (sans connaître Rust) : Retour d&amp;rsquo;expérience sur le &amp;ldquo;Vibe Coding&amp;rdquo;&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Novembre 2025 - Expérimentation avec l&amp;rsquo;IA générative&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;introduction--le-pari-du-débutant-complet&#34;&gt;Introduction : Le pari du débutant complet&lt;/h2&gt;
+&lt;p&gt;Et si je vous disais qu&amp;rsquo;il est possible de développer un client FTP/FTPS/SFTP complet et fonctionnel en Rust&amp;hellip; en une semaine&amp;hellip; sans avoir jamais écrit une ligne de Rust auparavant ?&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est exactement ce que j&amp;rsquo;ai fait en novembre 2025, armé uniquement de mon expérience de développeur senior et de l&amp;rsquo;assistance d&amp;rsquo;outils d&amp;rsquo;IA comme Claude et GitHub Copilot. Cette expérience m&amp;rsquo;a permis de tester concrètement les limites et les possibilités du &amp;ldquo;vibe coding&amp;rdquo; - cette nouvelle approche où l&amp;rsquo;IA génère du code à partir de descriptions en langage naturel.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Spoiler alert&lt;/strong&gt; : Les résultats sont à la fois impressionnants et révélateurs des limites actuelles de l&amp;rsquo;IA en développement logiciel.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202025-11-21%20214807.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;jour-1--du-zéro-au-mvp-en-moins-de-24-heures&#34;&gt;Jour 1 : Du zéro au MVP en moins de 24 heures&lt;/h2&gt;
+&lt;h3 id=&#34;un-démarrage-fulgurant&#34;&gt;Un démarrage fulgurant&lt;/h3&gt;
+&lt;p&gt;Le premier jour a été une révélation. Malgré ma totale méconnaissance de Rust - pas même un &amp;ldquo;Hello World&amp;rdquo; à mon actif - j&amp;rsquo;ai réussi à mettre en place un MVP fonctionnel en moins d&amp;rsquo;une journée :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Structure CLI&lt;/strong&gt; : Initialisation du projet et gestion des arguments en ligne de commande&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Protocoles de base&lt;/strong&gt; : Connexion et transfert de fichiers via FTP et SFTP&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Confort immédiat&lt;/strong&gt; : Intégration de &lt;code&gt;rustyline&lt;/code&gt; pour l&amp;rsquo;historique des commandes et l&amp;rsquo;auto-complétion, et &lt;code&gt;owo-colors&lt;/code&gt; pour un terminal coloré&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;le-rôle-crucial-de-lia&#34;&gt;Le rôle crucial de l&amp;rsquo;IA&lt;/h3&gt;
+&lt;p&gt;L&amp;rsquo;IA a été déterminante à ce stade. Elle m&amp;rsquo;a permis de :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Générer rapidement des structures et modules Rust idiomatiques&lt;/li&gt;
+&lt;li&gt;Comprendre les concepts fondamentaux comme le célèbre &lt;em&gt;borrow checker&lt;/em&gt; de Rust&lt;/li&gt;
+&lt;li&gt;Débugger rapidement les erreurs de compilation sans passer des heures dans la documentation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Constat&lt;/strong&gt; : Pour un développeur expérimenté, l&amp;rsquo;IA supprime complètement la barrière d&amp;rsquo;entrée d&amp;rsquo;un nouveau langage. On peut être productif immédiatement.&lt;/p&gt;
+&lt;h2 id=&#34;jours-2-4--lexplosion-fonctionnelle&#34;&gt;Jours 2-4 : L&amp;rsquo;explosion fonctionnelle&lt;/h2&gt;
+&lt;h3 id=&#34;une-vélocité-impressionnante&#34;&gt;Une vélocité impressionnante&lt;/h3&gt;
+&lt;p&gt;Une fois le MVP en place, le rythme s&amp;rsquo;est accéléré de manière spectaculaire. En deux jours, mon client FTP simple est devenu une application riche en fonctionnalités.&lt;/p&gt;
+&lt;h4 id=&#34;fonctionnalités-avancées&#34;&gt;Fonctionnalités avancées&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Transferts en arrière-plan&lt;/strong&gt; : Implémentation complexe permettant de lancer des téléchargements (&lt;code&gt;get file &amp;amp;&lt;/code&gt;) tout en continuant à naviguer dans l&amp;rsquo;arborescence.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Opérations batch&lt;/strong&gt; : Ajout des commandes &lt;code&gt;mget&lt;/code&gt; et &lt;code&gt;mput&lt;/code&gt; avec support des wildcards et de la récursivité (&lt;code&gt;-r&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Gestion des tâches&lt;/strong&gt; : Commandes &lt;code&gt;jobs&lt;/code&gt; et &lt;code&gt;cancel&lt;/code&gt; pour piloter les transferts longs.&lt;/p&gt;
+&lt;h4 id=&#34;expérience-utilisateur-soignée&#34;&gt;Expérience utilisateur soignée&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bookmarks&lt;/strong&gt; : Système de sauvegarde des connexions favorites&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Listings enrichis&lt;/strong&gt; : Affichage tabulaire triable avec icônes et couleurs&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Auto-complétion intelligente&lt;/strong&gt; : Suggestions contextuelles pour les chemins locaux et distants&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;robustesse-et-sécurité&#34;&gt;Robustesse et sécurité&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Résilience&lt;/strong&gt; : Reconnexion automatique et mécanismes de retry&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sécurité&lt;/strong&gt; : Intégration du crate &lt;code&gt;zeroize&lt;/code&gt; pour nettoyer les mots de passe en mémoire&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;la-magie-de-lia-pour-les-features-isolées&#34;&gt;La magie de l&amp;rsquo;IA pour les features isolées&lt;/h3&gt;
+&lt;p&gt;Ces ajouts se sont faits avec une fluidité remarquable. L&amp;rsquo;IA excellait dans la génération de code Rust idiomatique pour des fonctionnalités bien délimitées. Je formulais une demande (&amp;ldquo;Ajoute une commande pour gérer les bookmarks avec sauvegarde sur disque&amp;rdquo;), et quelques minutes plus tard, j&amp;rsquo;avais du code fonctionnel.&lt;/p&gt;
+&lt;h2 id=&#34;jours-5-7--la-stabilisation-et-les-limites-de-lia&#34;&gt;Jours 5-7 : La stabilisation et&amp;hellip; les limites de l&amp;rsquo;IA&lt;/h2&gt;
+&lt;h3 id=&#34;le-besoin-de-rigueur&#34;&gt;Le besoin de rigueur&lt;/h3&gt;
+&lt;p&gt;Après l&amp;rsquo;euphorie de l&amp;rsquo;ajout de fonctionnalités, les derniers jours ont été consacrés à la consolidation. C&amp;rsquo;est là que la dynamique a changé.&lt;/p&gt;
+&lt;p&gt;Le 18 novembre, j&amp;rsquo;ai décidé de me concentrer sur la qualité du code :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sécurité de la concurrence&lt;/strong&gt; : Création de &lt;code&gt;mutex_utils&lt;/code&gt; pour éliminer les dangereux &lt;code&gt;unwrap()&lt;/code&gt; sur les locks&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tests unitaires&lt;/strong&gt; : Écriture d&amp;rsquo;une suite de tests pour les modules critiques&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Documentation&lt;/strong&gt; : Ajout de commentaires et documentation inline&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;la-grande-limite--le-refactoring&#34;&gt;La grande limite : Le refactoring&lt;/h3&gt;
+&lt;p&gt;Le 19 novembre, j&amp;rsquo;ai établi un plan de refactoring complet. &lt;strong&gt;C&amp;rsquo;est ici que les limites de l&amp;rsquo;assistance IA sont devenues flagrantes.&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;les-pièges-de-lia-en-refactoring&#34;&gt;Les pièges de l&amp;rsquo;IA en refactoring&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Surengineering systématique&lt;/strong&gt; : Les propositions de l&amp;rsquo;IA tombaient souvent dans l&amp;rsquo;excès d&amp;rsquo;abstraction. Patterns complexes, traits inutiles, architectures over-engineered pour un projet de cette taille.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Manque de cohérence globale&lt;/strong&gt; : L&amp;rsquo;IA n&amp;rsquo;a pas de véritable compréhension contextuelle sur la durée. Elle propose des solutions localement correctes mais qui peuvent entrer en conflit avec des décisions architecturales prises précédemment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Biais vers la complexité&lt;/strong&gt; : Là où une solution simple aurait suffi, l&amp;rsquo;IA suggérait systématiquement des approches &amp;ldquo;enterprise-grade&amp;rdquo; inadaptées.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;lexpertise-humaine-indispensable&#34;&gt;L&amp;rsquo;expertise humaine indispensable&lt;/h4&gt;
+&lt;p&gt;C&amp;rsquo;est finalement mon expérience de développeur senior qui a permis de :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Structurer un plan de refactoring cohérent et progressif&lt;/li&gt;
+&lt;li&gt;Simplifier l&amp;rsquo;architecture plutôt que de l&amp;rsquo;alourdir&lt;/li&gt;
+&lt;li&gt;Prioriser la stabilité (tests, gestion d&amp;rsquo;erreurs) sur la complexité technique&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Leçon importante&lt;/strong&gt; : L&amp;rsquo;IA peut générer du code rapidement, mais c&amp;rsquo;est le développeur qui doit maintenir la vision d&amp;rsquo;ensemble et la cohérence architecturale.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion--lia-comme-turbo-pas-comme-pilote-automatique&#34;&gt;Conclusion : L&amp;rsquo;IA comme turbo, pas comme pilote automatique&lt;/h2&gt;
+&lt;h3 id=&#34;ce-que-lia-fait-exceptionnellement-bien&#34;&gt;Ce que l&amp;rsquo;IA fait exceptionnellement bien&lt;/h3&gt;
+&lt;p&gt;✅ &lt;strong&gt;Démarrage rapide&lt;/strong&gt; : Passer de zéro à un MVP en quelques heures dans un langage inconnu&lt;/p&gt;
+&lt;p&gt;✅ &lt;strong&gt;Exploration&lt;/strong&gt; : Découvrir un écosystème (les crates Rust) sans passer des semaines à lire la doc&lt;/p&gt;
+&lt;p&gt;✅ &lt;strong&gt;Production véloce&lt;/strong&gt; : Ajouter des fonctionnalités isolées à un rythme soutenu&lt;/p&gt;
+&lt;p&gt;✅ &lt;strong&gt;Déblocage&lt;/strong&gt; : Résoudre rapidement les erreurs de compilation et comprendre les concepts&lt;/p&gt;
+&lt;h3 id=&#34;ce-que-lia-ne-sait-pas-encore-faire&#34;&gt;Ce que l&amp;rsquo;IA ne sait pas (encore) faire&lt;/h3&gt;
+&lt;p&gt;❌ &lt;strong&gt;Refactoring cohérent&lt;/strong&gt; : Maintenir une vision architecturale sur la durée&lt;/p&gt;
+&lt;p&gt;❌ &lt;strong&gt;Décisions de design&lt;/strong&gt; : Arbitrer entre simplicité et complexité selon le contexte&lt;/p&gt;
+&lt;p&gt;❌ &lt;strong&gt;Jugement expérimenté&lt;/strong&gt; : Savoir quand s&amp;rsquo;arrêter et éviter le surengineering&lt;/p&gt;
+&lt;h3 id=&#34;le-verdict-final&#34;&gt;Le verdict final&lt;/h3&gt;
+&lt;p&gt;Cette expérience valide une hypothèse : &lt;strong&gt;l&amp;rsquo;IA est un multiplicateur de productivité formidable, mais elle ne remplace pas l&amp;rsquo;expertise humaine.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Pour un développeur senior :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;L&amp;rsquo;IA élimine la courbe d&amp;rsquo;apprentissage initiale d&amp;rsquo;un nouveau langage&lt;/li&gt;
+&lt;li&gt;Elle accélère drastiquement la phase de développement de features&lt;/li&gt;
+&lt;li&gt;Mais elle nécessite un pilotage constant et des décisions architecturales humaines&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pour un développeur junior ou débutant, les risques sont plus importants :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Difficulté à évaluer la qualité du code généré&lt;/li&gt;
+&lt;li&gt;Tendance à accepter le surengineering proposé&lt;/li&gt;
+&lt;li&gt;Manque de recul pour simplifier et refactorer efficacement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;lavenir-du-développement-&#34;&gt;L&amp;rsquo;avenir du développement ?&lt;/h3&gt;
+&lt;p&gt;Le &amp;ldquo;vibe coding&amp;rdquo; n&amp;rsquo;est pas du développement paresseux - c&amp;rsquo;est du développement &lt;strong&gt;accéléré mais exigeant&lt;/strong&gt;. Il faut plus que jamais :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Une vision claire de ce qu&amp;rsquo;on construit&lt;/li&gt;
+&lt;li&gt;La capacité à évaluer et challenger les propositions de l&amp;rsquo;IA&lt;/li&gt;
+&lt;li&gt;L&amp;rsquo;expertise pour simplifier plutôt que complexifier&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;L&amp;rsquo;IA permet d&amp;rsquo;aller vite. L&amp;rsquo;expertise humaine garantit qu&amp;rsquo;on va dans la bonne direction.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Le projet RustyFTP est disponible en open source. N&amp;rsquo;hésitez pas à explorer le code pour voir concrètement ce qu&amp;rsquo;une semaine de &amp;ldquo;vibe coding&amp;rdquo; peut produire.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pour les curieux :&lt;/strong&gt; 📦 &lt;a href=&#34;https://github.com/hansipie/RustyFTP&#34;&gt;Télécharger et explorer le code sur GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202025-11-21%20220522.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Questions ouvertes :&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comment l&amp;rsquo;IA évoluera-t-elle pour mieux gérer le refactoring et la cohérence architecturale ?&lt;/li&gt;
+&lt;li&gt;Quelles nouvelles compétences les développeurs doivent-ils cultiver dans ce nouveau paradigme ?&lt;/li&gt;
+&lt;li&gt;À quel point peut-on s&amp;rsquo;appuyer sur l&amp;rsquo;IA pour apprendre un langage &amp;ldquo;profondément&amp;rdquo; ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Votre expérience :&lt;/strong&gt;
+Avez-vous tenté des projets similaires avec l&amp;rsquo;assistance de l&amp;rsquo;IA ? Quelles ont été vos découvertes et vos limites ? Partagez vos retours en commentaire !&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/tags/ai/" term="AI" label="AI" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/tags/projet/" term="Projet" label="Projet" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/tags/dev/" term="Dev" label="Dev" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">Papimathic: le coup de boost ludique du calcul mental</title>
             <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-06-23-unlocking-papimathic-key-concepts-and-benefits/" />
             <id>http://localhost:1313/posts/2025-06-23-unlocking-papimathic-key-concepts-and-benefits/</id>
-            <updated>2025-06-23T08:21:57&#43;03:00</updated>
+            <updated>2025-06-23T18:58:27&#43;03:00</updated>
             <published>2025-06-23T05:01:19&#43;00:00</published>
             <author>
                     <name>AnsiCode</name>
@@ -72,19 +241,7 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
                             
                             
                             
-                                <category scheme="http://localhost:1313/categories/papimathic/" term="Papimathic" label="Papimathic" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="http://localhost:1313/categories/%C3%A9ducation/" term="éducation" label="éducation" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="http://localhost:1313/categories/applications-mobiles/" term="applications mobiles" label="applications mobiles" />
+                                <category scheme="http://localhost:1313/categories/application/" term="application" label="application" />
                             
                         
                     
@@ -94,142 +251,15 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/papimathic/" term="Papimathic" label="Papimathic" />
+                                <category scheme="http://localhost:1313/tags/dev/" term="Dev" label="Dev" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/calcul-mental/" term="calcul mental" label="calcul mental" />
+                                <category scheme="http://localhost:1313/tags/expo/" term="Expo" label="Expo" />
                             
                         
-                            
-                            
-                            
-                                <category scheme="http://localhost:1313/tags/%C3%A9ducation/" term="éducation" label="éducation" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="http://localhost:1313/tags/application-mobile/" term="application mobile" label="application mobile" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">Privacy Policy for Papimathic</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-06-16-privacy-policy-for-papimathic/" />
-            <id>http://localhost:1313/posts/2025-06-16-privacy-policy-for-papimathic/</id>
-            <updated>2025-06-16T22:07:24&#43;03:00</updated>
-            <published>2025-06-16T19:04:19&#43;00:00</published>
-            <author>
-                    <name>AnsiCode</name>
-                    <uri>https://ansicode.fr/</uri>
-                    <email>ansicode@ansicode.fr</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;h2 id=&#34;papimathic-privacy-policy&#34;&gt;Papimathic Privacy Policy&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Effective Date:&lt;/strong&gt; June 16, 2025
-&lt;strong&gt;Developer:&lt;/strong&gt; Hansi PIERRE
-&lt;strong&gt;Company:&lt;/strong&gt; ansicode&lt;/p&gt;
-&lt;p&gt;This Privacy Policy outlines how the Papimathic mobile application (&amp;ldquo;the App&amp;rdquo;) handles user information.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;data-collection&#34;&gt;Data Collection&lt;/h3&gt;
-&lt;p&gt;The Papimathic App is designed to help children learn math. While the App itself &lt;strong&gt;does not directly collect any personal data&lt;/strong&gt; from users, such as names, email addresses, or unique device identifiers managed by us, we do use &lt;strong&gt;Google AdMob&lt;/strong&gt;, a third-party advertising service, to display advertisements within the App.&lt;/p&gt;</summary>
-            
-                <content type="html">&lt;h2 id=&#34;papimathic-privacy-policy&#34;&gt;Papimathic Privacy Policy&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Effective Date:&lt;/strong&gt; June 16, 2025
-&lt;strong&gt;Developer:&lt;/strong&gt; Hansi PIERRE
-&lt;strong&gt;Company:&lt;/strong&gt; ansicode&lt;/p&gt;
-&lt;p&gt;This Privacy Policy outlines how the Papimathic mobile application (&amp;ldquo;the App&amp;rdquo;) handles user information.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;data-collection&#34;&gt;Data Collection&lt;/h3&gt;
-&lt;p&gt;The Papimathic App is designed to help children learn math. While the App itself &lt;strong&gt;does not directly collect any personal data&lt;/strong&gt; from users, such as names, email addresses, or unique device identifiers managed by us, we do use &lt;strong&gt;Google AdMob&lt;/strong&gt;, a third-party advertising service, to display advertisements within the App.&lt;/p&gt;
-&lt;p&gt;AdMob may collect certain information to provide and improve its advertising services. This information can include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Device identifiers&lt;/strong&gt; (e.g., Android Advertising ID).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;IP address&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Device type and operating system&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Information about user interactions with advertisements&lt;/strong&gt; (e.g., clicks, impressions).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Other data&lt;/strong&gt; related to user activity on ads.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This data is collected by AdMob for the purpose of:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Measuring the effectiveness of advertising campaigns.&lt;/li&gt;
-&lt;li&gt;Preventing fraudulent activity.&lt;/li&gt;
-&lt;li&gt;Performing advertising-related analytics.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;data-sharing&#34;&gt;Data Sharing&lt;/h3&gt;
-&lt;p&gt;Since the Papimathic App does not directly collect personal data, we do not share any such data with third parties.&lt;/p&gt;
-&lt;p&gt;However, by integrating Google AdMob, certain data (as described above) may be &lt;strong&gt;shared with Google&lt;/strong&gt; and its advertising partners. This sharing is solely for the purpose of enabling advertising services and is governed by Google&amp;rsquo;s Privacy Policy. We do not independently share any personal data collected by our App with any external entities, organizations, or companies.&lt;/p&gt;
-&lt;p&gt;For more information on how Google AdMob collects and processes data, please refer to &lt;a href=&#34;https://policies.google.com/privacy&#34;&gt;Google&amp;rsquo;s Privacy Policy&lt;/a&gt; and &lt;a href=&#34;https://policies.google.com/technologies/partner-sites&#34;&gt;How Google uses information from sites or apps that use our services&lt;/a&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;childrens-privacy&#34;&gt;Children&amp;rsquo;s Privacy&lt;/h3&gt;
-&lt;p&gt;The Papimathic App is intended for educational use, including by children. Consistent with our commitment to privacy and in compliance with regulations such as the &lt;strong&gt;General Data Protection Regulation (GDPR)&lt;/strong&gt; and the &lt;strong&gt;Children&amp;rsquo;s Online Privacy Protection Act (COPPA)&lt;/strong&gt;, we have configured our AdMob implementation to &lt;strong&gt;serve non-personalized ads only&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;This means that all ad requests from our App are treated as child-directed. AdMob will &lt;strong&gt;not collect or use personal data for the purpose of personalized advertising&lt;/strong&gt; for users of the Papimathic App, ensuring a safe and private learning environment free from targeted advertising for our young users.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;changes-to-this-privacy-policy&#34;&gt;Changes to This Privacy Policy&lt;/h3&gt;
-&lt;p&gt;We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &amp;ldquo;Effective Date&amp;rdquo; at the top. We encourage users to periodically review this Privacy Policy for any updates.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;contact-us&#34;&gt;Contact Us&lt;/h3&gt;
-&lt;p&gt;If you have any questions or suggestions about this Privacy Policy, please do not hesitate to contact us at &lt;a href=&#34;mailto:ansicode@ansicode.fr&#34;&gt;ansicode@ansicode.fr&lt;/a&gt;.&lt;/p&gt;
-</content>
-            
-            
-            
-            
-            
-                
-                    
-                
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">Privacy Policy for Papimathic</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-05-16-privacy-policy-for-papimathic/" />
-            <id>http://localhost:1313/posts/2025-05-16-privacy-policy-for-papimathic/</id>
-            <updated>2025-06-23T08:19:32&#43;03:00</updated>
-            <published>2025-05-16T20:05:15&#43;00:00</published>
-            <author>
-                    <name>AnsiCode</name>
-                    <uri>https://ansicode.fr/</uri>
-                    <email>ansicode@ansicode.fr</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;&lt;strong&gt;Effective Date&lt;/strong&gt;: 2025/05/16&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Developer&lt;/strong&gt;: Hansi PIERRE &lt;strong&gt;Company&lt;/strong&gt;: ansicode&lt;/p&gt;
-&lt;p&gt;This Privacy Policy outlines how the Papimathic mobile application (referred to as &amp;ldquo;the App&amp;rdquo;) handles user information.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Data Collection&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Based on the information provided for the Google Play Store Data Safety section, &lt;strong&gt;the Papimathic app does not collect any personal data&lt;/strong&gt; from its users. The App is designed to function without requiring or gathering any personal information.&lt;/p&gt;</summary>
-            
-                <content type="html">&lt;p&gt;&lt;strong&gt;Effective Date&lt;/strong&gt;: 2025/05/16&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Developer&lt;/strong&gt;: Hansi PIERRE &lt;strong&gt;Company&lt;/strong&gt;: ansicode&lt;/p&gt;
-&lt;p&gt;This Privacy Policy outlines how the Papimathic mobile application (referred to as &amp;ldquo;the App&amp;rdquo;) handles user information.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Data Collection&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Based on the information provided for the Google Play Store Data Safety section, &lt;strong&gt;the Papimathic app does not collect any personal data&lt;/strong&gt; from its users. The App is designed to function without requiring or gathering any personal information.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Data Sharing&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Based on the information provided for the Google Play Store Data Safety section, &lt;strong&gt;the Papimathic app does not share any personal data with third parties&lt;/strong&gt;. Since no data is collected by the App, there is no personal data to share with any external entities, organizations, or companies.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Children&amp;rsquo;s Privacy&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The Papimathic App is intended for educational use, including by children. Consistent with our commitment to privacy and the declarations made for platforms like the Google Play Store, we ensure that the App adheres to a strict no-data-collection policy, providing a safe and private environment for children to learn and practice math skills.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Changes to This Privacy Policy&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Contact Us&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If you have any questions or suggestions about this Privacy Policy, please do not hesitate to contact us at &lt;a href=&#34;mailto:ansicode@ansicode.fr&#34;&gt;ansicode@ansicode.fr&lt;/a&gt;.&lt;/p&gt;
-</content>
-            
-            
-            
-            
-            
-                
-                    
-                
                     
                 
             
@@ -239,7 +269,7 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
             <title type="text">SmartComments</title>
             <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-05-14-smartcomments/" />
             <id>http://localhost:1313/posts/2025-05-14-smartcomments/</id>
-            <updated>2025-05-14T22:17:36&#43;03:00</updated>
+            <updated>2025-06-23T18:58:27&#43;03:00</updated>
             <published>2025-05-14T18:47:19&#43;00:00</published>
             <author>
                     <name>AnsiCode</name>
@@ -278,12 +308,6 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
                             
                             
                                 <category scheme="http://localhost:1313/tags/expo/" term="Expo" label="Expo" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="http://localhost:1313/tags/typescript/" term="TypeScript" label="TypeScript" />
                             
                         
                     
