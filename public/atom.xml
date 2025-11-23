@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
     <title type="text">AnsiCode&#39;s Blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2025-11-21T22:15:54&#43;02:00</updated>
+    <updated>2025-11-24T00:31:00&#43;02:00</updated>
     <id>http://localhost:1313/</id>
     <link rel="alternate" type="text/html" href="http://localhost:1313/" />
     <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/atom.xml" />
@@ -20,20 +20,18 @@
             <title type="text">Mon retour sur le Vibe Coding</title>
             <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-11-21-mon-retour-sur-le-vibe-coding/" />
             <id>http://localhost:1313/posts/2025-11-21-mon-retour-sur-le-vibe-coding/</id>
-            <updated>2025-11-21T22:15:54&#43;02:00</updated>
+            <updated>2025-11-24T00:31:00&#43;02:00</updated>
             <published>2025-11-21T17:10:57&#43;00:00</published>
             <author>
                     <name>AnsiCode</name>
                     <uri>https://ansicode.fr/</uri>
                     <email>ansicode@ansicode.fr</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;h1 id=&#34;jai-développé-un-client-ftp-en-rust-en-une-semaine-sans-connaître-rust--retour-dexpérience-sur-le-vibe-coding&#34;&gt;J&amp;rsquo;ai développé un client FTP en Rust en une semaine (sans connaître Rust) : Retour d&amp;rsquo;expérience sur le &amp;ldquo;Vibe Coding&amp;rdquo;&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;Novembre 2025 - Expérimentation avec l&amp;rsquo;IA générative&lt;/em&gt;&lt;/p&gt;
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;&lt;em&gt;J&amp;rsquo;ai développé un client FTP en Rust en une semaine (sans connaître Rust) : Retour d&amp;rsquo;expérience sur le &amp;ldquo;Vibe Coding&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;introduction--le-pari-du-débutant-complet&#34;&gt;Introduction : Le pari du débutant complet&lt;/h2&gt;
 &lt;p&gt;Et si je vous disais qu&amp;rsquo;il est possible de développer un client FTP/FTPS/SFTP complet et fonctionnel en Rust&amp;hellip; en une semaine&amp;hellip; sans avoir jamais écrit une ligne de Rust auparavant ?&lt;/p&gt;</summary>
             
-                <content type="html">&lt;h1 id=&#34;jai-développé-un-client-ftp-en-rust-en-une-semaine-sans-connaître-rust--retour-dexpérience-sur-le-vibe-coding&#34;&gt;J&amp;rsquo;ai développé un client FTP en Rust en une semaine (sans connaître Rust) : Retour d&amp;rsquo;expérience sur le &amp;ldquo;Vibe Coding&amp;rdquo;&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;Novembre 2025 - Expérimentation avec l&amp;rsquo;IA générative&lt;/em&gt;&lt;/p&gt;
+                <content type="html">&lt;p&gt;&lt;em&gt;J&amp;rsquo;ai développé un client FTP en Rust en une semaine (sans connaître Rust) : Retour d&amp;rsquo;expérience sur le &amp;ldquo;Vibe Coding&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;introduction--le-pari-du-débutant-complet&#34;&gt;Introduction : Le pari du débutant complet&lt;/h2&gt;
 &lt;p&gt;Et si je vous disais qu&amp;rsquo;il est possible de développer un client FTP/FTPS/SFTP complet et fonctionnel en Rust&amp;hellip; en une semaine&amp;hellip; sans avoir jamais écrit une ligne de Rust auparavant ?&lt;/p&gt;
 &lt;p&gt;C&amp;rsquo;est exactement ce que j&amp;rsquo;ai fait en novembre 2025, armé uniquement de mon expérience de développeur senior et de l&amp;rsquo;assistance d&amp;rsquo;outils d&amp;rsquo;IA comme Claude et GitHub Copilot. Cette expérience m&amp;rsquo;a permis de tester concrètement les limites et les possibilités du &amp;ldquo;vibe coding&amp;rdquo; - cette nouvelle approche où l&amp;rsquo;IA génère du code à partir de descriptions en langage naturel.&lt;/p&gt;

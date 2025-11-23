@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Fri, 21 Nov 2025 22:15:54 &#43;0200</lastBuildDate>
+        <lastBuildDate>Mon, 24 Nov 2025 00:31:00 &#43;0200</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="http://localhost:1313/rss.xml" />
         
@@ -38,8 +38,7 @@
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
                 
-                    <description>&lt;h1 id=&#34;jai-développé-un-client-ftp-en-rust-en-une-semaine-sans-connaître-rust--retour-dexpérience-sur-le-vibe-coding&#34;&gt;J&amp;rsquo;ai développé un client FTP en Rust en une semaine (sans connaître Rust) : Retour d&amp;rsquo;expérience sur le &amp;ldquo;Vibe Coding&amp;rdquo;&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;Novembre 2025 - Expérimentation avec l&amp;rsquo;IA générative&lt;/em&gt;&lt;/p&gt;
+                    <description>&lt;p&gt;&lt;em&gt;J&amp;rsquo;ai développé un client FTP en Rust en une semaine (sans connaître Rust) : Retour d&amp;rsquo;expérience sur le &amp;ldquo;Vibe Coding&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;introduction--le-pari-du-débutant-complet&#34;&gt;Introduction : Le pari du débutant complet&lt;/h2&gt;
 &lt;p&gt;Et si je vous disais qu&amp;rsquo;il est possible de développer un client FTP/FTPS/SFTP complet et fonctionnel en Rust&amp;hellip; en une semaine&amp;hellip; sans avoir jamais écrit une ligne de Rust auparavant ?&lt;/p&gt;
 &lt;p&gt;C&amp;rsquo;est exactement ce que j&amp;rsquo;ai fait en novembre 2025, armé uniquement de mon expérience de développeur senior et de l&amp;rsquo;assistance d&amp;rsquo;outils d&amp;rsquo;IA comme Claude et GitHub Copilot. Cette expérience m&amp;rsquo;a permis de tester concrètement les limites et les possibilités du &amp;ldquo;vibe coding&amp;rdquo; - cette nouvelle approche où l&amp;rsquo;IA génère du code à partir de descriptions en langage naturel.&lt;/p&gt;

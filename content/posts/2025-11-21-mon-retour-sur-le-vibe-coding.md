@@ -11,9 +11,7 @@ tags:
 categories: []
 ---
 
-# J'ai développé un client FTP en Rust en une semaine (sans connaître Rust) : Retour d'expérience sur le "Vibe Coding"
-
-*Novembre 2025 - Expérimentation avec l'IA générative*
+*J'ai développé un client FTP en Rust en une semaine (sans connaître Rust) : Retour d'expérience sur le "Vibe Coding"*
 
 ## Introduction : Le pari du débutant complet
 
