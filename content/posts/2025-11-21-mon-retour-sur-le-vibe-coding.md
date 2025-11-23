@@ -21,7 +21,7 @@ C'est exactement ce que j'ai fait en novembre 2025, armé uniquement de mon exp�
 
 **Spoiler alert** : Les résultats sont à la fois impressionnants et révélateurs des limites actuelles de l'IA en développement logiciel.
 
-![](/Capture%20d'écran%202025-11-21%20214807.png)
+![](/Capture%20d%27écran%202025-11-21%20214807.png)
 
 ## Jour 1 : Du zéro au MVP en moins de 24 heures
 
@@ -153,7 +153,7 @@ Le "vibe coding" n'est pas du développement paresseux - c'est du développement
 
 **Pour les curieux :** 📦 [Télécharger et explorer le code sur GitHub](https://github.com/hansipie/RustyFTP)
 
-![](/Capture%20d'écran%202025-11-21%20220522.png)
+![](/Capture%20d%27écran%202025-11-21%20220522.png)
 
 ## Pour aller plus loin
 

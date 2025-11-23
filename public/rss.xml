@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Mon, 24 Nov 2025 00:31:00 &#43;0200</lastBuildDate>
+        <lastBuildDate>Mon, 24 Nov 2025 00:36:05 &#43;0200</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="http://localhost:1313/rss.xml" />
         
@@ -43,7 +43,7 @@
 &lt;p&gt;Et si je vous disais qu&amp;rsquo;il est possible de développer un client FTP/FTPS/SFTP complet et fonctionnel en Rust&amp;hellip; en une semaine&amp;hellip; sans avoir jamais écrit une ligne de Rust auparavant ?&lt;/p&gt;
 &lt;p&gt;C&amp;rsquo;est exactement ce que j&amp;rsquo;ai fait en novembre 2025, armé uniquement de mon expérience de développeur senior et de l&amp;rsquo;assistance d&amp;rsquo;outils d&amp;rsquo;IA comme Claude et GitHub Copilot. Cette expérience m&amp;rsquo;a permis de tester concrètement les limites et les possibilités du &amp;ldquo;vibe coding&amp;rdquo; - cette nouvelle approche où l&amp;rsquo;IA génère du code à partir de descriptions en langage naturel.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Spoiler alert&lt;/strong&gt; : Les résultats sont à la fois impressionnants et révélateurs des limites actuelles de l&amp;rsquo;IA en développement logiciel.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202025-11-21%20214807.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Capture%20d%27%C3%A9cran%202025-11-21%20214807.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;jour-1--du-zéro-au-mvp-en-moins-de-24-heures&#34;&gt;Jour 1 : Du zéro au MVP en moins de 24 heures&lt;/h2&gt;
 &lt;h3 id=&#34;un-démarrage-fulgurant&#34;&gt;Un démarrage fulgurant&lt;/h3&gt;
 &lt;p&gt;Le premier jour a été une révélation. Malgré ma totale méconnaissance de Rust - pas même un &amp;ldquo;Hello World&amp;rdquo; à mon actif - j&amp;rsquo;ai réussi à mettre en place un MVP fonctionnel en moins d&amp;rsquo;une journée :&lt;/p&gt;
@@ -146,7 +146,7 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;Le projet RustyFTP est disponible en open source. N&amp;rsquo;hésitez pas à explorer le code pour voir concrètement ce qu&amp;rsquo;une semaine de &amp;ldquo;vibe coding&amp;rdquo; peut produire.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Pour les curieux :&lt;/strong&gt; 📦 &lt;a href=&#34;https://github.com/hansipie/RustyFTP&#34;&gt;Télécharger et explorer le code sur GitHub&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202025-11-21%20220522.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Capture%20d%27%C3%A9cran%202025-11-21%20220522.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Questions ouvertes :&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
