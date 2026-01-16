@@ -4,13 +4,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
     <title type="text">AnsiCode&#39;s Blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2026-01-16T12:22:02&#43;02:00</updated>
-    <id>http://localhost:1313/</id>
-    <link rel="alternate" type="text/html" href="http://localhost:1313/" />
-    <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/atom.xml" />
+    <updated>2026-01-16T13:28:48&#43;02:00</updated>
+    <id>http://localhost:1313/MyBlog/</id>
+    <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/" />
+    <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/MyBlog/atom.xml" />
     <author>
             <name>AnsiCode</name>
-            <uri>http://localhost:1313/</uri>
+            <uri>http://localhost:1313/MyBlog/</uri>
             
                 <email>ansicode@ansicode.fr</email>
             </author>
@@ -18,9 +18,9 @@
     <generator uri="https://gohugo.io/" version="0.154.5">Hugo</generator>
         <entry>
             <title type="text">Android Emulator sur Bazzite : Quand Linux met des bâtons dans les roues (et comment s’en sortir)</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2026-01-16-android-emulator-distrobox/" />
-            <id>http://localhost:1313/posts/2026-01-16-android-emulator-distrobox/</id>
-            <updated>2026-01-16T12:21:29&#43;02:00</updated>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/posts/2026-01-16-android-emulator-distrobox/" />
+            <id>http://localhost:1313/MyBlog/posts/2026-01-16-android-emulator-distrobox/</id>
+            <updated>2026-01-16T13:27:42&#43;02:00</updated>
             <published>2026-01-16T10:00:00&#43;00:00</published>
             <author>
                     <name>AnsiCode</name>
@@ -29,7 +29,9 @@
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">L&#39;histoire d&#39;une migration de Windows vers Linux et des défis inattendus pour faire tourner l&#39;émulateur Android</summary>
             
-                <content type="html">&lt;p&gt;&lt;em&gt;De Windows à Linux : quand développer pour Android devient un parcours du combattant&amp;hellip; mais pas insurmontable.&lt;/em&gt;&lt;/p&gt;
+                <content type="html">&lt;p&gt;&lt;em&gt;De Windows à Linux : quand développer pour Android devient un parcours du combattant&amp;hellip; mais pas insurmontable.&lt;/em&gt;
+&lt;img src=&#34;http://localhost:1313/MyBlog/bannerbazziteandro.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;le-point-de-départ--un-besoin-simple-une-envie-dévolution&#34;&gt;Le point de départ : un besoin simple, une envie d&amp;rsquo;évolution&lt;/h2&gt;
 &lt;p&gt;J&amp;rsquo;avais besoin de développer pour Android. Rien d&amp;rsquo;extraordinaire, une tâche que j&amp;rsquo;ai réalisée des centaines de fois sous Windows. Installer Android Studio, créer un émulateur, lancer l&amp;rsquo;application, et voilà. Un processus rodé, fluide, presque ennuyeux de simplicité.&lt;/p&gt;
 &lt;p&gt;Mais voilà, j&amp;rsquo;étais en pleine migration vers Linux. Après des années sous Windows, j&amp;rsquo;avais décidé de franchir le pas et de basculer sur Bazzite, une distribution Linux &amp;ldquo;atomique&amp;rdquo; basée sur Fedora. Le genre de distribution moderne qui promet stabilité et fiabilité grâce à un système de fichiers racine en lecture seule.&lt;/p&gt;
@@ -46,7 +48,7 @@
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Créer un environnement de développement&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;distrobox create --name dev-android --image ubuntu:22.04
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;distrobox enter dev-android
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;distrobox enter dev-androidez
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Première contrainte acceptée. Pas le choix de toute façon.&lt;/p&gt;
@@ -55,9 +57,11 @@
 &lt;p&gt;J&amp;rsquo;étais satisfait. Presque trop. &amp;ldquo;Finalement, Linux ce n&amp;rsquo;est pas si compliqué&amp;rdquo;, me disais-je.&lt;/p&gt;
 &lt;p&gt;Et puis j&amp;rsquo;ai cliqué sur le bouton &amp;ldquo;Play&amp;rdquo; pour lancer l&amp;rsquo;émulateur.&lt;/p&gt;
 &lt;h2 id=&#34;le-mur--lémulateur-refuse-obstinément-de-démarrer&#34;&gt;Le mur : l&amp;rsquo;émulateur refuse obstinément de démarrer&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/BannerHeapWar.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Segmentation fault.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Deux mots qui font froid dans le dos de tout développeur. L&amp;rsquo;émulateur plantait avant même de s&amp;rsquo;afficher. J&amp;rsquo;ai réessayé. Même résultat. Encore. Toujours pareil.&lt;/p&gt;
-&lt;p&gt;J&amp;rsquo;ai commencé à creuser. Forums, documentation Android, Stack Overflow&amp;hellip; Les heures ont défilé.&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;ai commencé à creuser. Forums, documentation Android, Stack Overflow, ChatGPT, Gemini&amp;hellip; Les heures ont défilé.&lt;/p&gt;
 &lt;h2 id=&#34;les-sources-de-friction--comprendre-pourquoi-ça-ne-marche-pas&#34;&gt;Les sources de friction : comprendre pourquoi ça ne marche pas&lt;/h2&gt;
 &lt;h3 id=&#34;1-la-guerre-des-drivers-graphiques&#34;&gt;1. La guerre des drivers graphiques&lt;/h3&gt;
 &lt;p&gt;L&amp;rsquo;émulateur Android utilise QEMU avec accélération GPU. Problème : dans mon conteneur Ubuntu, les drivers Mesa (les drivers graphiques open-source) sont ceux d&amp;rsquo;Ubuntu. Mais mon GPU, lui, est géré par les drivers de l&amp;rsquo;hôte Bazzite (Fedora).&lt;/p&gt;
@@ -199,7 +203,7 @@
                             
                             
                             
-                                <category scheme="http://localhost:1313/categories/diy/" term="DIY" label="DIY" />
+                                <category scheme="http://localhost:1313/MyBlog/categories/diy/" term="DIY" label="DIY" />
                             
                         
                     
@@ -209,25 +213,25 @@
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/dev/" term="Dev" label="Dev" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/dev/" term="Dev" label="Dev" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/linux/" term="Linux" label="Linux" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/linux/" term="Linux" label="Linux" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/android/" term="Android" label="Android" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/android/" term="Android" label="Android" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/distrobox/" term="Distrobox" label="Distrobox" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/distrobox/" term="Distrobox" label="Distrobox" />
                             
                         
                     
@@ -237,8 +241,8 @@
     
         <entry>
             <title type="text">Mon retour sur le Vibe Coding</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-11-21-mon-retour-sur-le-vibe-coding/" />
-            <id>http://localhost:1313/posts/2025-11-21-mon-retour-sur-le-vibe-coding/</id>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/posts/2025-11-21-mon-retour-sur-le-vibe-coding/" />
+            <id>http://localhost:1313/MyBlog/posts/2025-11-21-mon-retour-sur-le-vibe-coding/</id>
             <updated>2026-01-16T10:52:01&#43;02:00</updated>
             <published>2025-11-21T17:10:57&#43;00:00</published>
             <author>
@@ -255,7 +259,8 @@
 &lt;p&gt;Et si je vous disais qu&amp;rsquo;il est possible de développer un client FTP/FTPS/SFTP complet et fonctionnel en Rust&amp;hellip; en une semaine&amp;hellip; sans avoir jamais écrit une ligne de Rust auparavant ?&lt;/p&gt;
 &lt;p&gt;C&amp;rsquo;est exactement ce que j&amp;rsquo;ai fait en novembre 2025, armé uniquement de mon expérience de développeur senior et de l&amp;rsquo;assistance d&amp;rsquo;outils d&amp;rsquo;IA comme Claude et GitHub Copilot. Cette expérience m&amp;rsquo;a permis de tester concrètement les limites et les possibilités du &amp;ldquo;vibe coding&amp;rdquo; - cette nouvelle approche où l&amp;rsquo;IA génère du code à partir de descriptions en langage naturel.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Spoiler alert&lt;/strong&gt; : Les résultats sont à la fois impressionnants et révélateurs des limites actuelles de l&amp;rsquo;IA en développement logiciel.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/rustyftp1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/rustyftp1.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;jour-1--du-zéro-au-mvp-en-moins-de-24-heures&#34;&gt;Jour 1 : Du zéro au MVP en moins de 24 heures&lt;/h2&gt;
 &lt;h3 id=&#34;un-démarrage-fulgurant&#34;&gt;Un démarrage fulgurant&lt;/h3&gt;
 &lt;p&gt;Le premier jour a été une révélation. Malgré ma totale méconnaissance de Rust - pas même un &amp;ldquo;Hello World&amp;rdquo; à mon actif - j&amp;rsquo;ai réussi à mettre en place un MVP fonctionnel en moins d&amp;rsquo;une journée :&lt;/p&gt;
@@ -358,7 +363,8 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;Le projet RustyFTP est disponible en open source. N&amp;rsquo;hésitez pas à explorer le code pour voir concrètement ce qu&amp;rsquo;une semaine de &amp;ldquo;vibe coding&amp;rdquo; peut produire.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Pour les curieux :&lt;/strong&gt; 📦 &lt;a href=&#34;https://github.com/hansipie/RustyFTP&#34;&gt;Télécharger et explorer le code sur GitHub&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/rustyftp2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/rustyftp2.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Questions ouvertes :&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -382,19 +388,19 @@ Avez-vous tenté des projets similaires avec l&amp;rsquo;assistance de l&amp;rsq
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/ai/" term="AI" label="AI" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/ai/" term="AI" label="AI" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/projet/" term="Projet" label="Projet" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/projet/" term="Projet" label="Projet" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/dev/" term="Dev" label="Dev" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/dev/" term="Dev" label="Dev" />
                             
                         
                     
@@ -404,8 +410,8 @@ Avez-vous tenté des projets similaires avec l&amp;rsquo;assistance de l&amp;rsq
     
         <entry>
             <title type="text">Papimathic: le coup de boost ludique du calcul mental</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-06-23-unlocking-papimathic-key-concepts-and-benefits/" />
-            <id>http://localhost:1313/posts/2025-06-23-unlocking-papimathic-key-concepts-and-benefits/</id>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/posts/2025-06-23-unlocking-papimathic-key-concepts-and-benefits/" />
+            <id>http://localhost:1313/MyBlog/posts/2025-06-23-unlocking-papimathic-key-concepts-and-benefits/</id>
             <updated>2026-01-16T10:52:01&#43;02:00</updated>
             <published>2025-06-23T05:01:19&#43;00:00</published>
             <author>
@@ -422,7 +428,8 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
 Pourtant, plusieurs études et rapports d’enseignants alertent : les compétences en calcul mental décroissent de façon inquiétante, faute de pratique régulière et d’apprentissage des tables.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-découvrez-papimathic--le-coup-de-boost-ludique-du-calcul-mental&#34;&gt;🎉 Découvrez &lt;strong&gt;Papimathic&lt;/strong&gt; : le coup de boost ludique du calcul mental&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://papimathic.ansicode.fr/images/title.png&#34; alt=&#34;Papimathic&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://papimathic.ansicode.fr/images/title.png&#34; alt=&#34;Papimathic&#34;&gt;
+&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Papimathic&lt;/strong&gt; est une application mobile conçue pour redonner aux enfants (et à leurs parents) le goût du calcul mental, avec :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;✅ Pratique des &lt;strong&gt;4 opérations fondamentales&lt;/strong&gt; (addition, soustraction, multiplication, division)&lt;/li&gt;
@@ -442,7 +449,8 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
 &lt;hr&gt;
 &lt;p&gt;👉 &lt;strong&gt;Papimathic est disponible dès aujourd’hui&lt;/strong&gt; sur Android. Donnez à vos enfants (et à vous-même !) un coup de pouce ludique pour faire des maths autrement.&lt;/p&gt;
 &lt;p&gt;🔗 &lt;a href=&#34;http://papimathic.ansicode.fr&#34;&gt;Téléchargez Papimathic maintenant&lt;/a&gt;
-&lt;img src=&#34;https://papimathic.ansicode.fr/images/favicon.png&#34; alt=&#34;Papimathic&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://papimathic.ansicode.fr/images/favicon.png&#34; alt=&#34;Papimathic&#34;&gt;
+&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;🔁 &lt;strong&gt;Aimez, commentez ou partagez&lt;/strong&gt; ce post pour aider d’autres parents, enseignants et éducateurs à redécouvrir la puissance du calcul mental !&lt;/p&gt;
 &lt;hr&gt;
@@ -458,7 +466,7 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
                             
                             
                             
-                                <category scheme="http://localhost:1313/categories/application/" term="application" label="application" />
+                                <category scheme="http://localhost:1313/MyBlog/categories/application/" term="application" label="application" />
                             
                         
                     
@@ -468,13 +476,13 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/dev/" term="Dev" label="Dev" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/dev/" term="Dev" label="Dev" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/expo/" term="Expo" label="Expo" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/expo/" term="Expo" label="Expo" />
                             
                         
                     
@@ -484,8 +492,8 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
     
         <entry>
             <title type="text">SmartComments</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2025-05-14-smartcomments/" />
-            <id>http://localhost:1313/posts/2025-05-14-smartcomments/</id>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/posts/2025-05-14-smartcomments/" />
+            <id>http://localhost:1313/MyBlog/posts/2025-05-14-smartcomments/</id>
             <updated>2026-01-16T10:52:01&#43;02:00</updated>
             <published>2025-05-14T18:47:19&#43;00:00</published>
             <author>
@@ -493,9 +501,11 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
                     <uri>https://ansicode.fr/</uri>
                     <email>ansicode@ansicode.fr</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;&lt;img src=&#34;http://localhost:1313/SmatComments/titre.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/SmatComments/titre.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;</summary>
             
-                <content type="html">&lt;p&gt;&lt;img src=&#34;http://localhost:1313/SmatComments/titre.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+                <content type="html">&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/SmatComments/titre.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
 </content>
             
             
@@ -508,7 +518,7 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
                             
                             
                             
-                                <category scheme="http://localhost:1313/categories/application/" term="application" label="application" />
+                                <category scheme="http://localhost:1313/MyBlog/categories/application/" term="application" label="application" />
                             
                         
                     
@@ -518,13 +528,13 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/dev/" term="Dev" label="Dev" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/dev/" term="Dev" label="Dev" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/expo/" term="Expo" label="Expo" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/expo/" term="Expo" label="Expo" />
                             
                         
                     
@@ -534,8 +544,8 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
     
         <entry>
             <title type="text">Routeur VPN</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/2024-09-05-routeur-vpn/" />
-            <id>http://localhost:1313/posts/2024-09-05-routeur-vpn/</id>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/posts/2024-09-05-routeur-vpn/" />
+            <id>http://localhost:1313/MyBlog/posts/2024-09-05-routeur-vpn/</id>
             <updated>2026-01-16T10:52:01&#43;02:00</updated>
             <published>2024-09-05T13:25:06&#43;00:00</published>
             <author>
@@ -547,7 +557,8 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
             
                 <content type="html">&lt;p&gt;Il existe dans le commerce des routeurs VPN prêts à l&amp;rsquo;emploi (exemple: le Asus RT-AX86U Pro), mais ils peuvent être coûteux et ne pas offrir autant de flexibilité que la création de votre propre routeur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi, à moindre coût.&lt;/p&gt;
 &lt;p&gt;Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un client VPN matériel. Cette configuration vous permettra de router le trafic réseau de tous vos appareils à travers un serveur VPN à l&amp;rsquo;aide d&amp;rsquo;un Raspberry Pi.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202024-09-11%20090234.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/Capture%20d%27%c3%a9cran%202024-09-11%20090234.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
 &lt;h1 id=&#34;pré-requis&#34;&gt;Pré-requis:&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Un Raspberry Pi&lt;/li&gt;
@@ -555,7 +566,8 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
 &lt;li&gt;Un dongle USB Wifi&lt;/li&gt;
 &lt;li&gt;Un accès internet&lt;/li&gt;
 &lt;li&gt;Un fournisseur de VPN avec un fichier de configuration &lt;code&gt;.ovpn&lt;/code&gt; (Un serveur OpenVPN auto-hébergé ou un service comme NordVPN, CyberGhost, etc.)
-&lt;img src=&#34;http://localhost:1313/20240910_154853.jpg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;http://localhost:1313/MyBlog/20240910_154853.jpg&#34; alt=&#34;&#34;&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;etape-1-installation-de-los-sur-le-raspberry-pi&#34;&gt;Etape 1. Installation de l&amp;rsquo;OS sur le Raspberry Pi&lt;/h1&gt;
 &lt;h2 id=&#34;a-téléchargement-de-raspberry-pi-os&#34;&gt;a. Téléchargement de Raspberry Pi OS&lt;/h2&gt;
@@ -848,7 +860,8 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
 &lt;hr&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Voilà! Votre Raspberry Pi est maintenant configuré en tant que client VPN matériel. Tous les appareils connectés au Raspberry Pi via l&amp;rsquo;interface &lt;code&gt;eth0&lt;/code&gt; utiliseront la connexion VPN pour accéder à Internet de manière sécurisée.
-&lt;img src=&#34;http://localhost:1313/Capture%20d&#39;%C3%A9cran%202024-09-11%20090302.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;http://localhost:1313/MyBlog/Capture%20d%27%c3%a9cran%202024-09-11%20090302.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
 </content>
             
             
@@ -861,7 +874,7 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
                             
                             
                             
-                                <category scheme="http://localhost:1313/categories/diy/" term="DIY" label="DIY" />
+                                <category scheme="http://localhost:1313/MyBlog/categories/diy/" term="DIY" label="DIY" />
                             
                         
                     
@@ -871,19 +884,19 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/network/" term="network" label="network" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/network/" term="network" label="network" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/raspberry/" term="raspberry" label="raspberry" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/raspberry/" term="raspberry" label="raspberry" />
                             
                         
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/vpn/" term="vpn" label="vpn" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/vpn/" term="vpn" label="vpn" />
                             
                         
                     
@@ -893,8 +906,8 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
     
         <entry>
             <title type="text">Hello World</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/posts/world/" />
-            <id>http://localhost:1313/posts/world/</id>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/posts/world/" />
+            <id>http://localhost:1313/MyBlog/posts/world/</id>
             <updated>2026-01-16T10:52:01&#43;02:00</updated>
             <published>2024-09-05T09:56:36&#43;00:00</published>
             <author>
@@ -922,7 +935,7 @@ N’hésitez pas à laisser un commentaire ou à me contacter si vous avez des q
                             
                             
                             
-                                <category scheme="http://localhost:1313/categories/divers/" term="Divers" label="Divers" />
+                                <category scheme="http://localhost:1313/MyBlog/categories/divers/" term="Divers" label="Divers" />
                             
                         
                     
@@ -932,7 +945,7 @@ N’hésitez pas à laisser un commentaire ou à me contacter si vous avez des q
                             
                             
                             
-                                <category scheme="http://localhost:1313/tags/pr%C3%A9sentation/" term="Présentation" label="Présentation" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/pr%C3%A9sentation/" term="Présentation" label="Présentation" />
                             
                         
                     

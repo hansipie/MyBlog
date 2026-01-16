@@ -1,0 +1,5 @@
+{{- $url := .Destination -}}
+{{- if hasPrefix $url "/" -}}
+  {{- $url = printf "%s%s" .Page.Site.BaseURL (strings.TrimPrefix "/" $url) -}}
+{{- end -}}
+<img src="{{ $url }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>

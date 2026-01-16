@@ -1,7 +1,7 @@
 ##########################################
 # Site Settings
 
-baseURL = "https://ansicode.fr/"
+baseURL = "https://hansipie.github.io/MyBlog/"
 title = "AnsiCode's Blog"
 languageCode = "fr"
 hasCJKLanguage = false
