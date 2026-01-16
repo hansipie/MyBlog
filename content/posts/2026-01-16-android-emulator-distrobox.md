@@ -14,7 +14,7 @@ categories:
 ---
 
 *De Windows à Linux : quand développer pour Android devient un parcours du combattant... mais pas insurmontable.*
-![](/bannerbazziteandro.png)
+![banner1](/bannerbazziteandro.png)
 ## Le point de départ : un besoin simple, une envie d'évolution
 
 J'avais besoin de développer pour Android. Rien d'extraordinaire, une tâche que j'ai réalisée des centaines de fois sous Windows. Installer Android Studio, créer un émulateur, lancer l'application, et voilà. Un processus rodé, fluide, presque ennuyeux de simplicité.
