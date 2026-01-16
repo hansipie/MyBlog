@@ -10,7 +10,7 @@
         <title>AnsiCode&#39;s Blog</title>
         <link>http://localhost:1313/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
-        <generator>Hugo 0.135.0 https://gohugo.io/</generator>
+        <generator>Hugo 0.154.5 https://gohugo.io/</generator>
         
             <language>fr</language>
         
@@ -23,10 +23,226 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Mon, 24 Nov 2025 00:40:37 &#43;0200</lastBuildDate>
+        <lastBuildDate>Fri, 16 Jan 2026 12:22:02 &#43;0200</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="http://localhost:1313/rss.xml" />
         
+        
+            <item>
+                <title>Android Emulator sur Bazzite : Quand Linux met des bâtons dans les roues (et comment s’en sortir)</title>
+                <link>http://localhost:1313/posts/2026-01-16-android-emulator-distrobox/</link>
+                <guid isPermaLink="true">http://localhost:1313/posts/2026-01-16-android-emulator-distrobox/</guid>
+                <pubDate>Fri, 16 Jan 2026 10:00:00 &#43;0000</pubDate>
+                
+                    <author>ansicode@ansicode.fr (AnsiCode)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;&lt;em&gt;De Windows à Linux : quand développer pour Android devient un parcours du combattant&amp;hellip; mais pas insurmontable.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;le-point-de-départ--un-besoin-simple-une-envie-dévolution&#34;&gt;Le point de départ : un besoin simple, une envie d&amp;rsquo;évolution&lt;/h2&gt;
+&lt;p&gt;J&amp;rsquo;avais besoin de développer pour Android. Rien d&amp;rsquo;extraordinaire, une tâche que j&amp;rsquo;ai réalisée des centaines de fois sous Windows. Installer Android Studio, créer un émulateur, lancer l&amp;rsquo;application, et voilà. Un processus rodé, fluide, presque ennuyeux de simplicité.&lt;/p&gt;
+&lt;p&gt;Mais voilà, j&amp;rsquo;étais en pleine migration vers Linux. Après des années sous Windows, j&amp;rsquo;avais décidé de franchir le pas et de basculer sur Bazzite, une distribution Linux &amp;ldquo;atomique&amp;rdquo; basée sur Fedora. Le genre de distribution moderne qui promet stabilité et fiabilité grâce à un système de fichiers racine en lecture seule.&lt;/p&gt;
+&lt;p&gt;Naïvement, je pensais que ce serait aussi simple que sous Windows. Spoiler : ça ne l&amp;rsquo;a pas été.&lt;/p&gt;
+&lt;h2 id=&#34;les-contraintes--bienvenue-dans-le-monde-atomique&#34;&gt;Les contraintes : bienvenue dans le monde atomique&lt;/h2&gt;
+&lt;p&gt;Première découverte : avec un système atomique, impossible d&amp;rsquo;installer des outils de développement directement sur le système hôte. Le système de fichiers racine est verrouillé, immuable. C&amp;rsquo;est le prix à payer pour la stabilité.&lt;/p&gt;
+&lt;p&gt;La solution ? &lt;strong&gt;Distrobox&lt;/strong&gt;. Un outil qui permet de créer des conteneurs légers où l&amp;rsquo;on peut installer tout ce qu&amp;rsquo;on veut. En gros, une petite bulle Ubuntu (j&amp;rsquo;ai choisi Ubuntu pour sa compatibilité) qui tourne dans mon système Bazzite.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Créer un environnement de développement&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;distrobox create --name dev-android --image ubuntu:22.04
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;distrobox enter dev-android
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Première contrainte acceptée. Pas le choix de toute façon.&lt;/p&gt;
+&lt;h2 id=&#34;le-faux-sentiment-de-victoire--android-studio-installé-&#34;&gt;Le faux sentiment de victoire : Android Studio installé !&lt;/h2&gt;
+&lt;p&gt;Dans mon conteneur Ubuntu fraîchement créé, j&amp;rsquo;ai installé Android Studio. Téléchargement du SDK, installation des outils, création d&amp;rsquo;un Virtual Device (AVD)&amp;hellip; tout s&amp;rsquo;est déroulé sans accroc. L&amp;rsquo;interface s&amp;rsquo;affichait correctement, les menus répondaient, les paramètres se configuraient.&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;étais satisfait. Presque trop. &amp;ldquo;Finalement, Linux ce n&amp;rsquo;est pas si compliqué&amp;rdquo;, me disais-je.&lt;/p&gt;
+&lt;p&gt;Et puis j&amp;rsquo;ai cliqué sur le bouton &amp;ldquo;Play&amp;rdquo; pour lancer l&amp;rsquo;émulateur.&lt;/p&gt;
+&lt;h2 id=&#34;le-mur--lémulateur-refuse-obstinément-de-démarrer&#34;&gt;Le mur : l&amp;rsquo;émulateur refuse obstinément de démarrer&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Segmentation fault.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Deux mots qui font froid dans le dos de tout développeur. L&amp;rsquo;émulateur plantait avant même de s&amp;rsquo;afficher. J&amp;rsquo;ai réessayé. Même résultat. Encore. Toujours pareil.&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;ai commencé à creuser. Forums, documentation Android, Stack Overflow&amp;hellip; Les heures ont défilé.&lt;/p&gt;
+&lt;h2 id=&#34;les-sources-de-friction--comprendre-pourquoi-ça-ne-marche-pas&#34;&gt;Les sources de friction : comprendre pourquoi ça ne marche pas&lt;/h2&gt;
+&lt;h3 id=&#34;1-la-guerre-des-drivers-graphiques&#34;&gt;1. La guerre des drivers graphiques&lt;/h3&gt;
+&lt;p&gt;L&amp;rsquo;émulateur Android utilise QEMU avec accélération GPU. Problème : dans mon conteneur Ubuntu, les drivers Mesa (les drivers graphiques open-source) sont ceux d&amp;rsquo;Ubuntu. Mais mon GPU, lui, est géré par les drivers de l&amp;rsquo;hôte Bazzite (Fedora).&lt;/p&gt;
+&lt;p&gt;Cette incompatibilité entre les versions de Mesa créait des conflits insurmontables. Le conteneur essayait d&amp;rsquo;utiliser des drivers qui ne correspondaient pas au matériel réel.&lt;/p&gt;
+&lt;h3 id=&#34;2-selinux-le-garde-chiourme&#34;&gt;2. SELinux, le garde-chiourme&lt;/h3&gt;
+&lt;p&gt;Bazzite utilise SELinux, le système de sécurité de Red Hat/Fedora. Et SELinux n&amp;rsquo;aime pas qu&amp;rsquo;on exécute du code depuis le heap (la mémoire dynamique). Devinez ce que fait l&amp;rsquo;émulateur Android ? Exactement ça.&lt;/p&gt;
+&lt;p&gt;SELinux bloquait l&amp;rsquo;émulateur avant même qu&amp;rsquo;il puisse vraiment démarrer.&lt;/p&gt;
+&lt;h3 id=&#34;3-la-virtualisation-imbriquée-ou-lenfer-dans-lenfer&#34;&gt;3. La virtualisation imbriquée, ou l&amp;rsquo;enfer dans l&amp;rsquo;enfer&lt;/h3&gt;
+&lt;p&gt;Lancer l&amp;rsquo;émulateur depuis un conteneur, c&amp;rsquo;est créer une chaîne de virtualisation :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mon PC (matériel réel)&lt;/li&gt;
+&lt;li&gt;→ Conteneur Podman/Distrobox&lt;/li&gt;
+&lt;li&gt;→ QEMU (l&amp;rsquo;émulateur Android)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Trois couches de virtualisation. C&amp;rsquo;est comme essayer de courir un marathon avec des chaussures deux tailles trop petites et un sac de 20 kg sur le dos. Techniquement possible, mais atrocement inefficace.&lt;/p&gt;
+&lt;h3 id=&#34;4-kvm-et-les-permissions&#34;&gt;4. KVM et les permissions&lt;/h3&gt;
+&lt;p&gt;L&amp;rsquo;émulateur Android a besoin de KVM (Kernel-based Virtual Machine) pour la virtualisation matérielle. Bien que &lt;code&gt;/dev/kvm&lt;/code&gt; soit partagé avec le conteneur, les permissions et les groupes d&amp;rsquo;utilisateurs n&amp;rsquo;étaient pas correctement mappés entre l&amp;rsquo;hôte et le conteneur.&lt;/p&gt;
+&lt;h3 id=&#34;5-qt-et-laffichage-graphique&#34;&gt;5. Qt et l&amp;rsquo;affichage graphique&lt;/h3&gt;
+&lt;p&gt;L&amp;rsquo;interface de l&amp;rsquo;émulateur utilise Qt. Dans le conteneur, les variables d&amp;rsquo;environnement &lt;code&gt;QT_QPA_PLATFORM&lt;/code&gt; et &lt;code&gt;DISPLAY&lt;/code&gt; n&amp;rsquo;étaient pas correctement configurées. L&amp;rsquo;émulateur ne savait tout simplement pas où et comment afficher sa fenêtre.&lt;/p&gt;
+&lt;h2 id=&#34;lillumination--sortir-du-conteneur&#34;&gt;L&amp;rsquo;illumination : sortir du conteneur&lt;/h2&gt;
+&lt;p&gt;Après avoir passé des heures à essayer de réparer ce qui semblait irréparable, j&amp;rsquo;ai eu une idée contre-intuitive : &lt;strong&gt;et si je n&amp;rsquo;exécutais pas l&amp;rsquo;émulateur dans le conteneur ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;La solution était là, dans la documentation de Distrobox : &lt;code&gt;distrobox-host-exec&lt;/code&gt;. Une commande qui permet d&amp;rsquo;exécuter des programmes directement sur l&amp;rsquo;hôte, depuis le conteneur.&lt;/p&gt;
+&lt;h3 id=&#34;larchitecture-de-la-solution&#34;&gt;L&amp;rsquo;architecture de la solution&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────────┐
+│                     Hôte Bazzite                            │
+│  ┌─────────────────────────────────────────────────────┐    │
+│  │  Android Emulator (via distrobox-host-exec)         │    │
+│  │  - Accès direct GPU                                 │    │
+│  │  - Accès direct KVM                                 │    │
+│  │  - Accès direct à l&amp;#39;affichage                       │    │
+│  └─────────────────────────────────────────────────────┘    │
+│                            ▲                                │
+│                            │                                │
+│  ┌─────────────────────────┴───────────────────────────┐    │
+│  │        Conteneur Distrobox (Ubuntu)                 │    │
+│  │  - Android Studio (interface)                       │    │
+│  │  - SDK Tools                                        │    │
+│  │  - ADB, Gradle, etc.                                │    │
+│  └─────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Android Studio reste dans le conteneur, où il est facile à maintenir et à configurer. Mais l&amp;rsquo;émulateur, lui, tourne sur l&amp;rsquo;hôte avec accès direct au GPU, à KVM, et à l&amp;rsquo;affichage.&lt;/p&gt;
+&lt;h3 id=&#34;le-script-magique&#34;&gt;Le script magique&lt;/h3&gt;
+&lt;p&gt;J&amp;rsquo;ai créé un script shell qui fait le pont entre les deux mondes :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Variables d&amp;#39;environnement essentielles&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;AVD_HOME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/.android/avd&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;EMULATOR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/opt/android-sdk/emulator/emulator&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;AVD_NAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;:-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;Pixel_8_API_34&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# La commande qui change tout&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;EMULATOR_CMD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;export QT_QPA_PLATFORM=xcb &amp;amp;&amp;amp; export DISPLAY=:0 &amp;amp;&amp;amp; export ANDROID_AVD_HOME=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$AVD_HOME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; &amp;amp;&amp;amp; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$EMULATOR&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; -avd &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$AVD_NAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; -no-snapshot -gpu host&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Exécution sur l&amp;#39;hôte depuis le conteneur&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;distrobox-host-exec bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$EMULATOR_CMD&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Les éléments clés :&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;QT_QPA_PLATFORM=xcb&lt;/code&gt; : Force Qt à utiliser X11 au lieu de Wayland&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DISPLAY=:0&lt;/code&gt; : Spécifie l&amp;rsquo;affichage de l&amp;rsquo;hôte&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-gpu host&lt;/code&gt; : Utilise le GPU réel, pas une émulation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-no-snapshot&lt;/code&gt; : Évite les problèmes de persistance&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;distrobox-host-exec&lt;/code&gt; : La clé de voûte qui exécute tout ça sur l&amp;rsquo;hôte&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;et-ça-marche-&#34;&gt;Et ça marche !&lt;/h3&gt;
+&lt;p&gt;Après des heures de frustration, l&amp;rsquo;émulateur s&amp;rsquo;est enfin lancé. Fluide, rapide, exactement comme sous Windows. J&amp;rsquo;ai pu déployer mes applications, tester, debugger. Tout fonctionnait.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion--linux-lamour-vache&#34;&gt;Conclusion : Linux, l&amp;rsquo;amour vache&lt;/h2&gt;
+&lt;p&gt;Voilà. J&amp;rsquo;avais mon environnement de développement Android fonctionnel sur Linux. Mais à quel prix ?&lt;/p&gt;
+&lt;p&gt;Sous Windows, tout ça aurait pris 30 minutes. Télécharger, installer, lancer. Point final. Windows est conçu pour être &amp;ldquo;user-friendly&amp;rdquo;, pour que tout fonctionne &amp;ldquo;out of the box&amp;rdquo;. Et ça marche. C&amp;rsquo;est indéniable.&lt;/p&gt;
+&lt;p&gt;Linux, lui, ne fait pas de cadeaux. Il ne mâche pas le travail. Il faut comprendre ce qu&amp;rsquo;on fait, pourquoi les choses plantent, comment le système fonctionne en profondeur. C&amp;rsquo;est frustrant. C&amp;rsquo;est chronophage. Parfois, c&amp;rsquo;est épuisant.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mais il y a toujours une solution.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est ça, la philosophie Linux. Rien n&amp;rsquo;est impossible si on se donne les moyens de comprendre et de chercher. La communauté est là, la documentation existe, les outils sont puissants. Mais il faut accepter de mettre les mains dans le cambouis.&lt;/p&gt;
+&lt;p&gt;Pour certains, c&amp;rsquo;est un repoussoir. Pour d&amp;rsquo;autres, c&amp;rsquo;est exactement ce qu&amp;rsquo;ils cherchent : le contrôle total, la compréhension profonde, la satisfaction d&amp;rsquo;avoir résolu un problème complexe.&lt;/p&gt;
+&lt;p&gt;Ma migration de Windows vers Linux ? Elle continue. Avec ses hauts et ses bas. Ses victoires et ses frustrations. Mais au final, je ne regrette rien. Parce que chaque problème résolu est une leçon apprise. Et ça, aucun assistant Windows ne pourra jamais me l&amp;rsquo;offrir.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-ressources-utiles&#34;&gt;🔧 Ressources utiles&lt;/h2&gt;
+&lt;p&gt;Pour ceux qui voudraient se lancer dans l&amp;rsquo;aventure :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://distrobox.it/&#34;&gt;Documentation Distrobox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/89luca89/distrobox/blob/main/docs/usage/distrobox-host-exec.md&#34;&gt;Guide distrobox-host-exec&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.bazzite.gg/&#34;&gt;Documentation Bazzite&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.android.com/studio/run/emulator-troubleshooting&#34;&gt;Troubleshooting Android Emulator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Commandes utiles :&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Vérifier si KVM est disponible&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -la /dev/kvm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Vérifier l&amp;#39;état SELinux&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;getenforce
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Lister les émulateurs disponibles&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;emulator -list-avds
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Lancer l&amp;#39;émulateur avec le script&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./android-emulator.sh Nom_De_Votre_AVD
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="http://localhost:1313/categories/diy/">DIY</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="http://localhost:1313/tags/dev/">Dev</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="http://localhost:1313/tags/linux/">Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="http://localhost:1313/tags/android/">Android</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="http://localhost:1313/tags/distrobox/">Distrobox</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Mon retour sur le Vibe Coding</title>
