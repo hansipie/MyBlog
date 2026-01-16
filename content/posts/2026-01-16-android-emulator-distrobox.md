@@ -3,14 +3,14 @@ title: "Android Emulator sur Bazzite : Quand Linux met des bâtons dans les roue
 description: L'histoire d'une migration de Windows vers Linux et des défis inattendus pour faire tourner l'émulateur Android
 date: 2026-01-16T10:00:00Z
 preview: null
-draft: true
+draft: false
 tags:
-    - Dev
-    - Linux
-    - Android
-    - Distrobox
+  - Dev
+  - Linux
+  - Android
+  - Distrobox
 categories:
-    - DIY
+  - DIY
 ---
 
 *De Windows à Linux : quand développer pour Android devient un parcours du combattant... mais pas insurmontable.*
