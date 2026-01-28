@@ -87,7 +87,7 @@ L'argument marketing de Clawdbot — "Claude with hands" — ignore que Claude C
 | Exécution de commandes shell | ✅ | ✅ |
 | Gestion Git | ✅ | ✅ |
 | Recherche web | ✅ | ✅ |
-| Mémoire persistante | ✅ | ✅ (CLAUDE.md) |
+| Mémoire persistante | ✅ | ✅ |
 | Intégration MCP | ✅ | ✅ |
 | Manipulation de données | ✅ | ✅ |
 
