@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
     <title type="text">AnsiCode&#39;s Blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2026-01-16T13:28:48&#43;02:00</updated>
+    <updated>2026-01-28T23:37:54&#43;02:00</updated>
     <id>http://localhost:1313/MyBlog/</id>
     <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/" />
     <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/MyBlog/atom.xml" />
@@ -16,6 +16,216 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.154.5">Hugo</generator>
+        <entry>
+            <title type="text">Clawdbot : la hype est-elle justifiée ?</title>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/posts/2026-01-28-clawdbot-hype-justifiee/" />
+            <id>http://localhost:1313/MyBlog/posts/2026-01-28-clawdbot-hype-justifiee/</id>
+            <updated>2026-01-28T23:37:54&#43;02:00</updated>
+            <published>2026-01-28T10:00:00&#43;01:00</published>
+            <author>
+                    <name>AnsiCode</name>
+                    <uri>https://ansicode.fr/</uri>
+                    <email>ansicode@ansicode.fr</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Analyse critique de Clawdbot, l&#39;assistant IA qui affole la tech, et pourquoi Claude Code pourrait suffire</summary>
+            
+                <content type="html">&lt;h2 id=&#34;lassistant-ia-qui-affole-la-tech&#34;&gt;L&amp;rsquo;assistant IA qui affole la tech&lt;/h2&gt;
+&lt;p&gt;Impossible d&amp;rsquo;y échapper cette semaine : &lt;strong&gt;Clawdbot&lt;/strong&gt; (récemment renommé &lt;strong&gt;Moltbot&lt;/strong&gt; après une dispute de marque avec Anthropic) est partout. Plus de 60 000 étoiles GitHub en quelques semaines, des Mac Mini en rupture de stock, des threads viraux sur X qui promettent la révolution de la productivité personnelle.&lt;/p&gt;
+&lt;p&gt;Le pitch est séduisant : un &amp;ldquo;Claude with hands&amp;rdquo;, un assistant IA qui ne se contente pas de répondre à vos questions, mais qui &lt;strong&gt;agit&lt;/strong&gt; — envoie vos emails, gère votre calendrier, réserve vos vols, contrôle votre domotique, le tout depuis WhatsApp ou Telegram.&lt;/p&gt;
+&lt;p&gt;Créé par Peter Steinberger, le fondateur autrichien de PSPDFKit, Clawdbot représente une vision ambitieuse : transformer Claude en véritable système d&amp;rsquo;exploitation personnel.&lt;/p&gt;
+&lt;p&gt;Mais derrière l&amp;rsquo;enthousiasme, je reste sceptique. &lt;strong&gt;La hype me semble surfaite.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/clawdvsclaude.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;ce-que-clawdbot-promet&#34;&gt;Ce que Clawdbot promet&lt;/h2&gt;
+&lt;p&gt;Soyons honnêtes : sur le papier, c&amp;rsquo;est impressionnant.&lt;/p&gt;
+&lt;h3 id=&#34;les-fonctionnalités-annoncées&#34;&gt;Les fonctionnalités annoncées&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Exécution de tâches réelles&lt;/strong&gt; : rédaction et envoi d&amp;rsquo;emails, gestion de calendrier, réservations&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Automatisation web&lt;/strong&gt; : navigation, remplissage de formulaires, extraction de données&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Contrôle système&lt;/strong&gt; : commandes shell, gestion de fichiers, repositories Git&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mémoire persistante&lt;/strong&gt; : vos préférences et historiques stockés localement&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Multi-plateforme&lt;/strong&gt; : accessible via WhatsApp, Telegram, Discord, iMessage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;largument-du-self-hosted&#34;&gt;L&amp;rsquo;argument du &amp;ldquo;self-hosted&amp;rdquo;&lt;/h3&gt;
+&lt;p&gt;Clawdbot se veut respectueux de la vie privée : tout tourne sur votre propre matériel. Pas de données envoyées à un tiers (hormis les appels API à Anthropic, évidemment).&lt;/p&gt;
+&lt;h2 id=&#34;les-problèmes-que-personne-ne-mentionne&#34;&gt;Les problèmes que personne ne mentionne&lt;/h2&gt;
+&lt;h3 id=&#34;la-sécurité--un-désastre-annoncé&#34;&gt;La sécurité : un désastre annoncé&lt;/h3&gt;
+&lt;p&gt;C&amp;rsquo;est le point le plus préoccupant. Les experts en cybersécurité tirent la sonnette d&amp;rsquo;alarme :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&amp;ldquo;When you run Clawdbot, you aren&amp;rsquo;t just using an app. You are deploying a privileged control plane directly onto the internet.&amp;rdquo;&lt;/em&gt;
+— &lt;a href=&#34;https://securityboulevard.com/2026/01/clawdbot-is-what-happens-when-ai-gets-root-access-a-security-experts-take-on-silicon-valleys-hottest-ai-agent/&#34;&gt;Security Boulevard&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Les chiffres font froid dans le dos :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Plus de 1 000 instances Clawdbot&lt;/strong&gt; exposées publiquement sur internet&lt;/li&gt;
+&lt;li&gt;Beaucoup &lt;strong&gt;sans aucune authentification&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;SlowMist a découvert des &lt;strong&gt;centaines de clés API et historiques de conversation&lt;/strong&gt; accessibles à tous&lt;/li&gt;
+&lt;li&gt;Vulnérabilités permettant le &lt;strong&gt;vol de credentials&lt;/strong&gt; et l&amp;rsquo;&lt;strong&gt;exécution de code à distance&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Comme le résume Eric Schwake, directeur stratégie cybersécurité chez Salt Security :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&amp;ldquo;A significant gap exists between the consumer enthusiasm for Clawdbot&amp;rsquo;s one-click appeal and the technical expertise needed to operate a secure agentic gateway.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;les-coûts-cachés&#34;&gt;Les coûts cachés&lt;/h3&gt;
+&lt;p&gt;Le logiciel est open source et gratuit. Mais la réalité est moins rose :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Impossible d&amp;rsquo;utiliser un abonnement Claude Max&lt;/strong&gt; (violation des conditions d&amp;rsquo;utilisation d&amp;rsquo;Anthropic)&lt;/li&gt;
+&lt;li&gt;Vous payez les appels API au token — un testeur rapporte &lt;strong&gt;80 millions de tokens en une journée&lt;/strong&gt;, soit environ &lt;strong&gt;80$&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Ajoutez le coût d&amp;rsquo;un VPS ou d&amp;rsquo;un Mac Mini dédié pour le faire tourner 24/7&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;le-chaos-du-rebrand&#34;&gt;Le chaos du rebrand&lt;/h3&gt;
+&lt;p&gt;La saga Clawdbot → Moltbot illustre bien l&amp;rsquo;immaturité du projet :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Anthropic exige un changement de nom (trop proche de &amp;ldquo;Claude&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Pendant le transfert des comptes GitHub et Twitter, &lt;strong&gt;des scammeurs volent les deux en 10 secondes&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Un faux token $CLAWD atteint 16 millions de dollars avant de crasher de 90%&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Difficile d&amp;rsquo;inspirer confiance pour un outil censé gérer vos emails et votre vie numérique.&lt;/p&gt;
+&lt;h2 id=&#34;et-si-claude-code-suffisait-&#34;&gt;Et si Claude Code suffisait ?&lt;/h2&gt;
+&lt;p&gt;Voici ma position : &lt;strong&gt;j&amp;rsquo;utilise déjà Claude Code, et il fait tout ce dont j&amp;rsquo;ai besoin.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;claude-code-a-déjà-des-mains&#34;&gt;Claude Code a déjà des &amp;ldquo;mains&amp;rdquo;&lt;/h3&gt;
+&lt;p&gt;L&amp;rsquo;argument marketing de Clawdbot — &amp;ldquo;Claude with hands&amp;rdquo; — ignore que Claude Code possède déjà ces capacités :&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Capacité&lt;/th&gt;
+          &lt;th&gt;Clawdbot&lt;/th&gt;
+          &lt;th&gt;Claude Code&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Accès au système de fichiers&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Exécution de commandes shell&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Gestion Git&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Recherche web&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Mémoire persistante&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅ (CLAUDE.md)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Intégration MCP&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Manipulation de données&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;au-delà-du-développement&#34;&gt;Au-delà du développement&lt;/h3&gt;
+&lt;p&gt;Claude Code n&amp;rsquo;est pas limité au code. En ce moment même, je l&amp;rsquo;utilise pour :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gérer mon vault Obsidian (création de dossiers, rédaction d&amp;rsquo;articles)&lt;/li&gt;
+&lt;li&gt;Faire de la recherche web et synthétiser des sources&lt;/li&gt;
+&lt;li&gt;Organiser mes fichiers et documents&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;C&amp;rsquo;est un assistant polyvalent qui s&amp;rsquo;adapte à mon contexte de travail, pas un gadget qui essaie de tout faire via WhatsApp.&lt;/p&gt;
+&lt;h3 id=&#34;les-avantages-concrets-de-claude-code&#34;&gt;Les avantages concrets de Claude Code&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Track record prouvé&lt;/strong&gt; : plus d&amp;rsquo;un an d&amp;rsquo;existence, utilisé en production&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sécurité maîtrisée&lt;/strong&gt; : pas d&amp;rsquo;exposition réseau, contrôle total&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Coût prévisible&lt;/strong&gt; : abonnement Max inclus, pas de surprise&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Intégration native&lt;/strong&gt; : terminal, IDE, workflow de développeur&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Simplicité&lt;/strong&gt; : &lt;code&gt;claude&lt;/code&gt; dans le terminal, c&amp;rsquo;est parti&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Web search natif&lt;/strong&gt; : la recherche web fonctionne &lt;em&gt;out of the box&lt;/em&gt;, sans configuration, sans MCP supplémentaire — Clawdbot nécessite de configurer des skills et des intégrations pour y arriver&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;larticle-qui-dit-tout-haut-ce-que-je-pense&#34;&gt;L&amp;rsquo;article qui dit tout haut ce que je pense&lt;/h2&gt;
+&lt;p&gt;Un développeur a publié un guide intitulé &lt;a href=&#34;https://jinlow.medium.com/transform-claude-code-into-your-free-ultra-powerful-clawdbot-alternative-the-complete-80ae8c43bf3e&#34;&gt;&amp;ldquo;Transform Claude Code Into Your Free, Ultra-Powerful Clawdbot Alternative&amp;rdquo;&lt;/a&gt;. Son résumé :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;Everything Clawdbot can do, Claude Code does better — for free.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;En utilisant les fonctionnalités natives de Claude Code — MCP servers, hooks, CLAUDE.md — on peut construire un système équivalent sans la complexité et les risques de Clawdbot.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion--cool-mais-pas-pour-moi&#34;&gt;Conclusion : cool, mais pas pour moi&lt;/h2&gt;
+&lt;p&gt;Clawdbot est un projet intéressant qui pousse une vision ambitieuse de l&amp;rsquo;IA agentique. Pour certains cas d&amp;rsquo;usage — recevoir des notifications sur Telegram, déléguer des tâches depuis son téléphone — il apporte une valeur ajoutée.&lt;/p&gt;
+&lt;p&gt;Mais pour moi, &lt;strong&gt;la hype est disproportionnée&lt;/strong&gt; :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Les risques de sécurité sont réels et sous-estimés&lt;/li&gt;
+&lt;li&gt;La complexité de configuration contredit la promesse de simplicité&lt;/li&gt;
+&lt;li&gt;Claude Code offre déjà 90% des fonctionnalités, de manière plus sûre et plus intégrée&lt;/li&gt;
+&lt;li&gt;Le projet a 3 semaines — aucun track record, aucune preuve de productivité réelle&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Si vous êtes technique et à l&amp;rsquo;aise avec un terminal, &lt;strong&gt;Claude Code est probablement tout ce dont vous avez besoin&lt;/strong&gt;. Pas besoin d&amp;rsquo;un Mac Mini dédié, pas besoin d&amp;rsquo;exposer un gateway sur internet, pas besoin de payer des tokens à la volée.&lt;/p&gt;
+&lt;p&gt;Parfois, l&amp;rsquo;outil le plus puissant est celui qu&amp;rsquo;on maîtrise déjà.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;sources&#34;&gt;Sources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://clawd.bot/&#34;&gt;Clawdbot Official Site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/clawdbot/clawdbot&#34;&gt;GitHub - clawdbot/clawdbot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://techcrunch.com/2026/01/27/everything-you-need-to-know-about-viral-personal-ai-assistant-clawdbot-now-moltbot/&#34;&gt;TechCrunch - Everything about Clawdbot/Moltbot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://securityboulevard.com/2026/01/clawdbot-is-what-happens-when-ai-gets-root-access-a-security-experts-take-on-silicon-valleys-hottest-ai-agent/&#34;&gt;Security Boulevard - AI Gets Root Access&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theregister.com/2026/01/27/clawdbot_moltbot_security_concerns&#34;&gt;The Register - Security Concerns&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.trendingtopics.eu/clawbot-hyped-ai-agent-risks-leaking-personal-data-security-experts-warn/&#34;&gt;Trending Topics - Data Leak Warnings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@champ18ion.personal/what-is-clawdbot-the-truth-about-the-2026-personal-os-hype-and-the-risks-you-arent-seeing-1c91969ca008&#34;&gt;Medium - The Truth About the Hype&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zenvanriel.nl/ai-engineer-blog/clawdbot-vs-claude-code-comparison-guide/&#34;&gt;Zen Van Riel - Clawdbot vs Claude Code Comparison&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jinlow.medium.com/transform-claude-code-into-your-free-ultra-powerful-clawdbot-alternative-the-complete-80ae8c43bf3e&#34;&gt;JIN - Transform Claude Code Into Clawdbot Alternative&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/MyBlog/categories/ia/" term="IA" label="IA" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/MyBlog/tags/ia/" term="ia" label="ia" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/MyBlog/tags/claude/" term="claude" label="claude" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/MyBlog/tags/clawdbot/" term="clawdbot" label="clawdbot" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/MyBlog/tags/productivit%C3%A9/" term="productivité" label="productivité" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Android Emulator sur Bazzite : Quand Linux met des bâtons dans les roues (et comment s’en sortir)</title>
             <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/posts/2026-01-16-android-emulator-distrobox/" />

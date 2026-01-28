@@ -2,16 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/MyBlog/</loc>
+    <lastmod>2026-01-28T23:02:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/MyBlog/categories/</loc>
+    <lastmod>2026-01-28T23:02:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/MyBlog/tags/claude/</loc>
+    <lastmod>2026-01-28T23:02:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/MyBlog/tags/clawdbot/</loc>
+    <lastmod>2026-01-28T23:02:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/MyBlog/posts/2026-01-28-clawdbot-hype-justifiee/</loc>
+    <lastmod>2026-01-28T23:02:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/MyBlog/tags/ia/</loc>
+    <lastmod>2026-01-28T23:02:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/MyBlog/categories/ia/</loc>
+    <lastmod>2026-01-28T23:02:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/MyBlog/posts/</loc>
+    <lastmod>2026-01-28T23:02:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/MyBlog/tags/productivit%C3%A9/</loc>
+    <lastmod>2026-01-28T23:02:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/MyBlog/tags/</loc>
+    <lastmod>2026-01-28T23:02:05+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/MyBlog/tags/android/</loc>
     <lastmod>2026-01-16T13:27:42+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/MyBlog/posts/2026-01-16-android-emulator-distrobox/</loc>
-    <lastmod>2026-01-16T13:27:42+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/MyBlog/</loc>
-    <lastmod>2026-01-16T13:27:42+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/MyBlog/categories/</loc>
     <lastmod>2026-01-16T13:27:42+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/MyBlog/tags/dev/</loc>
@@ -24,12 +48,6 @@
     <lastmod>2026-01-16T13:27:42+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/MyBlog/tags/linux/</loc>
-    <lastmod>2026-01-16T13:27:42+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/MyBlog/posts/</loc>
-    <lastmod>2026-01-16T13:27:42+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/MyBlog/tags/</loc>
     <lastmod>2026-01-16T13:27:42+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/MyBlog/tags/ai/</loc>
