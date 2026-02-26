@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
     <title type="text">AnsiCode&#39;s Blog</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2026-01-28T23:37:54&#43;02:00</updated>
+    <updated>2026-02-26T19:20:02&#43;02:00</updated>
     <id>http://localhost:1313/MyBlog/</id>
     <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/" />
     <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/MyBlog/atom.xml" />
@@ -17,10 +17,162 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.154.5">Hugo</generator>
         <entry>
+            <title type="text">Quitter Windows : le bilan complet d’une migration en trois actes</title>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/posts/2026-02-26-quitter-windows-bilan-complet/" />
+            <id>http://localhost:1313/MyBlog/posts/2026-02-26-quitter-windows-bilan-complet/</id>
+            <updated>2026-02-26T19:19:36&#43;02:00</updated>
+            <published>2026-02-26T00:00:00&#43;01:00</published>
+            <author>
+                    <name>AnsiCode</name>
+                    <uri>https://ansicode.fr/</uri>
+                    <email>ansicode@ansicode.fr</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Après 25 ans d&#39;aller-retours, j&#39;ai décidé de quitter Windows pour Linux. Pour de vrai, cette fois. Récit d&#39;un mois de découvertes, de galères, et d&#39;attachement.</summary>
+            
+                <content type="html">&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/quitter-windows/banner.png&#34; alt=&#34;&#34;&gt;
+
+Après 25 ans d&amp;rsquo;aller-retours, j&amp;rsquo;ai décidé de quitter Windows pour Linux. Pour de vrai, cette fois.&lt;/p&gt;
+&lt;p&gt;Ce qui devait être un &amp;ldquo;on verra bien&amp;rdquo; s&amp;rsquo;est transformé en un mois de découvertes, de galères, et finalement — d&amp;rsquo;attachement. Voici le récit complet.&lt;/p&gt;
+&lt;p&gt;━━━━━━━━━━━━━━━━━━━━━━&lt;/p&gt;
+&lt;h2 id=&#34;acte-1--le-saut-dans-le-vide&#34;&gt;Acte 1 — Le saut dans le vide&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/quitter-windows/acte1.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
+&lt;p&gt;Depuis la fin des années 90, Linux fait partie de mon paysage informatique.&lt;/p&gt;
+&lt;p&gt;Mandrake, Suse, RedHat, Slackware, Ubuntu, CentOS&amp;hellip; j&amp;rsquo;ai tout essayé. J&amp;rsquo;ai monté des serveurs DNS, configuré du routage réseau, expérimenté sans fin. J&amp;rsquo;ai toujours reconnu à Linux sa puissance, sa légèreté, sa versatilité.&lt;/p&gt;
+&lt;p&gt;Mais il y avait UN problème : les jeux.&lt;/p&gt;
+&lt;p&gt;Ce problème m&amp;rsquo;a systématiquement ramené vers cette &amp;ldquo;prison dorée&amp;rdquo; qu&amp;rsquo;est Windows. À chaque fois. Sans exception.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ce qui a tout changé : SteamOS.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Valve a ouvert une brèche. On voit maintenant des gamers migrer vers Linux en masse. La démocratisation est en marche, notamment avec Bazzite.&lt;/p&gt;
+&lt;p&gt;Alors j&amp;rsquo;ai tenté ma chance avec Fedora Silverblue — la base atomique de Bazzite. En OG que je suis. 😎&lt;/p&gt;
+&lt;p&gt;Le checklist d&amp;rsquo;installation :
+→ Partitionnement des disques
+→ Installation de Fedora Silverblue
+→ Dual boot Windows (pas fou non plus)
+→ Drivers Nvidia + software RGB
+→ Environnement utilisateur, de code, de jeux&lt;/p&gt;
+&lt;p&gt;Résultat sur Cyberpunk 2077 :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fedora Silverblue : 60 fps&lt;/li&gt;
+&lt;li&gt;Windows : 70 fps&lt;/li&gt;
+&lt;li&gt;Bazzite : 70 fps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;10 fps de moins sur Fedora. Pas rédhibitoire — ça s&amp;rsquo;optimise. L&amp;rsquo;essentiel : je pouvais jouer, coder, surfer, tout ça sous Linux.&lt;/p&gt;
+&lt;p&gt;Au-delà du gaming, cette expérience m&amp;rsquo;a fait découvrir l&amp;rsquo;univers des Linux atomiques. Et franchement ? C&amp;rsquo;est incroyable. Certains disent que c&amp;rsquo;est le futur des OS Linux. Après cette première semaine, j&amp;rsquo;avais envie de le croire.&lt;/p&gt;
+&lt;p&gt;━━━━━━━━━━━━━━━━━━━━━━&lt;/p&gt;
+&lt;h2 id=&#34;acte-2--le-premier-mur&#34;&gt;Acte 2 — Le premier mur&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/quitter-windows/acte2.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
+&lt;p&gt;La lune de miel n&amp;rsquo;aura pas duré longtemps.&lt;/p&gt;
+&lt;p&gt;Une semaine après la migration, premier vrai défi : je veux coder une app mobile avec Android Studio.&lt;/p&gt;
+&lt;p&gt;Installation ? Nickel.
+Lancement de l&amp;rsquo;émulateur ? &lt;strong&gt;Segmentation fault.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Crash immédiat. Pas d&amp;rsquo;écran. Rien. Bienvenue dans le monde réel de Linux. 😅&lt;/p&gt;
+&lt;p&gt;Après investigation, j&amp;rsquo;identifie cinq problèmes imbriqués :
+→ Conflits de drivers graphiques (Mesa Ubuntu vs Fedora host)
+→ SELinux qui bloque l&amp;rsquo;exécution depuis la heap
+→ Triple virtualisation (hardware → Podman → QEMU)
+→ Permissions KVM mal mappées
+→ Variables Qt manquantes pour l&amp;rsquo;affichage&lt;/p&gt;
+&lt;p&gt;Rien que ça.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;La solution :&lt;/strong&gt; plutôt que de forcer l&amp;rsquo;émulateur dans le conteneur Distrobox, j&amp;rsquo;utilise &lt;code&gt;distrobox-host-exec&lt;/code&gt; pour le lancer directement sur l&amp;rsquo;hôte. Android Studio reste dans son conteneur. L&amp;rsquo;émulateur tourne nativement avec accès direct au GPU et au KVM.&lt;/p&gt;
+&lt;p&gt;Résultat : ça marche. 🎉&lt;/p&gt;
+&lt;p&gt;Et c&amp;rsquo;est là que j&amp;rsquo;ai compris quelque chose d&amp;rsquo;important :&lt;/p&gt;
+&lt;p&gt;Sous Windows, quand ça ne marche pas, tu réinstalles.
+Sous Linux, tu &lt;strong&gt;comprends&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est plus exigeant, c&amp;rsquo;est vrai. Mais il y a toujours une solution. Et cette solution, tu la maîtrises.&lt;/p&gt;
+&lt;p&gt;━━━━━━━━━━━━━━━━━━━━━━&lt;/p&gt;
+&lt;h2 id=&#34;acte-3--un-mois-plus-tard&#34;&gt;Acte 3 — Un mois plus tard&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/quitter-windows/acte3.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
+&lt;p&gt;La dernière fois que j&amp;rsquo;ai booté Windows, c&amp;rsquo;était pour un build. Un seul. Et en attendant que la machine redémarre, j&amp;rsquo;ai réalisé que ça faisait des semaines que je n&amp;rsquo;avais pas vu ce fond d&amp;rsquo;écran bleu.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Les doutes du début&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Soyons honnêtes : les premières semaines, il y a eu des moments de flottement. Des outils que j&amp;rsquo;avais sous Windows et que je ne retrouvais pas sous Linux. Des petites habitudes cassées. Ce sentiment désagréable de chercher quelque chose qui n&amp;rsquo;est plus là.&lt;/p&gt;
+&lt;p&gt;Mais à chaque fois, l&amp;rsquo;un de deux trucs s&amp;rsquo;est produit :
+→ J&amp;rsquo;ai trouvé une alternative Linux qui fait le job (souvent mieux)
+→ Ou j&amp;rsquo;ai réalisé que j&amp;rsquo;avais pas vraiment besoin de cet outil&lt;/p&gt;
+&lt;p&gt;Ce deuxième cas est le plus intéressant. On accumule des logiciels par inertie. On les utilise parce qu&amp;rsquo;ils sont là, pas parce qu&amp;rsquo;on en a besoin. Changer de système force une cure de minceur salutaire.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;La stratégie en 3 étapes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;avais planifié ma migration en trois phases. Pas par hasard — c&amp;rsquo;est la seule façon de ne pas se retrouver bloqué sans filet si quelque chose tourne mal.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Étape 1 — Dual boot avec partition NTFS partagée&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Documents, dossiers perso, bibliothèque de jeux : tout sur une partition accessible depuis les deux systèmes. En théorie, c&amp;rsquo;est élégant. En pratique, deux agacements récurrents : Windows scannait la partition à chaque démarrage, et certains fichiers de jeux développaient de petites incompatibilités qui forçaient des re-téléchargements. Pas bloquant. Mais irritant.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Étape 2 — Dual boot sans partition partagée (situation actuelle)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;La partition partagée migrée vers Btrfs, le filesystem natif Linux. Cette étape est clé : elle élimine tous les problèmes de cohabitation. Windows et Linux vivent maintenant chacun dans leur coin, sans se marcher dessus. Propre.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Étape 3 — Suppression de la partition Windows&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;objectif final. La ligne d&amp;rsquo;arrivée. On y est&amp;hellip; presque.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Où j&amp;rsquo;en suis&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Je passe 99% de mon temps sous Linux. Windows dort sur son coin de disque, tranquille, ignoré. Cette transition s&amp;rsquo;est faite naturellement — pas de moment &amp;ldquo;ok, maintenant j&amp;rsquo;arrête Windows&amp;rdquo;. Juste une lente obsolescence de fait.&lt;/p&gt;
+&lt;p&gt;━━━━━━━━━━━━━━━━━━━━━━&lt;/p&gt;
+&lt;h2 id=&#34;post-scriptum--létape-3-naura-pas-lieu&#34;&gt;Post-scriptum — L&amp;rsquo;étape 3 n&amp;rsquo;aura pas lieu&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/quitter-windows/ps1.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;avais annoncé une étape 3 : supprimer définitivement la partition Windows.&lt;/p&gt;
+&lt;p&gt;Je ne la ferai pas.&lt;/p&gt;
+&lt;p&gt;Non pas parce que Linux m&amp;rsquo;a déçu — au contraire. Mais parce que j&amp;rsquo;ai pris du recul sur ce que ça représente vraiment. Windows occupe une place écrasante sur le marché des OS. Cette réalité ne disparaît pas parce qu&amp;rsquo;on supprime une partition. Et en tant que développeur, vivre totalement en dehors de cet écosystème serait me couper de quelque chose que j&amp;rsquo;ai tout intérêt à comprendre et à tester.&lt;/p&gt;
+&lt;p&gt;Garder Windows n&amp;rsquo;est pas un aveu d&amp;rsquo;échec. C&amp;rsquo;est un choix pragmatique.&lt;/p&gt;
+&lt;p&gt;Linux est mon système principal. Celui où je travaille, où je joue, où je vis numériquement. Windows est une partition qui dort, disponible quand le contexte l&amp;rsquo;exige — et c&amp;rsquo;est très bien comme ça.&lt;/p&gt;
+&lt;p&gt;La migration était une réussite bien avant d&amp;rsquo;atteindre l&amp;rsquo;étape 3. 🐧&lt;/p&gt;
+&lt;p&gt;━━━━━━━━━━━━━━━━━━━━━━&lt;/p&gt;
+&lt;h2 id=&#34;post-scriptum-2--la-distro-et-pourquoi-ça-na-presque-pas-dimportance&#34;&gt;Post-scriptum 2 — La distro, et pourquoi ça n&amp;rsquo;a presque pas d&amp;rsquo;importance&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/quitter-windows/ps2.png&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;ai finalement arrêté mon choix sur Bazzite. L&amp;rsquo;appel des FPS était trop fort. 😄&lt;/p&gt;
+&lt;p&gt;Mais honnêtement ? Le choix de la distro est presque anecdotique dans mon usage quotidien — et c&amp;rsquo;est là qu&amp;rsquo;entre en scène &lt;strong&gt;Distrobox&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Distrobox, c&amp;rsquo;est Linux en boîte : tu instancieras n&amp;rsquo;importe quelle distribution dans un conteneur, avec accès complet à tes fichiers et à tes outils, comme si tu étais nativement dessus. Résultat : je travaille dans un environnement parfaitement configuré, sans jamais me soucier de la nature atomique et immuable de Bazzite en dessous.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;OS hôte gère la stabilité et les mises à jour. Distrobox gère mes outils. Les deux coexistent sans se gêner.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est probablement le vrai game changer de cette migration — plus encore que le choix de la distro elle-même.&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/MyBlog/categories/linux/" term="Linux" label="Linux" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/MyBlog/tags/linux/" term="Linux" label="Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/MyBlog/tags/bazzite/" term="bazzite" label="bazzite" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/MyBlog/tags/distrobox/" term="distrobox" label="distrobox" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="http://localhost:1313/MyBlog/tags/migration/" term="migration" label="migration" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">Clawdbot : la hype est-elle justifiée ?</title>
             <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/posts/2026-01-28-clawdbot-hype-justifiee/" />
             <id>http://localhost:1313/MyBlog/posts/2026-01-28-clawdbot-hype-justifiee/</id>
-            <updated>2026-01-28T23:37:54&#43;02:00</updated>
+            <updated>2026-01-28T23:54:43&#43;02:00</updated>
             <published>2026-01-28T10:00:00&#43;01:00</published>
             <author>
                     <name>AnsiCode</name>
@@ -117,7 +269,7 @@
       &lt;tr&gt;
           &lt;td&gt;Mémoire persistante&lt;/td&gt;
           &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;✅ (CLAUDE.md)&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td&gt;Intégration MCP&lt;/td&gt;
@@ -441,7 +593,7 @@
                             
                             
                             
-                                <category scheme="http://localhost:1313/MyBlog/tags/distrobox/" term="Distrobox" label="Distrobox" />
+                                <category scheme="http://localhost:1313/MyBlog/tags/distrobox/" term="distrobox" label="distrobox" />
                             
                         
                     
@@ -664,58 +816,6 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
 &lt;hr&gt;
 &lt;p&gt;🔁 &lt;strong&gt;Aimez, commentez ou partagez&lt;/strong&gt; ce post pour aider d’autres parents, enseignants et éducateurs à redécouvrir la puissance du calcul mental !&lt;/p&gt;
 &lt;hr&gt;
-</content>
-            
-            
-            
-            
-            
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="http://localhost:1313/MyBlog/categories/application/" term="application" label="application" />
-                            
-                        
-                    
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="http://localhost:1313/MyBlog/tags/dev/" term="Dev" label="Dev" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="http://localhost:1313/MyBlog/tags/expo/" term="Expo" label="Expo" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">SmartComments</title>
-            <link rel="alternate" type="text/html" href="http://localhost:1313/MyBlog/posts/2025-05-14-smartcomments/" />
-            <id>http://localhost:1313/MyBlog/posts/2025-05-14-smartcomments/</id>
-            <updated>2026-01-16T10:52:01&#43;02:00</updated>
-            <published>2025-05-14T18:47:19&#43;00:00</published>
-            <author>
-                    <name>AnsiCode</name>
-                    <uri>https://ansicode.fr/</uri>
-                    <email>ansicode@ansicode.fr</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/SmatComments/titre.png&#34; alt=&#34;&#34;&gt;
-&lt;/p&gt;</summary>
-            
-                <content type="html">&lt;p&gt;&lt;img src=&#34;http://localhost:1313/MyBlog/SmatComments/titre.png&#34; alt=&#34;&#34;&gt;
-&lt;/p&gt;
 </content>
             
             
