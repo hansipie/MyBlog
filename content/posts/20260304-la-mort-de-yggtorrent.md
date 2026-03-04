@@ -9,7 +9,7 @@ tags:
   - Torrent
 categories:
   - Actu Tech
-preview: /ygg-chronologie.png
+preview: /ygg-monetisation.png
 ---
 
 Le 4 mars 2026, YggTorrent affiche un message laconique : **"L'histoire s'arrête ici."** En quelques heures, le plus grand tracker de torrents francophone disparaît de la toile — non pas sous les coups d'une saisie judiciaire, mais terrassé par l'un des siens. Un hacker du nom de Gr0lum vient d'exfiltrer 6,6 millions de comptes, de vider les wallets crypto et de publier l'intégralité du code source et des bases de données.
