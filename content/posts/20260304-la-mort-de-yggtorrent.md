@@ -9,14 +9,10 @@ tags:
   - Torrent
 categories:
   - Actu Tech
-# preview: /ygg-chronologie.png
+preview: /ygg-chronologie.png
 ---
 
-*Le plus grand tracker de torrents francophone vient de tomber — non pas sous les coups d'une saisie judiciaire, mais sous ceux d'un pirate qui lui reprochait d'avoir trahi ses propres valeurs.*
-
-<!-- ![Frise chronologique YggTorrent 2017-2026](/ygg-chronologie.png) -->
-
-Le 4 mars 2026, YggTorrent affiche un message laconique : **"L'histoire s'arrête ici."** En quelques heures, le plus grand tracker de torrents francophone disparaît de la toile. Un hacker du nom de Gr0lum vient d'exfiltrer 6,6 millions de comptes, de publier l'intégralité du code source et des bases de données, et d'exposer les pratiques financières douteuses de ses administrateurs.
+Le 4 mars 2026, YggTorrent affiche un message laconique : **"L'histoire s'arrête ici."** En quelques heures, le plus grand tracker de torrents francophone disparaît de la toile — non pas sous les coups d'une saisie judiciaire, mais terrassé par l'un des siens. Un hacker du nom de Gr0lum vient d'exfiltrer 6,6 millions de comptes, de vider les wallets crypto et de publier l'intégralité du code source et des bases de données.
 
 L'ironie est totale : un site qui a bâti son empire sur la culture du partage libre vient de tomber sous les coups d'un pirate qui lui reprochait d'avoir trahi cette même culture.
 
@@ -26,25 +22,37 @@ L'ironie est totale : un site qui a bâti son empire sur la culture du partage l
 
 ### L'héritier de T411
 
-L'histoire commence dans les cendres. En mars 2017, T411 — le tracker de référence en France depuis des années — est frappé d'une saisie judiciaire et disparaît du jour au lendemain, laissant des millions d'utilisateurs orphelins.
+L'histoire commence dans les cendres. Le **26 juin 2017**, T411 — le tracker de référence en France depuis des années — ferme ses portes, laissant des millions d'utilisateurs orphelins.
 
-C'est dans ce vide que naît **YggTorrent** : le domaine est réservé le 21 mai 2017, et le site ouvre officiellement en tant que tracker public en **juillet 2017**. Le projet démarre modestement, mais l'appétit est là. Quelques mois plus tard, le **31 octobre 2017**, c'est T411.si — l'un des clones qui avaient tenté de reprendre le flambeau — qui annonce sa fermeture et sa migration vers Ygg. La communauté se consolide d'un coup.
+C'est dans ce vide que naît **YggTorrent** : le domaine avait été réservé dès le **21 mai 2017**, et le site remodèle en profondeur son fonctionnement pour ouvrir officiellement en tant que tracker public participatif en **début juillet 2017**. En l'espace de quelques semaines, il change de modèle et devient un tracker privé à inscription libre.
+
+Quelques mois plus tard, le **31 octobre 2017**, c'est T411.si — l'un des clones qui avaient tenté de reprendre le flambeau — qui annonce sa fusion avec Ygg. La communauté se consolide d'un coup. Le bilan de la fin de l'année est éloquent : le **8 décembre 2017**, moins de six mois après le lancement, le site revendique déjà plus de **600 000 membres** et 173 000 torrents.
+
+Seule ombre au tableau : le **1er décembre 2017**, Google déréférence le site suite à un afflux massif de demandes DMCA.
 
 ### La montée en puissance
 
-Les années suivantes voient Ygg s'imposer comme **le** point de passage obligé du téléchargement de torrents en langue française. Au 1er janvier 2020, Alexa Internet classe le site **35e site le plus visité en France** — premier dans sa catégorie téléchargement. Films, séries, jeux, logiciels, musique : la communauté construit un catalogue considérable, entretenu par des équipes de contributeurs bénévoles organisés en groupes de release.
+Les années suivantes voient Ygg s'imposer comme **le** point de passage obligé du téléchargement de torrents en langue française. Au **1er janvier 2020**, Alexa Internet classe le site **35e site le plus visité en France** — un classement qui en dit long sur l'ampleur du phénomène. La plateforme atteint alors **3,5 millions d'utilisateurs**. Films, séries, jeux, logiciels, musique : la communauté construit un catalogue considérable, entretenu par des équipes de contributeurs bénévoles organisés en groupes de release.
 
-Le modèle est celui du tracker semi-privé classique : inscription sur invitation ou après un temps d'attente, ratio upload/download à maintenir, communauté soudée. Ygg se distingue par une interface soignée, un forum actif et une relative tolérance envers les débutants.
+Le modèle est celui du tracker semi-privé classique : inscription sur invitation ou après un temps d'attente, ratio upload/download à maintenir, communauté soudée. Ygg se distingue par une interface soignée, un forum actif et une relative tolérance envers les débutants. En coulisses, **Oracle** — l'administrateur principal, localisé au Maroc — gère le site de manière autoritaire, via un intermédiaire surnommé « YggFlop » pour communiquer avec les modérateurs bénévoles, auxquels il est formellement interdit de poser des questions sur le fonctionnement interne.
 
-### Le tournant du 17 mai 2024
+Dès **décembre 2018**, un ancien administrateur révèle que la plateforme a généré **300 000 euros en seulement quatre mois** — premier signe que le "partage libre" est depuis longtemps une activité très lucrative.
 
-Le **17 mai 2024**, Ygg franchit un cap décisif : le passage en **tracker totalement privé**. Plus d'inscriptions ouvertes au public, accès uniquement par invitation. Officiellement, il s'agit de protéger la communauté des attaques et de l'infiltration. Dans les faits, la décision concentre le pouvoir et les revenus entre quelques mains — et prépare le terrain pour la suite.
+### Les pressions judiciaires : une guerre d'usure
+
+La réussite attire aussi les foudres judiciaires. Le **17 octobre 2019**, le tribunal de grande instance de Paris ordonne le blocage de plusieurs noms de domaine. Le **5 février 2020**, le registraire désactive le domaine principal pour infractions à la propriété intellectuelle. Le **26 avril 2023**, l'**Arcom** inscrit officiellement YggTorrent sur sa liste des services contrefaisants — inscription renouvelée en novembre 2024 pour atteintes « graves et répétées » aux droits d'auteur. En avril puis juillet 2024, de nouvelles décisions judiciaires contraignent les FAI français à bloquer l'accès au site pour des durées de 18 mois.
+
+Face à chaque blocage, Ygg répond par un changement de nom de domaine — .com, .pe, .ws, .do… La guerre d'usure tourne à l'avantage du site, qui survit à tous les assauts. Les administrateurs ne se contentent pas de défense passive : selon Gr0lum, ils commanditaient également des **attaques DDoS contre les trackers concurrents**, pour forcer uploadeurs et utilisateurs à rester sur leur plateforme.
+
+### Le tournant de mai 2024
+
+Le **17 mai 2024**, Ygg franchit un cap décisif : le passage en **tracker totalement privé** et rebaptisé simplement **Ygg**. Plus d'inscriptions ouvertes au public, accès uniquement par invitation. Le nombre d'inscrits dépasse alors les **6 millions**. Officiellement, il s'agit de protéger la communauté. Dans les faits, la décision concentre le pouvoir et les revenus entre quelques mains — et prépare le terrain pour la suite. En **février 2025**, le catalogue atteint plus de **880 000 torrents indexés**.
+
+![Chronologie YggTorrent](/ygg-chronologie.png)
 
 ---
 
 ## La dérive commerciale : quand le piratage devient un business
-
-<!-- ![Mode Turbo, exit scam et fuite des utilisateurs](/ygg-monetisation.png) -->
 
 ### Le "Mode Turbo" : quand on fait payer pour pirater
 
@@ -54,47 +62,74 @@ La grille tarifaire est sans ambiguïté :
 - **14,99€/mois**
 - **85,99€ à vie**
 
-Pour les comptes gratuits, les restrictions tombent comme un couperet : **30 secondes d'attente** avant chaque torrent, **5 fichiers par jour** maximum. Le site qui se présentait comme un espace de liberté et de partage devient, de fait, un service freemium.
+Pour les comptes gratuits, les restrictions tombent comme un couperet : **30 secondes d'attente** entre chaque torrent, **5 fichiers par jour** maximum. Le site qui se présentait comme un espace de liberté et de partage devient, de fait, un service freemium.
 
-### L'escalade : bannissements en série et accusations graves
+La réaction de la communauté est brutale. Des années de contributions bénévoles — uploads, vérifications, maintenance des releases — pour se voir imposer un paywall ? La grogne enfle rapidement.
+
+![Mode Turbo YggTorrent](/ygg-monetisation.png)
+
+### L'escalade : boycott, bannissement et accusations graves
 
 La réaction des équipes de release est immédiate. La **Team QTZ** — l'un des groupes les plus prolifiques du site avec plus de 3 300 fichiers partagés — publie une lettre ouverte dénonçant un intermédiaire qui « impose une commission, souvent aux dépens des plus vulnérables ». Elle est bannie dans la foulée, son message supprimé. La **Team Forward**, responsable d'environ 35 000 fichiers partagés, reçoit un seul mot en guise de congédiement : **"OUST"**. D'autres groupes — tsundere-raws, BTT — subissent le même sort. Le fil de discussion est verrouillé, le salon de discussion désactivé.
 
-Les révélations du hack allaient ensuite exposer l'ampleur de la dérive. Les données exfiltrées permettent de reconstituer un tableau accablant :
+Les révélations du hack allaient ensuite exposer l'ampleur de la dérive. Les données exfiltrées par Gr0lum permettent de reconstituer un tableau accablant :
 
-- **~10 millions d'euros de revenus** pour 2024-2025, avec des pics à **490 000€ par mois** et plus de 249 000 commandes passées par ~100 000 payeurs uniques
-- **54 776 numéros de carte bancaire complets** — avec cryptogrammes visuels — stockés en clair
-- **Un script malveillant caché** sous le nom "ImageCarouselManager" qui scannait les navigateurs des visiteurs pour détecter les wallets crypto (MetaMask, Coinbase, etc.)
-- **Une fraude bancaire organisée** : les paiements transitaient par de faux sites e-commerce (ventes de t-shirts fictives) pour tromper les banques, avant d'être convertis en crypto et blanchis via **Tornado Cash** et le Monero
+- **5 à 10 millions d'euros de revenus** pour la période 2024-2025, avec des pics à **490 000€ par mois** et plus de 249 000 commandes passées par ~100 000 payeurs uniques
+- **54 776 numéros de carte bancaire complets** — avec cryptogrammes visuels (CVV) et dates d'expiration — interceptés via un fichier `Security.php` qui captait les données au moment du paiement avant de les transmettre au processeur
+- **Un script malveillant caché** sous le nom `ImageCarouselManager` (renommé depuis `security.min.js`) qui s'exécutait dans le navigateur de chaque visiteur pour détecter les extensions de wallets crypto : MetaMask, Phantom, Coinbase Wallet…
+- **Une fraude bancaire organisée** : les paiements transitaient par de fausses boutiques WooCommerce (ventes de t-shirts fictives) pour masquer l'origine des fonds sur les relevés bancaires, avant d'être convertis en crypto, passés par le mélangeur **Tornado Cash** (au moins 22 ETH documentés), puis convertis en **Monero (XMR)** — cryptomonnaie intraçable — vers des portefeuilles anonymes
 
-Derrière le site : deux administrateurs, **"Oracle"** (au Maroc) et **"Destroy"** (en France), accusés d'avoir orchestré l'ensemble du dispositif.
+Derrière le site : deux administrateurs accusés d'avoir orchestré l'ensemble du dispositif. **"Oracle"** (localisé au Maroc via une IP résidentielle Maroc Telecom) pour la direction générale, **"Destroy"** (en France) pour la partie technique — celui-là même dont la négligence allait causer la chute.
 
 ---
 
 ## Le hack de Gr0lum : une nuit pour détruire neuf ans
 
-<!-- ![Comment Gr0lum a détruit YggTorrent en une nuit](/ygg-hack.png) -->
+### Étape 1 — La reconnaissance : trouver l'infrastructure
 
-### La faille
+Gr0lum ne part pas à l'aveugle. Sa première action est aussi simple qu'efficace : il calcule l'**empreinte numérique (hash) du favicon** du site YggTorrent, puis la soumet à **Shodan** — le moteur de recherche des objets connectés exposés sur Internet. Cette technique d'empreinte de favicon permet d'identifier tous les serveurs hébergeant une copie identique de cette icône, révélant ainsi les machines de l'infrastructure même derrière des CDN ou des reverse proxies.
 
-Le 3 mars 2026, un hacker qui se présente sous le pseudonyme **Gr0lum** commence à s'intéresser à l'infrastructure de YggTorrent. Il utilise **Shodan** — le moteur de recherche des objets connectés exposés sur Internet — pour identifier les serveurs du site. Ce qu'il découvre stupéfie : un **serveur de pré-production** est accessible publiquement, son pare-feu désactivé, avec **13 ports ouverts**. Le serveur contient le code source et des mots de passe en clair.
+Ce qu'il trouve le laisse sans doute perplexe tant c'est béant : un **serveur de pré-production sous Windows Server**, accessible publiquement, avec **treize ports ouverts** et le pare-feu désactivé. Un répertoire web entier est accessible en clair.
 
-Détail aggravant : l'administrateur technique **"Destroy"** utilisait ce serveur comme ordinateur personnel. Ses identifiants FTP et les mots de passe sauvegardés dans son navigateur y étaient accessibles — offrant à Gr0lum un accès direct aux systèmes de production.
+### Étape 2 — L'exploitation : une chaîne de négligences
 
-### L'exfiltration
+La prise de contrôle ne repose sur aucune faille logicielle sophistiquée. Elle enchaîne des erreurs humaines élémentaires :
 
-En l'espace de quelques heures, Gr0lum exfiltre :
+1. **SphinxQL sans authentification** : Le moteur de recherche interne du site (SphinxQL) est exposé directement sur Internet, sans la moindre protection. Gr0lum s'y connecte et exploite sa capacité à lire des fichiers locaux sur le serveur.
 
-- **6,6 millions de comptes utilisateurs** avec leurs données personnelles
-- **11 Go d'archives** contenant le code source complet, les bases de données du tracker et du forum, et les identifiants des administrateurs
-- Environ **50% des mots de passe** stockés avec l'algorithme **MD5** — obsolète et facilement cassable
-- Les historiques de navigation des administrateurs et les journaux de transactions financières
+2. **Mots de passe en clair** : Dans ces fichiers, il découvre des **identifiants administrateur stockés en texte brut** — dont les accès aux bases de données de production.
+
+3. **L'ordinateur personnel de "Destroy"** : L'administrateur technique utilisait ce serveur de pré-production comme machine personnelle. Son navigateur contenait des **centaines de mots de passe enregistrés**, et son client FTP conservait les connexions aux serveurs critiques. Tout cela se retrouve entre les mains de Gr0lum.
+
+4. **Escalade vers la production** : Armé de ces identifiants, Gr0lum rebondit du serveur de pré-production vers **quatre serveurs critiques** : le tracker principal, la base de données de production, la boutique de paiement et les sauvegardes.
+
+### Étape 3 — L'exfiltration
+
+Une fois à l'intérieur, le pillage est méthodique. Gr0lum constitue une archive de **11 Go** baptisée **YGGLeak**, contenant :
+
+- La base des **6,6 millions de comptes** utilisateurs (pseudonymes, âges, sexes, historiques de téléchargement) — les IPs, emails et mots de passe sont caviardés dans la version publique, mais Gr0lum précise les garder « au chaud »
+- Environ **50% des mots de passe** hachés avec l'algorithme **MD5** — obsolète et trivial à casser par tables arc-en-ciel — le reste avec des méthodes plus récentes
+- Le **code source complet** du site et l'architecture des serveurs
+- Les bases de la boutique WooCommerce avec **89 000 commandes** et les logs de transactions financières
+- Les preuves du circuit de blanchiment crypto et les reçus Tornado Cash
+- Les données des 54 776 cartes bancaires interceptées et les logs du script malveillant
+
+### Étape 4 — La destruction
+
+L'exfiltration terminée, Gr0lum efface. Méthodiquement :
+
+- **4 serveurs** vidés puis détruits
+- **7 bases de données** critiques supprimées définitivement
+
+Il n'y a pas de sauvegarde accessible. L'infrastructure de neuf ans d'existence disparaît en quelques commandes.
 
 ### Le message
 
-Avant de tout publier, Gr0lum laisse un message. Non pas une revendication de trophée, mais une **dénonciation point par point** des pratiques qu'il accuse les administrateurs de Ygg d'avoir menées : le Mode Turbo, le stockage des CB, le script de détection de wallets, les circuits financiers frauduleux.
+Avant de tout publier, Gr0lum laisse une **dénonciation point par point**, adressée directement aux administrateurs. Il nomme Oracle (Francisco, au Maroc) et Destroy (Vladimir, en France), les accuse d'avoir « pris les utilisateurs en otage » pour amasser une fortune, dénonce les DDoS sur la concurrence, la collecte de données bancaires illicites et l'exploitation des bénévoles. Il conclut avec un pique sur la sécurité, s'adressant à Oracle : *« D'ailleurs Oracle, la moitié des hash sont encore en md5, c'est pas sérieux l'ami. »*
 
 Le 4 mars 2026 au matin, les serveurs de YggTorrent affichent leur dernier message : **"L'histoire s'arrête ici."**
+
+![Le hack YggTorrent](/ygg-hack.png)
 
 ---
 
@@ -120,4 +155,4 @@ Le piratage continuera. Mais sous quelle forme, et à quel prix éthique ?
 
 ---
 
-*Sources : Clubic, KultureGeek, Solutions Numériques, L'Observateur, Wikipedia (Ygg), Reddit r/france.*
+*Sources : Clubic, KultureGeek, Solutions Numériques, L'Observateur, Wikipedia (Ygg), Reddit r/france — compilées dans le notebook NotebookLM "Chute et héritage du géant YggTorrent" (mars 2026).*
