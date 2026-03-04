@@ -155,4 +155,4 @@ Le piratage continuera. Mais sous quelle forme, et à quel prix éthique ?
 
 ---
 
-*Sources : Clubic, KultureGeek, Solutions Numériques, L'Observateur, Wikipedia (Ygg), Reddit r/france — compilées dans le notebook NotebookLM "Chute et héritage du géant YggTorrent" (mars 2026).*
+*Sources : Clubic, KultureGeek, Solutions Numériques, L'Observateur, Wikipedia (Ygg), Reddit r/france
