@@ -1,7 +1,7 @@
 ---
-title: "Comment Claude Code a ressuscité mon projet de 2005"
+title: Comment Claude Code a ressuscité mon projet de 2005
 description: "J'ai retrouvé mon projet Epitech de 2005 : 9 000 lignes de C/C++ compilées en 2026 grâce à Claude Code. REX sur le legacy, les Makefiles cassés et wxWidgets."
-date: 2026-03-23T18:00:00+01:00
+date: 2026-03-23T09:43:14.696Z
 draft: false
 tags:
   - Claude
