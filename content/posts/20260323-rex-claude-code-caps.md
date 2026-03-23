@@ -155,4 +155,4 @@ Ce que j'ai trouvé utile avec Claude Code dans ce contexte précis :
 
 Ce n'est pas un oracle. Il faut valider, tester, comprendre ce qui est proposé. Mais comme pair programmeur pour dépoussiérer du vieux code, c'est remarquablement efficace.
 
-Vingt et un ans de poussière. Trois semaines de travail en pointillé. Et un projet qui tourne à nouveau.
+Vingt et un ans de poussière. Quelques heures de travail en pointillé. Et un projet qui tourne à nouveau.
