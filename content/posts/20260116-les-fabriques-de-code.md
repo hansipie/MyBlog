@@ -14,6 +14,8 @@ categories:
 preview: /fabriques-de-code/20260116-fabriques-de-code-header.png
 ---
 
+![](/fabriques-de-code/20260116-fabriques-de-code-header.png)
+
 **1. Introduction**
 
 En 2024, nous imaginions l'avenir du développement logiciel à travers le prisme du cloud computing et des "banques de code source". Nous anticipions que la puissance de calcul déportée dans le cloud révolutionnerait les processus de build. Cette vision, bien que pertinente, passait à côté d'une transformation bien plus fondamentale : l'émergence de l'intelligence artificielle générative comme partenaire de développement.
