@@ -45,6 +45,11 @@ disablePathToLower = false
 relativeURLs = false
 uglyURLs = false
 
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
 # URL structure
 [permalinks]
     categories = "/categories/:slug/"
