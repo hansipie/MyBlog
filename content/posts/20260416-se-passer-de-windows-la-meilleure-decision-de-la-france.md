@@ -1,5 +1,5 @@
 +++
-title = "Se passer de Windows : la meilleure décision de la France"
+title = "Se passer de Windows : la meilleure décision de la France depuis 10 ans"
 date = 2026-04-16T09:00:00.000Z
 draft = false
 description = "La France annonce officiellement l'abandon de Windows au profit de Linux. Retour sur vingt ans de décisions numériques souveraines."
@@ -114,7 +114,7 @@ Le déploiement immédiat concerne les **250 agents de la DINUM**. Mais l'horizo
 
 ![](/france-linux/francelinux5.png)
 
-J'ai effectué [ma propre migration Windows vers Linux en janvier 2026](/quitter-windows/). Ces initiatives, je les connaissais. GendBuntu, la DINUM, le SILL : autant de signaux que j'avais suivis au fil des années, avec l'intérêt du dev qui regarde ce que font les grands comptes avant de se décider.
+J'ai effectué [ma propre migration Windows vers Linux](/posts/2026-02-26-quitter-windows-bilan-complet/) en ce début d'année 2026. Ces initiatives, je les connaissais. GendBuntu, la DINUM, le SILL : autant de signaux que j'avais suivis au fil des années, avec l'intérêt du dev qui regarde ce que font les grands comptes avant de se décider.
 
 Ces exemples ont pesé dans la balance au moment de franchir le pas. Quand on sait que 100 000 gendarmes travaillent sous Linux depuis des années sans que l'institution s'effondre, le "Linux c'est pas prêt pour tout le monde" sonne creux.
 
