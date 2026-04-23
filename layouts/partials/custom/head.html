@@ -1,3 +1,4 @@
 {{- if and (eq hugo.Environment "production") .Site.Params.goatcounter -}}
-<script data-goatcounter="{{ .Site.Params.goatcounter }}/count" async src="{{ .Site.Params.goatcounter }}/count.js"></script>
+<script>window.goatcounter = { endpoint: '{{ .Site.Params.goatcounter }}/count' }</script>
+<script async src="/js/p.js"></script>
 {{- end -}}
