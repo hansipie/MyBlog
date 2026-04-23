@@ -247,6 +247,8 @@ uglyURLs = false
 # Theme Settings
 
 [params]
+    goatcounter = "hansipie"
+
     ######################################
     # Header
 

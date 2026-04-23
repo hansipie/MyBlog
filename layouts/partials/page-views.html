@@ -1,0 +1,14 @@
+{{- if and (eq hugo.Environment "production") .Site.Params.goatcounter -}}
+<span id="{{ .File.UniqueID }}" class="post-meta-item page-views"></span>
+<script>
+    (function() {
+        var r = new XMLHttpRequest();
+        r.addEventListener('load', function() {
+            var data = JSON.parse(this.responseText);
+            document.getElementById('{{ .File.UniqueID }}').innerText = data.count_unique + ' {{ i18n "pageViews" }}';
+        });
+        r.open('GET', 'https://{{ .Site.Params.goatcounter }}.goatcounter.com/counter/' + encodeURIComponent('{{ .RelPermalink }}'.replace(/\/$/, '')) + '.json');
+        r.send();
+    })();
+</script>
+{{- end -}}
