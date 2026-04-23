@@ -247,7 +247,7 @@ uglyURLs = false
 # Theme Settings
 
 [params]
-    goatcounter = "hansipie"
+    goatcounter = "https://stats.ansicode.fr"
 
     ######################################
     # Header

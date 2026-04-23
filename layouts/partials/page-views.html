@@ -10,7 +10,7 @@
                 document.getElementById('{{ .File.UniqueID }}').innerText = data.count_unique + ' {{ i18n "pageViews" }}';
             } catch(e) {}
         });
-        r.open('GET', 'https://{{ .Site.Params.goatcounter }}.goatcounter.com/counter/' + encodeURIComponent('{{ .RelPermalink }}'.replace(/\/$/, '')) + '.json');
+        r.open('GET', '{{ .Site.Params.goatcounter }}/counter/' + encodeURIComponent('{{ .RelPermalink }}'.replace(/\/$/, '')) + '.json');
         r.send();
     })();
 </script>
