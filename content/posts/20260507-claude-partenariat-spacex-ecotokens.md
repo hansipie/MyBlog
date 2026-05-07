@@ -29,6 +29,7 @@ Voici les piliers techniques de cette montée en puissance :
 *   **Souveraineté des Infrastructures :** Un investissement de 50 milliards de dollars dans l'infrastructure IA américaine via Fluidstack.
 
 > **INSIGHT STRATÉGIQUE : L'AMBITION DE L'IA ORBITALE**
+>
 > Anthropic et SpaceX ont formellement exprimé leur intérêt pour le développement de plusieurs gigawatts de capacité de calcul IA orbitale (dans l'espace). Pourquoi ? Parce que le calcul terrestre se heurte à un "plafond de verre" physique : la raréfaction des ressources en eau pour le refroidissement, les contraintes de densité des réseaux électriques et l'opposition croissante des communautés locales. En déplaçant l'inférence dans l'espace, Anthropic vise à s'affranchir des limites planétaires pour garantir une mise à l'échelle infinie.
 
 ---
