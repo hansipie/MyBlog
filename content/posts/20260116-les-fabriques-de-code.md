@@ -5,10 +5,9 @@ date: 2026-01-16T10:00:00+01:00
 draft: true
 tags:
   - IA
-  - Développement
+  - Dev
   - Vibe Coding
-  - Cursor
-  - Claude Code
+  - Claude
 categories:
   - IA
 preview: /fabriques-de-code/20260116-fabriques-de-code-header.png

@@ -6,7 +6,7 @@ preview: ""
 draft: false
 tags:
     - Dev
-    - Expo
+    - Mobile
 categories:
     - application
 ---

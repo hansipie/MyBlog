@@ -4,9 +4,8 @@ description: "J'ai retrouvé mon projet Epitech de 2005 : 9 000 lignes de C/C++ 
 date: 2026-03-23T09:43:14.696Z
 draft: false
 tags:
-  - Claude
-  - Claude-Code
   - IA
+  - Claude
   - Dev
 categories:
   - IA

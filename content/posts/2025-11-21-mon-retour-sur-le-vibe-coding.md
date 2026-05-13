@@ -5,10 +5,11 @@ date: 2025-11-21T17:10:57.709Z
 preview: ""
 draft: false
 tags:
-    - AI
-    - Projet
+    - IA
     - Dev
-categories: []
+    - Vibe Coding
+categories:
+    - IA
 ---
 
 *J'ai développé un client FTP en Rust en une semaine (sans connaître Rust) : Retour d'expérience sur le "Vibe Coding"*

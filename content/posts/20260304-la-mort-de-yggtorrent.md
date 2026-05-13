@@ -4,9 +4,8 @@ description: Le 4 mars 2026, YggTorrent ferme définitivement après un hack mas
 date: 2026-03-04T17:35:15.304Z
 draft: false
 tags:
-  - Piratage
-  - Cybersécurité
-  - Torrent
+  - Sécurité
+  - Actu Tech
 categories:
   - Actu Tech
 preview: /ygg-monetisation.png

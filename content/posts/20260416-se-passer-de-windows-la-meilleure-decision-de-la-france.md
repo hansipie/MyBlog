@@ -3,7 +3,7 @@ title = "Se passer de Windows : la meilleure décision de la France depuis 10 an
 date = 2026-04-16T09:00:00.000Z
 draft = false
 description = "La France annonce officiellement l'abandon de Windows au profit de Linux. Retour sur vingt ans de décisions numériques souveraines."
-tags = [ "france", "linux", "opensource", "souverainete-numerique" ]
+tags = [ "Linux", "Souveraineté" ]
 categories = [ "Linux" ]
 preview = "/france-linux/francelinux0.png"
 +++

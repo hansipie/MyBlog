@@ -4,10 +4,11 @@ description: "Ce qu'il faut vraiment comprendre avant de se lancer : stratégies
 date: 2026-05-13T00:00:00+02:00
 draft: false
 tags:
-    - Trading
     - Finance
-    - Algorithmique
+    - Dev
+    - IA
 categories: []
+preview: /trading-bot-banner-1-pipeline.png
 ---
 
 Les bots de trading font fantasmer. L'image est séduisante : un programme qui travaille 24h/24, sans émotion, qui achète au bon moment et vend au bon moment pendant que vous dormez. La réalité est plus nuancée, mais aussi plus fascinante. Voici ce qu'il faut vraiment comprendre avant de s'y lancer.

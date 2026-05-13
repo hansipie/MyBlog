@@ -7,8 +7,7 @@ draft: false
 tags:
   - Dev
   - Linux
-  - Android
-  - Distrobox
+  - Mobile
 categories:
   - DIY
 ---

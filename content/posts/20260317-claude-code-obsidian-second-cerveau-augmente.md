@@ -4,11 +4,9 @@ description: Connecter Claude Code directement à son vault Obsidian transforme 
 date: 2026-03-17T10:00:00Z
 draft: false
 tags:
-  - Claude
-  - Obsidian
-  - Productivité
   - IA
-  - PKM
+  - Claude
+  - Productivité
 categories:
   - IA
 preview: /claude-code-obsidian/chapitre-2.png

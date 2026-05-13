@@ -5,9 +5,7 @@ date: 2024-09-05T13:25:06.970Z
 preview: ""
 draft: false
 tags:
-   - network
-   - raspberry
-   - vpn
+   - Réseau
 categories:
    - DIY
 ---

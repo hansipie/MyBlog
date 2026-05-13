@@ -3,7 +3,7 @@ title = "Clawdbot : la hype est-elle justifiée ?"
 date = 2026-01-28T10:00:00+01:00
 draft = false
 description = "Analyse critique de Clawdbot, l'assistant IA qui affole la tech, et pourquoi Claude Code pourrait suffire"
-tags = ["ia", "claude", "clawdbot", "productivité"]
+tags = ["IA", "Claude", "Productivité"]
 categories = ["IA"]
 +++
 

@@ -3,7 +3,7 @@ title = "Pourquoi la RAM explose : Stargate, HBM et le grand gâchis"
 date = 2026-04-27T10:00:00+02:00
 draft = false
 description = "Comment le projet Stargate d'OpenAI et le pivot des fabricants vers la HBM ont provoqué une pénurie mondiale de mémoire DDR5 qui fait exploser les prix pour les consommateurs."
-tags = ["RAM", "IA", "Stargate", "HBM", "OpenAI", "Actu Tech"]
+tags = ["IA", "Actu Tech"]
 categories = ["Actu Tech"]
 preview = "/20260427-ram/01-flambee-prix.png"
 +++

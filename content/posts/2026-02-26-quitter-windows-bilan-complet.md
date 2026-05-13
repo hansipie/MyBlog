@@ -3,7 +3,7 @@ title = "Quitter Windows : le bilan complet d'une migration en trois actes"
 date = 2026-02-26T00:00:00+01:00
 draft = false
 description = "Après 25 ans d'aller-retours, j'ai décidé de quitter Windows pour Linux. Pour de vrai, cette fois. Récit d'un mois de découvertes, de galères, et d'attachement."
-tags = ["linux", "bazzite", "distrobox", "migration"]
+tags = ["Linux", "Souveraineté"]
 categories = ["Linux"]
 +++
 
