@@ -359,6 +359,7 @@ uglyURLs = false
     # Note: used for JSON-LD, Open Graph
 
     siteDescription = "Blog tech d'Hansi Pierre — IA, Claude Code, Linux, vibe coding, souveraineté numérique. 20+ ans d'expérience en ingénierie logicielle."
+    siteTagline = "IA, Claude, Linux, Dev"
     # Note: used for HTML head meta, JSON-LD,
     #       Open Graph, Atom, RSS
 
