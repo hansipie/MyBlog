@@ -358,7 +358,7 @@ uglyURLs = false
     siteLogo = "/icons/apple-touch-icon.png"
     # Note: used for JSON-LD, Open Graph
 
-    siteDescription = "MemE is a powerful and highly customizable GoHugo theme for personal blogs."
+    siteDescription = "Blog tech d'Hansi Pierre — IA, Claude Code, Linux, vibe coding, souveraineté numérique. 20+ ans d'expérience en ingénierie logicielle."
     # Note: used for HTML head meta, JSON-LD,
     #       Open Graph, Atom, RSS
 
@@ -1505,7 +1505,7 @@ uglyURLs = false
         lunr = "/npm/lunr@2.3.9/lunr.min.js"
         lunr_tinyseg = "/npm/lunr-languages@1.4.0/tinyseg.js"
         lunr_stemmer = "/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js"
-        lunr_lang = "/npm/lunr-languages@1.4.0/min/lunr.de.min.js"
+        lunr_lang = "/npm/lunr-languages@1.4.0/min/lunr.fr.min.js"
         mathjax = "/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"
         medium_zoom = "/npm/medium-zoom@latest/dist/medium-zoom.min.js"
         mermaid = "/npm/mermaid@8.8.3/dist/mermaid.min.js"

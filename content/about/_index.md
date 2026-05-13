@@ -2,6 +2,7 @@
 title = 'À propos'
 date = 2024-09-05T12:57:01+03:00
 draft = false
+description = "Hansi Pierre — Ingénieur logiciel senior, 20+ ans d'expérience en C/C++, architectures client/serveur et développement multi-plateformes. Diplômé EPITECH Paris."
 +++
 
 ## Hansi Pierre — Ingénieur Logiciel Senior

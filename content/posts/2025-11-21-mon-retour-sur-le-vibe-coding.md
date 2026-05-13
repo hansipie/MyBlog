@@ -1,6 +1,6 @@
 ---
 title: Mon retour sur le Vibe Coding
-description: ""
+description: "Retour d'expérience : j'ai développé un client FTP complet en Rust en une semaine, sans connaître Rust, en m'appuyant sur Claude et GitHub Copilot. Le vibe coding en pratique."
 date: 2025-11-21T17:10:57.709Z
 preview: ""
 draft: false
