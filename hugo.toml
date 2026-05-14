@@ -1068,7 +1068,7 @@ uglyURLs = false
     fontFamilyBody = "'IBM Plex Serif', serif"
 
     # Embed fonts link
-    fontsLink = "/fonts/fonts.css"
+    fontsLink = "https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:wght@700&display=swap"
     # Note: In order for the reader to
     #       experience the fonts you set,
     #       it is best to use web fonts.
@@ -1486,23 +1486,23 @@ uglyURLs = false
     # Customize host for third-party libraries
 
     [params.lib]
-        host = "/"
+        host = "https://cdn.jsdelivr.net"
     [params.lib.path]
         clipboard = "/npm/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.min.js"
         instantsearch = "/npm/instantsearch.js@2/dist/instantsearch.min.js"
         gitalk = "/npm/gitalk@1/dist/gitalk.min.js"
         gitalk_css = "/npm/gitalk@1/dist/gitalk.css"
-        instantpage = "lib/instantpage.min.js"
+        instantpage = "/npm/instant.page@5.1.0/instantpage.min.js"
         katex = "/npm/katex@0.13.0/dist/katex.min.js"
         katex_css = "/npm/katex@0.13.0/dist/katex.min.css"
         katex_mhchem = "/npm/katex@0.13.0/dist/contrib/mhchem.min.js"
         katex_auto_render = "/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
-        lunr = "lib/lunr.min.js"
+        lunr = "/npm/lunr@2.3.9/lunr.min.js"
         lunr_tinyseg = "/npm/lunr-languages@1.4.0/tinyseg.js"
-        lunr_stemmer = "lib/lunr.stemmer.support.min.js"
-        lunr_lang = "lib/lunr.fr.min.js"
+        lunr_stemmer = "/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js"
+        lunr_lang = "/npm/lunr-languages@1.4.0/min/lunr.fr.min.js"
         mathjax = "/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"
-        medium_zoom = "lib/medium-zoom.min.js"
+        medium_zoom = "/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"
         mermaid = "/npm/mermaid@8.8.3/dist/mermaid.min.js"
         qrcode = "/npm/qrcode-generator@1.4.4/qrcode.min.js"
         valine = "/npm/valine@1.4.14/dist/Valine.min.js"
