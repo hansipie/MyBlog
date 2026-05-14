@@ -12,8 +12,6 @@ categories:
 preview: /caps/logo_caps.png
 ---
 
-# Comment Claude Code a ressuscité mon projet de 2005
-
 Ce weekend, j'ai eu une impulsion étrange : aller fouiller dans mes vieux disques durs et retrouver mon projet de fin d'études Epitech. Celui que j'avais rendu en 2005, un peu fièrement, et que je n'avais plus touché depuis. Vingt et un ans de poussière numérique.
 ![Logo Caps](/caps/logo_caps.png)
 Le projet s'appelle **Caps** : une implémentation complète du protocole [Hotline Communications](https://en.wikipedia.org/wiki/Hotline_Communications), un protocole de partage de fichiers et de chat pair-à-pair très populaire dans la scène Mac des années 90. Mon groupe et moi avions développé un serveur entier (**BlueCap**, en C++), un client en ligne de commande (**RedCap/Console**, en C), et un client graphique (**RedCap/GUI**, en C++/wxWidgets). Environ 9 000 lignes de code applicatif.
