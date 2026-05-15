@@ -151,6 +151,9 @@ Trois principes d'architecture à ne jamais oublier :
 - **État reconstructible** : si le bot crashe, il doit pouvoir redémarrer en retrouvant son état complet en lisant la base de données. Aucun état uniquement en mémoire.
 - **Séparation backtest/live** : le même code de stratégie doit pouvoir tourner sur des données historiques ou en temps réel. On y arrive en abstrayant la source de données.
 
+**Concrètement**, en voici **un exemple d'implementation** : https://github.com/hansipie/tradbot
+
+
 ## La réalité brutale
 
 ![](/trading-bot-banner-5-realite.png)
@@ -165,9 +168,4 @@ La bonne question à se poser avant de déployer un euro n'est pas "est-ce que m
 
 Si vous ne pouvez pas répondre à cette question clairement, le backtest ne compte pas.
 
----
-
-> P.S: Toute cette théorie n'est rien sans un peu de pratique 
->
-> https://github.com/hansipie/tradbot
 
