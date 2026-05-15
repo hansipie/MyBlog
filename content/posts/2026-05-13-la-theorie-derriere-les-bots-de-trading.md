@@ -126,7 +126,7 @@ Une approche sérieuse ressemble à ceci :
 - Développez et optimisez uniquement sur le bloc de développement
 - Validez sur 2021-2022 pour vérifier que ça tient
 - Appliquez au bloc sacré une seule fois. Si ça ne marche pas, vous repartez de zéro avec une autre idée, vous n'avez pas le droit de retoucher
-- Passez en paper trading pendant plusieurs mois avant tout argent réel
+- Passez en paper trading pendant suffisamment longtemps avant de risquer tout argent réel
 - Commencez en live avec une fraction du capital prévu
 
 Le mantra à retenir : un backtest n'est pas une preuve que la stratégie marchera. C'est seulement une preuve qu'elle aurait pu marcher.
