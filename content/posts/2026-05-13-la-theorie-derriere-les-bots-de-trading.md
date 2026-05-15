@@ -164,3 +164,10 @@ Ce qui reste accessible : des stratégies swing trading sur des horizons de quel
 La bonne question à se poser avant de déployer un euro n'est pas "est-ce que mon backtest est beau ?", mais "est-ce que je comprends pourquoi cette stratégie gagne, et est-ce que ce mécanisme a des chances d'exister encore dans six mois ?"
 
 Si vous ne pouvez pas répondre à cette question clairement, le backtest ne compte pas.
+
+---
+
+> P.S: Toute cette théorie n'est rien sans un peu de pratique 
+>
+> https://github.com/hansipie/tradbot
+
