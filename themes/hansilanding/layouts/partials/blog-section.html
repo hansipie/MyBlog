@@ -61,7 +61,8 @@
     <div class="pf-project-grid">
       {{ range first 4 $posts }}
       <article class="pf-card pf-project-card">
-        {{ with index .Params.images 0 }}
+        {{ $cover := .Params.preview | default (index .Params.images 0) }}
+        {{ with $cover }}
         <img src="{{ . }}" alt="" class="pf-card-cover" loading="lazy">
         {{ end }}
         <div class="pf-project-top">
