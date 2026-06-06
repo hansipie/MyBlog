@@ -1,0 +1,12 @@
+name = "hansilanding"
+license = "MIT"
+licenselink = ""
+description = "Thème portfolio dark-tech inspiré du design ansicode.fr — nav glassmorphism, hero orbital, sections cards, statusbar."
+homepage = "https://blog.ansicode.fr"
+tags = ["portfolio", "dark", "tech", "responsive", "minimal"]
+features = ["blog", "portfolio", "contact", "themeable"]
+min_version = "0.110.0"
+
+[author]
+  name = "Hansi PIERRE"
+  homepage = "https://ansicode.fr"

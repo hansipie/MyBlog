@@ -1,0 +1,78 @@
+{{- $p := .Site.Params -}}
+<aside class="pf-statusbar" aria-label="Status bar">
+  <div class="pf-statusbar-inner">
+    <div class="pf-statusbar-left">
+      <span class="pf-status pf-status-running">
+        <span class="pf-status-dot" aria-hidden="true"></span>
+        <span class="pf-status-label">Running</span>
+      </span>
+      <span class="pf-statusbar-sep" aria-hidden="true">·</span>
+      {{ with $p.author.email }}
+      <span class="pf-statusbar-mono">{{ . }}</span>
+      {{ end }}
+      {{ with $p.region }}
+      <span class="pf-statusbar-sep pf-statusbar-hide-mobile" aria-hidden="true">·</span>
+      <span class="pf-statusbar-mono pf-statusbar-hide-mobile">{{ . }}</span>
+      {{ end }}
+    </div>
+    <div class="pf-statusbar-right">
+      {{ with $p.author.github }}
+      <a href="https://github.com/{{ . }}" target="_blank" rel="noopener noreferrer" class="pf-statusbar-link" aria-label="GitHub" title="GitHub">
+        <svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#ico-github"/></svg>
+      </a>
+      {{ end }}
+      {{ with $p.author.linkedin }}
+      <a href="https://www.linkedin.com/in/{{ . }}" target="_blank" rel="noopener noreferrer" class="pf-statusbar-link" aria-label="LinkedIn" title="LinkedIn">
+        <svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#ico-linkedin"/></svg>
+      </a>
+      {{ end }}
+      {{ with $p.author.twitter }}
+      <a href="https://x.com/{{ . }}" target="_blank" rel="noopener noreferrer" class="pf-statusbar-link" aria-label="X" title="X">
+        <svg width="13" height="13" fill="currentColor" aria-hidden="true"><use href="#ico-x"/></svg>
+      </a>
+      {{ end }}
+      <button type="button" class="pf-statusbar-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut" title="Top">
+        <svg width="14" height="14" aria-hidden="true"><use href="#ico-up"/></svg>
+      </button>
+    </div>
+  </div>
+</aside>
+
+{{/* Chat widget */}}
+<button class="pf-chat-bubble" id="chatToggle" type="button" aria-controls="chatWidget" aria-expanded="false" aria-label="Ouvrir l'assistant">
+  <span class="pf-chat-bubble-avatar">
+    {{ with $p.author.photo }}
+    <img src="{{ . }}" alt="{{ $p.author.name }}" draggable="false" />
+    {{ end }}
+    <span class="pf-chat-bubble-initials" aria-hidden="true">
+      {{ $p.author.initials | default "HP" }}
+    </span>
+  </span>
+  <span class="pf-chat-bubble-ring" aria-hidden="true"></span>
+  <span class="pf-chat-bubble-badge" aria-label="1 nouveau message">1</span>
+</button>
+
+<article class="pf-chat-card" id="chatWidget" aria-label="Assistant portfolio" aria-hidden="true">
+  <header class="pf-chat-head">
+    <h3 class="pf-chat-title">{{ $p.brandName | default .Site.Title }} assistant</h3>
+    <div class="pf-chat-head-actions">
+      <span class="pf-status pf-status-running"><span class="pf-status-dot" aria-hidden="true"></span>LOCAL</span>
+      <button class="pf-chat-close" id="chatClose" type="button" aria-label="Fermer" title="Fermer">
+        <svg width="14" height="14" aria-hidden="true"><use href="#ico-close"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="pf-chat-body" id="chatBody">
+    {{ range $p.chatMessages }}
+    <div class="pf-message pf-message-{{ .type | default "bot" }}">{{ .text }}</div>
+    {{ else }}
+    <div class="pf-message pf-message-bot">Bonjour ! Je peux répondre à vos questions sur le profil et les projets.</div>
+    <div class="pf-message pf-message-user">Sur quoi peux-tu intervenir ?</div>
+    <div class="pf-message pf-message-bot">Audit, spike technique, agents LLM, outils développeur, app mobile, modernisation et diagnostic de systèmes complexes.</div>
+    {{ end }}
+  </div>
+  <form class="pf-chat-input" id="chatForm">
+    <input id="chatInput" placeholder="Une question…" aria-label="Message" />
+    <button type="submit">send</button>
+  </form>
+</article>

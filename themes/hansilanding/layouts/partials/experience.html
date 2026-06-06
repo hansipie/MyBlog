@@ -1,0 +1,44 @@
+{{- $e := .Site.Params.experience | default dict -}}
+<section class="pf-section" id="experience">
+  <div class="pf-section-head">
+    <div class="pf-section-hud">
+      <span class="pf-section-progress">
+        <span class="pf-section-progress-label">02 / DEPLOYMENTS</span>
+        <span class="pf-section-progress-track">
+          <span class="pf-section-progress-fill" style="width: {{ $e.progress | default 87 }}%"></span>
+        </span>
+        <span class="pf-section-progress-val">{{ $e.progressLabel | default "TRACKED" }}</span>
+      </span>
+    </div>
+    <h2 class="pf-section-title">{{ $e.title | default "Expérience" }}</h2>
+    <p class="pf-section-lead">{{ $e.lead }}</p>
+  </div>
+
+  <ol class="pf-deploy-list">
+    {{ range $i, $item := $e.items }}
+    <li class="pf-deploy-item">
+      <span class="pf-deploy-marker">{{ printf "%02d" (add $i 1) }}</span>
+      <article class="pf-deploy-card">
+        <div class="pf-deploy-head">
+          <div class="pf-deploy-head-left">
+            <h3 class="pf-deploy-role">{{ $item.role }}</h3>
+            <span class="pf-status pf-status-{{ $item.status | default "deployed" }}">
+              <span class="pf-status-dot"></span>{{ $item.statusLabel | default ($item.status | upper) }}
+            </span>
+          </div>
+          {{ with $item.version }}<span class="pf-version">{{ . }}</span>{{ end }}
+        </div>
+        <div class="pf-deploy-meta">
+          {{ with $item.location }}<span class="pf-deploy-meta-item pf-deploy-meta-mono">{{ . }}</span>{{ end }}
+          {{ with $item.quest }}<span class="pf-deploy-quest">{{ . }}</span>{{ end }}
+        </div>
+        {{ with $item.highlights }}
+        <ul class="pf-deploy-highlights">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+      </article>
+    </li>
+    {{ end }}
+  </ol>
+</section>

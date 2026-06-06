@@ -1,0 +1,92 @@
+{{- $b := .Site.Params.blogSection | default dict -}}
+<section class="pf-section" id="blog">
+  <div class="pf-section-head">
+    <div class="pf-section-hud">
+      <span class="pf-section-progress">
+        <span class="pf-section-progress-label">05 / BLOG</span>
+        <span class="pf-section-progress-track">
+          <span class="pf-section-progress-fill" style="width: {{ $b.progress | default 81 }}%"></span>
+        </span>
+        <span class="pf-section-progress-val">{{ $b.progressLabel | default "PUBLISHED" }}</span>
+      </span>
+      {{ with $b.achievement }}<span class="pf-achievement">★ {{ . }}</span>{{ end }}
+    </div>
+    <h2 class="pf-section-title">{{ $b.title | default "Blog" }}</h2>
+    <p class="pf-section-lead">{{ $b.lead }}</p>
+  </div>
+
+  <div class="pf-project-grid">
+    {{/* Cartes de blogs externes (depuis params) */}}
+    {{ range $b.externalBlogs }}
+    <article class="pf-card pf-project-card">
+      <div class="pf-project-top">
+        <div>
+          <h3 class="pf-project-title">{{ .title }}</h3>
+          <p class="pf-project-desc">{{ .desc }}</p>
+        </div>
+        <span class="pf-status pf-status-{{ .status | default "running" }}">
+          <span class="pf-status-dot"></span>{{ .statusLabel | default "BLOG" }}
+        </span>
+      </div>
+      {{ with .tech }}
+      <div class="pf-tech-row">
+        {{ range . }}
+        <span class="pf-tech">
+          <span class="pf-tech-dot" style="color:{{ .color }};background:{{ .color }}"></span>
+          {{ .label }}
+        </span>
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ with .link }}
+      {{ if hasPrefix . "/" }}
+      <a class="pf-btn pf-btn-secondary" href="{{ . }}">
+      {{ else }}
+      <a class="pf-btn pf-btn-secondary" href="{{ . }}" target="_blank" rel="noreferrer">
+      {{ end }}
+        <svg width="15" height="15" aria-hidden="true"><use href="#ico-globe"/></svg>
+        Lire le blog
+      </a>
+      {{ end }}
+    </article>
+    {{ end }}
+  </div>
+
+  {{/* Sous-section : derniers articles */}}
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ $posts = $posts.ByDate.Reverse }}
+  {{ if $posts }}
+  <div class="pf-subsection">
+    <h3 class="pf-subsection-title">Articles récents</h3>
+    <div class="pf-project-grid">
+      {{ range first 4 $posts }}
+      <article class="pf-card pf-project-card">
+        {{ with index .Params.images 0 }}
+        <img src="{{ . }}" alt="" class="pf-card-cover" loading="lazy">
+        {{ end }}
+        <div class="pf-project-top">
+          <div>
+            <h3 class="pf-project-title">
+              <a href="{{ .RelPermalink }}" style="text-decoration:none;color:inherit;">{{ .Title }}</a>
+            </h3>
+            <p class="pf-project-desc">{{ .Description | default (.Summary | truncate 120) }}</p>
+          </div>
+          <span class="pf-status pf-status-running"><span class="pf-status-dot"></span>POST</span>
+        </div>
+        {{ with .Params.tags }}
+        <div class="pf-tech-row">
+          {{ range first 3 . }}
+          <span class="pf-tech">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+        <a class="pf-btn pf-btn-secondary" href="{{ .RelPermalink }}">
+          <svg width="15" height="15" aria-hidden="true"><use href="#ico-globe"/></svg>
+          Lire l'article
+        </a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</section>

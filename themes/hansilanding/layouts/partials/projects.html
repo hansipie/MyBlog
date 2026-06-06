@@ -1,0 +1,54 @@
+{{- $pr := .Site.Params.projects | default dict -}}
+<section class="pf-section" id="projects">
+  <div class="pf-section-head">
+    <div class="pf-section-hud">
+      <span class="pf-section-progress">
+        <span class="pf-section-progress-label">03 / PROJECTS</span>
+        <span class="pf-section-progress-track">
+          <span class="pf-section-progress-fill" style="width: {{ $pr.progress | default 79 }}%"></span>
+        </span>
+        <span class="pf-section-progress-val">{{ $pr.progressLabel | default "ACTIVE" }}</span>
+      </span>
+      {{ with $pr.achievement }}<span class="pf-achievement">★ {{ . }}</span>{{ end }}
+    </div>
+    <h2 class="pf-section-title">{{ $pr.title | default "Projets" }}</h2>
+    <p class="pf-section-lead">{{ $pr.lead }}</p>
+  </div>
+
+  <div class="pf-project-grid">
+    {{ range $pr.items }}
+    {{- $item := . -}}
+    <article class="pf-card pf-project-card">
+      <div class="pf-project-top">
+        <div>
+          <h3 class="pf-project-title">{{ $item.title }}</h3>
+          <p class="pf-project-desc">{{ $item.desc }}</p>
+        </div>
+        <span class="pf-status pf-status-{{ $item.status | default "deployed" }}">
+          <span class="pf-status-dot"></span>{{ $item.statusLabel | default ($item.status | upper) }}
+        </span>
+      </div>
+      {{ with $item.tech }}
+      <div class="pf-tech-row">
+        {{ range . }}
+        <span class="pf-tech">
+          <span class="pf-tech-dot" style="color:{{ .color }};background:{{ .color }}"></span>
+          {{ .label }}
+        </span>
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ with $item.link }}
+      <a class="pf-btn pf-btn-secondary" href="{{ . }}" target="_blank" rel="noreferrer">
+        {{ if eq $item.linkIcon "github" }}
+        <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#ico-github"/></svg>
+        {{ else }}
+        <svg width="15" height="15" aria-hidden="true"><use href="#ico-globe"/></svg>
+        {{ end }}
+        {{ $item.linkLabel | default "Voir" }}
+      </a>
+      {{ end }}
+    </article>
+    {{ end }}
+  </div>
+</section>

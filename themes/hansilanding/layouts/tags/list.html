@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="pf-section" style="padding-top:32px">
+  <div class="pf-section-head">
+    <div class="pf-section-hud">
+      <span class="pf-section-progress">
+        <span class="pf-section-progress-label">TAGS</span>
+        <span class="pf-section-progress-val">{{ len .Data.Terms }} TAGS</span>
+      </span>
+    </div>
+    <h2 class="pf-section-title">{{ .Title }}</h2>
+  </div>
+
+  <div class="pf-tag-cloud">
+    {{ range .Data.Terms.ByCount }}
+    <a class="pf-tag-cloud-item pf-tag-size-{{ if ge .Count 6 }}xl{{ else if ge .Count 3 }}lg{{ else if ge .Count 2 }}md{{ else }}sm{{ end }}"
+       href="{{ .Page.RelPermalink }}">
+      {{ .Page.Title }}<span class="pf-tag-cloud-count">{{ .Count }}</span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,26 @@
+{{- $p := .Site.Params -}}
+{{- $currentPage := . -}}
+<nav class="pf-nav" id="nav" aria-label="Navigation principale">
+  <div class="pf-nav-inner">
+    <a class="pf-nav-brand" href="{{ "/" | relURL }}" aria-label="Accueil">
+      {{ with $p.faviconSmall }}
+      <span class="pf-nav-brand-logo">
+        <img src="{{ . }}" alt="" width="32" height="32" aria-hidden="true" />
+      </span>
+      {{ end }}
+      <span class="pf-nav-brand-text">
+        <span class="pf-nav-brand-name">{{ $p.brandName | default .Site.Title }}</span>
+      </span>
+    </a>
+
+    <div class="pf-nav-links" aria-label="Menu">
+      {{ range .Site.Menus.main }}
+      <a class="pf-nav-link{{ if or ($currentPage.IsMenuCurrent .Menu .) ($currentPage.HasMenuCurrent .Menu .) }} pf-nav-link-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </div>
+
+    <div class="pf-nav-actions">
+      <button class="pf-theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Thème">◐</button>
+    </div>
+  </div>
+</nav>

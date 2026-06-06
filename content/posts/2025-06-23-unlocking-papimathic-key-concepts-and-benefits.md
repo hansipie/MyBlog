@@ -3,6 +3,8 @@ title: "Papimathic: le coup de boost ludique du calcul mental"
 description: "Papimathic : une appli ludique pour booster le calcul mental des enfants et des adultes. Pourquoi le calcul mental redevient essentiel à l'ère des calculatrices."
 date: 2025-06-23T05:01:19.916Z
 preview: ""
+images:
+    - /papimathic-banner.png
 draft: false
 tags:
     - Dev
@@ -10,6 +12,8 @@ tags:
 categories:
     - application
 ---
+
+![Papimathic banner](/papimathic-banner.png)
 
 🧠 **Le calcul mental, une compétence essentielle… et en déclin !** 🧠
 
@@ -20,7 +24,7 @@ Pourtant, plusieurs études et rapports d’enseignants alertent : les compéten
 
 ## 🎉 Découvrez **Papimathic** : le coup de boost ludique du calcul mental
 
-![Papimathic](https://papimathic.ansicode.fr/images/title.png)
+![Papimathic](/papimathic-banner.png)
 
 **Papimathic** est une application mobile conçue pour redonner aux enfants (et à leurs parents) le goût du calcul mental, avec :
 

@@ -1,0 +1,49 @@
+{{ define "main" }}
+<section class="pf-section" style="padding-top:32px">
+  <div class="pf-section-head">
+    <h1 class="pf-section-title">{{ .Site.Params.description | default .Site.Title }}</h1>
+  </div>
+
+  {{ $pages := where .Site.RegularPages "Section" "posts" }}
+  {{ $paginator := .Paginate $pages.ByDate.Reverse }}
+
+  <div class="pf-post-list">
+    {{ range $paginator.Pages }}
+    <a class="pf-card pf-post-card" href="{{ .RelPermalink }}">
+      {{ with .Params.preview }}
+      <div class="pf-post-card-img">
+        <img src="{{ . }}" alt="" loading="lazy">
+      </div>
+      {{ end }}
+      <div>
+        <p class="pf-post-date">{{ .Date.Format "02 Jan 2006" }}</p>
+        <h2 class="pf-post-title">{{ .Title }}</h2>
+      </div>
+      {{ with .Description }}
+      <p class="pf-post-desc">{{ . }}</p>
+      {{ else }}
+      <p class="pf-post-desc">{{ .Summary | truncate 140 }}</p>
+      {{ end }}
+      {{ with .Params.tags }}
+      <div class="pf-tech-row">
+        {{ range first 3 . }}
+        <span class="pf-tech">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+    </a>
+    {{ end }}
+  </div>
+
+  {{ if or $paginator.HasPrev $paginator.HasNext }}
+  <div style="display:flex;gap:16px;margin-top:32px;justify-content:center">
+    {{ if $paginator.HasPrev }}
+    <a class="pf-btn pf-btn-ghost" href="{{ $paginator.Prev.URL }}">← Précédent</a>
+    {{ end }}
+    {{ if $paginator.HasNext }}
+    <a class="pf-btn pf-btn-ghost" href="{{ $paginator.Next.URL }}">Suivant →</a>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
+{{ end }}

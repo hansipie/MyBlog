@@ -1,0 +1,32 @@
+{{- $sk := .Site.Params.skills | default dict -}}
+<section class="pf-section" id="skills">
+  <div class="pf-section-head">
+    <div class="pf-section-hud">
+      <span class="pf-section-progress">
+        <span class="pf-section-progress-label">04 / STACK</span>
+        <span class="pf-section-progress-track">
+          <span class="pf-section-progress-fill" style="width: {{ $sk.progress | default 86 }}%"></span>
+        </span>
+        <span class="pf-section-progress-val">{{ $sk.progressLabel | default "ONLINE" }}</span>
+      </span>
+    </div>
+    <h2 class="pf-section-title">{{ $sk.title | default "Stack" }}</h2>
+    <p class="pf-section-lead">{{ $sk.lead }}</p>
+  </div>
+
+  <div class="pf-skill-grid">
+    {{ range $sk.groups }}
+    <article class="pf-card">
+      <div class="pf-card-head">
+        <span class="pf-text-accent">{{ .prefix }}</span>
+        <h3>{{ .title }}</h3>
+      </div>
+      <ul class="pf-skill-list">
+        {{ range .items }}
+        <li>{{ .name }} <span>{{ .level }}</span></li>
+        {{ end }}
+      </ul>
+    </article>
+    {{ end }}
+  </div>
+</section>

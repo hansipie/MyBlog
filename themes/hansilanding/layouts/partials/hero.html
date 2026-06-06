@@ -1,0 +1,110 @@
+{{- $p := .Site.Params -}}
+{{- $h := $p.hero | default dict -}}
+<section class="pf-hero">
+  <div class="pf-hero-grid">
+    <div class="pf-hero-content">
+      <div class="pf-hero-hud">
+        {{ with $h.level }}
+        <span class="pf-level">
+          <span class="pf-level-glyph">◆</span>
+          <span class="pf-level-text">{{ .value }}</span>
+          <span class="pf-level-label">{{ .label }}</span>
+        </span>
+        {{ end }}
+        {{ with $p.status }}
+        <span class="pf-status pf-status-running"><span class="pf-status-dot"></span>{{ . }}</span>
+        {{ end }}
+        {{ with $p.region }}
+        <span class="pf-region">⌁ {{ . }}</span>
+        {{ end }}
+      </div>
+
+      {{ with $p.author.eyebrow }}
+      <p class="pf-hero-eyebrow">{{ . }}</p>
+      {{ end }}
+      <h1 class="pf-hero-title">
+        <span class="pf-hero-name">{{ $p.author.name | default .Site.Title }}</span>
+      </h1>
+      {{ with $p.author.tagline }}
+      <p class="pf-hero-tagline">{{ . }}</p>
+      {{ end }}
+      {{ with $p.author.bio }}
+      <p class="pf-hero-bio">{{ . }}</p>
+      {{ end }}
+
+      {{ with $h.xp }}
+      <div class="pf-hero-xp" aria-label="Barres de progression métier">
+        {{ range . }}
+        <div class="pf-hero-xp-row">
+          <span class="pf-hero-xp-label">{{ .label }}</span>
+          <div class="pf-xp">
+            <span class="pf-xp-track">
+              <span class="pf-xp-fill" style="width: {{ .value }}%">
+                <span class="pf-xp-shine"></span>
+              </span>
+            </span>
+            <span class="pf-xp-val">{{ .value }}/100 XP</span>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      <div class="pf-hero-actions">
+        {{ with $h.ctaPrimary }}
+        <a class="pf-btn pf-btn-primary" href="{{ .url }}">{{ .label }}</a>
+        {{ end }}
+        {{ with $h.ctaSecondary }}
+        <a class="pf-btn pf-btn-ghost" href="{{ .url }}">{{ .label }}</a>
+        {{ end }}
+      </div>
+
+      {{ with $h.stats }}
+      <dl class="pf-hero-stats">
+        {{ range . }}
+        <div class="pf-stat">
+          <dt class="pf-stat-value">{{ .value }}</dt>
+          <dd class="pf-stat-label">{{ .label }}</dd>
+        </div>
+        {{ end }}
+      </dl>
+      {{ end }}
+    </div>
+
+    <div class="pf-hero-visual" aria-label="Visualisation orbitale du profil">
+      <div class="pf-orbit">
+        {{ range $h.orbit }}
+        <div class="pf-orbit-ring pf-orbit-ring-{{ .ring }}">
+          {{ range .pods }}
+          <span class="pf-orbit-pod pf-orbit-pod-{{ .class }}">{{ .label }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+
+      <article class="pf-portrait-card">
+        <header class="pf-portrait-header">
+          <span class="pf-portrait-id">{{ $h.portraitId | default "profile://ansicode" }}</span>
+          <span class="pf-status pf-status-deployed"><span class="pf-status-dot"></span>deployed</span>
+        </header>
+        <div class="pf-portrait-frame">
+          {{ with $p.author.photo }}
+          <img class="pf-portrait-img" src="{{ . }}" alt="Portrait de {{ $p.author.name }}" width="768" height="768" />
+          {{ end }}
+          <span class="pf-portrait-grid"></span>
+          <span class="pf-portrait-fallback" aria-hidden="true">
+            {{ with $p.author.initials }}{{ . }}{{ else }}HP{{ end }}
+          </span>
+        </div>
+        <footer class="pf-portrait-footer">
+          {{ range $h.portraitRows }}
+          <div class="pf-portrait-row">
+            <span class="pf-portrait-key">{{ .key }}</span>
+            <span class="pf-portrait-val">{{ .val }}</span>
+          </div>
+          {{ end }}
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>

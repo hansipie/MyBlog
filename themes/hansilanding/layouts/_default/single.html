@@ -1,0 +1,44 @@
+{{ define "main" }}
+<article class="pf-article">
+  <header class="pf-article-header">
+    <div class="pf-article-meta">
+      {{ with .Date }}
+      <span class="pf-post-date">{{ .Format "02 Jan 2006" }}</span>
+      {{ end }}
+      {{ with .Params.categories }}
+      {{ range . }}
+      <span class="pf-status pf-status-deployed"><span class="pf-status-dot"></span>{{ . }}</span>
+      {{ end }}
+      {{ end }}
+      {{ with .ReadingTime }}
+      <span class="pf-version">~{{ . }} min</span>
+      {{ end }}
+    </div>
+    <h1 class="pf-article-title">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="pf-article-desc">{{ . }}</p>
+    {{ end }}
+    {{ with .Params.tags }}
+    <div class="pf-article-tags">
+      {{ range . }}
+      <span class="pf-tech">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+    <hr class="pf-article-sep" />
+  </header>
+
+  <div class="pf-article-content">
+    {{ .Content }}
+  </div>
+
+  <footer style="margin-top:48px;padding-top:28px;border-top:1px solid var(--pf-border)">
+    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+      <a class="pf-btn pf-btn-ghost" href="/posts/">← Tous les articles</a>
+      {{ with .NextInSection }}
+      <a class="pf-btn pf-btn-secondary" href="{{ .RelPermalink }}">{{ .Title }} →</a>
+      {{ end }}
+    </div>
+  </footer>
+</article>
+{{ end }}

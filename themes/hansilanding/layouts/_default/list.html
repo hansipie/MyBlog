@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section class="pf-section" style="padding-top:32px">
+  <div class="pf-section-head">
+    <div class="pf-section-hud">
+      <span class="pf-section-progress">
+        <span class="pf-section-progress-label">BLOG</span>
+        <span class="pf-section-progress-track">
+          <span class="pf-section-progress-fill" style="width:{{ len .Pages }}0%"></span>
+        </span>
+        <span class="pf-section-progress-val">{{ len .Pages }} POSTS</span>
+      </span>
+    </div>
+    <h2 class="pf-section-title">{{ .Title }}</h2>
+    {{ with .Description }}<p class="pf-section-lead">{{ . }}</p>{{ end }}
+  </div>
+
+  {{ range (.Pages.ByDate.Reverse).GroupByDate "January 2006" }}
+  <div class="pf-month-group">
+    <h3 class="pf-month-title">{{ .Key }}</h3>
+    <ul class="pf-post-month-list">
+      {{ range .Pages }}
+      <li class="pf-post-month-item">
+        <span class="pf-post-date">{{ .Date.Format "02" }}</span>
+        <a class="pf-post-month-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ with .Params.tags }}
+        <span class="pf-post-month-tags">
+          {{ range first 2 . }}
+          <span class="pf-tech">{{ . }}</span>
+          {{ end }}
+        </span>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</section>
+{{ end }}

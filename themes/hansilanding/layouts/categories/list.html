@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section class="pf-section" style="padding-top:32px">
+  <div class="pf-section-head">
+    <div class="pf-section-hud">
+      <span class="pf-section-progress">
+        <span class="pf-section-progress-label">CATÉGORIES</span>
+        <span class="pf-section-progress-track">
+          <span class="pf-section-progress-fill" style="width:{{ len .Data.Terms }}0%"></span>
+        </span>
+        <span class="pf-section-progress-val">{{ len .Data.Terms }} CATÉGORIES</span>
+      </span>
+    </div>
+    <h2 class="pf-section-title">{{ .Title }}</h2>
+  </div>
+
+  {{ range .Data.Terms.Alphabetical }}
+  <div class="pf-month-group">
+    <h3 class="pf-month-title">
+      <a href="{{ .Page.RelPermalink }}" style="color:inherit;text-decoration:none">{{ .Page.Title }}</a>
+      <span class="pf-version" style="margin-left:10px">{{ len .Pages }}</span>
+    </h3>
+    <ul class="pf-post-month-list">
+      {{ range .Pages.ByDate.Reverse }}
+      <li class="pf-post-month-item">
+        <span class="pf-post-date">{{ .Date.Format "02 Jan 2006" }}</span>
+        <a class="pf-post-month-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ with .Params.tags }}
+        <span class="pf-post-month-tags">
+          {{ range first 2 . }}
+          <span class="pf-tech">{{ . }}</span>
+          {{ end }}
+        </span>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</section>
+{{ end }}

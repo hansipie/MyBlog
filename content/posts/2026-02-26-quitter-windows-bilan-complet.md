@@ -5,6 +5,7 @@ draft = false
 description = "Après 25 ans d'aller-retours, j'ai décidé de quitter Windows pour Linux. Pour de vrai, cette fois. Récit d'un mois de découvertes, de galères, et d'attachement."
 tags = ["Linux", "Souveraineté"]
 categories = ["Linux"]
+preview = "/quitter-windows/banner.png"
 +++
 
 ![](/quitter-windows/banner.png)

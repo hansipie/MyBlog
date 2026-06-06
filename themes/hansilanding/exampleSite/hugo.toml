@@ -1,68 +1,26 @@
-baseURL = "https://blog.ansicode.fr/"
+baseURL = "https://ansicode.fr/"
+languageCode = "fr-FR"
 title = "ansicode"
-languageCode = "fr"
-defaultContentLanguage = "fr"
 theme = "hansilanding"
-summaryLength = 42
-enableEmoji = false
-enableRobotsTXT = true
-disablePathToLower = false
-relativeURLs = false
-uglyURLs = false
-
-[pagination]
-  pagerSize = 9
-
-[permalinks]
-  categories = "/categories/:slug/"
-  tags = "/tags/:slug/"
-
-[menu]
-  [[menu.main]]
-    pageref = "/posts/"
-    name = "Posts"
-    weight = 1
-  [[menu.main]]
-    pageref = "/categories/"
-    name = "Catégories"
-    weight = 2
-  [[menu.main]]
-    pageref = "/tags/"
-    name = "Tags"
-    weight = 3
-  [[menu.main]]
-    pageref = "/about/"
-    name = "À propos"
-    weight = 4
-
-[taxonomies]
-  category = "categories"
-  tag = "tags"
-
-[markup.goldmark.renderer]
-  unsafe = true
-
-[markup.highlight]
-  noClasses = true
-  style = "dracula"
 
 [params]
-  description = " "
+  description = "Portfolio de Hansi PIERRE, ingénieur C/C++, IA appliquée, LLM, open source et modernisation applicative."
   brandName = "ansicode"
   status = "Open to targeted missions"
   region = "France, remote friendly"
-  faviconSmall = "/favicon-32.png"
-  faviconLarge = "/hansi-icon.png"
+  faviconSmall = "/assets/favicon-32.png"
+  faviconLarge = "/assets/hansi-icon.png"
+  appleTouchIcon = "/assets/apple-touch-icon.png"
   footerBio = "Ingénieur C/C++, IA appliquée et modernisation applicative — disponible pour des missions ciblées."
 
   [params.author]
     name = "Hansi PIERRE"
     initials = "HP"
     email = "ansicode@ansicode.fr"
-    photo = "/hansi-profile.png"
     github = "hansipie"
     linkedin = "hansi-pierre-05582b1b2"
     twitter = "ansi__code"
+    photo = "/assets/hansi-profile.png"
     eyebrow = "C/C++ · LLM · Open Source · Modernisation · Product Engineering"
     tagline = "Ingénieur IA appliquée, bas niveau & modernisation logicielle"
     bio = "J'aide les équipes à transformer des systèmes complexes en produits plus fiables, plus lisibles et plus utiles. Mon terrain naturel : C/C++, réseau, diagnostic, modernisation applicative, agents IA, outils développeur et prototypes qui deviennent réellement exploitables."
@@ -71,6 +29,7 @@ uglyURLs = false
     label = "Design inspiré par ankoay.dev"
     url = "https://ankoay.dev/"
 
+  # Liens de navigation (home et blog listing)
   [[params.navLinks]]
     label = "À propos"
     url = "#about"
@@ -85,7 +44,7 @@ uglyURLs = false
     url = "#skills"
   [[params.navLinks]]
     label = "Blog"
-    url = "/posts/"
+    url = "#blog"
   [[params.navLinks]]
     label = "Contact"
     url = "#contact"
@@ -103,8 +62,8 @@ uglyURLs = false
       url = "#contact"
 
     [params.hero.ctaSecondary]
-      label = "Lire le blog"
-      url = "/posts/"
+      label = "Explorer les builds"
+      url = "#projects"
 
     [[params.hero.xp]]
       label = "project"
@@ -142,6 +101,7 @@ uglyURLs = false
       key = "focus"
       val = "ship useful tools"
 
+    # Rings orbitales — ring 2, 3, 4
     [[params.hero.orbit]]
       ring = 2
       [[params.hero.orbit.pods]]
@@ -170,7 +130,7 @@ uglyURLs = false
   # ----- ABOUT -----
   [params.about]
     title = "Un profil senior pour cadrer, challenger et livrer."
-    lead = "Ingénieur avec 17 ans d'expérience sur des systèmes exigeants : C/C++ bas niveau, réseau, LLM appliqués, mobile et modernisation."
+    lead = "Ingénieur avec 17 ans d'expérience sur des systèmes exigeants : C/C++ bas niveau, réseau, LLM appliqués, mobile et modernisation. Trois angles : comment j'interviens, les domaines que je maîtrise, et les projets sur lesquels je travaille."
     progress = 92
     progressLabel = "READY"
     achievement = "Systems thinker"
@@ -259,14 +219,14 @@ uglyURLs = false
   # ----- PROJECTS -----
   [params.projects]
     title = "Projets qui racontent le profil."
-    lead = "Quatre projets concrets : CLI Rust pour LLM, app mobile de calcul mental, recherche inférence distribuée, et modernisation applicative."
+    lead = "Quatre projets concrets : un outil CLI Rust pour réduire les contextes LLM, une app mobile de calcul mental en production, une recherche sur l'inférence distribuée en Rust, et un dossier de modernisation applicative professionnelle."
     progress = 79
     progressLabel = "ACTIVE"
     achievement = "Builder portfolio"
 
     [[params.projects.items]]
       title = "ecotokens"
-      desc = "Outil Rust de réduction de contexte et d'analyse pour workflows LLM. Open source, CLI, recherche de code et économie de tokens."
+      desc = "Outil Rust de réduction de contexte et d'analyse pour workflows LLM. Sujet parfait pour montrer open source, CLI, recherche de code et économie de tokens."
       status = "running"
       statusLabel = "ACTIVE"
       link = "https://github.com/hansipie/ecotokens"
@@ -284,7 +244,7 @@ uglyURLs = false
 
     [[params.projects.items]]
       title = "Papimathic"
-      desc = "Application éducative de calcul mental en React Native / Expo, avec usage réel Play Store."
+      desc = "Application éducative de calcul mental en React Native / Expo, avec usage réel Play Store et boucle marketing, contenu, analytics et monétisation."
       status = "running"
       statusLabel = "RUNNING"
       link = "https://papimathic.ansicode.fr/"
@@ -302,7 +262,7 @@ uglyURLs = false
 
     [[params.projects.items]]
       title = "Mycelium"
-      desc = "Exploration d'un LLM distribué en Rust avec Candle, libp2p et pipeline parallelism."
+      desc = "Exploration d'un LLM distribué en Rust avec Candle, libp2p et pipeline parallelism. Projet de recherche autour de l'inférence distribuée."
       status = "archived"
       statusLabel = "R&D"
       [[params.projects.items.tech]]
@@ -317,7 +277,7 @@ uglyURLs = false
 
     [[params.projects.items]]
       title = "Caps"
-      desc = "Dossier de modernisation applicative : analyse de l'existant, trajectoire technique, réduction du risque."
+      desc = "Dossier de modernisation applicative : analyse de l'existant, trajectoire technique, réduction du risque et traduction des contraintes métier."
       status = "deployed"
       statusLabel = "PRO"
       [[params.projects.items.tech]]
@@ -333,7 +293,7 @@ uglyURLs = false
   # ----- SKILLS -----
   [params.skills]
     title = "Stack regroupée comme un dashboard."
-    lead = "Quatre familles de compétences : systèmes C/C++, IA appliquée, produit mobile, infra et automatisation."
+    lead = "Quatre familles de compétences organisées par domaine : systèmes et bas niveau C/C++, IA appliquée et agents LLM, produit mobile et contenu, infra et automatisation."
     progress = 86
     progressLabel = "ONLINE"
 
@@ -404,30 +364,14 @@ uglyURLs = false
   # ----- BLOG SECTION -----
   [params.blogSection]
     title = "Deux blogs pour documenter, expliquer et attirer."
-    lead = "Blog Ansicode pour les articles techniques (IA, LLM, open source, retours d'expérience) et blog Papimathic pour les contenus pédagogiques autour du calcul mental. Deux audiences distinctes, une même cadence de publication."
+    lead = "Blog Ansicode pour les articles techniques et blog Papimathic pour les contenus pédagogiques."
     progress = 81
     progressLabel = "PUBLISHED"
     achievement = "Long-form builder"
 
     [[params.blogSection.externalBlogs]]
-      title = "Blog Ansicode"
-      desc = "Articles techniques autour de l'IA, du développement logiciel, de l'open source, des LLM et des retours d'expérience de builder."
-      status = "running"
-      statusLabel = "TECH"
-      link = "/"
-      [[params.blogSection.externalBlogs.tech]]
-        label = "IA"
-        color = "#00d4ff"
-      [[params.blogSection.externalBlogs.tech]]
-        label = "Dev"
-        color = "#4f8df2"
-      [[params.blogSection.externalBlogs.tech]]
-        label = "Open source"
-        color = "#a78bfa"
-
-    [[params.blogSection.externalBlogs]]
       title = "Blog Papimathic"
-      desc = "Contenus pédagogiques pour rendre le calcul mental et les tables de multiplication plus accessibles aux enfants, parents et enseignants."
+      desc = "Contenus pédagogiques pour rendre le calcul mental et les tables de multiplication plus accessibles."
       status = "deployed"
       statusLabel = "SEO"
       link = "https://papimathic.ansicode.fr/blog/"
@@ -445,5 +389,5 @@ uglyURLs = false
   [params.contact]
     title = "Disponible pour missions ciblées."
     lead = "Email pour discuter d'une mission ou d'un cadrage rapide, LinkedIn pour un premier échange professionnel."
-    directBody = "Pour discuter d'une mission ou d'une collaboration. L'email reste le point d'entrée le plus direct."
-    followBody = "GitHub pour le code, X pour les updates et les réflexions à chaud."
+    directBody = "Pour discuter d'une mission ou d'une collaboration. L'email reste le point d'entrée le plus direct, LinkedIn pour un premier échange professionnel."
+    followBody = "Projets open source, articles techniques et activité en cours. GitHub pour le code, X pour les updates et les réflexions à chaud."

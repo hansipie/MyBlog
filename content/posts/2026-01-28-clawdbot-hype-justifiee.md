@@ -5,6 +5,7 @@ draft = false
 description = "Analyse critique de Clawdbot, l'assistant IA qui affole la tech, et pourquoi Claude Code pourrait suffire"
 tags = ["IA", "Claude", "Productivité"]
 categories = ["IA"]
+preview = "/clawdvsclaude.png"
 +++
 
 ## L'assistant IA qui affole la tech

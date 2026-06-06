@@ -1,0 +1,68 @@
+{{- $c := .Site.Params.contact | default dict -}}
+{{- $p := .Site.Params -}}
+<section class="pf-section" id="contact">
+  <div class="pf-section-head">
+    <div class="pf-section-hud">
+      <span class="pf-section-progress">
+        <span class="pf-section-progress-label">06 / CONTACT</span>
+        <span class="pf-section-progress-track">
+          <span class="pf-section-progress-fill" style="width: 100%"></span>
+        </span>
+        <span class="pf-section-progress-val">READY</span>
+      </span>
+    </div>
+    <h2 class="pf-section-title">{{ $c.title | default "Contact" }}</h2>
+    <p class="pf-section-lead">{{ $c.lead }}</p>
+  </div>
+
+  <div class="pf-contact">
+    <article class="pf-card">
+      <div class="pf-card-head"><span class="pf-text-accent">→</span><h3>Contact direct</h3></div>
+      <p class="pf-card-body">{{ $c.directBody | default "Email et LinkedIn pour discuter d'une mission ou d'une collaboration." }}</p>
+      <div class="pf-social-grid" aria-label="Canaux de contact directs">
+        {{ with $p.author.email }}
+        <a class="pf-social-link" href="mailto:{{ . }}">
+          <span class="pf-social-name"><span class="pf-social-icon">@</span>Email</span>
+          <span class="pf-social-handle">{{ . }}</span>
+        </a>
+        {{ end }}
+        {{ with $p.author.linkedin }}
+        <a class="pf-social-link" href="https://www.linkedin.com/in/{{ . }}" target="_blank" rel="noreferrer">
+          <span class="pf-social-name">
+            <span class="pf-social-icon">
+              <svg width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#ico-linkedin"/></svg>
+            </span>LinkedIn
+          </span>
+          <span class="pf-social-handle">{{ . }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </article>
+
+    <article class="pf-card">
+      <div class="pf-card-head"><span class="pf-text-accent">~</span><h3>Suivre les builds</h3></div>
+      <p class="pf-card-body">{{ $c.followBody | default "GitHub pour le code, X pour les updates et les réflexions à chaud." }}</p>
+      <div class="pf-social-grid" aria-label="Réseaux de veille">
+        {{ with $p.author.github }}
+        <a class="pf-social-link" href="https://github.com/{{ . }}" target="_blank" rel="noreferrer">
+          <span class="pf-social-name">
+            <span class="pf-social-icon"><svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="#ico-github"/></svg></span>
+            GitHub
+          </span>
+          <span class="pf-social-handle">{{ . }}</span>
+        </a>
+        {{ end }}
+        {{ with $p.author.twitter }}
+        <a class="pf-social-link" href="https://x.com/{{ . }}" target="_blank" rel="noreferrer">
+          <span class="pf-social-name">
+            <span class="pf-social-icon">
+              <svg width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#ico-x"/></svg>
+            </span>X
+          </span>
+          <span class="pf-social-handle">@{{ . }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </article>
+  </div>
+</section>
