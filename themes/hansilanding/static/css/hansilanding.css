@@ -248,6 +248,66 @@ body.pf-body #root {
 }
 .pf-theme-toggle:hover { color: var(--pf-accent); border-color: var(--pf-accent); }
 
+/* Burger button (mobile only) */
+.pf-burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 34px; height: 34px;
+  padding: 8px 7px;
+  background: transparent;
+  border: 1px solid var(--pf-border);
+  border-radius: var(--pf-radius-sm);
+  cursor: pointer;
+  color: var(--pf-text-muted);
+  transition: color 0.2s, border-color 0.2s;
+  box-sizing: border-box;
+}
+@media (min-width: 900px) { .pf-burger { display: none; } }
+.pf-burger span {
+  display: block;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.2s;
+  transform-origin: center;
+}
+.pf-burger:hover { color: var(--pf-accent); border-color: var(--pf-accent); }
+.pf-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.pf-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.pf-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Mobile dropdown menu */
+.pf-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 56px;
+  left: 0; right: 0;
+  z-index: 49;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px 14px;
+  background: #07091af0;
+  border-bottom: 1px solid var(--pf-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+:root[data-theme="light"] .pf-mobile-menu { background: #f5f7fff0; }
+.pf-mobile-menu.pf-mobile-menu-open { display: flex; }
+@media (min-width: 900px) { .pf-mobile-menu { display: none !important; } }
+
+.pf-mobile-menu-link {
+  display: block;
+  padding: 10px 14px;
+  color: var(--pf-text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: var(--pf-radius-sm);
+  transition: color 0.15s, background 0.15s;
+}
+.pf-mobile-menu-link:hover { color: var(--pf-accent); background: #00d4ff14; }
+.pf-mobile-menu-link.pf-nav-link-active { color: var(--pf-accent); }
+
 /* ============================================================
    Section layout
    ============================================================ */
