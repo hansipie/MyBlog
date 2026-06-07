@@ -21,6 +21,15 @@
 
     <div class="pf-nav-actions">
       <button class="pf-theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Thème">◐</button>
+      <button class="pf-burger" id="mobileMenuBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<div class="pf-mobile-menu" id="mobileMenu" aria-hidden="true">
+  {{ range .Site.Menus.main }}
+  <a class="pf-mobile-menu-link{{ if or ($currentPage.IsMenuCurrent .Menu .) ($currentPage.HasMenuCurrent .Menu .) }} pf-nav-link-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+  {{ end }}
+</div>
