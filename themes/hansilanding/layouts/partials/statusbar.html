@@ -38,7 +38,8 @@
   </div>
 </aside>
 
-{{/* Chat widget */}}
+{{/* Chat widget — visible uniquement sur la page À propos */}}
+{{ if eq .Type "about" }}
 <button class="pf-chat-bubble" id="chatToggle" type="button" aria-controls="chatWidget" aria-expanded="false" aria-label="Ouvrir l'assistant">
   <span class="pf-chat-bubble-avatar">
     {{ with $p.author.photo }}
@@ -76,3 +77,4 @@
     <button type="submit">send</button>
   </form>
 </article>
+{{ end }}
