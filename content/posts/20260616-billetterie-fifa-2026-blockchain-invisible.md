@@ -1,5 +1,5 @@
 +++
-title = "Billetterie FIFA 2026, la blockchain invisible qui pourrait réconcilier fans et organisateurs"
+title = "Billetterie FIFA 2026, la blockchain invisible"
 date = 2026-06-16T12:16:00+02:00
 draft = false
 description = "La FIFA expérimente la blockchain pour certains droits liés aux billets 2026. Un cas concret de technologie invisible, utile aux fans et aux organisateurs."
