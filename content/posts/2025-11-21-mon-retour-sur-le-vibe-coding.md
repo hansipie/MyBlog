@@ -32,7 +32,7 @@ Le premier jour a été une révélation. Malgré ma totale méconnaissance de R
 
 - **Structure CLI** : Initialisation du projet et gestion des arguments en ligne de commande
 - **Protocoles de base** : Connexion et transfert de fichiers via FTP et SFTP
-- **Confort immédiat** : Intégration de `rustyline` pour l'historique des commandes et l'auto-complétion, et `owo-colors` pour un terminal coloré
+- **Confort immédiat** : intégration de `rustyline` pour l'historique des commandes et l'auto-complétion, avec `owo-colors` pour un terminal coloré
 
 ### Le rôle crucial de l'IA
 
@@ -70,7 +70,7 @@ Une fois le MVP en place, le rythme s'est accéléré de manière spectaculaire.
 
 ### La magie de l'IA pour les features isolées
 
-Ces ajouts se sont faits avec une fluidité remarquable. L'IA excellait dans la génération de code Rust idiomatique pour des fonctionnalités bien délimitées. Je formulais une demande ("Ajoute une commande pour gérer les bookmarks avec sauvegarde sur disque"), et quelques minutes plus tard, j'avais du code fonctionnel.
+Ces ajouts se sont faits avec une fluidité remarquable. L'IA excellait dans la génération de code Rust idiomatique pour des fonctionnalités bien délimitées. Je formulais une demande ("Ajoute une commande pour gérer les bookmarks avec sauvegarde sur disque") et quelques minutes plus tard, j'avais du code fonctionnel.
 
 ## Jours 5-7 : La stabilisation et... les limites de l'IA
 

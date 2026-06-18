@@ -10,11 +10,11 @@ preview = "/20260608-secrets-hermes-bitwarden/01-env-vs-bitwarden.png"
 
 Les agents IA locaux donnent une impression de simplicité trompeuse. On installe un harness, on ajoute deux ou trois clés API, puis l'agent commence à coder, chercher sur le web, envoyer des messages, appeler des modèles et piloter des outils. Le problème, c'est que chaque nouvelle capacité ajoute souvent un nouveau secret : une clé OpenRouter, un token GitHub, un mot de passe SMTP, un jeton Telegram, un token MCP, une clé ElevenLabs, un identifiant Notion, parfois même des accès d'infrastructure.
 
-Au début, tout finit dans un fichier `.env`. Puis dans un autre. Puis dans `config.yaml`. Puis dans une note copiée au mauvais endroit. Ce n'est pas seulement désordonné, c'est dangereux.
+Au début, tout finit dans un fichier `.env`. Puis dans un autre. Puis dans `config.yaml`. Puis dans une note copiée au mauvais endroit. Le désordre devient vite un risque de sécurité.
 
 La bonne approche consiste à traiter les agents IA comme n'importe quel autre système logiciel qui manipule des credentials sensibles : les secrets doivent être centralisés, chiffrés, rotatifs, audités et injectés uniquement au moment où le processus en a besoin.
 
-Dans cet article, on prend un cas concret : Hermes Agent, un harness d'agent IA local, et Bitwarden Secrets Manager, la brique Bitwarden dédiée aux secrets techniques.
+Dans cet article, on prend un cas concret avec Hermes Agent, un harness d'agent IA local et Bitwarden Secrets Manager, la brique Bitwarden dédiée aux secrets techniques.
 
 ## Pourquoi les agents IA aggravent le problème des secrets
 
@@ -93,7 +93,7 @@ Le schéma mental est le suivant :
 5. les secrets sont injectés dans l'environnement du processus ;
 6. l'agent fonctionne sans stocker toutes les clés en clair dans ses fichiers.
 
-Ce n'est pas magique. Si le token du machine account fuit, les secrets du projet sont exposés. Mais le modèle réduit fortement la surface d'exposition : au lieu d'avoir des secrets partout, vous avez un point d'entrée contrôlé, révocable et limité.
+Le modèle ne supprime pas le risque. Si le token du machine account fuit, les secrets du projet sont exposés. Mais il réduit fortement la surface d'exposition. Au lieu d'avoir des secrets partout, vous avez un point d'entrée contrôlé, révocable et limité.
 
 ## Mise en place avec Hermes et Bitwarden
 
@@ -221,7 +221,7 @@ Le bon niveau de maturité est le suivant :
 - pour un usage d'équipe, chaque agent ou environnement reçoit son propre périmètre ;
 - pour la production, les tokens sont minimisés, surveillés, rotatifs et audités.
 
-Hermes va dans le bon sens en proposant une intégration explicite avec Bitwarden. C'est exactement le type de fonctionnalité dont les harnesses d'agents ont besoin : moins de magie, plus de contrôle, et une meilleure hygiène par défaut.
+Hermes va dans le bon sens en proposant une intégration explicite avec Bitwarden. C'est exactement le type de fonctionnalité dont les harnesses d'agents ont besoin, avec moins de magie, plus de contrôle et une meilleure hygiène par défaut.
 
 ## Conclusion
 
@@ -229,7 +229,7 @@ Les agents IA locaux ne sont plus de simples scripts. Ce sont des orchestrateurs
 
 Bitwarden Secrets Manager apporte une réponse pragmatique : centraliser les secrets, limiter les accès par projet, utiliser des machine accounts, injecter les variables au runtime et rendre la rotation supportable.
 
-Avec Hermes, cette approche devient accessible sans construire toute une infrastructure Vault. Ce n'est pas une excuse pour négliger les permissions, les logs ou les quotas, mais c'est une base saine.
+Avec Hermes, cette approche devient accessible sans construire toute une infrastructure Vault. Elle ne dispense pas de gérer les permissions, les logs ou les quotas, mais elle donne une base saine.
 
-La règle simple : un harness d'agent ne devrait pas être un album photo de vos clés API. Il devrait savoir où les demander, quand les utiliser, et comment fonctionner sans les exposer inutilement.
+La règle simple tient en une phrase. Un harness d'agent ne devrait pas être un album photo de vos clés API. Il devrait savoir où les demander, quand les utiliser et comment fonctionner sans les exposer inutilement.
 

@@ -74,7 +74,7 @@ Pour comprendre pourquoi la France a réussi là où d'autres ont échoué, il f
 
 En 2003, la ville lance **LiMux**, projet de migration de ses 15 000 postes vers Linux. Le projet est techniquement fonctionnel. Et pourtant, en **2017**, le conseil municipal vote le retour à Windows 10.
 
-Les raisons : un manque de continuité politique, des pressions des éditeurs propriétaires, et surtout une initiative locale isolée, sans soutien institutionnel fort. LiMux était un projet de mairie. GendBuntu est une doctrine d'État.
+Les raisons tiennent à un manque de continuité politique, à des pressions des éditeurs propriétaires et surtout à une initiative locale isolée, sans soutien institutionnel fort. LiMux était un projet de mairie. GendBuntu est une doctrine d'État.
 
 La différence est fondamentale.
 
@@ -100,13 +100,13 @@ Les commandes cloud de l'État ont atteint **84 millions d'euros en 2025** (+62 
 
 ![](/france-linux/francelinux0.png)
 
-Le **8 avril 2026**, la DINUM franchit une nouvelle étape. Elle annonce officiellement l'abandon de Windows au profit de Linux pour ses propres agents, et publie deux projets open source qui concrétisent cette ambition.
+Le **8 avril 2026**, la DINUM franchit une nouvelle étape. Elle annonce officiellement l'abandon de Windows au profit de Linux pour ses propres agents et publie deux projets open source qui concrétisent cette ambition.
 
 **Sécurix** est une configuration durcie de NixOS, développée avec le soutien de l'ANSSI. Pas un fork, pas une distribution traditionnelle : un socle déclaratif (Infrastructure-as-Code) qui applique les recommandations de sécurité les plus exigeantes de l'agence. Authentification par clés matérielles FIDO2, Secure Boot, chiffrement TPM2 : la sécurité est construite dans la configuration, pas rajoutée après coup. Le code est publié sous licence MIT sur GitHub (`cloud-gouv/securix`).
 
 **Bureautix** s'appuie sur Sécurix pour délivrer un environnement utilisateur complet, prêt à l'emploi pour un poste de travail bureautique. Il remplace également la dépendance à Active Directory de Microsoft par une gestion de configuration via Git.
 
-Le déploiement immédiat concerne les **250 agents de la DINUM**. Mais l'horizon est plus large : la CNAM engage la migration de ses **80 000 agents** vers LaSuite Numérique, et la fonction publique française compte plus de **2 millions d'agents** au total. Chaque ministère devra présenter son plan de réduction des dépendances à l'automne 2026.
+Le déploiement immédiat concerne les **250 agents de la DINUM**. Mais l'horizon est plus large : la CNAM engage la migration de ses **80 000 agents** vers LaSuite Numérique et la fonction publique française compte plus de **2 millions d'agents** au total. Chaque ministère devra présenter son plan de réduction des dépendances à l'automne 2026.
 
 ---
 

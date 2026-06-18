@@ -11,7 +11,7 @@ preview = "/quitter-windows/banner.png"
 ![](/quitter-windows/banner.png)
 Après 25 ans d'aller-retours, j'ai décidé de quitter Windows pour Linux. Pour de vrai, cette fois.
 
-Ce qui devait être un "on verra bien" s'est transformé en un mois de découvertes, de galères, et finalement — d'attachement. Voici le récit complet.
+Ce qui devait être un "on verra bien" s'est transformé en un mois de découvertes, de galères et finalement — d'attachement. Voici le récit complet.
 
 ━━━━━━━━━━━━━━━━━━━━━━
 
@@ -108,7 +108,7 @@ J'avais planifié ma migration en trois phases. Pas par hasard — c'est la seul
 
 *Étape 1 — Dual boot avec partition NTFS partagée*
 
-Documents, dossiers perso, bibliothèque de jeux : tout sur une partition accessible depuis les deux systèmes. En théorie, c'est élégant. En pratique, deux agacements récurrents : Windows scannait la partition à chaque démarrage, et certains fichiers de jeux développaient de petites incompatibilités qui forçaient des re-téléchargements. Pas bloquant. Mais irritant.
+Documents, dossiers perso, bibliothèque de jeux : tout sur une partition accessible depuis les deux systèmes. En théorie, c'est élégant. En pratique, deux agacements récurrents : Windows scannait la partition à chaque démarrage, et certains fichiers de jeux développaient de petites incompatibilités qui forçaient des re-téléchargements. Pas bloquant, mais irritant.
 
 *Étape 2 — Dual boot sans partition partagée (situation actuelle)*
 
@@ -142,7 +142,7 @@ La migration était une réussite bien avant d'atteindre l'étape 3. 🐧
 
 ━━━━━━━━━━━━━━━━━━━━━━
 
-## Post-scriptum 2 — La distro, et pourquoi ça n'a presque pas d'importance
+## Post-scriptum 2 — La distro et pourquoi ça n'a presque pas d'importance
 
 ![](/quitter-windows/ps2.png)
 

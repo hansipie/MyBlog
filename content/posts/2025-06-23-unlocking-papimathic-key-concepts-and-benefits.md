@@ -17,16 +17,16 @@ categories:
 
 🧠 **Le calcul mental, une compétence essentielle… et en déclin !** 🧠
 
-Aujourd’hui, l’importance du calcul mental va bien au-delà des mathématiques scolaires : il renforce la **confiance en soi**, la **concentration**, la **rapidité de raisonnement** et prépare efficacement les cerveaux à de nombreux défis cognitifs .  
+Aujourd’hui, l’importance du calcul mental va bien au-delà des mathématiques scolaires. Il renforce la **confiance en soi**, la **concentration**, la **rapidité de raisonnement** et prépare efficacement les cerveaux à de nombreux défis cognitifs.
 Pourtant, plusieurs études et rapports d’enseignants alertent : les compétences en calcul mental décroissent de façon inquiétante, faute de pratique régulière et d’apprentissage des tables.
 
 ---
 
-## 🎉 Découvrez **Papimathic** : le coup de boost ludique du calcul mental
+## 🎉 Découvrez **Papimathic**, le coup de boost ludique du calcul mental
 
 ![Papimathic](/papimathic-banner.png)
 
-**Papimathic** est une application mobile conçue pour redonner aux enfants (et à leurs parents) le goût du calcul mental, avec :
+**Papimathic** est une application mobile conçue pour redonner aux enfants (et à leurs parents) le goût du calcul mental, avec plusieurs atouts.
 
 - ✅ Pratique des **4 opérations fondamentales** (addition, soustraction, multiplication, division)
 - 🌟 **Feedback instantané** : seconde chance, étoiles, animations motivantes

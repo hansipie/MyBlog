@@ -16,7 +16,7 @@ categories:
 ![](/bannerbazziteandro.png)
 ## Le point de départ : un besoin simple, une envie d'évolution
 
-J'avais besoin de développer pour Android. Rien d'extraordinaire, une tâche que j'ai réalisée des centaines de fois sous Windows. Installer Android Studio, créer un émulateur, lancer l'application, et voilà. Un processus rodé, fluide, presque ennuyeux de simplicité.
+J'avais besoin de développer pour Android. Rien d'extraordinaire, une tâche que j'ai réalisée des centaines de fois sous Windows. Installer Android Studio, créer un émulateur, lancer l'application et voilà. Un processus rodé, fluide, presque ennuyeux de simplicité.
 
 Mais voilà, j'étais en pleine migration vers Linux. Après des années sous Windows, j'avais décidé de franchir le pas et de basculer sur Bazzite, une distribution Linux "atomique" basée sur Fedora. Le genre de distribution moderne qui promet stabilité et fiabilité grâce à un système de fichiers racine en lecture seule.
 
@@ -113,7 +113,7 @@ La solution était là, dans la documentation de Distrobox : `distrobox-host-exe
 └─────────────────────────────────────────────────────────────┘
 ```
 
-Android Studio reste dans le conteneur, où il est facile à maintenir et à configurer. Mais l'émulateur, lui, tourne sur l'hôte avec accès direct au GPU, à KVM, et à l'affichage.
+Android Studio reste dans le conteneur, où il est facile à maintenir et à configurer. Mais l'émulateur, lui, tourne sur l'hôte avec accès direct au GPU, à KVM et à l'affichage.
 
 ### Le script magique
 

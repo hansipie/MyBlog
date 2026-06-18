@@ -36,7 +36,7 @@ La FIFA vend donc des billets tout en expérimentant une couche de droits numér
 
 ![Processus de transformation d'un droit RTB ou RTT en billet de match via un contrat intelligent.](/20260616-fifa-blockchain-2026/03-rtb-rtt-droit-vers-billet.png)
 
-L'une des briques les plus intéressantes concerne les droits liés aux billets, notamment RTB, pour Right to Buy, et RTT, pour Right-to-Ticket, mis en avant par FIFA Collect.
+L'une des briques les plus intéressantes concerne les droits liés aux billets, notamment RTB, pour Right to Buy et RTT, pour Right-to-Ticket, mis en avant par FIFA Collect.
 
 L'idée générale tient en peu de mots. Un fan peut détenir un actif numérique qui lui donne un droit lié à un futur billet. Ce droit peut être attaché à un match, à une équipe ou à une condition. Par exemple, un droit peut devenir intéressant si une équipe atteint un certain stade de la compétition.
 
@@ -58,7 +58,7 @@ Le bénéfice devient beaucoup plus concret, réduire l'incertitude.
 
 Acheter un billet pour un grand événement sportif est souvent anxiogène. Est-ce le bon site ? Le billet est-il vrai ? Le vendeur a-t-il déjà revendu la même place ? Le prix est-il délirant ? Le QR code fonctionnera-t-il à l'entrée ?
 
-Une billetterie numérique contrôlée, couplée à une infrastructure traçable, peut améliorer plusieurs points:
+Une billetterie numérique contrôlée, couplée à une infrastructure traçable, peut améliorer plusieurs points.
 
 - authenticité du billet ou du droit associé,
 - historique de possession plus clair,
@@ -88,7 +88,7 @@ Avec une couche numérique programmable, la FIFA peut reprendre la main sur plus
 
 Le modèle devient alors gagnant-gagnant. Le supporter obtient plus de sécurité et moins de risque de contrefaçon. L'organisateur récupère du contrôle, de la donnée et une partie de la valeur du marché secondaire.
 
-On peut critiquer cette centralisation, et il faut le faire. Mais économiquement, elle est cohérente. Ici, la blockchain rend un marché contrôlé plus traçable et plus automatisable.
+Il faut critiquer cette centralisation. Mais économiquement, elle est cohérente. Ici, la blockchain rend un marché contrôlé plus traçable et plus automatisable.
 
 Cette différence avec l'imaginaire crypto classique mérite d'être soulignée. Le système fonctionne comme un hybride, avec une infrastructure blockchain, une expérience centralisée et des règles fortes imposées par l'organisateur.
 

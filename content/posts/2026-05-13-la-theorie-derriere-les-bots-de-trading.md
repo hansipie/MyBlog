@@ -21,7 +21,7 @@ Un bot de trading, c'est un programme qui automatise une décision d'investissem
 
 **La source de données.** Le bot a besoin de savoir ce qui se passe sur le marché : prix, volumes, carnet d'ordres. Ces données arrivent via une API d'exchange (Binance, Kraken, Interactive Brokers) ou un fournisseur spécialisé. Sans données fiables et récentes, tout le reste est construit sur du sable.
 
-**La stratégie.** C'est le cerveau du bot. La logique qui répond à trois questions : quand acheter, quand vendre, combien. C'est là que se joue l'essentiel, et c'est là que la plupart des gens passent trop ou pas assez de temps.
+**La stratégie.** C'est le cerveau du bot. La logique répond à trois questions, quand acheter, quand vendre et combien. C'est là que se joue l'essentiel, et c'est là que la plupart des gens passent trop ou pas assez de temps.
 
 **La gestion du risque.** L'étape que les débutants négligent systématiquement. Un bot sans gestion du risque finit par tout perdre, même avec une bonne stratégie. Stop-loss, taille de position, exposition maximale, drawdown limite : autant de garde-fous qui séparent un bot amateur d'un bot sérieux.
 
@@ -43,7 +43,7 @@ Il n'existe pas une bonne stratégie universelle. Il en existe plusieurs famille
 
 Hypothèse : un prix qui monte a tendance à continuer de monter. On achète quand une tendance s'installe, on vend quand elle s'inverse. Les indicateurs classiques sont les moyennes mobiles croisées, le MACD, ou les stratégies de breakout comme la méthode Donchian.
 
-La stratégie des "Turtle Traders", popularisée par Richard Dennis en 1983, en est un exemple célèbre. Le Système 1 : acheter quand le prix dépasse son plus-haut des 20 derniers jours, vendre quand il passe sous son plus-bas des 10 derniers. Le Système 2, à plus long terme : entrée sur un plus-haut de 55 jours, sortie sur un plus-bas de 20 jours. Dans les deux cas, chaque trade était protégé par un stop fixe à 2N (deux fois la volatilité quotidienne moyenne). Peu de paramètres, des règles claires, et des traders amateurs transformés en professionnels rentables : les Turtles ont généré environ 175 millions de dollars de profits en cinq ans.
+La stratégie des "Turtle Traders", popularisée par Richard Dennis en 1983, en est un exemple célèbre. Le Système 1 consiste à acheter quand le prix dépasse son plus-haut des 20 derniers jours, puis à vendre quand il passe sous son plus-bas des 10 derniers. Le Système 2, à plus long terme, entre sur un plus-haut de 55 jours et sort sur un plus-bas de 20 jours. Dans les deux cas, chaque trade était protégé par un stop fixe à 2N, soit deux fois la volatilité quotidienne moyenne. Peu de paramètres, des règles claires et des traders amateurs transformés en professionnels rentables. Les Turtles ont généré environ 175 millions de dollars de profits en cinq ans.
 
 Force de cette approche : elle capture les grandes tendances, avec des gains potentiellement importants. Faiblesse : elle souffre en marché sans direction, avec beaucoup de faux signaux et une tendance à rentrer tard et sortir tard.
 
@@ -57,9 +57,9 @@ Cette approche produit beaucoup de petits gains en marché calme. Mais elle est 
 
 Hypothèse : le même actif doit avoir le même prix partout. Si une divergence apparaît, on l'exploite. Mais toutes les formes d'arbitrage ne se ressemblent pas.
 
-L'**arbitrage pur** (spatial ou triangulaire) exploite des écarts de prix immédiats entre marchés. En théorie sans risque directionnel, en pratique inaccessible : les marges sont minuscules, la vitesse est absolue, et ces opportunités sont chassées par des firmes HFT en quelques microsecondes grâce à des serveurs co-localisés. Pour un particulier, oubliez.
+L'**arbitrage pur** (spatial ou triangulaire) exploite des écarts de prix immédiats entre marchés. En théorie, il évite le risque directionnel. En pratique, il reste inaccessible. Les marges sont minuscules, la vitesse est absolue et ces opportunités sont chassées par des firmes HFT en quelques microsecondes grâce à des serveurs co-localisés. Pour un particulier, oubliez.
 
-L'**arbitrage statistique** (pair trading) est différent : on parie que deux actifs historiquement corrélés qui divergent temporairement vont finir par se rapprocher. Ce type de stratégie peut s'étendre sur des heures ou des jours, ne nécessite pas d'infrastructure HFT, et reste un domaine actif pour les quants individuels. Le risque principal : la corrélation peut se briser définitivement.
+L'**arbitrage statistique** (pair trading) fonctionne autrement. On parie que deux actifs historiquement corrélés qui divergent temporairement vont finir par se rapprocher. Ce type de stratégie peut s'étendre sur des heures ou des jours, ne nécessite pas d'infrastructure HFT et reste un domaine actif pour les quants individuels. Le risque principal tient à la corrélation, qui peut se briser définitivement.
 
 ### Le market making
 
@@ -69,7 +69,7 @@ Le market maker fournit de la liquidité : il pose simultanément un ordre d'ach
 
 Le momentum se décline en deux variantes. Le **momentum cross-sectionnel** consiste à classer un panier d'actifs par performance récente, acheter les meilleurs, vendre les moins bons : une stratégie académiquement documentée depuis Jegadeesh et Titman (*Returns to Buying Winners and Selling Losers*, Journal of Finance, 1993), qui a historiquement fonctionné sur la plupart des classes d'actifs. Le **momentum de série temporelle** évalue la performance absolue d'un actif par rapport à son propre historique : des recherches académiques récentes montrent qu'il est souvent supérieur au momentum cross-sectionnel en termes de rendement ajusté au risque.
 
-Quant au machine learning appliqué au trading, la réalité est décevante : une grande majorité des projets échouent en live. Les marchés sont non-stationnaires, ce qui marchait hier peut ne plus marcher demain, et les modèles apprennent le bruit historique plutôt que les vrais signaux. À réserver à ceux qui maîtrisent vraiment la statistique.
+Quant au machine learning appliqué au trading, la réalité est décevante. Une grande majorité des projets échouent en live. Les marchés sont non-stationnaires, ce qui marchait hier peut ne plus marcher demain, et les modèles apprennent le bruit historique plutôt que les vrais signaux. À réserver à ceux qui maîtrisent vraiment la statistique.
 
 ## La règle d'or : la simplicité gagne
 
@@ -88,7 +88,7 @@ Si vous avez besoin de plus de quatre lignes pour décrire votre stratégie, ell
 
 Une stratégie à deux paramètres qui fait +15% par an sur 20 ans avec un drawdown maximum de 25% est infiniment plus crédible qu'une stratégie à douze paramètres qui affiche +40% par an avec 8% de drawdown sur les mêmes données. La première a probablement capté un phénomène réel. La seconde a probablement appris le bruit.
 
-Le bon test mental : est-ce que la stratégie fonctionne sur cinq années différentes, sur cinq marchés différents ? Si elle ne marche que sur Bitcoin entre 2020 et 2021, ce n'est pas une stratégie, c'est un souvenir.
+Le bon test mental tient en une question. Est-ce que la stratégie fonctionne sur cinq années différentes, sur cinq marchés différents ? Si elle ne marche que sur Bitcoin entre 2020 et 2021, elle décrit surtout une période exceptionnelle.
 
 ## Le backtest : nécessaire et traître
 
@@ -137,7 +137,7 @@ Sur le plan technique, un bot bien conçu est modulaire. Chaque brique est indé
 
 Le **data feed** reçoit les prix en temps réel via WebSocket et les données historiques via REST. Il normalise tout dans un format interne unique, peu importe la source.
 
-Le **storage** a deux niveaux : un cache en mémoire (Redis ou simple dictionnaire Python) pour l'état courant accessible en microsecondes, et une base de données (PostgreSQL, TimescaleDB) pour l'historique des trades et les performances.
+Le **storage** a deux niveaux, avec un cache en mémoire (Redis ou simple dictionnaire Python) pour l'état courant accessible en microsecondes et une base de données (PostgreSQL, TimescaleDB) pour l'historique des trades et les performances.
 
 Le **strategy engine** consomme les données, calcule les indicateurs, émet des signaux BUY, SELL ou HOLD. Il est conçu comme une fonction pure : données en entrée, signal en sortie. Ça permet de le tester facilement et de changer de stratégie sans toucher au reste.
 
@@ -158,13 +158,13 @@ Trois principes d'architecture à ne jamais oublier :
 
 ![](/trading-bot-banner-5-realite.png)
 
-La majorité des bots amateurs perdent de l'argent. Les marchés sont efficaces, les frais grignotent les marges, et ce qui marche en backtest échoue souvent en live.
+La majorité des bots amateurs perdent de l'argent. Les marchés sont efficaces, les frais grignotent les marges et ce qui marche en backtest échoue souvent en live.
 
 Les bots qui gagnent vraiment sont soit très simples et bien gérés en risque, soit développés par des firmes professionnelles avec une infrastructure et des données hors de portée du particulier. Le trading haute fréquence, l'arbitrage pur, le market making professionnel : ce sont des jeux d'équipes avec des serveurs co-localisés dans les datacenters des exchanges, pas des projets de week-end.
 
-Ce qui reste accessible : des stratégies swing trading sur des horizons de quelques heures à quelques jours, avec peu de paramètres, une gestion du risque rigoureuse, et beaucoup d'humilité face au backtest.
+Ce qui reste accessible tient plutôt aux stratégies swing trading sur des horizons de quelques heures à quelques jours, avec peu de paramètres, une gestion du risque rigoureuse et beaucoup d'humilité face au backtest.
 
-La bonne question à se poser avant de déployer un euro n'est pas "est-ce que mon backtest est beau ?", mais "est-ce que je comprends pourquoi cette stratégie gagne, et est-ce que ce mécanisme a des chances d'exister encore dans six mois ?"
+La bonne question à se poser avant de déployer un euro n'est pas "est-ce que mon backtest est beau ?", mais "est-ce que je comprends pourquoi cette stratégie gagne et est-ce que ce mécanisme a des chances d'exister encore dans six mois ?"
 
 Si vous ne pouvez pas répondre à cette question clairement, le backtest ne compte pas.
 

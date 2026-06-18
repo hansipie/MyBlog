@@ -12,7 +12,7 @@ categories:
 preview: /claude-code-obsidian/chapitre-2.png
 ---
 
-Il y a un paradoxe au cœur de tout système "second cerveau" : on passe des heures à capturer, organiser, lier des notes, et pourtant l'IA reste à l'extérieur. ChatGPT ne sait pas ce que tu as noté le mois dernier. Claude.ai non plus. Tu dois tout réexpliquer à chaque conversation, comme si tu parlais à quelqu'un qui perd la mémoire entre chaque échange.
+Il y a un paradoxe au cœur de tout système "second cerveau". On passe des heures à capturer, organiser, lier des notes, et pourtant l'IA reste à l'extérieur. ChatGPT ne sait pas ce que tu as noté le mois dernier. Claude.ai non plus. Tu dois tout réexpliquer à chaque conversation, comme si tu parlais à quelqu'un qui perd la mémoire entre chaque échange.
 
 J'utilise Obsidian et Claude Code depuis plusieurs mois. Ce qui a changé ma façon de travailler, c'est de les avoir connectés. Pas via un plugin, pas via une interface graphique, mais directement par le terminal, dans mon vault.
 
@@ -34,7 +34,7 @@ Le résultat : tu passes ton temps à réexpliquer. À chaque nouvelle conversat
 
 ![](/claude-code-obsidian/chapitre-2.png)
 
-Claude Code, c'est Claude accessible depuis le terminal, avec accès direct au système de fichiers. La différence fondamentale avec "chatter avec une IA" : Claude peut lire, créer et modifier des fichiers. Il peut naviguer dans ta structure de dossiers, comprendre l'organisation de ton vault, et agir dessus.
+Claude Code, c'est Claude accessible depuis le terminal, avec accès direct au système de fichiers. La différence fondamentale avec "chatter avec une IA" tient à sa capacité d'action. Claude peut lire, créer et modifier des fichiers. Il peut naviguer dans ta structure de dossiers, comprendre l'organisation de ton vault et agir dessus.
 
 Mais l'accès aux fichiers seul ne suffit pas. Ce qui fait vraiment la différence, c'est la capacité à **contextualiser**, à dire à Claude ce qu'il a besoin de savoir sur ton système, une fois pour toutes.
 
@@ -53,7 +53,7 @@ C'est la pièce maîtresse. Un fichier Markdown placé à la racine du vault, lu
 - Les workflows récurrents
 - Les règles de style (pour les articles, les notes, etc.)
 
-Exemple concret : dans mon `CLAUDE.md`, j'ai documenté qu'un side project suit un workflow de promotion spécifique avec un fichier dashboard central. Maintenant, quand je demande à Claude de m'aider sur ce projet, il sait où regarder, ce que je veux accomplir, et comment je travaille. Je n'explique plus. Je demande.
+Exemple concret. Dans mon `CLAUDE.md`, j'ai documenté qu'un side project suit un workflow de promotion spécifique avec un fichier dashboard central. Maintenant, quand je demande à Claude de m'aider sur ce projet, il sait où regarder, ce que je veux accomplir et comment je travaille. Je n'explique plus. Je demande.
 
 ### Les skills : automatiser l'action répétitive
 
@@ -83,7 +83,7 @@ Autre exemple concret : l'open data public français. [data.gouv.fr](https://www
 
 ![](/claude-code-obsidian/chapitre-4.png)
 
-**Gérer un projet avec un seul point d'entrée.** J'ai un dashboard Obsidian pour un side project : une page avec les priorités, l'état du déploiement, les prochaines étapes. Claude connaît ce fichier, connaît les conventions du projet. Quand j'arrive le matin et que je veux avancer, je dis simplement "qu'est-ce que je devrais faire aujourd'hui sur ce projet ?". Il lit le dashboard, comprend le contexte, et propose. Je n'ai pas réexpliqué le projet depuis des semaines.
+**Gérer un projet avec un seul point d'entrée.** J'ai un dashboard Obsidian pour un side project, une page avec les priorités, l'état du déploiement et les prochaines étapes. Claude connaît ce fichier, connaît les conventions du projet. Quand j'arrive le matin et que je veux avancer, je dis simplement "qu'est-ce que je devrais faire aujourd'hui sur ce projet ?". Il lit le dashboard, comprend le contexte et propose. Je n'ai pas réexpliqué le projet depuis des semaines.
 
 **Générer des assets depuis une idée brute.** J'ai un skill qui génère des visuels pour les réseaux sociaux à partir d'un sujet. Je note l'idée dans Obsidian, je lance le skill, Claude orchestre la génération. Le fichier se retrouve au bon endroit, avec la bonne nomenclature, prêt à être utilisé.
 
@@ -95,7 +95,7 @@ Autre exemple concret : l'open data public français. [data.gouv.fr](https://www
 
 ![](/claude-code-obsidian/chapitre-5.png)
 
-**La qualité du `CLAUDE.md` détermine tout.** Un fichier mal rédigé, trop vague ou pas à jour, et Claude travaille dans le flou. L'investissement initial de documentation est réel. Ce n'est pas "installer un plugin et ça marche".
+**La qualité du `CLAUDE.md` détermine tout.** Avec un fichier mal rédigé, trop vague ou pas à jour, Claude travaille dans le flou. L'investissement initial de documentation est réel. Ce n'est pas "installer un plugin et ça marche".
 
 **Le mode plan.** Par défaut, Claude Code propose un plan avant d'agir. Au début, ça frustre. On veut juste que ça se fasse. Avec le temps, on comprend que c'est salvateur : ça force à valider l'intention avant d'exécuter. J'ai évité plusieurs erreurs de ce seul fait.
 
@@ -109,7 +109,7 @@ Autre exemple concret : l'open data public français. [data.gouv.fr](https://www
 
 ![](/claude-code-obsidian/chapitre-6.png)
 
-Ce n'est pas une solution magique. C'est un investissement de configuration, réel, qui prend quelques jours à mettre en place correctement. La différence entre un vault Obsidian et un vault Obsidian + Claude Code bien configuré, c'est la différence entre une bibliothèque et un collaborateur qui a lu tous les livres de cette bibliothèque et comprend comment tu travailles.
+La solution demande un vrai investissement de configuration, avec quelques jours de mise en place sérieuse. La différence entre un vault Obsidian et un vault Obsidian + Claude Code bien configuré ressemble à celle entre une bibliothèque et un collaborateur qui a lu tous les livres de cette bibliothèque et comprend comment tu travailles.
 
 Un détail qui compte : tout reste local. Le vault, les notes, la mémoire de Claude, les fichiers générés, ce sont des fichiers Markdown et des PNG sur ton disque. Rien n'est enfermé dans un service tiers. Pour la synchronisation, tu choisis ce qui te convient : iCloud, Google Drive, Dropbox, Synology, Nextcloud, un simple rsync vers un VPS. La stack est agnostique. Tu peux changer de solution de sync demain sans toucher à quoi que ce soit d'autre... Et encore mieux : même Obsidian et Claude Code sont eux-même échangeables !
 

@@ -14,7 +14,7 @@ preview: /caps/logo_caps.png
 
 Ce weekend, j'ai eu une impulsion étrange : aller fouiller dans mes vieux disques durs et retrouver mon projet de fin d'études Epitech. Celui que j'avais rendu en 2005, un peu fièrement, et que je n'avais plus touché depuis. Vingt et un ans de poussière numérique.
 ![Logo Caps](/caps/logo_caps.png)
-Le projet s'appelle **Caps** : une implémentation complète du protocole [Hotline Communications](https://en.wikipedia.org/wiki/Hotline_Communications), un protocole de partage de fichiers et de chat pair-à-pair très populaire dans la scène Mac des années 90. Mon groupe et moi avions développé un serveur entier (**BlueCap**, en C++), un client en ligne de commande (**RedCap/Console**, en C), et un client graphique (**RedCap/GUI**, en C++/wxWidgets). Environ 9 000 lignes de code applicatif.
+Le projet s'appelle **Caps**. C'est une implémentation complète du protocole [Hotline Communications](https://en.wikipedia.org/wiki/Hotline_Communications), un protocole de partage de fichiers et de chat pair-à-pair très populaire dans la scène Mac des années 90. Mon groupe et moi avions développé un serveur entier (**BlueCap**, en C++), un client en ligne de commande (**RedCap/Console**, en C) et un client graphique (**RedCap/GUI**, en C++/wxWidgets). Environ 9 000 lignes de code applicatif.
 
 J'ai voulu le publier sur GitHub. Et là, j'ai réalisé que ça n'allait pas être simple.
 
@@ -27,10 +27,10 @@ Premier `make`. Échec immédiat.
 Ce n'était pas surprenant, mais l'ampleur du bazar était plus grande que prévu. En rouvrant le code, j'ai découvert :
 
 - **Structure plate** : tous les fichiers `.cpp`/`.h` balancés à la racine de chaque composant. Pas de sous-dossiers, pas d'organisation thématique.
-- **Makefiles cassés** : le Makefile du client CLI était hardcodé pour NetBSD (`-I/usr/pkg/include -L/usr/pkg/lib`). Il y avait aussi une variable `TCPSERV` référencée mais jamais définie, et un bug classique de 2005 : `$(RM) rm build/RedCap`, ce qui donne en vrai `rm -f rm build/RedCap`, c'est-à-dire une tentative de supprimer un fichier appelé `rm`. Pas de souci, ça rate silencieusement.
+- **Makefiles cassés.** Le Makefile du client CLI était hardcodé pour NetBSD (`-I/usr/pkg/include -L/usr/pkg/lib`). Il y avait aussi une variable `TCPSERV` référencée mais jamais définie, et un bug classique de 2005 : `$(RM) rm build/RedCap`, ce qui donne en vrai `rm -f rm build/RedCap`, c'est-à-dire une tentative de supprimer un fichier appelé `rm`. Pas de souci, ça rate silencieusement.
 - **47 Mo d'artefacts dans git** : binaires compilés, vidéos de démo au format `.mov` et `.avi`, archives `.tgz`.
 - **85 000 lignes générées par Autoconf/Automake** : `configure`, `ltmain.sh`, `aclocal.m4`, `libtool`, `config.status`, les caches... Le client CLI était livré avec toute l'infrastructure générée par `autoconf`. Rien de tout ça ne devrait jamais entrer dans un dépôt git.
-- **Le Makefile de la GUI** était un fichier *généré par le SDK wxWidgets lui-même*, daté de 1998, signé Julian Smart, et supposait que le projet se trouvait dans l'arborescence des sources de wxWidgets. Il référençait `../../src/makeprog.env`, un fichier qui n'existe nulle part hors du SDK.
+- **Le Makefile de la GUI** était un fichier *généré par le SDK wxWidgets lui-même*, daté de 1998, signé Julian Smart et supposait que le projet se trouvait dans l'arborescence des sources de wxWidgets. Il référençait `../../src/makeprog.env`, un fichier qui n'existe nulle part hors du SDK.
 - **Signatures d'event handlers incompatibles** avec wxWidgets moderne : les fonctions comme `void PreviewFile()` ne prennent aucun paramètre, alors que le système d'événements wxWidgets exige depuis longtemps un `wxCommandEvent& event`. Résultat : les boutons de l'interface ne faisaient rien.
 
 Bref : un projet parfaitement fonctionnel en 2005 sur une installation DevC++ sous Windows, mais totalement hors d'état d'être compilé en 2026 sur n'importe quel système Linux standard.
@@ -45,7 +45,7 @@ J'ai ouvert Claude Code dans le répertoire du projet et je lui ai donné le con
 
 Ce qui m'a frappé immédiatement, c'est la façon dont Claude Code lit le code. Il ne se contente pas de repérer les erreurs du compilateur : il comprend *pourquoi* elles existent. En regardant `$(RM) rm build/RedCap`, il a immédiatement expliqué l'expansion de la macro et le bug qui en résulte. En voyant `-I/usr/pkg/include`, il a dit "c'est du NetBSD, ça ne marchera pas sur Fedora, voilà comment le rendre portable". En voyant `void PreviewFile()` dans un `EVT_BUTTON` handler, il a reconnu le pattern wxWidgets et expliqué que la signature était incompatible avec les versions ≥ 2.x.
 
-C'est exactement là où l'IA est utile sur du legacy : le contexte manque, les erreurs sont cryptiques, et l'outillage de l'époque ne ressemble à rien d'actuel. Claude Code est capable de mettre ce contexte en relation : "ce Makefile vient du SDK wxWidgets, voilà pourquoi il ne fonctionne pas sorti de son environnement d'origine".
+C'est exactement là où l'IA est utile sur du legacy. Le contexte manque, les erreurs sont cryptiques et l'outillage de l'époque ne ressemble à rien d'actuel. Claude Code est capable de mettre ce contexte en relation : "ce Makefile vient du SDK wxWidgets, voilà pourquoi il ne fonctionne pas sorti de son environnement d'origine".
 
 ---
 
@@ -108,13 +108,13 @@ Zéro ligne de logique applicative modifiée.
 
 Le protocole Hotline est implémenté exactement comme en 2005. Les algorithmes de traitement des transactions réseau, les structures de données, la gestion des utilisateurs, les transferts de fichiers : tout est identique. Les quelques lignes de code source touchées sont des corrections de compilation mineures (includes manquants, flags).
 
-C'était l'objectif depuis le début, et c'est ce qui rend ce type d'exercice intéressant : l'infrastructure de build et l'organisation des fichiers avaient vieilli, pas le code lui-même.
+C'était l'objectif depuis le début, et c'est ce qui rend ce type d'exercice intéressant. L'infrastructure de build et l'organisation des fichiers avaient vieilli, pas le code lui-même.
 
 ---
 
 ## Le résultat
 
-Caps compile aujourd'hui sur Linux, macOS, et Windows via MinGW. Le projet est publié sur GitHub avec un README complet. Une capsule temporelle de 2005 rendue accessible en 2026.
+Caps compile aujourd'hui sur Linux, macOS et Windows via MinGW. Le projet est publié sur GitHub avec un README complet. Une capsule temporelle de 2005 rendue accessible en 2026.
 
 → [github.com/hansipie/Caps](https://github.com/hansipie/Caps)
 
@@ -126,7 +126,7 @@ Caps compile aujourd'hui sur Linux, macOS, et Windows via MinGW. Le projet est p
 
 En préparant la publication du projet, j'ai fait une recherche sur GitHub pour voir ce qui existait autour du protocole Hotline. Je m'attendais à tomber sur des archives poussiéreuses des années 90-2000.
 
-Surprise : il y a des projets **actifs, modernes, et sérieusement développés**.
+Surprise, il y a des projets **actifs, modernes et sérieusement développés**.
 
 - **[hotline](https://github.com/mierau/hotline)** : un remake complet de l'app Hotline originale de 1997, écrit en Swift pour macOS, avec le support iOS/iPadOS en développement. Interface native moderne, chat, partage de fichiers, message boards.
 - **[Mobius](https://github.com/jhalter/mobius)** : un serveur Hotline cross-platform écrit en Go, distribué en binaire unique, compatible avec tous les clients existants. Tourne sur macOS, Linux et Windows, avec une API HTTP optionnelle pour l'administration.
@@ -142,14 +142,14 @@ Il y a quelque chose d'étonnant là-dedans. Hotline n'était pas un protocole s
 
 Claude Code ne remplace pas la compréhension du code : on doit quand même comprendre ce qu'on fait et valider chaque changement. Mais il rend le plongeon dans le legacy beaucoup moins douloureux.
 
-Sur du code récent, dans un projet actif, on a le contexte : on sait pourquoi tel fichier existe, pourquoi tel flag est là, pourquoi tel pattern a été choisi. Sur du legacy de 20 ans, ce contexte est perdu. Les erreurs du compilateur sont cryptiques, les dépendances implicites sont invisibles, et chaque fichier est un puzzle.
+Sur du code récent, dans un projet actif, on a le contexte. On sait pourquoi tel fichier existe, pourquoi tel flag est là, pourquoi tel pattern a été choisi. Sur du legacy de 20 ans, ce contexte est perdu. Les erreurs du compilateur sont cryptiques, les dépendances implicites sont invisibles, et chaque fichier est un puzzle.
 
 Ce que j'ai trouvé utile avec Claude Code dans ce contexte précis :
 
-1. **Diagnostiquer des erreurs hors contexte** : "pourquoi ce Makefile ne compile pas", et obtenir une explication qui tient compte de l'origine historique du fichier
+1. **Diagnostiquer des erreurs hors contexte**, par exemple "pourquoi ce Makefile ne compile pas", et obtenir une explication qui tient compte de l'origine historique du fichier
 2. **Identifier les patterns legacy** : reconnaître Autoconf, wxWidgets SDK, les flags NetBSD, les conventions Dev-C++ de 2005
 3. **Proposer des refactorings ciblés** : réécrire les Makefiles sans toucher aux sources, ajouter des flags `-I` plutôt que modifier les includes
 
-Ce n'est pas un oracle. Il faut valider, tester, comprendre ce qui est proposé. Mais comme pair programmeur pour dépoussiérer du vieux code, c'est remarquablement efficace.
+L'outil n'a rien d'un oracle. Il faut valider, tester, comprendre ce qui est proposé. Mais comme pair programmeur pour dépoussiérer du vieux code, c'est remarquablement efficace.
 
 Vingt et un ans de poussière. Quelques heures de travail en pointillé. Et un projet qui tourne à nouveau.

@@ -23,7 +23,7 @@ L'ironie est totale : un site qui a bâti son empire sur la culture du partage l
 
 L'histoire commence dans les cendres. Le **26 juin 2017**, T411 — le tracker de référence en France depuis des années — ferme ses portes, laissant des millions d'utilisateurs orphelins.
 
-C'est dans ce vide que naît **YggTorrent** : le domaine avait été réservé dès le **21 mai 2017**, et le site remodèle en profondeur son fonctionnement pour ouvrir officiellement en tant que tracker public participatif en **début juillet 2017**. En l'espace de quelques semaines, il change de modèle et devient un tracker privé à inscription libre.
+C'est dans ce vide que naît **YggTorrent**. Le domaine avait été réservé dès le **21 mai 2017**, et le site remodèle en profondeur son fonctionnement pour ouvrir officiellement en tant que tracker public participatif en **début juillet 2017**. En l'espace de quelques semaines, il change de modèle et devient un tracker privé à inscription libre.
 
 Quelques mois plus tard, le **31 octobre 2017**, c'est T411.si — l'un des clones qui avaient tenté de reprendre le flambeau — qui annonce sa fusion avec Ygg. La communauté se consolide d'un coup. Le bilan de la fin de l'année est éloquent : le **8 décembre 2017**, moins de six mois après le lancement, le site revendique déjà plus de **600 000 membres** et 173 000 torrents.
 
@@ -98,7 +98,7 @@ La prise de contrôle ne repose sur aucune faille logicielle sophistiquée. Elle
 
 2. **Mots de passe en clair** : Dans ces fichiers, il découvre des **identifiants administrateur stockés en texte brut** — dont les accès aux bases de données de production.
 
-3. **L'ordinateur personnel de "Destroy"** : L'administrateur technique utilisait ce serveur de pré-production comme machine personnelle. Son navigateur contenait des **centaines de mots de passe enregistrés**, et son client FTP conservait les connexions aux serveurs critiques. Tout cela se retrouve entre les mains de Gr0lum.
+3. **L'ordinateur personnel de "Destroy".** L'administrateur technique utilisait ce serveur de pré-production comme machine personnelle. Son navigateur contenait des **centaines de mots de passe enregistrés** et son client FTP conservait les connexions aux serveurs critiques. Tout cela se retrouve entre les mains de Gr0lum.
 
 4. **Escalade vers la production** : Armé de ces identifiants, Gr0lum rebondit du serveur de pré-production vers **quatre serveurs critiques** : le tracker principal, la base de données de production, la boutique de paiement et les sauvegardes.
 
@@ -150,7 +150,7 @@ Ce qui distingue l'histoire de Ygg, c'est que sa chute n'est pas venue de l'ext�
 
 C'est une leçon que les trackers survivants — et plus largement tous les projets communautaires qui flirtent avec la monétisation — feraient bien de méditer.
 
-Le piratage continuera. Mais sous quelle forme, et à quel prix éthique ?
+Le piratage continuera. Mais sous quelle forme et à quel prix éthique ?
 
 ---
 

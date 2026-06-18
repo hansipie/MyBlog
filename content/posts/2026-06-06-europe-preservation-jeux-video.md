@@ -48,7 +48,7 @@ C'est ici que le débat européen prend une dimension nouvelle. Le sujet n'est p
 
 Cette distinction est essentielle. Un remboursement peut réparer un préjudice individuel. Il ne préserve pas l'œuvre. Si un jeu disparaît entièrement, il manque ensuite aux joueurs, aux chercheurs, aux historiens, aux créateurs, aux bibliothèques et aux générations futures.[^preserving-pixels]
 
-Le débat européen fait ainsi émerger une idée nouvelle : le jeu vidéo appartient aussi à la mémoire numérique. Ce n'est pas un détail. C'est un changement de statut.[^citip]
+Le débat européen fait ainsi émerger une idée nouvelle. Le jeu vidéo appartient aussi à la mémoire numérique. L'enjeu dépasse le détail technique. Il marque un changement de statut.[^citip]
 
 ## Un socle européen existe déjà
 
@@ -60,7 +60,7 @@ Ces textes n'ont pas été conçus spécifiquement pour sauver les jeux vidéo a
 
 La question devient alors : que signifie la conformité d'un jeu lorsque son fonctionnement dépend d'un service distant ? Si un jeu acheté devient totalement inutilisable parce que le serveur a été éteint, est-ce une simple fin de service, ou une rupture de l'usage légitime attendu par l'acheteur ?[^tw-digital-content]
 
-En France, le débat rejoint aussi celui de l'obsolescence logicielle, documentée notamment par un rapport public consacré à ce sujet.[^obsolescence] Les politiques publiques commencent à reconnaître qu'un produit peut perdre sa valeur d'usage non pas parce que son matériel est cassé, mais parce que son logiciel ou son infrastructure deviennent indisponibles. Cette idée est centrale pour les objets connectés, les smartphones, les logiciels professionnels, et désormais les jeux vidéo.
+En France, le débat rejoint aussi celui de l'obsolescence logicielle, documentée notamment par un rapport public consacré à ce sujet.[^obsolescence] Les politiques publiques commencent à reconnaître qu'un produit peut perdre sa valeur d'usage non pas parce que son matériel est cassé, mais parce que son logiciel ou son infrastructure deviennent indisponibles. Cette idée est centrale pour les objets connectés, les smartphones, les logiciels professionnels et désormais les jeux vidéo.
 
 Le mérite de *Stop Destroying Videogames* est de pousser ce cadre existant jusqu'à ses limites. Le droit européen sait déjà parler de durabilité numérique. Il doit maintenant apprendre à parler de préservation interactive.
 
@@ -72,7 +72,7 @@ Mais il ne suffit pas.
 
 Certains cas montrent la limite d'une approche purement consumériste. Si un jeu est fermé très rapidement mais que tous les acheteurs sont remboursés, le préjudice économique individuel peut être considéré comme réparé. Pourtant, le jeu peut quand même disparaître. L'œuvre, elle, n'est pas remboursée. Elle est perdue.
 
-C'est pourquoi l'Europe doit probablement articuler deux logiques : protéger l'acheteur, et préserver le patrimoine numérique. La première logique vise la justice contractuelle. La seconde vise la transmission culturelle.
+C'est pourquoi l'Europe doit probablement articuler deux logiques, protéger l'acheteur et préserver le patrimoine numérique. La première logique vise la justice contractuelle. La seconde vise la transmission culturelle.
 
 Ce passage est important car il évite de réduire le débat à une opposition caricaturale entre joueurs mécontents et éditeurs cupides. Le problème est plus profond : notre société produit des œuvres numériques complexes sans toujours prévoir les conditions de leur survie.
 
@@ -137,7 +137,7 @@ La suite dépendra des arbitrages européens. Il faudra trouver un équilibre en
 
 À travers ce débat, l'Europe pose une question qui dépasse largement le jeu vidéo : que voulons-nous transmettre du monde numérique que nous construisons ? Si nos œuvres, nos logiciels et nos expériences interactives peuvent disparaître serveur après serveur, alors notre mémoire collective devient dépendante de décisions commerciales invisibles.
 
-Préserver les jeux vidéo, ce n'est pas seulement sauver des pixels. C'est apprendre à construire une culture numérique qui ne s'efface pas au moment où elle cesse d'être rentable.
+Préserver les jeux vidéo revient aussi à apprendre à construire une culture numérique qui ne s'efface pas au moment où elle cesse d'être rentable.
 
 ---
 

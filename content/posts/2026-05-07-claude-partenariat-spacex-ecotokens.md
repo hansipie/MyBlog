@@ -64,7 +64,7 @@ Pour le Tier 1 des développeurs, les nouveaux plafonds de l'API Opus transforme
 
 Anthropic ne construit pas seulement une infrastructure, mais un véritable fossé défensif (*moat*) face à ses concurrents.
 
-*   **Offensive Enterprise :** L'annonce de la création d'une société de services IA avec **Blackstone, Hellman & Friedman, et Goldman Sachs** prouve que Claude n'est plus un simple outil de chat, mais le moteur de la transformation numérique des services financiers et gouvernementaux.
+*   **Offensive Enterprise.** L'annonce de la création d'une société de services IA avec **Blackstone, Hellman & Friedman et Goldman Sachs** prouve que Claude n'est plus un simple outil de chat, mais le moteur de la transformation numérique des services financiers et gouvernementaux.
 *   **Le Moat Hardware vs Open-Source :** Contrairement aux modèles open-source (DeepSeek, Gemma) limités par le hardware local de l'utilisateur, Anthropic mise sur une infrastructure propriétaire colossale. Ce "Compute Moat" garantit que les modèles les plus performants (Opus) resteront l'apanage de ceux qui contrôlent l'infrastructure.
 *   **Expansion et Éthique :** Pour répondre aux besoins de conformité (RGPD, résidence des données), Anthropic déploie des capacités d'inférence régionales en Europe et en Asie via Amazon.
 *   **Engagement Communautaire :** Anthropic s'engage à couvrir les hausses de prix d'électricité pour les résidents vivant à proximité de ses centres de données. C'est un mouvement pragmatique : en devenant un "bon voisin", l'entreprise évite les blocages politiques qui ralentissent ses concurrents.
@@ -89,7 +89,7 @@ En tant qu'experts, nous vous recommandons de revoir vos architectures IA à la 
 
 L'explosion des limites est une excellente nouvelle. Mais attention au piège symétrique : quand les quotas sont généreux, la tentation est de consommer sans compter. Multiplier les agents Opus en parallèle, industrialiser la fenêtre de contexte d'un million de tokens, enchaîner les sessions Claude Code sans interruption... tout cela a un coût réel, qui s'accumule silencieusement.
 
-C'est là qu'**[ecotokens](https://github.com/hansipie/ecotokens)** entre en jeu. Cet outil CLI open-source (Rust, MIT) s'installe une fois via des hooks natifs dans Claude Code, Gemini CLI ou Qwen Code, et travaille ensuite en silence : il intercepte les outputs shell avant qu'ils ne soient envoyés au modèle, les filtre, les résume si nécessaire, et mesure les économies réalisées. Sur 13 jours d'utilisation réelle : **89,6% de réduction des tokens envoyés, soit 6,7 millions de tokens économisés.** Sur une passe `git diff --staged`, la réduction peut atteindre 99,97%.
+C'est là qu'**[ecotokens](https://github.com/hansipie/ecotokens)** entre en jeu. Cet outil CLI open-source (Rust, MIT) s'installe une fois via des hooks natifs dans Claude Code, Gemini CLI ou Qwen Code et travaille ensuite en silence. Il intercepte les outputs shell avant qu'ils ne soient envoyés au modèle, les filtre, les résume si nécessaire et mesure les économies réalisées. Sur 13 jours d'utilisation réelle, il atteint **89,6% de réduction des tokens envoyés, soit 6,7 millions de tokens économisés.** Sur une passe `git diff --staged`, la réduction peut atteindre 99,97%.
 
 La commande `ecotokens gain` affiche un dashboard TUI avec les économies par période (jour, semaine, mois), projet par projet. Aucune configuration manuelle, aucun overhead : le principe est *"set it and forget it"*.
 
@@ -99,6 +99,6 @@ Là où les nouvelles limites d'Anthropic repoussent le plafond de ce qu'on peut
 
 ## Conclusion : Un signal fort pour l'avenir de l'IA
 
-Il est désormais clair que **Claude Code** est le produit phare d'Anthropic, et que l'entreprise a choisi de gagner la guerre de l'IA par la suprématie de l'infrastructure. En sécurisant ses besoins en calcul pour les cinq prochaines années, Anthropic envoie un message sans équivoque : Claude est la plateforme la plus stable et la plus scalable pour les bâtisseurs de demain.
+Il est désormais clair que **Claude Code** est le produit phare d'Anthropic et que l'entreprise a choisi de gagner la guerre de l'IA par la suprématie de l'infrastructure. En sécurisant ses besoins en calcul pour les cinq prochaines années, Anthropic envoie un message sans équivoque : Claude est la plateforme la plus stable et la plus scalable pour les bâtisseurs de demain.
 
 Le moment est venu de repenser l'échelle de vos ambitions. Les limites techniques ont été repoussées. La seule limite restante est votre capacité à exploiter cette puissance brute avec intelligence. Et ça commence par savoir ce qu'on consomme.

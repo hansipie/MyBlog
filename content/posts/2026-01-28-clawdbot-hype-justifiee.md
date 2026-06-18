@@ -76,7 +76,7 @@ Difficile d'inspirer confiance pour un outil censé gérer vos emails et votre v
 
 ## Et si Claude Code suffisait ?
 
-Voici ma position : **j'utilise déjà Claude Code, et il fait tout ce dont j'ai besoin.**
+Voici ma position. **J'utilise déjà Claude Code et il fait tout ce dont j'ai besoin.**
 
 ### Claude Code a déjà des "mains"
 
