@@ -60,24 +60,89 @@
     if (chatClose) chatClose.addEventListener("click", function () { setChatOpen(false); });
     window.addEventListener("keydown", function (e) { if (e.key === "Escape") setChatOpen(false); });
 
-    var answers = [
-      "Je peux parler des projets actifs : ecotokens, Papimathic, Mycelium, Caps.",
-      "Pour une mission, le bon format est un cadrage court avec livrable vérifiable.",
-      "Contact : ansicode@ansicode.fr, LinkedIn, GitHub et X dans la section Contact.",
-      "Stack principale : C/C++, LLM, agents, React Native, Rust, Docker."
+    function normalize(str) {
+      return str
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[̀-ͯ]/g, "");
+    }
+
+    var rules = [
+      {
+        keywords: ["ecotoken"],
+        response: "ecotokens : outil Rust open source de réduction de contexte et d'analyse pour workflows LLM (CLI, recherche de code, économie de tokens). github.com/hansipie/ecotokens"
+      },
+      {
+        keywords: ["papimathic"],
+        response: "Papimathic : application éducative de calcul mental en React Native / Expo, disponible en usage réel sur le Play Store. papimathic.ansicode.fr"
+      },
+      {
+        keywords: ["mycelium"],
+        response: "Mycelium : exploration R&D d'un LLM distribué en Rust avec Candle, libp2p et pipeline parallelism."
+      },
+      {
+        keywords: ["caps"],
+        response: "Caps : dossier de modernisation applicative — analyse de l'existant, trajectoire technique, réduction du risque."
+      },
+      {
+        keywords: ["projet", "portfolio", "realisation"],
+        response: "Projets actifs : ecotokens (CLI Rust/LLM), Papimathic (app mobile calcul mental), Mycelium (LLM distribué), Caps (modernisation applicative)."
+      },
+      {
+        keywords: ["stack", "techno", "langage", "competence", "c++", "rust", "llm", "ia", "intelligence artificielle", "agent", "docker", "react native", "mobile", "notebooklm", "rag"],
+        response: "Stack principale : C/C++ bas niveau, réseau, LLM & agents (Claude/Codex, ClaudeCode/Hermes), React Native/Expo, Rust, Docker."
+      },
+      {
+        keywords: ["mission", "audit", "spike", "cadrage", "disponib", "tarif", "budget", "devis", "freelance"],
+        response: "Disponible pour missions ciblées : spike technique, audit, modernisation, architecture, ou accompagnement de build produit. Cadrage court avec livrable vérifiable."
+      },
+      {
+        keywords: ["experience", "parcours", "cv", "dassault", "2sb"],
+        response: "17 ans d'expérience : 6 ans C/C++ & réseau chez 2SB, 11 ans Lead Dev chez Dassault Systèmes, puis freelance IA appliquée et modernisation depuis 2026."
+      },
+      {
+        keywords: ["blog", "article"],
+        response: "Deux blogs : Ansicode (articles techniques IA, LLM, open source) et Papimathic (contenus pédagogiques calcul mental)."
+      },
+      {
+        keywords: ["contact", "email", "mail", "linkedin", "github", "twitter", " x "],
+        response: "Contact : ansicode@ansicode.fr, LinkedIn, GitHub et X — liens dans la section Contact."
+      },
+      {
+        keywords: ["bonjour", "salut", "hello", "hi", "coucou"],
+        response: "Bonjour ! Posez-moi une question sur le profil, les projets, la stack ou une mission."
+      },
+      {
+        keywords: ["merci"],
+        response: "Avec plaisir !"
+      }
     ];
-    var idx = 0;
+
+    var fallback = "Je peux répondre sur : projets (ecotokens, Papimathic, Mycelium, Caps), stack technique, expérience, missions ou contact.";
+
+    function findAnswer(text) {
+      var normalized = normalize(text);
+      for (var i = 0; i < rules.length; i++) {
+        var keywords = rules[i].keywords;
+        for (var j = 0; j < keywords.length; j++) {
+          if (normalized.indexOf(keywords[j]) !== -1) return rules[i].response;
+        }
+      }
+      return fallback;
+    }
+
     if (form && input && body) {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        var text = input.value.trim() || "?";
+        var text = input.value.trim();
+        if (!text) return;
         var userMsg = document.createElement("div");
         userMsg.className = "pf-message pf-message-user";
         userMsg.textContent = text;
         body.appendChild(userMsg);
         var botMsg = document.createElement("div");
         botMsg.className = "pf-message pf-message-bot";
-        botMsg.textContent = answers[idx++ % answers.length];
+        botMsg.textContent = findAnswer(text);
         body.appendChild(botMsg);
         input.value = "";
         body.scrollTop = body.scrollHeight;
