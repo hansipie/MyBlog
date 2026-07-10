@@ -211,8 +211,8 @@ uglyURLs = false
         key = "Calcul mental mobile"
         val = "Papimathic"
       [[params.about.cards.kv]]
-        key = "Inférence distribuée"
-        val = "Mycelium"
+        key = "Secrets Hermes"
+        val = "Hermes Vaultwarden"
 
   # ----- EXPERIENCE -----
   [params.experience]
@@ -259,7 +259,7 @@ uglyURLs = false
   # ----- PROJECTS -----
   [params.projects]
     title = "Projets qui racontent le profil."
-    lead = "Quatre projets concrets : CLI Rust pour LLM, app mobile de calcul mental, recherche inférence distribuée, et modernisation applicative."
+    lead = "Quatre projets concrets : CLI Rust pour LLM, app mobile de calcul mental, gestion sécurisée des secrets Hermes et modernisation applicative."
     progress = 79
     progressLabel = "ACTIVE"
     achievement = "Builder portfolio"
@@ -301,25 +301,31 @@ uglyURLs = false
         color = "#22e09e"
 
     [[params.projects.items]]
-      title = "Mycelium"
-      desc = "Exploration d'un LLM distribué en Rust avec Candle, libp2p et pipeline parallelism."
-      status = "archived"
-      statusLabel = "R&D"
+      title = "Hermes Vaultwarden"
+      desc = "Plugin Hermes Agent qui charge au démarrage des variables d'environnement depuis Vaultwarden ou Bitwarden via le CLI bw."
+      status = "running"
+      statusLabel = "ACTIVE"
+      link = "https://github.com/hansipie/hermes-vaultwarden"
+      linkIcon = "github"
+      linkLabel = "GitHub"
       [[params.projects.items.tech]]
-        label = "Rust"
-        color = "#fb923c"
-      [[params.projects.items.tech]]
-        label = "Candle"
+        label = "Python"
         color = "#fcd34d"
       [[params.projects.items.tech]]
-        label = "libp2p"
+        label = "Hermes Agent"
         color = "#a78bfa"
+      [[params.projects.items.tech]]
+        label = "Vaultwarden"
+        color = "#00d4ff"
 
     [[params.projects.items]]
       title = "Caps"
       desc = "Dossier de modernisation applicative : analyse de l'existant, trajectoire technique, réduction du risque."
       status = "deployed"
       statusLabel = "PRO"
+      link = "https://github.com/hansipie/Caps"
+      linkIcon = "github"
+      linkLabel = "GitHub"
       [[params.projects.items.tech]]
         label = "Architecture"
         color = "#326ce5"

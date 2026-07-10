@@ -77,8 +77,8 @@
         response: "Papimathic : application éducative de calcul mental en React Native / Expo, disponible en usage réel sur le Play Store. papimathic.ansicode.fr"
       },
       {
-        keywords: ["mycelium"],
-        response: "Mycelium : exploration R&D d'un LLM distribué en Rust avec Candle, libp2p et pipeline parallelism."
+        keywords: ["hermes vaultwarden", "vaultwarden", "bitwarden", "secret"],
+        response: "Hermes Vaultwarden : plugin Hermes Agent qui charge les secrets d'un coffre Vaultwarden ou Bitwarden via le CLI bw. github.com/hansipie/hermes-vaultwarden"
       },
       {
         keywords: ["caps"],
@@ -86,7 +86,7 @@
       },
       {
         keywords: ["projet", "portfolio", "realisation"],
-        response: "Projets actifs : ecotokens (CLI Rust/LLM), Papimathic (app mobile calcul mental), Mycelium (LLM distribué), Caps (modernisation applicative)."
+        response: "Projets actifs : ecotokens (CLI Rust/LLM), Papimathic (app mobile calcul mental), Hermes Vaultwarden (gestion de secrets), Caps (modernisation applicative)."
       },
       {
         keywords: ["stack", "techno", "langage", "competence", "c++", "rust", "llm", "ia", "intelligence artificielle", "agent", "docker", "react native", "mobile", "notebooklm", "rag"],
@@ -118,7 +118,7 @@
       }
     ];
 
-    var fallback = "Je peux répondre sur : projets (ecotokens, Papimathic, Mycelium, Caps), stack technique, expérience, missions ou contact.";
+    var fallback = "Je peux répondre sur : projets (ecotokens, Papimathic, Hermes Vaultwarden, Caps), stack technique, expérience, missions ou contact.";
 
     function findAnswer(text) {
       var normalized = normalize(text);
