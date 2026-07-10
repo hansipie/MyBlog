@@ -1,0 +1,480 @@
+{{ define "main" }}
+<article class="pf-article" style="max-width:1180px">
+  <header class="pf-article-header">
+    <div class="pf-article-meta">
+      <span class="pf-status pf-status-running"><span class="pf-status-dot"></span>{{ .Params.statusLabel | default "LIVE DATA" }}</span>
+      <span class="pf-version">màj {{ .Params.updated }}</span>
+      <span class="pf-region">{{ .Params.sources }} sources officielles</span>
+    </div>
+    <h1 class="pf-article-title">{{ .Title }}</h1>
+    <p class="pf-article-desc">{{ .Description }}</p>
+    {{ with .Params.tags }}
+    <div class="pf-article-tags">
+      {{ range . }}<span class="pf-tech">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+    <hr class="pf-article-sep" />
+  </header>
+
+<style>
+.llm-lab{
+  --lab-bar-in: var(--pf-accent);
+  --lab-bar-out: #fb923c;
+  --lab-good: var(--pf-green);
+  --lab-warn: var(--pf-amber);
+  --lab-crit: var(--pf-red);
+  --lab-violet: var(--pf-violet);
+}
+:root[data-theme="light"] .llm-lab{
+  --lab-bar-out: #ea580c;
+}
+.llm-lab .lab-meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0 0 24px;padding:16px 20px;
+  background:var(--pf-bg-card);border:1px solid var(--pf-border);border-radius:var(--pf-radius);box-shadow:var(--pf-shadow-sm)}
+.llm-lab .lab-meta div{display:flex;flex-direction:column;gap:1px}
+.llm-lab .lab-meta b{font-family:var(--pf-mono);font-size:19px;color:var(--pf-accent)}
+.llm-lab .lab-meta span{font-family:var(--pf-mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--pf-text-soft)}
+/* tabs */
+.llm-lab .lab-tabs{display:flex;gap:4px;border-bottom:1px solid var(--pf-border);margin-bottom:20px;overflow-x:auto}
+.llm-lab .lab-tabs button{appearance:none;background:none;border:none;border-bottom:2px solid transparent;
+  padding:9px 14px;font:inherit;font-family:var(--pf-mono);font-size:13px;font-weight:600;color:var(--pf-text-muted);cursor:pointer;white-space:nowrap}
+.llm-lab .lab-tabs button[aria-selected="true"]{color:var(--pf-accent);border-bottom-color:var(--pf-accent)}
+.llm-lab .lab-tabs button:focus-visible{outline:2px solid var(--pf-accent);outline-offset:2px;border-radius:4px}
+/* calculator */
+.llm-lab .lab-calc{display:flex;flex-wrap:wrap;gap:16px;align-items:end;margin:0 0 16px;padding:16px 20px;
+  background:var(--pf-bg-card);border:1px solid var(--pf-border);border-radius:var(--pf-radius);box-shadow:var(--pf-shadow-sm)}
+.llm-lab .lab-calc .f{display:flex;flex-direction:column;gap:4px}
+.llm-lab .lab-calc label{font-family:var(--pf-mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--pf-text-soft)}
+.llm-lab .lab-calc input{width:120px;padding:8px 10px;font:inherit;font-family:var(--pf-mono);
+  color:var(--pf-text);background:var(--pf-bg-soft);border:1px solid var(--pf-border-strong);border-radius:var(--pf-radius-sm)}
+.llm-lab .lab-calc input:focus-visible{outline:2px solid var(--pf-accent);outline-offset:1px}
+.llm-lab .lab-calc .hint{font-size:13px;color:var(--pf-text-muted);max-width:46ch;margin:0}
+/* toolbar */
+.llm-lab .lab-toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:10px}
+.llm-lab .lab-toolbar input[type=search]{flex:1 1 220px;min-width:180px;padding:9px 12px;font:inherit;
+  color:var(--pf-text);background:var(--pf-bg-card);border:1px solid var(--pf-border-strong);border-radius:var(--pf-radius-sm)}
+.llm-lab .lab-toolbar input:focus-visible{outline:2px solid var(--pf-accent);outline-offset:1px}
+.llm-lab .lab-tgl{display:flex;gap:7px;align-items:center;font-size:13px;color:var(--pf-text-muted);cursor:pointer}
+.llm-lab .lab-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.llm-lab .lab-chip{appearance:none;font-family:var(--pf-mono);font-size:12px;padding:4px 11px;border-radius:var(--pf-radius-pill);
+  border:1px solid var(--pf-border);background:var(--pf-bg-soft);color:var(--pf-text-muted);cursor:pointer;
+  transition:border-color .15s ease,color .15s ease}
+.llm-lab .lab-chip:hover{border-color:var(--pf-accent);color:var(--pf-accent)}
+.llm-lab .lab-chip[aria-pressed="true"]{background:var(--pf-accent);color:var(--pf-bg);border-color:var(--pf-accent);font-weight:700}
+.llm-lab .lab-chip:focus-visible{outline:2px solid var(--pf-accent);outline-offset:2px}
+/* legend */
+.llm-lab .lab-legend{display:flex;gap:18px;align-items:center;font-family:var(--pf-mono);font-size:12px;color:var(--pf-text-muted);margin:0 0 8px}
+.llm-lab .lab-legend i{display:inline-block;width:14px;height:8px;border-radius:3px;margin-right:6px;vertical-align:1px}
+.llm-lab .lab-legend .li i{background:var(--lab-bar-in)}
+.llm-lab .lab-legend .lo i{background:var(--lab-bar-out)}
+.llm-lab .lab-legend em{font-style:normal;color:var(--pf-text-soft)}
+/* table */
+.llm-lab .lab-tblwrap{overflow-x:auto;background:var(--pf-bg-card);border:1px solid var(--pf-border);border-radius:var(--pf-radius);box-shadow:var(--pf-shadow-sm)}
+.llm-lab table{border-collapse:collapse;width:100%;min-width:880px}
+.llm-lab thead th{position:sticky;top:0;background:var(--pf-bg-card);z-index:2;
+  font-family:var(--pf-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--pf-text-soft);
+  text-align:left;padding:12px;border-bottom:1px solid var(--pf-border-strong);white-space:nowrap}
+.llm-lab thead th.num{text-align:right}
+.llm-lab thead th button{appearance:none;background:none;border:none;font:inherit;color:inherit;cursor:pointer;
+  padding:0;letter-spacing:inherit;text-transform:inherit}
+.llm-lab thead th button:hover{color:var(--pf-accent)}
+.llm-lab thead th button:focus-visible{outline:2px solid var(--pf-accent);outline-offset:2px;border-radius:3px}
+.llm-lab tbody td{padding:9px 12px;border-bottom:1px solid var(--pf-border);vertical-align:middle;font-size:14px}
+.llm-lab tbody tr:last-child td{border-bottom:none}
+.llm-lab tbody tr:hover td{background:var(--pf-bg-hover)}
+.llm-lab td.num{text-align:right;font-family:var(--pf-mono);font-size:13px;white-space:nowrap}
+.llm-lab td .prov{font-family:var(--pf-mono);font-size:11px;color:var(--pf-text-soft);display:block}
+.llm-lab td .mdl{font-weight:600;color:var(--pf-text)}
+.llm-lab .lab-badge{display:inline-block;font-family:var(--pf-mono);font-size:10px;font-weight:700;letter-spacing:.04em;
+  padding:2px 8px;border-radius:var(--pf-radius-pill);margin-left:7px;vertical-align:1px;white-space:nowrap;border:1px solid transparent}
+.llm-lab .b-new{color:var(--lab-good);background:#22e09e1f;border-color:#22e09e4d}
+.llm-lab .b-prev{color:var(--pf-text-soft);background:#6a72a324;border-color:#6a72a33d}
+.llm-lab .b-promo{color:var(--lab-violet);background:#a78bfa1f;border-color:#a78bfa47}
+.llm-lab .b-price{color:var(--lab-warn);background:#fbbf241f;border-color:#fbbf2452}
+.llm-lab .b-legacy{color:var(--lab-crit);background:transparent;border-color:#ef44445c}
+.llm-lab .b-free{color:var(--lab-good);background:#22e09e1f;border-color:#22e09e4d}
+.llm-lab .bars{min-width:150px}
+.llm-lab .bar{height:8px;border-radius:0 4px 4px 0;margin:2px 0}
+.llm-lab .bar.in{background:var(--lab-bar-in)}
+.llm-lab .bar.out{background:var(--lab-bar-out)}
+.llm-lab td.cost{font-weight:700;color:var(--pf-accent)}
+.llm-lab .note-ic{cursor:help;color:var(--pf-text-soft);border-bottom:1px dotted var(--pf-text-soft)}
+.llm-lab .lab-count{font-family:var(--pf-mono);font-size:12px;color:var(--pf-text-soft);margin:10px 2px 0}
+/* subs */
+.llm-lab .lab-subgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+.llm-lab .lab-subcard{background:var(--pf-bg-card);border:1px solid var(--pf-border);border-radius:var(--pf-radius);padding:18px 18px 8px;box-shadow:var(--pf-shadow-sm)}
+.llm-lab .lab-subcard h3{margin:0 0 2px;font-size:17px;color:var(--pf-text)}
+.llm-lab .lab-subcard .sc-sub{font-size:13px;color:var(--pf-text-soft);margin:0 0 10px}
+.llm-lab .plan{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--pf-border)}
+.llm-lab .plan .pn{font-weight:600;font-size:14px;color:var(--pf-text)}
+.llm-lab .plan .pd{font-size:12.5px;color:var(--pf-text-muted);max-width:34ch}
+.llm-lab .plan .pp{font-family:var(--pf-mono);font-size:13px;font-weight:700;white-space:nowrap;text-align:right;color:var(--pf-accent)}
+/* changes */
+.llm-lab .lab-chgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start}
+.llm-lab .lab-chcol{background:var(--pf-bg-card);border:1px solid var(--pf-border);border-radius:var(--pf-radius);padding:16px 18px;box-shadow:var(--pf-shadow-sm)}
+.llm-lab .lab-chcol h3{margin:0 0 4px;font-size:15px;display:flex;align-items:center;gap:8px;color:var(--pf-text)}
+.llm-lab .lab-chcol h3 .dot{width:9px;height:9px;border-radius:50%;display:inline-block;box-shadow:0 0 8px currentColor}
+.llm-lab .lab-chcol.new h3 .dot{background:var(--lab-good);color:var(--lab-good)}
+.llm-lab .lab-chcol.del h3 .dot{background:var(--lab-crit);color:var(--lab-crit)}
+.llm-lab .lab-chcol.pri h3 .dot{background:var(--lab-warn);color:var(--lab-warn)}
+.llm-lab .lab-chcol p.d{font-family:var(--pf-mono);font-size:11px;color:var(--pf-text-soft);margin:0 0 8px}
+.llm-lab .lab-chcol ul{margin:0;padding:0;list-style:none}
+.llm-lab .lab-chcol li{padding:9px 0;border-top:1px solid var(--pf-border);font-size:13.5px;color:var(--pf-text-muted)}
+.llm-lab .lab-chcol li b{color:var(--pf-text)}
+.llm-lab .lab-panel[hidden]{display:none}
+.llm-lab .lab-foot{margin-top:30px;font-size:12.5px;color:var(--pf-text-soft);max-width:80ch}
+@media (prefers-reduced-motion: no-preference){ .llm-lab .bar{transition:width .25s ease} }
+</style>
+
+<div class="llm-lab">
+  <div class="lab-meta">
+    <div><b id="m-models">—</b><span>modèles tarifés</span></div>
+    <div><b id="m-prov">—</b><span>providers</span></div>
+    <div><b>{{ .Params.sources }}</b><span>sources officielles</span></div>
+    <div><b>$0.01–$30</b><span>étendue input /1M</span></div>
+  </div>
+
+  <div class="lab-tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="models">Modèles API</button>
+    <button role="tab" aria-selected="false" data-tab="subs">Abonnements</button>
+    <button role="tab" aria-selected="false" data-tab="changes">Nouveautés &amp; retraits</button>
+  </div>
+
+  <section class="lab-panel" id="p-models">
+    <div class="lab-calc">
+      <div class="f"><label for="c-in">Tokens input (M / mois)</label><input id="c-in" type="number" min="0" step="1" value="10"></div>
+      <div class="f"><label for="c-out">Tokens output (M / mois)</label><input id="c-out" type="number" min="0" step="1" value="2"></div>
+      <p class="hint">La colonne « Coût estimé » calcule <em>input × prix input + output × prix output</em> pour votre volume. Cliquez sur son en-tête pour trier.</p>
+    </div>
+
+    <div class="lab-toolbar">
+      <input id="q" type="search" placeholder="Rechercher un modèle ou un provider…" aria-label="Recherche">
+      <label class="lab-tgl"><input type="checkbox" id="show-free"> Inclure les modèles gratuits</label>
+    </div>
+    <div class="lab-chips" id="prov-chips" aria-label="Filtrer par provider"></div>
+
+    <p class="lab-legend"><span class="li"><i></i>Input $/1M</span><span class="lo"><i></i>Output $/1M</span>
+    <em>· échelle logarithmique</em></p>
+
+    <div class="lab-tblwrap">
+    <table id="tbl">
+      <thead><tr>
+        <th><button data-sort="model">Modèle <span class="arr"></span></button></th>
+        <th class="num"><button data-sort="input">Input <span class="arr"></span></button></th>
+        <th class="num"><button data-sort="output">Output <span class="arr"></span></button></th>
+        <th class="num"><button data-sort="cache">Cache <span class="arr"></span></button></th>
+        <th>Prix (log)</th>
+        <th class="num"><button data-sort="cost">Coût estimé <span class="arr"></span></button></th>
+      </tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    </div>
+    <p class="lab-count" id="count"></p>
+  </section>
+
+  <section class="lab-panel" id="p-subs" hidden>
+    <div class="lab-subgrid" id="subgrid"></div>
+  </section>
+
+  <section class="lab-panel" id="p-changes" hidden>
+    <div class="lab-chgrid">
+      <div class="lab-chcol new"><h3><span class="dot"></span>Nouveaux modèles</h3>
+        <p class="d">DEPUIS LE 11 JUIN 2026</p><ul id="ch-new"></ul></div>
+      <div class="lab-chcol del"><h3><span class="dot"></span>Retirés &amp; dépréciés</h3>
+        <p class="d">ABSENTS DES GRILLES OFFICIELLES</p><ul id="ch-del"></ul></div>
+      <div class="lab-chcol pri"><h3><span class="dot"></span>Prix modifiés</h3>
+        <p class="d">CHANGEMENTS DE TARIFICATION</p><ul id="ch-pri"></ul></div>
+    </div>
+  </section>
+
+  <p class="lab-foot">
+    Données compilées via NotebookLM depuis les pages pricing officielles (OpenAI, Anthropic, Google,
+    Mistral, xAI, DeepSeek, Alibaba, Z.ai, Moonshot, MiniMax…). Les prix « promo » et paliers
+    long-contexte sont signalés par badge ; la plupart des providers facturent le cache hit à ~10 % du prix input.
+  </p>
+</div>
+
+<script>
+// [provider, modèle, input, output, cache(null=N/A), badge, note]
+// badge: n=nouveau p=génération précédente m=promo $=prix modifié l=legacy f=gratuit
+const M=[
+["inclusionAI","Ling-2.6-flash",0.01,0.03,null,"",""],
+["IBM","Granite 4.0 Micro",0.017,0.112,null,"",""],
+["Alibaba","Qwen-flash (Global)",0.022,0.216,null,"","cache disponible"],
+["Alibaba","Qwen3.5-flash (Global)",0.029,0.287,null,"","cache disponible"],
+["Amazon","Nova Micro 1.0",0.03,0.14,null,"n",""],
+["OpenAI (Azure)","GPT OSS 20B",0.03,0.14,0.0375,"",""],
+["OpenAI","gpt-oss-120b",0.039,0.18,0.075,"",""],
+["Alibaba","Qwen3.5-9B",0.04,0.15,null,"",""],
+["Google","Gemma 3 4B / 12B",0.04,0.105,null,"n","output $0.08–$0.13"],
+["Meta","Llama 3.1 8B Instant",0.05,0.08,null,"n",""],
+["Mistral AI","Mistral Small 3",0.05,0.08,null,"",""],
+["Microsoft","Phi 4",0.065,0.14,null,"n",""],
+["Alibaba","Qwen3.5-Flash (Intl)",0.065,0.26,null,"",""],
+["Baidu","ERNIE 4.5 21B A3B",0.07,0.28,null,"n",""],
+["Meta","Llama 4 Scout",0.08,0.30,null,"n",""],
+["Alibaba","Qwen3 32B",0.08,0.28,null,"",""],
+["Mistral AI","Ministral 3 – 3B",0.10,0.10,null,"n","contexte 131K"],
+["Mistral AI","Mistral Small 4",0.10,0.30,null,"","contexte 262K"],
+["Mistral AI","Devstral Small 2",0.10,0.30,null,"n","codage agentique"],
+["Mistral AI","Voxtral Small",0.10,0.40,null,"n","audio"],
+["Google","Gemini 2.5 Flash-Lite",0.10,0.40,0.01,"",""],
+["DeepSeek","DeepSeek-V4-Flash",0.14,0.28,0.0028,"","contexte 1M"],
+["Mistral AI","Mistral NeMo",0.15,0.15,null,"n","contexte 128K"],
+["Mistral AI","Ministral 3 – 8B",0.15,0.15,null,"n","contexte 262K"],
+["OpenAI","GPT-5.4-nano",0.20,1.25,0.02,"n","remplace GPT-5-nano · 400K"],
+["Mistral AI","Ministral 3 – 14B",0.20,0.20,null,"n","contexte 262K"],
+["Google","Gemini 3.1 Flash-Lite",0.25,1.50,0.025,"n",""],
+["Alibaba","Qwen3.6-flash",0.25,1.50,null,"n","prix double env. au-delà de 256K"],
+["Google","Gemini 2.5 Flash",0.30,2.50,0.03,"$","nouveau tarif au 02/07/2026"],
+["MiniMax","MiniMax-M3",0.30,1.20,0.06,"n","-50% permanent · double au-delà de 512K"],
+["MiniMax","MiniMax-M2.7",0.30,1.20,0.06,"",""],
+["MiniMax","MiniMax-M2.5",0.30,1.20,0.03,"",""],
+["MiniMax","MiniMax-M2.1",0.30,1.20,0.03,"",""],
+["MiniMax","MiniMax-M2",0.30,1.20,0.03,"",""],
+["Alibaba","Qwen3.5-27B",0.30,2.40,null,"",""],
+["Amazon","Nova 2 Lite",0.30,2.50,null,"",""],
+["Mistral AI","Codestral",0.30,0.90,null,"n","FIM"],
+["Alibaba","Qwen3.6-27B",0.32,3.20,null,"","cache disponible"],
+["Alibaba","Qwen3.5-Plus (Intl)",0.40,2.40,null,"","cache disponible"],
+["Alibaba","Qwen3.5-Omni-Flash",0.40,2.20,null,"",""],
+["Alibaba","Qwen3.5-122B-A10B",0.40,3.20,null,"",""],
+["Mistral AI","Devstral 2 (Medium)",0.40,2.00,null,"n","codage agentique"],
+["DeepSeek","DeepSeek-V4-Pro",0.435,0.87,0.0036,"","contexte 1M · sortie max 384K"],
+["Mistral AI","Mistral Large 3",0.50,1.50,null,"","contexte 262K"],
+["Mistral AI","Magistral Small",0.50,1.50,null,"n","raisonnement"],
+["Google","Gemini 3 Flash Preview",0.50,3.00,0.05,"",""],
+["Alibaba","Qwen3.6-Plus (Intl)",0.50,3.00,null,"","cache disponible"],
+["Alibaba","Qwen3-A17B",0.60,3.60,null,"",""],
+["MiniMax","MiniMax-M2.1-highspeed",0.60,2.40,0.03,"",""],
+["MiniMax","MiniMax-M2.5-highspeed",0.60,2.40,0.03,"",""],
+["MiniMax","MiniMax-M2.7-highspeed",0.60,2.40,0.06,"",""],
+["MiniMax","MiniMax-M3-highspeed",0.60,2.40,0.12,"n",""],
+["Moonshot","Kimi K2 Thinking",0.60,2.50,0.10,"","tokens de raisonnement au prix output"],
+["OpenAI","GPT-5.4-mini",0.75,4.50,0.075,"n","contexte 400K"],
+["Moonshot","Kimi K2.7 Code",0.95,4.00,null,"n","12/06/2026 · multimodal, code"],
+["Anthropic","Claude Haiku 4.5",1.00,5.00,0.10,"n","remplace Haiku 3.5"],
+["Z.ai","GLM-5",1.00,3.20,0.20,"",""],
+["xAI","Grok Build 0.1",1.00,2.00,0.20,"n","spécialisé code · 256K"],
+["OpenAI","GPT-5.6-Luna",1.00,6.00,0.10,"n","famille GPT-5.6 · contexte 1M"],
+["Google","Gemini 2.5 Pro",1.25,10.00,0.125,"","prix double au-delà de 200K"],
+["xAI","Grok 4.20",1.25,2.50,0.20,"n","reasoning / non-reasoning / multi-agent · 1M"],
+["xAI","Grok 4.3",1.25,2.50,0.20,"","contexte 1M"],
+["Alibaba","Qwen3.6-max-preview",1.30,7.80,null,"n","$2.00/$12.00 au-delà de 128K"],
+["Z.ai","GLM-5.1",1.40,4.40,0.26,"",""],
+["Z.ai","GLM-5.2",1.40,4.40,0.26,"n","13/06/2026 · 1M · open-weight MIT"],
+["Alibaba","Qwen3.5-Omni-Plus",1.40,8.30,null,"",""],
+["Google","Gemini 3.5 Flash",1.50,9.00,0.15,"n",""],
+["Mistral AI","Mistral Medium 3.5",1.50,7.50,null,"","contexte 262K"],
+["OpenAI","GPT-5.3 Codex/Chat",1.75,14.00,0.175,"","spécialisé code"],
+["Mistral AI","Magistral Medium",2.00,5.00,null,"n","raisonnement"],
+["Mistral AI","Mistral Large 2",2.00,6.00,null,"l",""],
+["xAI","Grok 4.5",2.00,6.00,null,"n","flagship xAI · 500K · ~2x plus efficace en tokens"],
+["OpenAI","o4-mini-deep-research",2.00,8.00,null,"n","contexte 200K"],
+["Google","Gemini 3.1 Pro Preview",2.00,12.00,0.20,"n","double au-delà de 200K"],
+["OpenAI","GPT-5.4",2.50,15.00,0.25,"n","1.05M · remplace GPT-4.1 / GPT-4o"],
+["OpenAI","GPT-5.6-Terra",2.50,15.00,0.25,"n","famille GPT-5.6 · contexte 1M"],
+["Anthropic","Claude Sonnet 4.6",3.00,15.00,0.30,"p",""],
+["Anthropic","Claude Sonnet 5",3.00,15.00,0.30,"m","promo $2.00/$10.00 jusqu'au 31/08/2026 · tokenizer +30%"],
+["Anthropic","Claude Opus 4.7",5.00,25.00,0.50,"",""],
+["Anthropic","Claude Opus 4.8",5.00,25.00,0.50,"n","28/05/2026 · fast mode $10/$50"],
+["OpenAI","GPT-5.5",5.00,30.00,0.50,"p","remplacée par GPT-5.6"],
+["OpenAI","GPT-5.6-Sol",5.00,30.00,0.50,"n","flagship · 1M · dispo large 09/07/2026"],
+["Anthropic","Claude Fable 5",10.00,50.00,1.00,"n","1M au tarif standard · cache write 5min $12.50"],
+["Anthropic","Claude Mythos 5",10.00,50.00,1.00,"n","accès restreint (Project Glasswing)"],
+["OpenAI","o3-deep-research",10.00,40.00,2.50,"n","web_search systématique · 200K"],
+["OpenAI (Azure)","GPT-5.5-Pro Global",30.00,180.00,null,"n","remplace GPT-5 Pro Global"],
+];
+const FREE=[
+["Baidu","CoBuddy","optimisé code/agents · 131K"],
+["OpenRouter","Owl Alpha","modèle fondation agents · 1.05M"],
+["NVIDIA","Nemotron 3 Nano Omni","perception multimodale · 256K"],
+["NVIDIA","Nemotron 3 Super","Mamba-Transformer · 1M"],
+["Poolside","Laguna XS.2 / M.1","codage agentique · 131K"],
+["Google","Gemma 4 (free tier)","via Google AI Studio · 262K"],
+["OpenRouter","MiniMax M2.5 (free)","productivité bureautique · 205K"],
+["OpenAI","gpt-oss-120b (free)","via OpenRouter · 131K"],
+["OpenAI","gpt-oss-20b (free)","via OpenRouter · 131K"],
+["DeepSeek","DeepSeek V4 Flash (free)","via OpenRouter · 1.05M"],
+["Meta","Llama 3.3 70B Instruct (free)","via OpenRouter · 131K"],
+];
+const SUBS=[
+["Anthropic — Claude","Plans consumer et équipes",[
+ ["Free","$0","chat web/mobile, web search, mémoire, MCP distant"],
+ ["Pro","$20/mo","+ Claude Code, Cowork, Research · $200/an"],
+ ["Max 5x / 20x","$100 · $200/mo","5x / 20x le volume Pro, accès prioritaire"],
+ ["Team Std / Premium","$25 · $125/siège","SSO, admin · Premium = 5x volume"],
+ ["Enterprise","$20/siège + API","SCIM, audit, HIPAA optionnel"]]],
+["OpenAI — ChatGPT","Restructuré 2026 : plan Go, Pro scindé, Team → Business",[
+ ["Free","$0","GPT-5.3 Instant, 10 msgs / 5h"],
+ ["Go","$8/mo","10x messages, uploads, images"],
+ ["Plus","$20/mo","GPT-5.5, Deep Research, Sora, Agent Mode"],
+ ["Pro 5x / 20x","$100 · $200/mo","limites étendues · 20x = contexte 1M"],
+ ["Business","$25/siège","workspace, SAML SSO, 60+ intégrations"],
+ ["Enterprise","sur devis","~$60–100+/siège selon volume"]]],
+["Google — Google AI","Ex-Gemini Advanced, renommé en 2026",[
+ ["Plus","$9.99/mo","2x usage, 400 Go, Gemini Omni"],
+ ["Pro","$19.99/mo","Gemini 3.1 Pro, 2 To, Deep Research, NotebookLM étendu"],
+ ["Ultra","$200/mo","20x vs Pro, 30 To, YouTube Premium, Project Genie"]]],
+["Perplexity","Gamme élargie 2026 (Max, Enterprise Max)",[
+ ["Free","$0","recherches illimitées (standard)"],
+ ["Pro","$20/mo","Pro Search illimité, $5/mo crédits API · $200/an"],
+ ["Max","$200/mo","Deep Research avancé, agents"],
+ ["Enterprise Pro / Max","$40 · $325/siège","SSO, données isolées · Max = Labs illimité"]]],
+["xAI — Grok","Gamme SuperGrok restructurée 2026",[
+ ["X Premium / +","$8 · $40/mo","accès Grok dans X"],
+ ["SuperGrok Lite","$10/mo","Grok Imagine, usage léger"],
+ ["SuperGrok","$30/mo","Grok 4.x, DeepSearch, Big Brain · $300/an"],
+ ["SuperGrok Heavy","$300/mo","Grok 4.3 + Heavy multi-agent, 256K"],
+ ["Grok Business","$30/siège","billing centralisé, admin"]]],
+["Mistral AI — Le Chat","",[
+ ["Free","$0","derniers modèles, ~25 msgs/jour, 100+ connecteurs"],
+ ["Pro","$14.99/mo","illimité, Mistral Vibe (CLI/IDE/web)"],
+ ["Education","$5.99/mo","tarif étudiant, 12 mois max"],
+ ["Team","$24.99/siège","30 Go/utilisateur, export, workspace"],
+ ["Enterprise","sur devis","déploiement privé, white-label, SSO"]]],
+["API uniquement","Pas d'abonnement consumer",[
+ ["DeepSeek · MiniMax · Groq","pay-as-you-go","crédit prépayé ou on-demand"],
+ ["Cohere","pay-as-you-go","Model Vault $2 500–6 500/mo dédié"],
+ ["Together · Fireworks","pay-as-you-go","serverless + GPU on-demand"],
+ ["Alibaba (Qwen)","pay-as-you-go","Token Plan Team Edition B2B"]]],
+];
+const CH_NEW=[
+["GPT-5.6 Sol / Terra / Luna","OpenAI — nouvelle famille flagship (09/07), $5/$30 · $2.50/$15 · $1/$6, contexte 1M, cache read -90%"],
+["GPT-5.4 / mini / nano","OpenAI — palier intermédiaire, remplace GPT-4.1 et GPT-4o"],
+["o3 / o4-mini deep-research","OpenAI — modèles recherche avec web_search intégré"],
+["Claude Fable 5 & Mythos 5","Anthropic — $10/$50, 1M au tarif standard ; Mythos réservé Project Glasswing"],
+["Claude Opus 4.8","Anthropic — 28/05, $5/$25, fast mode $10/$50"],
+["Claude Sonnet 5","Anthropic — 30/06, promo $2/$10 jusqu'au 31/08 ; tokenizer +30% de tokens"],
+["Claude Haiku 4.5","Anthropic — $1/$5, remplace Haiku 3.5"],
+["Grok 4.5","xAI — flagship $2/$6, 500K, ~2x efficacité tokens"],
+["Grok 4.20 & Grok Build 0.1","xAI — variantes 1M à $1.25/$2.50 ; code à $1/$2"],
+["Gemini 3.5 Flash & 3.1 Flash-Lite","Google — $1.50/$9.00 et $0.25/$1.50"],
+["Kimi K2.7 Code","Moonshot — 12/06, $0.95/$4.00, -30% de tokens vs K2.6"],
+["GLM-5.2","Z.ai — 13/06, $1.40/$4.40, 1M, open-weight MIT"],
+["Qwen3.6-max-preview / flash","Alibaba — $1.30/$7.80 et $0.25/$1.50 ; Qwen3.7 Max annoncé, pas encore tarifé officiellement"],
+["MiniMax-M3 (+highspeed)","MiniMax — frontier code/agents, -50% permanent ($0.30/$1.20)"],
+["Vague Mistral","Magistral, Ministral 3, Devstral 2, Codestral, Voxtral, NeMo"],
+];
+const CH_DEL=[
+["GPT-4.1, GPT-4o (+ minis, nano)","OpenAI — absents de la grille officielle, remplacés par GPT-5.x"],
+["o1, o1-pro, o3, o3-pro","OpenAI — retirés ; recherche = o3 / o4-mini deep-research"],
+["GPT-5-nano · GPT-5 Pro Global","OpenAI — remplacés par GPT-5.4-nano et GPT-5.5-Pro Global ($30/$180)"],
+["GPT-5.5","OpenAI — reléguée génération précédente au 09/07 (tarif inchangé)"],
+["Claude Sonnet 4 & Opus 4","Anthropic — retirés de l'API directe le 15/06 (restent Bedrock/GCloud)"],
+["Claude Haiku 3.5","Anthropic — retiré, remplacé par Haiku 4.5"],
+["Claude Opus 4.1","Anthropic — deprecated, retrait le 05/08/2026"],
+["Gemini 2.0 Flash & Flash-Lite","Google — fermés le 01/06/2026"],
+["Grok 4 & Grok 4-fast","xAI — retirés le 15/05, remplacés par Grok 4.3"],
+["deepseek-chat / deepseek-reasoner","DeepSeek — noms d'API legacy, retrait le 24/07/2026"],
+["Qwen-Turbo","Alibaba — plus mis à jour, Qwen-Flash recommandé"],
+];
+const CH_PRI=[
+["Gemini 2.5 Flash","Google — $0.30/$2.50 au 02/07 (était $1.00/$3.50 au tableau)"],
+["Gemini 3.1 Pro","Google — hausse au 02/07 : $1.25/$5 → $2/$12 ; double au-delà de 200K"],
+["DeepSeek V4","sortie mi-juillet avec tarif heures pleines 2x (9h-12h / 14h-18h Pékin), 1M sur toute la gamme"],
+["DeepSeek-V4-Pro","la promo -75% ($0.435/$0.87) est devenue le tarif standard"],
+["MiniMax M3","réduction permanente de -50% (input $0.30 au lieu de $0.60)"],
+["Claude Sonnet 5","fin de promo le 31/08/2026 : retour à $3/$15"],
+["Fast mode Opus 4.7","Anthropic — déprécié, retrait le 24/07/2026 ($30/$150)"],
+];
+
+const root=document.querySelector(".llm-lab");
+const $=s=>root.querySelector(s);
+const LOGMIN=Math.log10(0.008), LOGMAX=Math.log10(200);
+const w=v=>v<=0?0:Math.max(2,Math.round(100*(Math.log10(v)-LOGMIN)/(LOGMAX-LOGMIN)));
+const fmt=v=>v==null?"—":("$"+(v<0.1?v.toFixed(v<0.01?4:3):v.toFixed(2)));
+const fmtC=v=>"$"+v.toLocaleString("fr-FR",{maximumFractionDigits:v<10?2:0});
+const BADGE={n:["b-new","Nouveau"],p:["b-prev","Génération précédente"],m:["b-promo","Promo"],
+  "$":["b-price","▲ Prix modifié"],l:["b-legacy","Legacy"],f:["b-free","Gratuit"]};
+
+const provs=[...new Set(M.map(r=>r[0]))].sort((a,b)=>a.localeCompare(b,"fr"));
+$("#m-models").textContent=M.length+FREE.length;
+$("#m-prov").textContent=new Set([...M.map(r=>r[0]),...FREE.map(r=>r[0])]).size;
+
+let active=new Set(), query="", showFree=false, sortKey="input", sortDir=1;
+
+const chipbox=$("#prov-chips");
+provs.forEach(p=>{
+  const b=document.createElement("button");
+  b.className="lab-chip";b.textContent=p;b.setAttribute("aria-pressed","false");
+  b.onclick=()=>{active.has(p)?active.delete(p):active.add(p);
+    b.setAttribute("aria-pressed",active.has(p));render();};
+  chipbox.appendChild(b);
+});
+
+function rows(){
+  const ci=+$("#c-in").value||0, co=+$("#c-out").value||0;
+  let list=M.map(r=>({prov:r[0],model:r[1],input:r[2],output:r[3],cache:r[4],b:r[5],note:r[6],
+    cost:ci*r[2]+co*r[3],free:false}));
+  if(showFree) list=list.concat(FREE.map(r=>({prov:r[0],model:r[1],input:0,output:0,cache:null,
+    b:"f",note:r[2],cost:0,free:true})));
+  if(active.size) list=list.filter(r=>active.has(r.prov));
+  if(query) list=list.filter(r=>(r.prov+" "+r.model+" "+r.note).toLowerCase().includes(query));
+  list.sort((a,b)=>{
+    if(sortKey==="model") return sortDir*(a.model.localeCompare(b.model,"fr"));
+    const av=a[sortKey]??-1, bv=b[sortKey]??-1;
+    return sortDir*(av-bv)||a.model.localeCompare(b.model,"fr");
+  });
+  return list;
+}
+
+function render(){
+  const list=rows(), tb=$("#tbody");
+  tb.innerHTML=list.map(r=>{
+    const bd=r.b?`<span class="lab-badge ${BADGE[r.b][0]}">${BADGE[r.b][1]}</span>`:"";
+    const note=r.note?` <span class="note-ic" title="${r.note.replace(/"/g,"&quot;")}">ⓘ</span>`:"";
+    return `<tr>
+      <td><span class="mdl">${r.model}</span>${bd}${note}<span class="prov">${r.prov}</span></td>
+      <td class="num">${r.free?"gratuit":fmt(r.input)}</td>
+      <td class="num">${r.free?"gratuit":fmt(r.output)}</td>
+      <td class="num">${fmt(r.cache)}</td>
+      <td class="bars" aria-hidden="true">
+        <div class="bar in" style="width:${w(r.input)}%" title="Input ${fmt(r.input)}/1M"></div>
+        <div class="bar out" style="width:${w(r.output)}%" title="Output ${fmt(r.output)}/1M"></div>
+      </td>
+      <td class="num cost">${r.free?"$0":fmtC(r.cost)}</td>
+    </tr>`;
+  }).join("");
+  $("#count").textContent=list.length+" modèle"+(list.length>1?"s":"")+" affiché"+(list.length>1?"s":"")+
+    (active.size?" · filtre : "+[...active].join(", "):"");
+  root.querySelectorAll("thead .arr").forEach(a=>a.textContent="");
+  const th=root.querySelector(`thead button[data-sort="${sortKey}"] .arr`);
+  if(th) th.textContent=sortDir>0?"↑":"↓";
+}
+
+$("#q").addEventListener("input",e=>{query=e.target.value.toLowerCase();render();});
+$("#show-free").addEventListener("change",e=>{showFree=e.target.checked;render();});
+$("#c-in").addEventListener("input",render);
+$("#c-out").addEventListener("input",render);
+root.querySelectorAll("thead button").forEach(b=>{
+  b.onclick=()=>{const k=b.dataset.sort;
+    if(sortKey===k) sortDir=-sortDir; else {sortKey=k;sortDir=1;}
+    render();};
+});
+
+$("#subgrid").innerHTML=SUBS.map(([t,s,plans])=>`
+  <div class="lab-subcard"><h3>${t}</h3><p class="sc-sub">${s||"&nbsp;"}</p>
+  ${plans.map(([n,p,d])=>`<div class="plan"><div><div class="pn">${n}</div><div class="pd">${d}</div></div>
+    <div class="pp">${p}</div></div>`).join("")}</div>`).join("");
+
+const li=([t,d])=>`<li><b>${t}</b><br>${d}</li>`;
+$("#ch-new").innerHTML=CH_NEW.map(li).join("");
+$("#ch-del").innerHTML=CH_DEL.map(li).join("");
+$("#ch-pri").innerHTML=CH_PRI.map(li).join("");
+
+root.querySelectorAll(".lab-tabs button").forEach(b=>{
+  b.onclick=()=>{
+    root.querySelectorAll(".lab-tabs button").forEach(x=>x.setAttribute("aria-selected",x===b));
+    root.querySelectorAll(".lab-panel").forEach(p=>p.hidden=true);
+    $("#p-"+b.dataset.tab).hidden=false;
+  };
+});
+
+render();
+</script>
+
+  <footer style="margin-top:48px;padding-top:28px;border-top:1px solid var(--pf-border)">
+    <a class="pf-btn pf-btn-ghost" href="/labs/">← Tous les labs</a>
+  </footer>
+</article>
+{{ end }}

@@ -1,0 +1,35 @@
+{{ define "main" }}
+<section class="pf-section" style="padding-top:32px">
+  <div class="pf-section-head">
+    <div class="pf-section-hud">
+      <span class="pf-section-progress">
+        <span class="pf-section-progress-label">LABS</span>
+        <span class="pf-section-progress-track">
+          <span class="pf-section-progress-fill" style="width:{{ math.Min 100 (mul (len .Pages) 25) }}%"></span>
+        </span>
+        <span class="pf-section-progress-val">{{ len .Pages }} OUTIL{{ if gt (len .Pages) 1 }}S{{ end }}</span>
+      </span>
+    </div>
+    <h2 class="pf-section-title">{{ .Title }}</h2>
+    {{ with .Description }}<p class="pf-section-lead">{{ . }}</p>{{ end }}
+  </div>
+
+  <div class="pf-cards-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px">
+    {{ range .Pages.ByDate.Reverse }}
+    <a class="pf-card" href="{{ .RelPermalink }}" style="text-decoration:none;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <span class="pf-status pf-status-{{ .Params.status | default "deployed" }}"><span class="pf-status-dot"></span>{{ .Params.statusLabel | default "TOOL" }}</span>
+        {{ with .Params.updated }}<span class="pf-version">màj {{ . }}</span>{{ end }}
+      </div>
+      <h3 style="margin:0;font-size:19px;color:var(--pf-text)">{{ .Title }}</h3>
+      <p style="margin:0;font-size:14px;color:var(--pf-text-muted);flex:1">{{ .Description }}</p>
+      {{ with .Params.tags }}
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        {{ range first 4 . }}<span class="pf-tech">{{ . }}</span>{{ end }}
+      </div>
+      {{ end }}
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
