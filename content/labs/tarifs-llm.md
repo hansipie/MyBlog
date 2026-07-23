@@ -7,7 +7,7 @@ tags: [LLM, IA, pricing, API]
 categories: [IA]
 params:
   status: running
-  statusLabel: LIVE DATA
+  statusLabel: SNAPSHOT
   updated: "23 juil. 2026"
   sources: 65
 ---
