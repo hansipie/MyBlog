@@ -47,8 +47,7 @@ uglyURLs = false
   unsafe = true
 
 [markup.highlight]
-  noClasses = true
-  style = "dracula"
+  noClasses = false
 
 [params]
   description = " "
