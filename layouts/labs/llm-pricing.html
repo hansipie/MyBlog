@@ -211,6 +211,7 @@ const M=[
 ["Microsoft","Phi 4",0.065,0.14,null,"",""],
 ["Alibaba","Qwen3.5-Flash (Intl)",0.065,0.26,null,"",""],
 ["Baidu","ERNIE 4.5 21B A3B",0.07,0.28,null,"",""],
+["Z.ai","GLM-4.7-FlashX",0.07,0.40,null,"n","palier payant le moins cher de la gamme GLM"],
 ["Meta","Llama 4 Scout",0.08,0.30,null,"",""],
 ["Alibaba","Qwen3 32B",0.08,0.28,null,"",""],
 ["Mistral AI","Ministral 3 – 3B",0.10,0.10,null,"","contexte 131K"],
@@ -218,11 +219,12 @@ const M=[
 ["Mistral AI","Devstral Small 2",0.10,0.30,null,"","codage agentique"],
 ["Mistral AI","Voxtral Small",0.10,0.40,null,"","audio"],
 ["Google","Gemini 2.5 Flash-Lite",0.10,0.40,0.01,"",""],
-["DeepSeek","DeepSeek-V4-Flash",0.14,0.28,0.0028,"$","révision V4-Flash-0731 · tarif off-peak · peak (9h-12h/14h-18h Pékin) = 2x, cache $0.0056"],
+["DeepSeek","DeepSeek-V4-Flash",0.14,0.28,0.0028,"$","tarif redevenu plat au 11/08 (heures pleines/creuses supprimées) · hausse de prix à venir annoncée par DeepSeek, date non précisée"],
 ["Mistral AI","Mistral NeMo",0.15,0.15,null,"","contexte 128K"],
 ["Mistral AI","Ministral 3 – 8B",0.15,0.15,null,"","contexte 262K"],
 ["OpenAI","GPT-5.4-nano",0.20,1.25,0.02,"","remplace GPT-5-nano · 400K"],
 ["Mistral AI","Ministral 3 – 14B",0.20,0.20,null,"","contexte 262K"],
+["Google","Gemini 3.1 Flash-Lite",0.25,1.50,0.025,"","reste bien listé sur la page officielle au 11/08, le doute du 25/07 était infondé"],
 ["Alibaba","Qwen3.6-flash",0.25,1.50,null,"","prix double env. au-delà de 256K"],
 ["Google","Gemini 3.5 Flash-Lite",0.30,2.50,0.03,"n","remplace Gemini 3.1 Flash-Lite · +$1.00/h stockage"],
 ["Google","Gemini 2.5 Flash",0.30,2.50,0.03,"","tarif au 02/07/2026"],
@@ -240,7 +242,7 @@ const M=[
 ["Alibaba","Qwen3.5-Omni-Flash",0.40,2.20,null,"",""],
 ["Alibaba","Qwen3.5-122B-A10B",0.40,3.20,null,"",""],
 ["Mistral AI","Devstral 2 (Medium)",0.40,2.00,null,"","codage agentique"],
-["DeepSeek","DeepSeek-V4-Pro",0.435,0.87,0.0036,"$","tarif off-peak · peak = 2x · contexte 1M · sortie max 384K"],
+["DeepSeek","DeepSeek-V4-Pro",0.435,0.87,0.0036,"$","tarif redevenu plat au 11/08 (heures pleines/creuses supprimées) · contexte 1M · hausse de prix à venir annoncée par DeepSeek"],
 ["Mistral AI","Mistral Large 3",0.50,1.50,null,"","contexte 262K"],
 ["Mistral AI","Magistral Small",0.50,1.50,null,"","raisonnement"],
 ["Google","Gemini 3 Flash Preview",0.50,3.00,0.05,"",""],
@@ -272,8 +274,8 @@ const M=[
 ["OpenAI","GPT-5.3 Codex/Chat",1.75,14.00,0.175,"","spécialisé code"],
 ["Mistral AI","Magistral Medium",2.00,5.00,null,"","raisonnement"],
 ["Mistral AI","Mistral Large 2",2.00,6.00,null,"l",""],
-["xAI","Grok 4.5",2.00,6.00,null,"","flagship xAI · 500K · ~2x plus efficace en tokens"],
-["Alibaba","Qwen3.8-Max",2.00,6.00,0.25,"n","GA 02-03/08/2026 · MoE 2.4T · contexte 1M sans surcharge long-prompt · remplace Qwen3.7-Max"],
+["xAI","Grok 4.5",2.00,6.00,0.30,"","flagship xAI · double au-delà de 200K ($4/$12, cache $0.60) · ~2x plus efficace en tokens"],
+["Alibaba","Qwen3.8-Max",2.00,6.00,0.25,"n","GA annoncée 02-03/08 par sources tierces, MoE 2.4T, contexte 1M sans surcharge long-prompt · toujours absent de la page pricing officielle Alibaba au 11/08, tarif non confirmé en direct"],
 ["OpenAI","o4-mini-deep-research",2.00,8.00,null,"","contexte 200K"],
 ["Google","Gemini 3.1 Pro Preview",2.00,12.00,0.20,"","double au-delà de 200K"],
 ["OpenAI","GPT-5.6-Terra",2.00,12.00,0.20,"$","prix réduit de 20% le 30/07 · contexte 1.05M · cache write $2.50 · surcharge au-delà de 272K"],
@@ -303,6 +305,8 @@ const FREE=[
 ["OpenAI","gpt-oss-20b (free)","via OpenRouter · 131K"],
 ["DeepSeek","DeepSeek V4 Flash (free)","via OpenRouter · 1.05M"],
 ["Meta","Llama 3.3 70B Instruct (free)","via OpenRouter · 131K"],
+["Z.ai","GLM-4.7-Flash","gratuit, sans quota crédit, optimisé rapidité"],
+["Z.ai","GLM-4.5-Flash","gratuit, sans quota crédit"],
 ];
 const SUBS=[
 ["Anthropic — Claude","Plans consumer et équipes",[
@@ -346,7 +350,9 @@ const SUBS=[
  ["Alibaba (Qwen)","pay-as-you-go","Token Plan Team Edition B2B"]]],
 ];
 const CH_NEW=[
-["Qwen3.8-Max","Alibaba — GA 02-03/08, $2/$6, cache $0.25, MoE 2.4T, contexte 1M sans surcharge long-prompt ; remplace Qwen3.7-Max comme flagship"],
+["GLM-4.7-Flash & GLM-4.5-Flash","Z.ai — confirmés gratuits ($0/$0) sur la page pricing officielle, sans quota crédit (11/08)"],
+["GLM-4.7-FlashX","Z.ai — palier payant le moins cher de la gamme GLM à $0.07/$0.40 (11/08)"],
+["Qwen3.8-Max","Alibaba — GA annoncée 02-03/08 par sources tierces, $2/$6, cache $0.25, MoE 2.4T, contexte 1M sans surcharge long-prompt ; remplace Qwen3.7-Max comme flagship ; toujours absent de la page pricing officielle au 11/08"],
 ["DeepSeek-V4-Flash-0731","DeepSeek — révision du 31/07 axée agents et code, tarif inchangé à $0.14/$0.28 en heures creuses"],
 ["Claude Opus 5","Anthropic · 24/07 · nouvel Opus $5/$25 · API claude-opus-5 · fast mode $10/$50 · toutes plateformes"],
 ["Kimi K3","Moonshot — flagship 16/07, $3/$15, remplace K2 Thinking, MoE 2.8T, contexte 1M, tarif plat"],
@@ -371,7 +377,6 @@ const CH_NEW=[
 ["Vague Mistral","Magistral, Ministral 3, Devstral 2, Codestral, Voxtral, NeMo"],
 ];
 const CH_DEL=[
-["Gemini 3.1 Flash-Lite","Google — n'apparaît plus sur la page pricing officielle depuis le lancement de Gemini 3.5 Flash-Lite (21/07)"],
 ["deepseek-chat / deepseek-reasoner","DeepSeek — noms d'API legacy, retrait le 24/07/2026 15h59 UTC"],
 ["Claude Opus 4.1","Anthropic — deprecated, retrait imminent le 05/08/2026"],
 ["Kimi K2 Thinking","Moonshot — relégué génération précédente, remplacé par Kimi K3 comme flagship le 16/07"],
@@ -386,6 +391,8 @@ const CH_DEL=[
 ["Qwen-Turbo","Alibaba — plus mis à jour, Qwen-Flash recommandé"],
 ];
 const CH_PRI=[
+["DeepSeek V4 (Flash & Pro)","tarification heures pleines/creuses supprimée de la page officielle au 11/08, retour à un tarif plat (= ancien palier off-peak) ; hausse de prix « significative » annoncée sans date précisée"],
+["Grok 4.5 & Gemini 3.1 Pro Preview","confirmation officielle du doublement de tarif au-delà de 200K tokens (11/08)"],
 ["GPT-5.6 Luna & Terra","OpenAI — baisse le 30/07 : Luna -80% à $0.20/$1.20 ; Terra -20% à $2/$12 ; Sol reste à $5/$30"],
 ["GPT-5.6 — contexte long","au-delà de 272K tokens d'entrée : input ×2 et output ×1.5 sur l'intégralité de la requête"],
 ["DeepSeek V4 (Flash & Pro)","tarification heures pleines/creuses effective mi-juillet : tarif peak (9h-12h/14h-18h Pékin) = 2x le tarif off-peak"],
