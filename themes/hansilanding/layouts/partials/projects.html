@@ -1,4 +1,4 @@
-{{- $pr := .Site.Params.projects | default dict -}}
+{{- $pr := .Site.Data.about.projects | default .Site.Params.projects | default dict -}}
 <section class="pf-section" id="projects">
   <div class="pf-section-head">
     <div class="pf-section-hud">

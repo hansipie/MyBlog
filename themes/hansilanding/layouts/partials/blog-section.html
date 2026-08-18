@@ -1,4 +1,4 @@
-{{- $b := .Site.Params.blogSection | default dict -}}
+{{- $b := .Site.Data.about.blogSection | default .Site.Params.blogSection | default dict -}}
 <section class="pf-section" id="blog">
   <div class="pf-section-head">
     <div class="pf-section-hud">
@@ -16,7 +16,7 @@
   </div>
 
   <div class="pf-project-grid">
-    {{/* Cartes de blogs externes (depuis params) */}}
+    {{/* Cartes de blogs externes (depuis data/about.toml) */}}
     {{ range $b.externalBlogs }}
     <article class="pf-card pf-project-card">
       <div class="pf-project-top">

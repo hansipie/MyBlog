@@ -1,4 +1,4 @@
-{{- $c := .Site.Params.contact | default dict -}}
+{{- $c := .Site.Data.about.contact | default .Site.Params.contact | default dict -}}
 {{- $p := .Site.Params -}}
 <section class="pf-section" id="contact">
   <div class="pf-section-head">

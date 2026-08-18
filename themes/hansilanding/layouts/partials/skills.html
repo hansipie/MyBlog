@@ -1,4 +1,4 @@
-{{- $sk := .Site.Params.skills | default dict -}}
+{{- $sk := .Site.Data.about.skills | default .Site.Params.skills | default dict -}}
 <section class="pf-section" id="skills">
   <div class="pf-section-head">
     <div class="pf-section-hud">

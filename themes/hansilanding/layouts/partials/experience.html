@@ -1,4 +1,4 @@
-{{- $e := .Site.Params.experience | default dict -}}
+{{- $e := .Site.Data.about.experience | default .Site.Params.experience | default dict -}}
 <section class="pf-section" id="experience">
   <div class="pf-section-head">
     <div class="pf-section-hud">

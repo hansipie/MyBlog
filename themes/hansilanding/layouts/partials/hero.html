@@ -1,5 +1,7 @@
 {{- $p := .Site.Params -}}
-{{- $h := $p.hero | default dict -}}
+{{- $d := .Site.Data.about | default dict -}}
+{{- $profile := $d.profile | default $p.author | default dict -}}
+{{- $h := $d.hero | default $p.hero | default dict -}}
 <section class="pf-hero">
   <div class="pf-hero-grid">
     <div class="pf-hero-content">
@@ -19,16 +21,16 @@
         {{ end }}
       </div>
 
-      {{ with $p.author.eyebrow }}
+      {{ with $profile.eyebrow }}
       <p class="pf-hero-eyebrow">{{ . }}</p>
       {{ end }}
       <h1 class="pf-hero-title">
         <span class="pf-hero-name">{{ $p.author.name | default .Site.Title }}</span>
       </h1>
-      {{ with $p.author.tagline }}
+      {{ with $profile.tagline }}
       <p class="pf-hero-tagline">{{ . }}</p>
       {{ end }}
-      {{ with $p.author.bio }}
+      {{ with $profile.bio }}
       <p class="pf-hero-bio">{{ . }}</p>
       {{ end }}
 

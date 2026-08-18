@@ -1,0 +1,417 @@
+# Contenu structuré de la page /about/.
+# Le rendu est défini dans themes/hansilanding/layouts/about/list.html.
+
+[profile]
+eyebrow = "C/C++ · Systèmes · Réseau · Developer Tools · IA"
+tagline = "Ingénieur logiciel senior, Tech Lead et architecte opérationnel"
+bio = "Plus de 20 ans d'expérience en ingénierie logicielle, du C/C++ bas niveau aux plateformes CI/CD intégrées à un cloud privé. Je conçois aujourd'hui des outils open source, des applications mobiles et des produits fondés sur l'intelligence artificielle."
+
+[hero]
+portraitId = "profile://hansi"
+
+[hero.level]
+value = "LEVEL 20+"
+label = "Senior Engineer"
+
+[hero.ctaPrimary]
+label = "Discuter d'une mission"
+url = "#contact"
+
+[hero.ctaSecondary]
+label = "Lire le blog"
+url = "/posts/"
+
+[[hero.xp]]
+label = "project"
+value = 90
+
+[[hero.xp]]
+label = "coding"
+value = 95
+
+[[hero.xp]]
+label = "ai/llm/agent"
+value = 90
+
+[[hero.xp]]
+label = "devops"
+value = 70
+
+[[hero.xp]]
+label = "system"
+value = 80
+
+[[hero.stats]]
+value = "20+ ans"
+label = "d'expérience en ingénierie logicielle"
+
+[[hero.stats]]
+value = "6 ans"
+label = "Lead Developer chez Dassault Systèmes"
+
+[[hero.stats]]
+value = "4+"
+label = "projets IA, mobile et open source actifs"
+
+[[hero.portraitRows]]
+key = "role"
+val = "freelance"
+
+[[hero.portraitRows]]
+key = "mode"
+val = "challenge"
+
+[[hero.portraitRows]]
+key = "focus"
+val = "ship useful tools"
+
+[[hero.orbit]]
+ring = 2
+
+[[hero.orbit.pods]]
+label = "LLM"
+class = "llm"
+
+[[hero.orbit.pods]]
+label = "Rust"
+class = "rn"
+
+[[hero.orbit]]
+ring = 3
+
+[[hero.orbit.pods]]
+label = "Ops"
+class = "docker"
+
+[[hero.orbit.pods]]
+label = "AI"
+class = "agent"
+
+[[hero.orbit]]
+ring = 4
+
+[[hero.orbit.pods]]
+label = "C++"
+class = "cpp"
+
+[[hero.orbit.pods]]
+label = "Dev"
+class = "rust"
+
+[about]
+title = "Une culture système, une pratique de l'architecture et le goût de livrer."
+lead = "Mon parcours relie le C/C++ bas niveau, le réseau, les plateformes CI/CD et le développement de produits. J'interviens du diagnostic d'un composant complexe jusqu'à la mise en production d'une solution complète."
+progress = 92
+progressLabel = "READY"
+achievement = "Systems thinker"
+
+[[about.cards]]
+icon = "$"
+title = "Mission"
+wide = true
+body = "Concevoir des solutions pragmatiques et maintenables. Je peux intervenir sur l'architecture, la modernisation d'une application, les outils pour développeurs, les systèmes distribués ou un prototype IA destiné à devenir un vrai produit."
+meta = "comprendre → concevoir → prototyper → tester → déployer"
+
+[[about.cards]]
+icon = "{}"
+title = "Identité technique"
+
+[[about.cards.kv]]
+key = "C/C++ bas niveau"
+val = "core"
+
+[[about.cards.kv]]
+key = "Réseau & diagnostic"
+val = "expert"
+
+[[about.cards.kv]]
+key = "CI/CD & Developer Tools"
+val = "lead"
+
+[[about.cards.kv]]
+key = "LLM & agents"
+val = "pratique"
+
+[[about.cards]]
+icon = "λ"
+title = "Terrain d'impact"
+
+[[about.cards.kv]]
+key = "Software Factory"
+val = "architecture"
+
+[[about.cards.kv]]
+key = "Réduction de contexte LLM"
+val = "ecotokens"
+
+[[about.cards.kv]]
+key = "Calcul mental mobile"
+val = "Papimathic"
+
+[[about.cards.kv]]
+key = "Recherche sourcée"
+val = "BO Analyst"
+
+[experience]
+title = "Expérience en mode déploiement."
+lead = "Plus de 20 ans de métier. Six ans chez 2SB, onze ans en R&D chez Dassault Systèmes dont six comme Lead Developer, puis une activité indépendante depuis août 2023."
+progress = 87
+progressLabel = "TRACKED"
+
+[[experience.items]]
+role = "Freelance IA & modernisation"
+status = "running"
+statusLabel = "RUNNING"
+version = "v2026"
+location = "France · remote"
+quest = "Produits et missions"
+highlights = [
+  "Conception et livraison d'outils open source, d'applications mobiles et de produits fondés sur l'intelligence artificielle.",
+  "Rust, Python, React Native, Expo, Docker, bases SQL, agents logiciels, modèles locaux et intégrations MCP."
+]
+
+[[experience.items]]
+role = "Ingénieur R&D senior, Dassault Systèmes"
+status = "deployed"
+statusLabel = "DEPLOYED"
+version = "11 ans"
+location = "R&D Outils"
+quest = "Developer Tools et Software Factory"
+highlights = [
+  "Développement de ReleaseWork, un gestionnaire de tâches comparable à Jenkins pour piloter builds, tests et contrôles qualité sous Windows, Linux et AIX.",
+  "Six ans comme Lead Developer de la Software Factory : architecture du moteur C++ sous Linux, serveur web, API, cloud privé, virtualisation, haute disponibilité, répartition de charge et sécurité."
+]
+
+[[experience.items]]
+role = "Ingénieur logiciel, 2SB"
+status = "deployed"
+statusLabel = "DEPLOYED"
+version = "6 ans"
+location = "C/C++ · Windows · Unix"
+quest = "Collecte de journaux multiplateforme"
+highlights = [
+  "Responsable de Seccollect, collecteur de journaux pour Windows, Linux, Unix, AIX et HP-UX.",
+  "Conception du protocole TCP, interface wxWidgets, installeur, optimisation des performances, diagnostic de bugs et support client."
+]
+
+[projects]
+title = "Des outils et des produits réellement publiés."
+lead = "Rust, intelligence artificielle, recherche documentaire et mobile : ces projets prolongent mon parcours système tout en couvrant tout le cycle de vie d'un produit."
+progress = 79
+progressLabel = "ACTIVE"
+achievement = "Builder portfolio"
+
+[[projects.items]]
+title = "ecotokens"
+desc = "Outil Rust de réduction de contexte et d'analyse pour workflows LLM. Open source, CLI, recherche de code et économie de tokens."
+status = "running"
+statusLabel = "ACTIVE"
+link = "https://github.com/hansipie/ecotokens"
+linkIcon = "github"
+linkLabel = "GitHub"
+
+[[projects.items.tech]]
+label = "Rust"
+color = "#fb923c"
+
+[[projects.items.tech]]
+label = "LLM"
+color = "#a78bfa"
+
+[[projects.items.tech]]
+label = "CLI"
+color = "#00d4ff"
+
+[[projects.items]]
+title = "Papimathic"
+desc = "Application éducative de calcul mental en React Native / Expo, avec usage réel Play Store."
+status = "running"
+statusLabel = "RUNNING"
+link = "https://papimathic.ansicode.fr/"
+linkIcon = "globe"
+linkLabel = "Voir le site"
+
+[[projects.items.tech]]
+label = "React Native"
+color = "#00d4ff"
+
+[[projects.items.tech]]
+label = "Expo"
+color = "#4f8df2"
+
+[[projects.items.tech]]
+label = "Education"
+color = "#22e09e"
+
+[[projects.items]]
+title = "viztokens"
+desc = "Visualiseur de sessions d'agents IA conçu pour comprendre leur consommation de contexte et observer leurs workflows."
+status = "running"
+statusLabel = "ACTIVE"
+
+[[projects.items.tech]]
+label = "Agents IA"
+color = "#a78bfa"
+
+[[projects.items.tech]]
+label = "Visualisation"
+color = "#00d4ff"
+
+[[projects.items.tech]]
+label = "Developer Tools"
+color = "#22e09e"
+
+[[projects.items]]
+title = "BO Analyst"
+desc = "Plateforme de recherche d'informations sourcées dans les Bulletins officiels de l'Éducation nationale."
+status = "running"
+statusLabel = "ACTIVE"
+
+[[projects.items.tech]]
+label = "IA"
+color = "#a78bfa"
+
+[[projects.items.tech]]
+label = "Recherche"
+color = "#00d4ff"
+
+[[projects.items.tech]]
+label = "Sources"
+color = "#22e09e"
+
+[skills]
+title = "Une expertise construite sur le terrain."
+lead = "Mon socle reste le C/C++, les systèmes et le réseau. Il s'étend aujourd'hui aux agents IA, à Rust, au développement produit et aux plateformes de livraison."
+progress = 86
+progressLabel = "ONLINE"
+
+[[skills.groups]]
+prefix = "sys"
+title = "Systèmes"
+
+[[skills.groups.items]]
+name = "C / C++"
+level = "core"
+
+[[skills.groups.items]]
+name = "Réseau"
+level = "deep"
+
+[[skills.groups.items]]
+name = "Windows / Linux / Unix"
+level = "expert"
+
+[[skills.groups.items]]
+name = "Debug"
+level = "root cause"
+
+[[skills.groups]]
+prefix = "ai"
+title = "IA appliquée"
+
+[[skills.groups.items]]
+name = "LLM"
+level = "avancé"
+
+[[skills.groups.items]]
+name = "Agents"
+level = "multi-agents"
+
+[[skills.groups.items]]
+name = "MCP"
+level = "intégration"
+
+[[skills.groups.items]]
+name = "RAG"
+level = "recherche"
+
+[[skills.groups]]
+prefix = "dev"
+title = "Développement"
+
+[[skills.groups.items]]
+name = "Rust"
+level = "outils CLI"
+
+[[skills.groups.items]]
+name = "Python / Java"
+level = "avancé"
+
+[[skills.groups.items]]
+name = "React Native / Expo"
+level = "mobile"
+
+[[skills.groups.items]]
+name = "SQLite / PostgreSQL"
+level = "data"
+
+[[skills.groups]]
+prefix = "ops"
+title = "Plateformes"
+
+[[skills.groups.items]]
+name = "CI/CD"
+level = "architecture"
+
+[[skills.groups.items]]
+name = "Software Factory"
+level = "lead"
+
+[[skills.groups.items]]
+name = "Cloud privé / VM"
+level = "intégration"
+
+[[skills.groups.items]]
+name = "HA / répartition de charge"
+level = "architecture"
+
+[blogSection]
+title = "Deux blogs pour documenter, expliquer et attirer."
+lead = "Blog Ansicode pour les articles techniques (IA, LLM, open source, retours d'expérience) et blog Papimathic pour les contenus pédagogiques autour du calcul mental. Deux audiences distinctes, une même cadence de publication."
+progress = 81
+progressLabel = "PUBLISHED"
+achievement = "Long-form builder"
+
+[[blogSection.externalBlogs]]
+title = "Blog Ansicode"
+desc = "Articles techniques autour de l'IA, du développement logiciel, de l'open source, des LLM et des retours d'expérience de builder."
+status = "running"
+statusLabel = "TECH"
+link = "/"
+
+[[blogSection.externalBlogs.tech]]
+label = "IA"
+color = "#00d4ff"
+
+[[blogSection.externalBlogs.tech]]
+label = "Dev"
+color = "#4f8df2"
+
+[[blogSection.externalBlogs.tech]]
+label = "Open source"
+color = "#a78bfa"
+
+[[blogSection.externalBlogs]]
+title = "Blog Papimathic"
+desc = "Contenus pédagogiques pour rendre le calcul mental et les tables de multiplication plus accessibles aux enfants, parents et enseignants."
+status = "deployed"
+statusLabel = "SEO"
+link = "https://papimathic.ansicode.fr/blog/"
+
+[[blogSection.externalBlogs.tech]]
+label = "Education"
+color = "#22e09e"
+
+[[blogSection.externalBlogs.tech]]
+label = "Maths"
+color = "#fcd34d"
+
+[[blogSection.externalBlogs.tech]]
+label = "SEO"
+color = "#326ce5"
+
+[contact]
+title = "Disponible pour missions ciblées."
+lead = "Email pour discuter d'une mission ou d'un cadrage rapide, LinkedIn pour un premier échange professionnel."
+directBody = "Pour discuter d'une mission ou d'une collaboration. L'email reste le point d'entrée le plus direct."
+followBody = "GitHub pour le code, X pour les updates et les réflexions à chaud."
