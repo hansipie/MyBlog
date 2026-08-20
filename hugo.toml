@@ -43,6 +43,9 @@ uglyURLs = false
   category = "categories"
   tag = "tags"
 
+[outputFormats.RSS]
+  baseName = "rss"
+
 [markup.goldmark.renderer]
   unsafe = true
 
