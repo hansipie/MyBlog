@@ -1,0 +1,34 @@
+{{- if and (eq hugo.Environment "production") .Site.Params.goatcounter -}}
+<span id="goatcounter-page-views" class="pf-version" hidden></span>
+<script>
+  (function () {
+    var attempts = 0;
+    var counter = document.getElementById("goatcounter-page-views");
+
+    function loadPageViews() {
+      if (!window.goatcounter || !window.goatcounter.get_data) {
+        attempts += 1;
+        if (attempts < 50) window.setTimeout(loadPageViews, 100);
+        return;
+      }
+
+      var path = window.goatcounter.get_data().p;
+      var url = "{{ .Site.Params.goatcounter }}/counter/" + encodeURIComponent(path) + ".json";
+
+      fetch(url, { credentials: "omit" })
+        .then(function (response) {
+          if (!response.ok) throw new Error("GoatCounter returned " + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          if (!data.count) return;
+          counter.textContent = data.count + " vues";
+          counter.hidden = false;
+        })
+        .catch(function () {});
+    }
+
+    loadPageViews();
+  })();
+</script>
+{{- end -}}

@@ -55,6 +55,7 @@ uglyURLs = false
 [params]
   description = " "
   brandName = "ansicode"
+  goatcounter = "https://stats.ansicode.fr"
   status = "Open to targeted missions"
   region = "France, remote friendly"
   faviconSmall = "/favicon-32.png"
