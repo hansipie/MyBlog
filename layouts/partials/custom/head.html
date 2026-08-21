@@ -1,4 +1,0 @@
-{{- if and (eq hugo.Environment "production") .Site.Params.goatcounter -}}
-<script>window.goatcounter = { endpoint: '{{ .Site.Params.goatcounter }}/count' }</script>
-<script async src="/js/p.js"></script>
-{{- end -}}
