@@ -122,7 +122,7 @@ val = "core"
 
 [[about.cards.kv]]
 key = "Réseau & diagnostic"
-val = "expert"
+val = "deep"
 
 [[about.cards.kv]]
 key = "CI/CD & Developer Tools"
@@ -299,7 +299,7 @@ level = "deep"
 
 [[skills.groups.items]]
 name = "Windows / Linux / Unix"
-level = "expert"
+level = "pratique"
 
 [[skills.groups.items]]
 name = "Debug"
