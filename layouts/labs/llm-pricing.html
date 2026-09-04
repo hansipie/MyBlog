@@ -178,9 +178,9 @@
   <section class="lab-panel" id="p-changes" hidden>
     <div class="lab-chgrid">
       <div class="lab-chcol new"><h3><span class="dot"></span>Nouveaux modèles</h3>
-        <p class="d">DEPUIS LE 10 JUILLET 2026</p><ul id="ch-new"></ul></div>
+        <p class="d">SUIVI 2026 · PLUS RÉCENT D'ABORD</p><ul id="ch-new"></ul></div>
       <div class="lab-chcol del"><h3><span class="dot"></span>Retirés &amp; dépréciés</h3>
-        <p class="d">ABSENTS DES GRILLES OFFICIELLES</p><ul id="ch-del"></ul></div>
+        <p class="d">ANNONCES OFFICIELLES UNIQUEMENT</p><ul id="ch-del"></ul></div>
       <div class="lab-chcol pri"><h3><span class="dot"></span>Prix modifiés</h3>
         <p class="d">CHANGEMENTS DE TARIFICATION</p><ul id="ch-pri"></ul></div>
     </div>
@@ -216,10 +216,11 @@ const M=[
 ["Meta","Llama 4 Scout",0.08,0.30,null,"",""],
 ["Alibaba","Qwen3 32B",0.08,0.28,null,"",""],
 ["Mistral AI","Ministral 3 – 3B",0.10,0.10,null,"","contexte 131K"],
-["Mistral AI","Mistral Small 4",0.10,0.30,null,"","contexte 262K"],
 ["Mistral AI","Devstral Small 2",0.10,0.30,null,"","codage agentique"],
 ["Mistral AI","Voxtral Small",0.10,0.40,null,"","audio"],
 ["Google","Gemini 2.5 Flash-Lite",0.10,0.40,0.01,"",""],
+["Alibaba","Qwen3.8-Flash (Global)",0.113,0.382,0.014,"n","28/08 · contexte 1M · International $0.15/$0.47, cache $0.016"],
+["Mistral AI","Mistral Small 4",0.15,0.60,null,"$","prix officiel corrigé le 04/09 · contexte 262K"],
 ["DeepSeek","DeepSeek-V4-Flash-0731",0.22,0.66,0.007,"$","hausse effective le 16/08 : retour du peak/off-peak · off-peak $0.22/$0.66 (cache $0.007), peak $0.44/$1.32 (cache $0.014) · peak lun-ven 01:00-04:00 et 06:00-10:00 UTC"],
 ["DeepSeek","DeepSeek-V4-Flash-Vision-Exp",0.22,0.66,0.007,"n","21/08 · multimodal expérimental · contexte 1M · peak $0.44/$1.32 (cache $0.014)"],
 ["Mistral AI","Mistral NeMo",0.15,0.15,null,"","contexte 128K"],
@@ -244,6 +245,7 @@ const M=[
 ["Alibaba","Qwen3.5-Omni-Flash",0.40,2.20,null,"",""],
 ["Alibaba","Qwen3.5-122B-A10B",0.40,3.20,null,"",""],
 ["Mistral AI","Devstral 2 (Medium)",0.40,2.00,null,"","codage agentique"],
+["Alibaba","Qwen3.8-27B (International)",0.50,3.00,0.10,"n","01/09 · contexte 1M · Chine $0.424/$1.696, cache $0.085"],
 ["DeepSeek","DeepSeek-V4-Pro-0813",0.66,1.98,0.022,"$","GA le 13/08, tarif modifié le 16/08 · off-peak $0.66/$1.98 (cache $0.022), peak $1.32/$3.96 (cache $0.044) · contexte 1M"],
 ["Mistral AI","Mistral Large 3",0.50,1.50,null,"","contexte 262K"],
 ["Mistral AI","Magistral Small",0.50,1.50,null,"","raisonnement"],
@@ -254,8 +256,8 @@ const M=[
 ["MiniMax","MiniMax-M2.5-highspeed",0.60,2.40,0.03,"",""],
 ["MiniMax","MiniMax-M2.7-highspeed",0.60,2.40,0.06,"",""],
 ["MiniMax","MiniMax-M3-highspeed",0.60,2.40,0.12,"",""],
-["Moonshot","Kimi K2 Thinking",0.60,2.50,0.10,"p","remplacé par Kimi K3 comme flagship le 16/07/2026"],
 ["OpenAI","GPT-5.4-mini",0.75,4.50,0.075,"","contexte 400K"],
+["Google","Gemini 3.8 Flash",0.75,3.75,0.075,"m","02/09 · contexte 1.05M · promo jusqu'au 31/12/2026, puis $1.50/$7.50 (cache $0.15) · stockage cache $0.50/MTok/h pendant la promo"],
 ["Moonshot","Kimi K2.7 Code",0.95,4.00,null,"","12/06/2026 · multimodal, code"],
 ["Anthropic","Claude Haiku 4.5",1.00,5.00,0.10,"","remplace Haiku 3.5"],
 ["Z.ai","GLM-5",1.00,3.20,0.20,"",""],
@@ -272,7 +274,8 @@ const M=[
 ["Z.ai","GLM-5.3",1.40,4.40,0.26,"n","flagship code et agents le 14/08 · même tarif que GLM-5.2"],
 ["Alibaba","Qwen3.5-Omni-Plus",1.40,8.30,null,"",""],
 ["Google","Gemini 3.7 Flash",0.75,3.75,0.075,"n","13/08 · tarif promo jusqu'au 31/12/2026, puis $1.50/$7.50 (cache $0.15) · +$0.50/h stockage cache"],
-["Google","Gemini 3.6 Flash",1.50,7.50,0.15,"","remplace Gemini 3.5 Flash · output -17% · +$1.00/h stockage"],
+["Google","Gemini 3.6 Flash",0.75,3.75,0.075,"m","promo jusqu'au 31/12/2026, puis $1.50/$7.50 (cache $0.15) · stockage cache $0.50/MTok/h pendant la promo"],
+["Google","Gemini 3.5 Flash (Nv)",1.50,9.00,0.15,"p","remplacé par Gemini 3.6 Flash le 21/07/2026"],
 ["Google","Gemini Omni Flash (Preview)",1.50,9.00,null,"n","multimodal natif · output vidéo $17.50"],
 ["Mistral AI","Mistral Medium 3.5",1.50,7.50,null,"","contexte 262K"],
 ["OpenAI","GPT-5.3 Codex/Chat",1.75,14.00,0.175,"","spécialisé code"],
@@ -295,9 +298,12 @@ const M=[
 ["OpenAI","GPT-5.6-Sol",4.00,20.00,0.40,"$","prix promo depuis le 21/08 (était $5/$30), garanti au moins jusqu'au 21/11/2026 · long contexte $8/$30, cache $0.80 · contexte 1.05M"],
 ["Anthropic","Claude Fable 5",10.00,50.00,1.00,"","1M au tarif standard · cache write 5min $12.50"],
 ["Anthropic","Claude Mythos 5",10.00,50.00,1.00,"","accès restreint (Project Glasswing)"],
+["Anthropic","Claude Fable 5.1",10.00,50.00,0.25,"n","01/09 · contexte 1M · cache write 5 min $12.50, 1 h $20 · Fable 5 reste actif en legacy"],
+["Anthropic","Claude Mythos 5.1",10.00,50.00,0.25,"n","01/09 · mêmes tarifs · accès sur invitation Project Glasswing"],
 ["OpenAI","o3-deep-research",10.00,40.00,2.50,"","web_search systématique · 200K"],
 ["OpenAI","GPT-5.6-Cyber",12.50,75.00,1.25,"n","modèle Daybreak spécialisé cybersécurité · cache write $15.625"],
 ["OpenAI (Azure)","GPT-5.5-Pro Global",30.00,180.00,null,"","remplace GPT-5 Pro Global"],
+["Mistral AI","Voxtral Mini Trans.",0.003,null,null,"n","tarification audio : $0.003/min, non applicable au calculateur par tokens"],
 ];
 const FREE=[
 ["Baidu","CoBuddy","optimisé code/agents · 131K"],
@@ -343,10 +349,10 @@ const SUBS=[
  ["SuperGrok","$30/mo","Grok 4.x, DeepSearch, Big Brain · $300/an"],
  ["SuperGrok Heavy","$300/mo","Grok 4.3 + Heavy multi-agent, 256K"],
  ["Grok Business","$30/siège","billing centralisé, admin"]]],
-["Mistral AI — Le Chat","",[
- ["Free","$0","derniers modèles, ~25 msgs/jour, 100+ connecteurs"],
- ["Pro","$14.99/mo","illimité, Mistral Vibe (CLI/IDE/web)"],
- ["Education","$5.99/mo","tarif étudiant, 12 mois max"],
+["Mistral AI — Le Chat","Crédits API mensuels inclus",[
+ ["Free","$0","derniers modèles, 100+ connecteurs · $10/mois de crédits API"],
+ ["Pro","$14.99/mo","Mistral Vibe (CLI/IDE/web) · $30/mois de crédits API"],
+ ["Education","$5.99/mo","tarif étudiant, 12 mois max · $15/mois de crédits API"],
  ["Team","$24.99/siège","30 Go/utilisateur, export, workspace"],
  ["Enterprise","sur devis","déploiement privé, white-label, SSO"]]],
 ["API uniquement","Pas d'abonnement consumer",[
@@ -356,6 +362,10 @@ const SUBS=[
  ["Alibaba (Qwen)","pay-as-you-go","Token Plan Team Edition B2B"]]],
 ];
 const CH_NEW=[
+["Gemini 3.8 Flash","Google — 02/09, $0.75/$3.75 et cache $0.075 jusqu'au 31/12/2026, puis $1.50/$7.50 et cache $0.15 ; contexte 1.05M"],
+["Claude Fable 5.1 & Mythos 5.1","Anthropic — 01/09, $10/$50, cache read réduit à $0.25, contexte 1M ; Mythos sur invitation Project Glasswing"],
+["Qwen3.8-27B","Alibaba — 01/09, International $0.50/$3, cache $0.10 ; Chine $0.424/$1.696, cache $0.085 ; contexte 1M"],
+["Qwen3.8-Flash","Alibaba — page mise à jour le 28/08, Global $0.113/$0.382, cache $0.014 ; International $0.15/$0.47, cache $0.016 ; contexte 1M"],
 ["GLM-5.3-Flash","Z.ai — 28/08, $0.075/$0.25 et cache $0.015 pendant la remise de -50% qui s'achève le 09/09/2026 ; prix liste $0.15/$0.50, cache $0.03"],
 ["DeepSeek-V4-Flash-Vision-Exp","DeepSeek — 21/08, multimodal expérimental au tarif V4-Flash, contexte 1M"],
 ["GLM-5.3","Z.ai — 14/08, nouveau flagship code et agents à $1.40/$4.40, cache $0.26, même tarif que GLM-5.2"],
@@ -390,14 +400,11 @@ const CH_NEW=[
 ["Vague Mistral","Magistral, Ministral 3, Devstral 2, Codestral, Voxtral, NeMo"],
 ];
 const CH_DEL=[
-["Moonshot V1 & kimi-k2.5","Moonshot — indisponibles pour les nouveaux comptes, arrêt complet annoncé le 31/08/2026"],
+["Moonshot V1 & kimi-k2.5","Moonshot — arrêt effectif le 31/08/2026 ; les appels renvoient désormais une erreur 404"],
+["Kimi K2 Thinking","Moonshot — arrêt officiel le 25/05/2026 ; ligne retirée du tableau actif"],
+["Gemini 2.5 Pro, Flash & Flash-Lite","Google — arrêt programmé le 16/10/2026 ; Gemini 3.1 Flash-Lite reste actif jusqu'au 07/05/2027"],
 ["deepseek-chat / deepseek-reasoner","DeepSeek — noms d'API legacy, retrait le 24/07/2026 15h59 UTC"],
-["Claude Opus 4.1","Anthropic — deprecated, retrait imminent le 05/08/2026"],
-["Kimi K2 Thinking","Moonshot — relégué génération précédente, remplacé par Kimi K3 comme flagship le 16/07"],
-["GPT-4.1, GPT-4o (+ minis, nano)","OpenAI — absents de la grille officielle, remplacés par GPT-5.x"],
-["o1, o1-pro, o3, o3-pro","OpenAI — retirés ; recherche = o3 / o4-mini deep-research"],
-["GPT-5-nano · GPT-5 Pro Global","OpenAI — remplacés par GPT-5.4-nano et GPT-5.5-Pro Global ($30/$180)"],
-["GPT-5.5","OpenAI — reléguée génération précédente au 09/07 (tarif inchangé)"],
+["Claude Opus 4.1","Anthropic — retiré le 05/08/2026"],
 ["Claude Sonnet 4 & Opus 4","Anthropic — retirés de l'API directe le 15/06 (restent Bedrock/GCloud)"],
 ["Claude Haiku 3.5","Anthropic — retiré, remplacé par Haiku 4.5"],
 ["Gemini 2.0 Flash & Flash-Lite","Google — fermés le 01/06/2026"],
@@ -405,14 +412,14 @@ const CH_DEL=[
 ["Qwen-Turbo","Alibaba — plus mis à jour, Qwen-Flash recommandé"],
 ];
 const CH_PRI=[
+["Gemini 3.6 Flash","Google — tarif promotionnel actuel $0.75/$3.75, cache $0.075, jusqu'au 31/12/2026 ; puis $1.50/$7.50, cache $0.15"],
+["Mistral Small 4","correction selon la page API officielle : $0.15/$0.60 au lieu de $0.10/$0.30"],
 ["DeepSeek V4 (Flash & Pro)","hausse effective le 16/08 avec retour du peak/off-peak (lun-ven 01:00-04:00 et 06:00-10:00 UTC) : V4-Flash $0.22/$0.66 off-peak et $0.44/$1.32 peak ; V4-Pro $0.66/$1.98 et $1.32/$3.96 ; cache $0.007/$0.014 et $0.022/$0.044"],
 ["GPT-5.6 Sol","OpenAI — baisse promo le 21/08 de $5/$30 à $4/$20 (cache $0.40), garantie au moins jusqu'au 21/11/2026 ; long contexte affiché $8/$30, cache $0.80"],
 ["Claude Sonnet 5","Anthropic — le tarif d'introduction $2/$10 devient permanent (10/08) : la hausse à $3/$15 prévue au 1er septembre est annulée, cache read $0.20, cache write 5 min $2.50"],
-["DeepSeek V4 (Flash & Pro)","tarification heures pleines/creuses supprimée de la page officielle au 11/08, retour à un tarif plat (= ancien palier off-peak) ; hausse de prix « significative » annoncée sans date précisée"],
 ["Grok 4.5 & Gemini 3.1 Pro Preview","confirmation officielle du doublement de tarif au-delà de 200K tokens (11/08)"],
 ["GPT-5.6 Luna & Terra","OpenAI — baisse le 30/07 : Luna -80% à $0.20/$1.20 ; Terra -20% à $2/$12 ; Sol reste à $5/$30"],
 ["GPT-5.6 — contexte long","au-delà de 272K tokens d'entrée : input ×2 et output ×1.5 sur l'intégralité de la requête"],
-["DeepSeek V4 (Flash & Pro)","tarification heures pleines/creuses effective mi-juillet : tarif peak (9h-12h/14h-18h Pékin) = 2x le tarif off-peak"],
 ["Gemini 2.5 Flash","Google — $0.30/$2.50 au 02/07 (était $1.00/$3.50 au tableau)"],
 ["Gemini 3.1 Pro","Google — hausse au 02/07 : $1.25/$5 → $2/$12 ; double au-delà de 200K"],
 ["DeepSeek-V4-Pro","la promo -75% ($0.435/$0.87) est devenue le tarif standard"],
