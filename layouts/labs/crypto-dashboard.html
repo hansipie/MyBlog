@@ -1,0 +1,59 @@
+{{ define "main" }}
+<article class="pf-article" style="max-width:1180px">
+  <header class="pf-article-header">
+    <div class="pf-article-meta">
+      <span class="pf-status pf-status-running"><span class="pf-status-dot"></span>{{ .Params.statusLabel | default "SNAPSHOT" }}</span>
+      <span class="pf-version">màj {{ .Params.updated }}</span>
+      <span class="pf-region">{{ .Params.sources }} sources</span>
+    </div>
+    <h1 class="pf-article-title">{{ .Title }}</h1>
+    <p class="pf-article-desc">{{ .Description }}</p>
+    <div class="pf-article-tags">{{ range .Params.tags }}<span class="pf-tech">{{ . }}</span>{{ end }}</div>
+    <hr class="pf-article-sep" />
+  </header>
+
+<style>
+.crypto-lab{--btc:#f7931a;--eth:#627eea;--stable:#22d3ee;--rwa:#fb923c;--btcaddr:#fbbf24;--ethaddr:#a78bfa;--up:#22c55e;--down:#ef4444}
+.crypto-lab .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 22px}.crypto-lab .kpi,.crypto-lab .chart{background:var(--pf-bg-card);border:1px solid var(--pf-border);border-radius:var(--pf-radius);box-shadow:var(--pf-shadow-sm)}
+.crypto-lab .kpi{padding:14px 16px;border-top:2px solid var(--c)}.crypto-lab .kl,.crypto-lab .stat,.crypto-lab .chart small,.crypto-lab .grid-label,.crypto-lab .tip{font-family:var(--pf-mono)}
+.crypto-lab .kl{font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--pf-text-soft)}.crypto-lab .kv{font-family:var(--pf-mono);font-weight:700;font-size:24px;line-height:1.1;margin:4px 0;color:var(--pf-text)}.crypto-lab .kd{font:600 12px var(--pf-mono)}.crypto-lab .up{color:var(--up)}.crypto-lab .down{color:var(--down)}.crypto-lab .flat{color:var(--pf-text-soft)}
+.crypto-lab .ranges{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 22px}.crypto-lab button{appearance:none;cursor:pointer;border:1px solid var(--pf-border);border-radius:var(--pf-radius-pill);padding:6px 13px;background:var(--pf-bg-soft);color:var(--pf-text-muted);font:600 12px var(--pf-mono)}.crypto-lab button[aria-pressed="true"]{background:var(--pf-accent);color:var(--pf-bg);border-color:var(--pf-accent)}
+.crypto-lab .section{font-size:16px;margin:30px 0 12px;color:var(--pf-text)}.crypto-lab .charts{display:grid;grid-template-columns:1fr 1fr;gap:18px}.crypto-lab .chart{padding:14px 16px 10px;position:relative}.crypto-lab .head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:6px}.crypto-lab .head b{font-size:15px}.crypto-lab .chart small{font-size:10px;color:var(--pf-text-soft);margin-left:5px}.crypto-lab .stat{font-size:11px;color:var(--pf-text-soft)}.crypto-lab .stat b{color:var(--pf-text)}.crypto-lab svg{display:block;width:100%;height:auto;overflow:visible}.crypto-lab .grid line{stroke:var(--pf-border);shape-rendering:crispEdges}.crypto-lab .grid-label{font-size:9px;fill:var(--pf-text-soft)}.crypto-lab .hov{opacity:0;stroke:var(--pf-text-soft);stroke-dasharray:3 3}.crypto-lab .dot{opacity:0}.crypto-lab .tip{position:absolute;pointer-events:none;opacity:0;transform:translate(-50%,-115%);z-index:2;padding:5px 9px;border:1px solid var(--pf-border-strong);border-radius:var(--pf-radius-sm);background:var(--pf-bg);box-shadow:var(--pf-shadow);font-size:11px;white-space:nowrap}.crypto-lab .foot{margin-top:28px;color:var(--pf-text-soft);font-size:12.5px;line-height:1.55;max-width:85ch}
+@media(max-width:820px){.crypto-lab .kpis{grid-template-columns:repeat(2,1fr)}.crypto-lab .charts{grid-template-columns:1fr}}@media(max-width:460px){.crypto-lab .kpis{grid-template-columns:1fr}}
+</style>
+
+<div class="crypto-lab" id="crypto-lab">
+  <div class="kpis" id="kpis"></div>
+  <div class="ranges" id="ranges" role="group" aria-label="Période"><button data-m="1">1M</button><button data-m="3">3M</button><button data-m="6">6M</button><button data-m="12" aria-pressed="true">1A</button><button data-m="36">3A</button><button data-m="60">5A</button><button data-m="0">Max</button></div>
+  <h2 class="section">Cours</h2><div class="charts" id="prices"></div>
+  <h2 class="section">Flux et activité on-chain</h2><div class="charts" id="activity"></div>
+  <h2 class="section">Stablecoins et actifs tokenisés</h2><div class="charts" id="market"></div>
+  <p class="foot">Instantané statique issu du <a href="https://github.com/hansipie/economic-dashboard" style="color:var(--pf-accent)">Dashboard Économique</a>. Bitcoin et Ethereum : Yahoo Finance ; flux ETF spot US : Farside Investors ; adresses actives : CoinMetrics Community API ; capitalisation stablecoins et TVL RWA : DefiLlama. Les cours et métriques ne sont pas un conseil en investissement.</p>
+</div>
+
+<script>
+(()=>{const root=document.querySelector('#crypto-lab'),$=s=>root.querySelector(s),DAY=864e5,VW=1000,VH=250,PL=6,PR=58,PT=10,PB=20,IW=VW-PL-PR,IH=VH-PT-PB;
+let months=12; const t=d=>new Date(d+'T00:00:00Z').getTime(),nf=(v,n=0)=>v.toLocaleString('fr-FR',{maximumFractionDigits:n,minimumFractionDigits:n});
+const defs=[
+ {key:'btc',title:'Bitcoin',sub:'USD · hebdomadaire',color:'var(--btc)',nd:0,suf:' $',group:'prices'},
+ {key:'eth',title:'Ethereum',sub:'USD · hebdomadaire',color:'var(--eth)',nd:0,suf:' $',group:'prices'},
+ {key:'btc_etf',title:'Flux net ETF spot BTC',sub:'M$ · quotidien',color:'var(--btc)',nd:1,suf:' M$',group:'activity',bar:true},
+ {key:'eth_etf',title:'Flux net ETF spot ETH',sub:'M$ · quotidien',color:'var(--eth)',nd:1,suf:' M$',group:'activity',bar:true},
+ {key:'btc_addr',title:'Adresses actives Bitcoin',sub:'quotidien · échantillon hebdo',color:'var(--btcaddr)',nd:0,suf:'',group:'activity'},
+ {key:'eth_addr',title:'Adresses actives Ethereum',sub:'quotidien · échantillon hebdo',color:'var(--ethaddr)',nd:0,suf:'',group:'activity'},
+ {key:'stable',title:'Capitalisation stablecoins',sub:'Md$ · hebdomadaire',color:'var(--stable)',nd:1,suf:' Md$',group:'market'},
+ {key:'rwa',title:'TVL RWA agrégée',sub:'Md$ · top protocoles · hebdomadaire',color:'var(--rwa)',nd:2,suf:' Md$',group:'market'}];
+ function filtered(s){if(!months)return s;const cut=t(DATA.updated)-months*30.44*DAY;return s.filter(p=>t(p[0])>=cut)}
+ function delta(s){const now=s.at(-1),past=[...s].reverse().find(p=>t(p[0])<=t(now[0])-30.44*DAY);return past?(now[1]/past[1]-1)*100:null}
+ function kpis(){const ids=['btc','eth','stable','rwa'];$('#kpis').innerHTML=ids.map(k=>{const d=defs.find(x=>x.key===k),s=DATA.series[k],p=s.at(-1),v=delta(s),cl=v==null?'flat':v>=0?'up':'down';return '<div class="kpi" style="--c:'+d.color+'"><div class="kl">'+d.title+'</div><div class="kv">'+nf(p[1],d.nd)+d.suf+'</div><div class="kd '+cl+'">'+(v==null?'—':(v>=0?'▲ ':'▼ ')+nf(Math.abs(v),2)+' %')+' <span style="color:var(--pf-text-soft);font-weight:400">· 30 j</span></div></div>'}).join('')}
+ function chart(d){const pts=filtered(DATA.series[d.key]);if(!pts.length)return '';const xs=pts.map(p=>t(p[0])),ys=pts.map(p=>p[1]),x0=xs[0],x1=xs.at(-1);let mn=Math.min(...ys),mx=Math.max(...ys);if(d.bar){mn=Math.min(0,mn);mx=Math.max(0,mx)}const pad=(mx-mn)*.08||1;mn-=d.bar?0:pad;mx+=pad;const X=x=>PL+(x-x0)/(x1-x0||1)*IW,Y=y=>PT+(1-(y-mn)/(mx-mn||1))*IH,base=Y(0),line=pts.map((p,i)=>(i?'L':'M')+X(xs[i]).toFixed(1)+','+Y(ys[i]).toFixed(1)).join(''),area='M'+X(x0).toFixed(1)+','+(PT+IH)+' '+pts.map((p,i)=>'L'+X(xs[i]).toFixed(1)+','+Y(ys[i]).toFixed(1)).join('')+' L'+X(x1).toFixed(1)+','+(PT+IH)+' Z';
+ let grid='';for(let i=0;i<4;i++){const v=mn+(mx-mn)*i/3,y=Y(v).toFixed(1);grid+='<line x1="'+PL+'" y1="'+y+'" x2="'+(PL+IW)+'" y2="'+y+'"/><text class="grid-label" x="'+(PL+IW+5)+'" y="'+(+y+3)+'">'+nf(v,d.nd)+'</text>'}const last=ys.at(-1),stat='<span class="stat"><b>'+nf(last,d.nd)+d.suf+'</b> · min '+nf(Math.min(...ys),d.nd)+' · max '+nf(Math.max(...ys),d.nd)+'</span>';
+ const marks=d.bar?pts.map((p,i)=>{const x=X(xs[i]),y=Y(ys[i]),w=Math.max(2,IW/pts.length*.65);return '<rect x="'+(x-w/2).toFixed(1)+'" y="'+Math.min(y,base).toFixed(1)+'" width="'+w.toFixed(1)+'" height="'+Math.max(1,Math.abs(base-y)).toFixed(1)+'" fill="'+(p[1]>=0?'var(--up)':'var(--down)')+'" opacity=".8"/>'}).join(''):'<path d="'+area+'" fill="'+d.color+'" fill-opacity=".09"/><path d="'+line+'" fill="none" stroke="'+d.color+'" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>';
+ return {d,pts,xs,ys,X,Y,html:'<div class="chart" data-key="'+d.key+'"><div class="head"><span><b>'+d.title+'</b><small>'+d.sub+'</small></span>'+stat+'</div><svg viewBox="0 0 '+VW+' '+VH+'" preserveAspectRatio="none"><g class="grid">'+grid+'</g>'+marks+'<line class="hov" x1="0" y1="'+PT+'" x2="0" y2="'+(PT+IH)+'"/><circle class="dot" r="4" fill="'+d.color+'" stroke="var(--pf-bg)" stroke-width="1.5"/><rect class="hit" x="'+PL+'" y="'+PT+'" width="'+IW+'" height="'+IH+'" fill="transparent"/></svg><div class="tip"></div></div>'}}
+ function wire(b){const el=root.querySelector('[data-key="'+b.d.key+'"]'),svg=el.querySelector('svg'),hit=el.querySelector('.hit'),line=el.querySelector('.hov'),dot=el.querySelector('.dot'),tip=el.querySelector('.tip');hit.onpointermove=e=>{const r=svg.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*VW;let best=0,dist=Infinity;b.xs.forEach((x,i)=>{const z=Math.abs(b.X(x)-px);if(z<dist){dist=z;best=i}});const x=b.X(b.xs[best]),y=b.Y(b.ys[best]);line.setAttribute('x1',x);line.setAttribute('x2',x);line.style.opacity=.6;dot.setAttribute('cx',x);dot.setAttribute('cy',y);dot.style.opacity=1;tip.style.opacity=1;tip.style.left=x/VW*r.width+'px';tip.style.top=y/VH*r.height+'px';tip.textContent=new Date(b.pts[best][0]+'T00:00:00Z').toLocaleDateString('fr-FR',{timeZone:'UTC',day:'2-digit',month:'short',year:'numeric'})+' · '+nf(b.ys[best],b.d.nd)+b.d.suf};hit.onpointerleave=()=>{line.style.opacity=0;dot.style.opacity=0;tip.style.opacity=0}}
+ function render(){kpis();for(const id of ['prices','activity','market']){const built=defs.filter(d=>d.group===id).map(chart);$('#'+id).innerHTML=built.map(b=>b.html).join('');built.forEach(wire)}}
+ fetch('/dashboards/crypto.json').then(r=>r.json()).then(x=>{window.DATA=x;kpis();render()}).catch(()=>{root.innerHTML='<p>Le snapshot crypto est indisponible pour le moment.</p>'});root.querySelectorAll('#ranges button').forEach(b=>b.onclick=()=>{months=+b.dataset.m;root.querySelectorAll('#ranges button').forEach(x=>x.setAttribute('aria-pressed',x===b));render()})})();
+</script>
+  <footer style="margin-top:48px;padding-top:28px;border-top:1px solid var(--pf-border)"><a class="pf-btn pf-btn-ghost" href="/labs/">← Tous les labs</a></footer>
+</article>
+{{ end }}
