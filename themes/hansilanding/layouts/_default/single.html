@@ -2,8 +2,12 @@
 <article class="pf-article">
   <header class="pf-article-header">
     <div class="pf-article-meta">
+      <span class="pf-post-date">Par <a href="/about/" rel="author">{{ .Site.Params.author.name }}</a></span>
       {{ with .Date }}
-      <span class="pf-post-date">{{ .Format "02 Jan 2006" }}</span>
+      <time class="pf-post-date" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">Publié le {{ .Format "02 Jan 2006" }}</time>
+      {{ end }}
+      {{ if gt .Lastmod.Unix .Date.Unix }}
+      <time class="pf-post-date" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">Mis à jour le {{ .Lastmod.Format "02 Jan 2006" }}</time>
       {{ end }}
       {{ with .Params.categories }}
       {{ range . }}
@@ -32,6 +36,22 @@
   <div class="pf-article-content">
     {{ .Content }}
   </div>
+
+  {{ $related := first 3 (where (.Site.RegularPages.Related .) "Section" "posts") }}
+  {{ if not $related }}
+    {{ $otherPosts := where (where .Site.RegularPages "Section" "posts") "RelPermalink" "ne" .RelPermalink }}
+    {{ $related = first 3 $otherPosts.ByDate.Reverse }}
+  {{ end }}
+  {{ with $related }}
+  <aside aria-labelledby="related-posts-title" style="margin-top:48px">
+    <h2 id="related-posts-title">À lire aussi</h2>
+    <ul>
+      {{ range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Description }} — {{ . }}{{ end }}</li>
+      {{ end }}
+    </ul>
+  </aside>
+  {{ end }}
 
   <footer style="margin-top:48px;padding-top:28px;border-top:1px solid var(--pf-border)">
     <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">

@@ -16,7 +16,7 @@ Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un cli
 
 ![](/Capture%20d'écran%202024-09-11%20090234.png)
 
-# Pré-requis:
+## Pré-requis:
 - Un Raspberry Pi
 - Un carte microSD (8GB ou plus) pour Raspbian OS
 - Un dongle USB Wifi
@@ -24,13 +24,13 @@ Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un cli
 - Un fournisseur de VPN avec un fichier de configuration `.ovpn` (Un serveur OpenVPN auto-hébergé ou un service comme NordVPN, CyberGhost, etc.)
 ![](/20240910_154853.jpg)
 
-# Etape 1. Installation de l'OS sur le Raspberry Pi
+## Etape 1. Installation de l'OS sur le Raspberry Pi
 
-## a. Téléchargement de Raspberry Pi OS
+### a. Téléchargement de Raspberry Pi OS
 1. **Téléchargez** Raspberry Pi OS (Lite version recommandée pour un usage de routeur) depuis le site officiel [Raspberry Pi](https://www.raspberrypi.org/software/operating-systems/).
 2. **Flash l'image** sur une carte microSD en utilisant un outil comme **Raspberry Pi Imager** ou **Balena Etcher**.
 
-## b. Configuration initiale
+### b. Configuration initiale
 1. **Insérez** la carte microSD dans le Raspberry Pi et démarrez-le.
 2. **Connectez-vous** via SSH (ou directement avec clavier et écran) :
    - Par défaut, le nom d'utilisateur est `pi` et le mot de passe est `raspberry`.
@@ -44,15 +44,15 @@ Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un cli
    ```
 
 
-# Etape 2. Installation du daemon OpenVPN
+## Etape 2. Installation du daemon OpenVPN
 
-## a. Installation d'OpenVPN
+### a. Installation d'OpenVPN
 1. **Installez OpenVPN** :
    ```bash
    sudo apt-get install openvpn -y
    ```
 
-## b. Configuration d'OpenVPN
+### b. Configuration d'OpenVPN
 1. **Copiez** ou créez un fichier de configuration `.ovpn` pour le serveur VPN auquel vous souhaitez vous connecter. Ce fichier contient les paramètres de connexion, les certificats et les clés nécessaires. Il est fourni par votre fournisseur de VPN.
 2. **Placez le fichier** de configuration dans le répertoire `/etc/openvpn/` et renommez-le en `client.conf` pour qu'OpenVPN le détecte automatiquement :
    ```bash
@@ -68,11 +68,11 @@ Dans ce tuto, je vais vous montrer comment transformer un Raspberry Pi en un cli
    ```
 
 
-# Etape 3. Mise en place du routage
+## Etape 3. Mise en place du routage
 
 Pour permettre au Raspberry Pi de router le trafic entre les interfaces `eth0` (le réseau local) et `tun0` (connexion VPN), nous devons activer le routage IP et configurer le NAT (Network Address Translation).
 
-## a. Activer le routage IP
+### a. Activer le routage IP
 1. **Activez le routage IP** sur le Raspberry Pi :
    ```bash
    sudo sysctl -w net.ipv4.ip_forward=1
@@ -90,7 +90,7 @@ Pour permettre au Raspberry Pi de router le trafic entre les interfaces `eth0` (
    sudo sysctl -p
    ```
 
-## b. Configurer le NAT avec iptables
+### b. Configurer le NAT avec iptables
 1. **Configurez le NAT** pour permettre le routage du trafic sortant via l'interface VPN (`tun0`) :
    ```bash
    sudo iptables -t nat -A POSTROUTING -o tun0 -j MASQUERADE
@@ -106,17 +106,17 @@ Pour permettre au Raspberry Pi de router le trafic entre les interfaces `eth0` (
    ```
 
 
-# Etape 4. Installation du serveur DHCP
+## Etape 4. Installation du serveur DHCP
 
 Pour attribuer des adresses IP aux appareils connectés au Raspberry Pi, nous allons installer un serveur DHCP (Dynamic Host Configuration Protocol).
 
-## a. Installation du serveur DHCP
+### a. Installation du serveur DHCP
 1. **Installez ISC DHCP Server** :
    ```bash
    sudo apt-get install isc-dhcp-server -y
    ```
 
-## b. Configuration du serveur DHCP
+### b. Configuration du serveur DHCP
 1. **Configurez** le fichier `/etc/dhcp/dhcpd.conf` :
    ```bash
    sudo nano /etc/dhcp/dhcpd.conf
@@ -135,7 +135,7 @@ Pour attribuer des adresses IP aux appareils connectés au Raspberry Pi, nous al
    }
    ```
 
-## c. Configurer l'interface `eth0` pour DHCP
+### c. Configurer l'interface `eth0` pour DHCP
 1. **Définissez** `eth0` comme l'interface pour le serveur DHCP :
    ```bash
    sudo nano /etc/default/isc-dhcp-server
@@ -145,7 +145,7 @@ Pour attribuer des adresses IP aux appareils connectés au Raspberry Pi, nous al
    INTERFACESv4="eth0"
    ```
 
-## d. Démarrer le serveur DHCP
+### d. Démarrer le serveur DHCP
 1. **Démarrez** le serveur DHCP et configurez-le pour démarrer au boot :
    ```bash
    sudo systemctl start isc-dhcp-server
@@ -153,7 +153,7 @@ Pour attribuer des adresses IP aux appareils connectés au Raspberry Pi, nous al
    ```
 
 
-## e. Attribition d'un adresse fixe à l'interface `eth0`
+### e. Attribition d'un adresse fixe à l'interface `eth0`
 
 1. **Attribuez l'adresse IP** `192.168.1.1` à `eth0` de manière permanente :
    ```bash

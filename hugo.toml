@@ -53,7 +53,9 @@ uglyURLs = false
   noClasses = false
 
 [params]
-  description = " "
+  homeTitle = "ansicode — Ingénierie logicielle, Linux et IA appliquée"
+  homeHeading = "Retours d’expérience sur le développement, Linux et l’IA"
+  description = "Analyses, tutoriels et retours d’expérience de Hansi PIERRE sur le développement logiciel, Linux, l’auto-hébergement et l’intelligence artificielle."
   brandName = "ansicode"
   goatcounter = "https://stats.ansicode.fr"
   status = "Open to targeted missions"

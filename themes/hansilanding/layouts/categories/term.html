@@ -7,7 +7,7 @@
         <span class="pf-section-progress-val">{{ len .Pages }} POSTS</span>
       </span>
     </div>
-    <h2 class="pf-section-title">{{ .Title }}</h2>
+    <h1 class="pf-section-title">{{ .Title }}</h1>
   </div>
 
   {{ range (.Pages.ByDate.Reverse).GroupByDate "January 2006" }}

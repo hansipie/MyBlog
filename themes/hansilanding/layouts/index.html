@@ -1,18 +1,26 @@
 {{ define "main" }}
 <section class="pf-section" style="padding-top:32px">
   <div class="pf-section-head">
-    <h1 class="pf-section-title">{{ .Site.Params.description | default .Site.Title }}</h1>
+    <h1 class="pf-section-title">{{ .Site.Params.homeHeading | default .Site.Title }}</h1>
+    <p class="pf-section-lead">{{ .Site.Params.description }}</p>
   </div>
 
   {{ $pages := where .Site.RegularPages "Section" "posts" }}
   {{ $paginator := .Paginate $pages.ByDate.Reverse }}
 
   <div class="pf-post-list">
-    {{ range $paginator.Pages }}
+    {{ range $index, $page := $paginator.Pages }}
     <a class="pf-card pf-post-card" href="{{ .RelPermalink }}">
       {{ with .Params.preview }}
       <div class="pf-post-card-img">
-        <img src="{{ . }}" alt="" loading="lazy">
+        {{ partial "responsive-image.html" (dict
+          "page" $page
+          "src" .
+          "alt" ""
+          "loading" (cond (eq $index 0) "eager" "lazy")
+          "fetchpriority" (cond (eq $index 0) "high" "auto")
+          "sizes" "(max-width: 1039px) 100vw, 33vw"
+        ) }}
       </div>
       {{ end }}
       <div>

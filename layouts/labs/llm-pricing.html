@@ -126,6 +126,11 @@
 </style>
 
 <div class="llm-lab">
+  <section aria-labelledby="llm-summary-title">
+    <h2 id="llm-summary-title">Comparer les prix des API de modèles IA</h2>
+    <p>Ce comparateur rassemble {{ .Params.models }} modèles et leurs prix par million de tokens en entrée, en sortie et en cache lorsque ce tarif est publié. Les données proviennent de {{ .Params.sources }} sources indexées et ont été mises à jour le {{ .Params.updated }}.</p>
+    <p>Le calculateur estime un coût mensuel à partir des volumes de tokens. Les filtres permettent ensuite de comparer les fournisseurs, les abonnements, les nouveaux modèles, les retraits et les changements de prix.</p>
+  </section>
   <div class="lab-meta">
     <div><b id="m-models">—</b><span>modèles tarifés</span></div>
     <div><b id="m-prov">—</b><span>providers</span></div>

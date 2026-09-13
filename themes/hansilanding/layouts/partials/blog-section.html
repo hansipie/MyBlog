@@ -59,11 +59,17 @@
   <div class="pf-subsection">
     <h3 class="pf-subsection-title">Articles récents</h3>
     <div class="pf-project-grid">
-      {{ range first 4 $posts }}
+      {{ range $index, $page := first 4 $posts }}
       <article class="pf-card pf-project-card">
         {{ $cover := .Params.preview | default (index .Params.images 0) }}
         {{ with $cover }}
-        <img src="{{ . }}" alt="" class="pf-card-cover" loading="lazy">
+        {{ partial "responsive-image.html" (dict
+          "page" $page
+          "src" .
+          "alt" ""
+          "class" "pf-card-cover"
+          "sizes" "(max-width: 760px) 100vw, 50vw"
+        ) }}
         {{ end }}
         <div class="pf-project-top">
           <div>

@@ -10,4 +10,5 @@ params:
   statusLabel: SNAPSHOT
   updated: "12 septembre 2026"
   sources: 100
+  models: 106
 ---

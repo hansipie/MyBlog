@@ -1,0 +1,16 @@
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $sizes := .sizes | default "100vw" -}}
+{{- $fetchpriority := .fetchpriority | default "auto" -}}
+{{- $metadata := index .page.Site.Data.optimizedImages $src -}}
+{{- if $metadata -}}
+  {{- $srcset := slice -}}
+  {{- range $metadata.variants -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" .url (int .width)) -}}
+  {{- end -}}
+<img{{ with $class }} class="{{ . }}"{{ end }} src="{{ $metadata.src }}" srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}" width="{{ $metadata.width }}" height="{{ $metadata.height }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async"{{ if ne $fetchpriority "auto" }} fetchpriority="{{ $fetchpriority }}"{{ end }}{{ with .title }} title="{{ . }}"{{ end }}>
+{{- else -}}
+<img{{ with $class }} class="{{ . }}"{{ end }} src="{{ $src }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async"{{ if ne $fetchpriority "auto" }} fetchpriority="{{ $fetchpriority }}"{{ end }}{{ with .title }} title="{{ . }}"{{ end }}>
+{{- end -}}
