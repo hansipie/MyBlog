@@ -3,3 +3,4 @@ node_modules/
 /.wrangler
 /static/_optimized/
 /data/optimizedImages.json
+/AGENTS.md
