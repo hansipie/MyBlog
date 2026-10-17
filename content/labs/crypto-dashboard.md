@@ -8,6 +8,6 @@ categories: [data]
 params:
   status: running
   statusLabel: SNAPSHOT
-  updated: "27 septembre 2026"
+  updated: "17 octobre 2026"
   sources: 5
 ---
