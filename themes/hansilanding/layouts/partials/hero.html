@@ -1,5 +1,5 @@
 {{- $p := .Site.Params -}}
-{{- $d := .Site.Data.about | default dict -}}
+{{- $d := partial "about-data.html" . -}}
 {{- $profile := $d.profile | default $p.author | default dict -}}
 {{- $h := $d.hero | default $p.hero | default dict -}}
 <section class="pf-hero">
@@ -35,7 +35,7 @@
       {{ end }}
 
       {{ with $h.xp }}
-      <div class="pf-hero-xp" aria-label="Barres de progression métier">
+      <div class="pf-hero-xp" aria-label="{{ if eq $.Params.lang "en" }}Skill progress bars{{ else }}Barres de progression métier{{ end }}">
         {{ range . }}
         <div class="pf-hero-xp-row">
           <span class="pf-hero-xp-label">{{ .label }}</span>
@@ -73,7 +73,7 @@
       {{ end }}
     </div>
 
-    <div class="pf-hero-visual" aria-label="Visualisation orbitale du profil">
+    <div class="pf-hero-visual" aria-label="{{ if eq $.Params.lang "en" }}Orbital view of the profile{{ else }}Visualisation orbitale du profil{{ end }}">
       <div class="pf-orbit">
         {{ range $h.orbit }}
         <div class="pf-orbit-ring pf-orbit-ring-{{ .ring }}">
@@ -91,7 +91,7 @@
         </header>
         <div class="pf-portrait-frame">
           {{ with $p.author.photo }}
-          <img class="pf-portrait-img" src="{{ . }}" alt="Portrait de {{ $p.author.name }}" width="768" height="768" />
+          <img class="pf-portrait-img" src="{{ . }}" alt="{{ if eq $.Params.lang "en" }}Portrait of{{ else }}Portrait de{{ end }} {{ $p.author.name }}" width="768" height="768" />
           {{ end }}
           <span class="pf-portrait-grid"></span>
           <span class="pf-portrait-fallback" aria-hidden="true">

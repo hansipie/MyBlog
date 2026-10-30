@@ -9,7 +9,8 @@
 <meta name="description" content="{{ $description }}" />
 <meta name="theme-color" content="#07091a" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
-<meta property="og:locale" content="fr_FR" />
+<meta property="og:locale" content="{{ if eq .Params.lang "en" }}en_US{{ else }}fr_FR{{ end }}" />
+{{ with .Params.langAlt }}<link rel="alternate" hreflang="{{ if eq $.Params.lang "en" }}fr{{ else }}en{{ end }}" href="{{ . | absURL }}" />{{ end }}
 <meta property="og:type" content="{{ if eq .Section "posts" }}article{{ else }}website{{ end }}" />
 <meta property="og:title" content="{{ $title }}" />
 <meta property="og:description" content="{{ $description }}" />

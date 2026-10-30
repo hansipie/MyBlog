@@ -20,6 +20,33 @@
     </div>
 
     <div class="pf-nav-actions">
+      {{ with .Params.langAlt }}
+      {{- $toEn := ne $.Params.lang "en" }}
+      <a class="pf-lang-switch" href="{{ . | relURL }}" hreflang="{{ if $toEn }}en{{ else }}fr{{ end }}" lang="{{ if $toEn }}en{{ else }}fr{{ end }}" aria-label="{{ if $toEn }}View this page in English{{ else }}Voir la page en français{{ end }}" title="{{ if $toEn }}English{{ else }}Français{{ end }}">
+        {{ if $toEn }}
+        <svg class="pf-flag" viewBox="0 0 60 40" width="22" height="15" aria-hidden="true" focusable="false">
+          <clipPath id="pf-flag-uk"><rect width="60" height="40" rx="3"/></clipPath>
+          <g clip-path="url(#pf-flag-uk)">
+            <rect width="60" height="40" fill="#012169"/>
+            <path d="M0 0L60 40M60 0L0 40" stroke="#fff" stroke-width="8"/>
+            <path d="M0 0L60 40M60 0L0 40" stroke="#C8102E" stroke-width="3"/>
+            <path d="M30 0V40M0 20H60" stroke="#fff" stroke-width="13"/>
+            <path d="M30 0V40M0 20H60" stroke="#C8102E" stroke-width="8"/>
+          </g>
+        </svg>
+        {{ else }}
+        <svg class="pf-flag" viewBox="0 0 60 40" width="22" height="15" aria-hidden="true" focusable="false">
+          <clipPath id="pf-flag-fr"><rect width="60" height="40" rx="3"/></clipPath>
+          <g clip-path="url(#pf-flag-fr)">
+            <rect width="20" height="40" fill="#0055A4"/>
+            <rect x="20" width="20" height="40" fill="#fff"/>
+            <rect x="40" width="20" height="40" fill="#EF4135"/>
+          </g>
+        </svg>
+        {{ end }}
+        <span class="pf-lang-code">{{ if $toEn }}EN{{ else }}FR{{ end }}</span>
+      </a>
+      {{ end }}
       <button class="pf-theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Thème">◐</button>
       <button class="pf-burger" id="mobileMenuBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>

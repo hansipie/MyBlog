@@ -1,4 +1,4 @@
-{{- $e := .Site.Data.about.experience | default .Site.Params.experience | default dict -}}
+{{- $e := (partial "about-data.html" .).experience | default .Site.Params.experience | default dict -}}
 <section class="pf-section" id="experience">
   <div class="pf-section-head">
     <div class="pf-section-hud">
@@ -10,7 +10,7 @@
         <span class="pf-section-progress-val">{{ $e.progressLabel | default "TRACKED" }}</span>
       </span>
     </div>
-    <h2 class="pf-section-title">{{ $e.title | default "Expérience" }}</h2>
+    <h2 class="pf-section-title">{{ $e.title | default (cond (eq $.Params.lang "en") "Experience" "Expérience") }}</h2>
     <p class="pf-section-lead">{{ $e.lead }}</p>
   </div>
 

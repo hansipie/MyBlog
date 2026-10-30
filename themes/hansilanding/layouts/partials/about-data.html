@@ -1,0 +1,3 @@
+{{- /* Données de la page About selon la langue de la page (Params.lang) : data/about.toml (fr) ou data/about_en.toml (en). */ -}}
+{{- $d := cond (eq .Params.lang "en") .Site.Data.about_en .Site.Data.about -}}
+{{- return ($d | default dict) -}}

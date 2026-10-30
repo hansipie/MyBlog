@@ -149,8 +149,8 @@ key = "Calcul mental mobile"
 val = "Papimathic"
 
 [[about.cards.kv]]
-key = "Recherche sourcée"
-val = "BO Analyst"
+key = "Création de hacks IKEA"
+val = "Hackea"
 
 [experience]
 title = "Expérience en mode déploiement."
@@ -244,39 +244,45 @@ label = "Education"
 color = "#22e09e"
 
 [[projects.items]]
-title = "viztokens"
-desc = "Visualiseur de sessions d'agents IA conçu pour comprendre leur consommation de contexte et observer leurs workflows."
+title = "Rewind Me"
+desc = "Jeu de puzzle de timing (A Robot Love Story) où l'on remonte le temps d'un petit robot pendant que le monde continue d'avancer. Démo gratuite de 5 niveaux sur Android."
 status = "running"
 statusLabel = "ACTIVE"
+link = "https://rewindme.ansicode.fr"
+linkIcon = "globe"
+linkLabel = "Voir le site"
 
 [[projects.items.tech]]
-label = "Agents IA"
+label = "Jeu"
 color = "#a78bfa"
 
 [[projects.items.tech]]
-label = "Visualisation"
+label = "Puzzle"
 color = "#00d4ff"
 
 [[projects.items.tech]]
-label = "Developer Tools"
+label = "Android"
 color = "#22e09e"
 
 [[projects.items]]
-title = "BO Analyst"
-desc = "Plateforme de recherche d'informations sourcées dans les Bulletins officiels de l'Éducation nationale."
+title = "Hackea"
+desc = "Outil de création de hacks IKEA : on assemble et modifie des pièces du catalogue dans un éditeur 3D, et l'outil génère le guide pas à pas (achats, modifications, étapes rejouées en 3D comme la notice papier, commentées à voix haute)."
 status = "running"
 statusLabel = "ACTIVE"
+link = "https://github.com/hansipie/Hackea"
+linkIcon = "github"
+linkLabel = "GitHub"
 
 [[projects.items.tech]]
-label = "IA"
+label = "3D"
 color = "#a78bfa"
 
 [[projects.items.tech]]
-label = "Recherche"
+label = "TypeScript"
 color = "#00d4ff"
 
 [[projects.items.tech]]
-label = "Sources"
+label = "Open source"
 color = "#22e09e"
 
 [skills]

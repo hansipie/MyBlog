@@ -1,4 +1,4 @@
-{{- $b := .Site.Data.about.blogSection | default .Site.Params.blogSection | default dict -}}
+{{- $b := (partial "about-data.html" .).blogSection | default .Site.Params.blogSection | default dict -}}
 <section class="pf-section" id="blog">
   <div class="pf-section-head">
     <div class="pf-section-hud">
@@ -57,7 +57,7 @@
   {{ $posts = $posts.ByDate.Reverse }}
   {{ if $posts }}
   <div class="pf-subsection">
-    <h3 class="pf-subsection-title">Articles récents</h3>
+    <h3 class="pf-subsection-title">{{ if eq $.Params.lang "en" }}Latest articles (in French){{ else }}Articles récents{{ end }}</h3>
     <div class="pf-project-grid">
       {{ range $index, $page := first 4 $posts }}
       <article class="pf-card pf-project-card">

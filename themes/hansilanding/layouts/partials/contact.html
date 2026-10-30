@@ -1,4 +1,4 @@
-{{- $c := .Site.Data.about.contact | default .Site.Params.contact | default dict -}}
+{{- $c := (partial "about-data.html" .).contact | default .Site.Params.contact | default dict -}}
 {{- $p := .Site.Params -}}
 <section class="pf-section" id="contact">
   <div class="pf-section-head">
@@ -17,9 +17,9 @@
 
   <div class="pf-contact">
     <article class="pf-card">
-      <div class="pf-card-head"><span class="pf-text-accent">→</span><h3>Contact direct</h3></div>
+      <div class="pf-card-head"><span class="pf-text-accent">→</span><h3>{{ if eq $.Params.lang "en" }}Direct contact{{ else }}Contact direct{{ end }}</h3></div>
       <p class="pf-card-body">{{ $c.directBody | default "Email et LinkedIn pour discuter d'une mission ou d'une collaboration." }}</p>
-      <div class="pf-social-grid" aria-label="Canaux de contact directs">
+      <div class="pf-social-grid" aria-label="{{ if eq $.Params.lang "en" }}Direct contact channels{{ else }}Canaux de contact directs{{ end }}">
         {{ with $p.author.email }}
         <a class="pf-social-link" href="mailto:{{ . }}">
           <span class="pf-social-name"><span class="pf-social-icon">@</span>Email</span>
@@ -40,9 +40,9 @@
     </article>
 
     <article class="pf-card">
-      <div class="pf-card-head"><span class="pf-text-accent">~</span><h3>Suivre les builds</h3></div>
+      <div class="pf-card-head"><span class="pf-text-accent">~</span><h3>{{ if eq $.Params.lang "en" }}Follow the builds{{ else }}Suivre les builds{{ end }}</h3></div>
       <p class="pf-card-body">{{ $c.followBody | default "GitHub pour le code, X pour les updates et les réflexions à chaud." }}</p>
-      <div class="pf-social-grid" aria-label="Réseaux de veille">
+      <div class="pf-social-grid" aria-label="{{ if eq $.Params.lang "en" }}Following channels{{ else }}Réseaux de veille{{ end }}">
         {{ with $p.author.github }}
         <a class="pf-social-link" href="https://github.com/{{ . }}" target="_blank" rel="noreferrer">
           <span class="pf-social-name">

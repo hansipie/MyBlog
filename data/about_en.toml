@@ -1,0 +1,423 @@
+# Structured content for the English /en/about/ page (mirror of about.toml).
+# Rendered by themes/hansilanding/layouts/about/list.html.
+
+[profile]
+eyebrow = "C/C++ · Systems · Networking · Developer Tools · AI"
+tagline = "Senior software engineer, Tech Lead and hands-on architect"
+bio = "Over 20 years of software engineering experience, from low-level C/C++ to CI/CD platforms integrated with a private cloud. Today I build open source tools, mobile apps and products powered by artificial intelligence."
+
+[hero]
+portraitId = "profile://hansi"
+
+[hero.level]
+value = "LEVEL 20+"
+label = "Senior Engineer"
+
+[hero.ctaPrimary]
+label = "Discuss a project"
+url = "#contact"
+
+[hero.ctaSecondary]
+label = "Read the blog"
+url = "/posts/"
+
+[[hero.xp]]
+label = "project"
+value = 90
+
+[[hero.xp]]
+label = "coding"
+value = 95
+
+[[hero.xp]]
+label = "ai/llm/agent"
+value = 90
+
+[[hero.xp]]
+label = "devops"
+value = 70
+
+[[hero.xp]]
+label = "system"
+value = 80
+
+[[hero.stats]]
+value = "20+ years"
+label = "of software engineering experience"
+
+[[hero.stats]]
+value = "6 years"
+label = "as Lead Developer at Dassault Systèmes"
+
+[[hero.stats]]
+value = "4+"
+label = "active AI, mobile and open source projects"
+
+[[hero.portraitRows]]
+key = "role"
+val = "freelance"
+
+[[hero.portraitRows]]
+key = "mode"
+val = "challenge"
+
+[[hero.portraitRows]]
+key = "focus"
+val = "ship useful tools"
+
+[[hero.orbit]]
+ring = 2
+
+[[hero.orbit.pods]]
+label = "LLM"
+class = "llm"
+
+[[hero.orbit.pods]]
+label = "Rust"
+class = "rn"
+
+[[hero.orbit]]
+ring = 3
+
+[[hero.orbit.pods]]
+label = "Ops"
+class = "docker"
+
+[[hero.orbit.pods]]
+label = "AI"
+class = "agent"
+
+[[hero.orbit]]
+ring = 4
+
+[[hero.orbit.pods]]
+label = "C++"
+class = "cpp"
+
+[[hero.orbit.pods]]
+label = "Dev"
+class = "rust"
+
+[about]
+title = "A systems background, an architect's practice and a taste for shipping."
+lead = "My path connects low-level C/C++, networking, CI/CD platforms and product development. I work from diagnosing a complex component all the way to putting a complete solution into production."
+progress = 92
+progressLabel = "READY"
+achievement = "Systems thinker"
+
+[[about.cards]]
+icon = "$"
+title = "Mission"
+wide = true
+body = "Design pragmatic, maintainable solutions. I can help with architecture, application modernization, developer tools, distributed systems, or an AI prototype meant to become a real product."
+meta = "understand → design → prototype → test → deploy"
+
+[[about.cards]]
+icon = "{}"
+title = "Technical identity"
+
+[[about.cards.kv]]
+key = "C/C++ bas niveau"
+val = "core"
+
+[[about.cards.kv]]
+key = "Networking & diagnostics"
+val = "deep"
+
+[[about.cards.kv]]
+key = "CI/CD & Developer Tools"
+val = "lead"
+
+[[about.cards.kv]]
+key = "LLM & agents"
+val = "hands-on"
+
+[[about.cards]]
+icon = "λ"
+title = "Where I make an impact"
+
+[[about.cards.kv]]
+key = "Software Factory"
+val = "architecture"
+
+[[about.cards.kv]]
+key = "LLM context reduction"
+val = "ecotokens"
+
+[[about.cards.kv]]
+key = "Mobile mental math"
+val = "Papimathic"
+
+[[about.cards.kv]]
+key = "IKEA hack creation"
+val = "Hackea"
+
+[experience]
+title = "Experience, deployed."
+lead = "Over 20 years in the trade. Six years at 2SB, eleven years in R&D at Dassault Systèmes including six as Lead Developer, then freelancing since August 2023."
+progress = 87
+progressLabel = "TRACKED"
+
+[[experience.items]]
+role = "Freelance AI & modernization"
+status = "running"
+statusLabel = "RUNNING"
+version = "v2026"
+location = "France · remote"
+quest = "Products and engagements"
+highlights = [
+  "Design and delivery of open source tools, mobile apps and products powered by artificial intelligence.",
+  "Rust, Python, React Native, Expo, Docker, SQL databases, software agents, local models and MCP integrations."
+]
+
+[[experience.items]]
+role = "Senior R&D engineer, Dassault Systèmes"
+status = "deployed"
+statusLabel = "DEPLOYED"
+version = "11 years"
+location = "R&D Outils"
+quest = "Developer Tools and Software Factory"
+highlights = [
+  "Development of ReleaseWork, a Jenkins-like task manager driving builds, tests and quality checks on Windows, Linux and AIX.",
+  "Six years as Lead Developer of the Software Factory: architecture of the C++ engine on Linux, web server, API, private cloud, virtualization, high availability, load balancing and security."
+]
+
+[[experience.items]]
+role = "Software engineer, 2SB"
+status = "deployed"
+statusLabel = "DEPLOYED"
+version = "6 years"
+location = "C/C++ · Windows · Unix"
+quest = "Cross-platform log collection"
+highlights = [
+  "Owner of Seccollect, a log collector for Windows, Linux, Unix, AIX and HP-UX.",
+  "TCP protocol design, wxWidgets interface, installer, performance tuning, bug diagnosis and customer support."
+]
+
+[projects]
+title = "Tools and products actually shipped."
+lead = "Rust, artificial intelligence, document search and mobile: these projects extend my systems background while covering the whole product lifecycle."
+progress = 79
+progressLabel = "ACTIVE"
+achievement = "Builder portfolio"
+
+[[projects.items]]
+title = "ecotokens"
+desc = "Rust tool for context reduction and analysis in LLM workflows. Open source, CLI, code search and token savings."
+status = "running"
+statusLabel = "ACTIVE"
+link = "https://github.com/hansipie/ecotokens"
+linkIcon = "github"
+linkLabel = "GitHub"
+
+[[projects.items.tech]]
+label = "Rust"
+color = "#fb923c"
+
+[[projects.items.tech]]
+label = "LLM"
+color = "#a78bfa"
+
+[[projects.items.tech]]
+label = "CLI"
+color = "#00d4ff"
+
+[[projects.items]]
+title = "Papimathic"
+desc = "Educational mental math app built with React Native / Expo, with real-world usage on the Play Store."
+status = "running"
+statusLabel = "RUNNING"
+link = "https://papimathic.ansicode.fr/"
+linkIcon = "globe"
+linkLabel = "Visit the site"
+
+[[projects.items.tech]]
+label = "React Native"
+color = "#00d4ff"
+
+[[projects.items.tech]]
+label = "Expo"
+color = "#4f8df2"
+
+[[projects.items.tech]]
+label = "Education"
+color = "#22e09e"
+
+[[projects.items]]
+title = "Rewind Me"
+desc = "Timing puzzle game (A Robot Love Story) where you rewind a little robot while the world keeps moving forward. Free 5-level demo on Android."
+status = "running"
+statusLabel = "ACTIVE"
+link = "https://rewindme.ansicode.fr"
+linkIcon = "globe"
+linkLabel = "Visit the site"
+
+[[projects.items.tech]]
+label = "Game"
+color = "#a78bfa"
+
+[[projects.items.tech]]
+label = "Puzzle"
+color = "#00d4ff"
+
+[[projects.items.tech]]
+label = "Android"
+color = "#22e09e"
+
+[[projects.items]]
+title = "Hackea"
+desc = "Creation tool for IKEA hacks: combine and modify catalog pieces in a 3D editor, and it generates the step-by-step guide (what to buy, what to change, each step played in 3D like the paper manual and read out loud)."
+status = "running"
+statusLabel = "ACTIVE"
+link = "https://github.com/hansipie/Hackea"
+linkIcon = "github"
+linkLabel = "GitHub"
+
+[[projects.items.tech]]
+label = "3D"
+color = "#a78bfa"
+
+[[projects.items.tech]]
+label = "TypeScript"
+color = "#00d4ff"
+
+[[projects.items.tech]]
+label = "Open source"
+color = "#22e09e"
+
+[skills]
+title = "Expertise built in the field."
+lead = "My foundation remains C/C++, systems and networking. It now extends to AI agents, Rust, product development and delivery platforms."
+progress = 86
+progressLabel = "ONLINE"
+
+[[skills.groups]]
+prefix = "sys"
+title = "Systems"
+
+[[skills.groups.items]]
+name = "C / C++"
+level = "core"
+
+[[skills.groups.items]]
+name = "Networking"
+level = "deep"
+
+[[skills.groups.items]]
+name = "Windows / Linux / Unix"
+level = "hands-on"
+
+[[skills.groups.items]]
+name = "Debug"
+level = "root cause"
+
+[[skills.groups]]
+prefix = "ai"
+title = "Applied AI"
+
+[[skills.groups.items]]
+name = "LLM"
+level = "advanced"
+
+[[skills.groups.items]]
+name = "Agents"
+level = "multi-agents"
+
+[[skills.groups.items]]
+name = "MCP"
+level = "integration"
+
+[[skills.groups.items]]
+name = "RAG"
+level = "retrieval"
+
+[[skills.groups]]
+prefix = "dev"
+title = "Development"
+
+[[skills.groups.items]]
+name = "Rust"
+level = "CLI tools"
+
+[[skills.groups.items]]
+name = "Python / Java"
+level = "advanced"
+
+[[skills.groups.items]]
+name = "React Native / Expo"
+level = "mobile"
+
+[[skills.groups.items]]
+name = "SQLite / PostgreSQL"
+level = "data"
+
+[[skills.groups]]
+prefix = "ops"
+title = "Platforms"
+
+[[skills.groups.items]]
+name = "CI/CD"
+level = "architecture"
+
+[[skills.groups.items]]
+name = "Software Factory"
+level = "lead"
+
+[[skills.groups.items]]
+name = "Private cloud / VMs"
+level = "integration"
+
+[[skills.groups.items]]
+name = "HA / load balancing"
+level = "architecture"
+
+[blogSection]
+title = "Two blogs to document, explain and attract."
+lead = "The Ansicode blog for technical articles (AI, LLM, open source, lessons learned) and the Papimathic blog for educational content around mental math. Two distinct audiences, one publishing cadence."
+progress = 81
+progressLabel = "PUBLISHED"
+achievement = "Long-form builder"
+
+[[blogSection.externalBlogs]]
+title = "Blog Ansicode"
+desc = "Technical articles about AI, software development, open source, LLMs and builder's lessons learned. (Articles are written in French.)"
+status = "running"
+statusLabel = "TECH"
+link = "/"
+
+[[blogSection.externalBlogs.tech]]
+label = "IA"
+color = "#00d4ff"
+
+[[blogSection.externalBlogs.tech]]
+label = "Dev"
+color = "#4f8df2"
+
+[[blogSection.externalBlogs.tech]]
+label = "Open source"
+color = "#a78bfa"
+
+[[blogSection.externalBlogs]]
+title = "Blog Papimathic"
+desc = "Educational content making mental math and multiplication tables more accessible to children, parents and teachers. (In French.)"
+status = "deployed"
+statusLabel = "SEO"
+link = "https://papimathic.ansicode.fr/blog/"
+
+[[blogSection.externalBlogs.tech]]
+label = "Education"
+color = "#22e09e"
+
+[[blogSection.externalBlogs.tech]]
+label = "Maths"
+color = "#fcd34d"
+
+[[blogSection.externalBlogs.tech]]
+label = "SEO"
+color = "#326ce5"
+
+[contact]
+title = "Available for focused engagements."
+lead = "Email to discuss a project or a quick scoping call, LinkedIn for a first professional conversation."
+directBody = "To discuss an engagement or a collaboration. Email remains the most direct way in."
+followBody = "GitHub for code, X for updates and quick thoughts."
