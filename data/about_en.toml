@@ -264,6 +264,10 @@ color = "#00d4ff"
 label = "Android"
 color = "#22e09e"
 
+[[projects.items.tech]]
+label = "Godot"
+color = "#478cbf"
+
 [[projects.items]]
 title = "Hackea"
 desc = "Creation tool for IKEA hacks: combine and modify catalog pieces in a 3D editor, and it generates the step-by-step guide (what to buy, what to change, each step played in 3D like the paper manual and read out loud)."

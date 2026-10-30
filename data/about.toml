@@ -264,6 +264,10 @@ color = "#00d4ff"
 label = "Android"
 color = "#22e09e"
 
+[[projects.items.tech]]
+label = "Godot"
+color = "#478cbf"
+
 [[projects.items]]
 title = "Hackea"
 desc = "Outil de création de hacks IKEA : on assemble et modifie des pièces du catalogue dans un éditeur 3D, et l'outil génère le guide pas à pas (achats, modifications, étapes rejouées en 3D comme la notice papier, commentées à voix haute)."
