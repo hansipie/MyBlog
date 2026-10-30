@@ -245,7 +245,7 @@ color = "#22e09e"
 
 [[projects.items]]
 title = "Rewind Me"
-desc = "Timing puzzle game (A Robot Love Story) where you rewind a little robot while the world keeps moving forward. Free 5-level demo on Android."
+desc = "Timing puzzle game where you rewind a little robot while the world keeps moving forward. Free 5-level demo on Android."
 status = "running"
 statusLabel = "ACTIVE"
 link = "https://rewindme.ansicode.fr"

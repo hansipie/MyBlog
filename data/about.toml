@@ -245,7 +245,7 @@ color = "#22e09e"
 
 [[projects.items]]
 title = "Rewind Me"
-desc = "Jeu de puzzle de timing (A Robot Love Story) où l'on remonte le temps d'un petit robot pendant que le monde continue d'avancer. Démo gratuite de 5 niveaux sur Android."
+desc = "Jeu de puzzle de timing où l'on remonte le temps d'un petit robot pendant que le monde continue d'avancer. Démo gratuite de 5 niveaux sur Android."
 status = "running"
 statusLabel = "ACTIVE"
 link = "https://rewindme.ansicode.fr"
