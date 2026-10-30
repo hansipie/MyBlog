@@ -136,7 +136,7 @@
 <div class="llm-lab">
   <section aria-labelledby="llm-summary-title">
     <h2 id="llm-summary-title">Comparer les prix des API de modèles IA</h2>
-    <p>Ce comparateur rassemble {{ .Params.models }} modèles et leurs prix par million de tokens en entrée, en sortie et en cache lorsque ce tarif est publié. Les données proviennent de {{ .Params.sources }} sources indexées et ont été mises à jour le {{ .Params.updated }}.</p>
+    <p>Ce comparateur rassemble {{ .Params.models }} modèles et leurs prix par million de tokens en entrée, en sortie et en cache lorsque ce tarif est publié. Les données tarifaires proviennent de {{ .Params.sources }} sources indexées, dont 12 relevés importés, et ont été mises à jour le {{ .Params.updated }}. La sélection comporte 98 entrées payantes et 13 gratuites auprès de 20 fournisseurs. Les benchmarks restent datés séparément ci-dessous.</p>
     <p>Le calculateur estime un coût mensuel à partir des volumes de tokens. Les filtres permettent ensuite de comparer les fournisseurs, les abonnements, les nouveaux modèles, les retraits et les changements de prix.</p>
   </section>
   <div class="lab-meta">
@@ -167,7 +167,7 @@
 
     <p class="lab-legend"><span class="li"><i></i>Input $/1M</span><span class="lo"><i></i>Output $/1M</span>
     <em>· échelle logarithmique</em></p>
-    <p class="lab-tiers">Tier de performance d'après le LLM Stats Score relevé le 17/10/2026 : <b>T1</b> Frontier ≥ 52 · <b>T2</b> Premium 48–51,9 · <b>T3</b> Balanced 40–47,9 · <b>T4</b> Economy &lt; 40. « — » : modèle spécialisé, accès restreint ou score non publié. Comparez les prix à l'intérieur d'un même tier.</p>
+    <p class="lab-tiers">Tier de performance d'après le LLM Stats Score relevé le 30/10/2026 : collecte de 434 modèles sur 15 pages, dont 28 sans score. <b>T1</b> Frontier ≥ 52 · <b>T2</b> Premium 48–51,9 · <b>T3</b> Balanced 40–47,9 · <b>T4</b> Economy &lt; 40. « — » : modèle spécialisé, accès restreint ou score non publié. Comparez les prix à l'intérieur d'un même tier.</p>
 
     <div class="lab-tblwrap">
     <table id="tbl">
@@ -204,7 +204,7 @@
   <p class="lab-foot">
     Données compilées via NotebookLM depuis les pages pricing officielles (OpenAI, Anthropic, Google,
     Mistral, xAI, DeepSeek, Alibaba, Z.ai, Moonshot, MiniMax…). Les prix « promo » et paliers
-    long-contexte sont précisés dans les notes ; la plupart des providers facturent le cache hit à ~10 % du prix input.
+    long-contexte et routes sont précisés dans les notes ; le cache read est distinct du cache write. Le calculateur utilise les premiers tarifs input/output affichés, sans cache, stockage, taxes ni frais annexes. « — » en cache signifie prix non publié ou non applicable, pas gratuité. Contrôles partiels des fournisseurs, régions et offres : absence de changement confirmé ne signifie pas absence exhaustive d’annonces.
   </p>
 </div>
 
@@ -212,295 +212,314 @@
 // [provider, modèle, input, output, cache(null=N/A), badge, note]
 // badge: n=nouveau p=génération précédente m=promo $=prix modifié l=legacy f=gratuit
 const M=[
-["inclusionAI","Ling-2.6-flash",0.01,0.03,null,"","[1]"],
-["IBM","Granite 4.0 Micro",0.017,0.112,null,"",""],
-["Alibaba","Qwen-flash (Global)",0.022,0.216,null,"","[11]"],
-["Alibaba","Qwen3.5-flash (Global)",0.029,0.287,null,"",""],
-["Amazon","Nova Micro 1.0",0.03,0.14,null,"n","Nouveau"],
-["Alibaba","Qwen3.7-Flash (Intl)",0.03,0.13,null,"n","Confirmé le 23/09 sur la page pricing officielle (tier 0-32K, prix progressifs jusqu'à 1M). Le rejet du 23/07 est corrigé [Alibaba]"],
+["inclusionAI","Ling-2.6-flash",0.01,0.03,null,"","[1] Grille : input $0.01 ; output $0.03 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["IBM","Granite 4.0 Micro",0.017,0.112,null,""," Grille : input $0.017 ; output $0.112 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Alibaba","Qwen-flash (Global)",0.022,0.216,null,"","[11] Cache disponible, prix non publié (N/A)."],
+["Alibaba","Qwen3.5-flash (Global)",0.029,0.287,null,""," Cache disponible, prix non publié (N/A)."],
+["Amazon","Nova Micro 1.0",0.03,0.14,null,"n","Nouveau Grille : input $0.03 ; output $0.14 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Alibaba","Qwen3.7-Flash (Intl)",0.03,0.13,null,"n","Confirmé le 23/09 sur la page pricing officielle (tier 0-32K, prix progressifs jusqu'à 1M). Le rejet du 23/07 est corrigé [Alibaba] Cache disponible, prix non publié (N/A)."],
 ["OpenAI (Azure)","GPT OSS 20B",0.03,0.14,0.0375,"",""],
 ["OpenAI","gpt-oss-120b",0.039,0.18,0.075,"",""],
-["Alibaba","Qwen3.5-9B",0.04,0.15,null,"",""],
-["Google","Gemma 3 4B / 12B",0.04,0.08,null,"n","Nouveau · grille output $0.08-$0.13 ; le calculateur utilise la première valeur de chaque colonne"],
-["Meta","Llama 3.1 8B Instant",0.05,0.08,null,"n","Nouveau"],
-["Microsoft","Phi 4",0.065,0.14,null,"n","Nouveau"],
-["Baidu","ERNIE 4.5 21B A3B",0.07,0.28,null,"n","Nouveau"],
+["Alibaba","Qwen3.5-9B",0.04,0.15,null,""," Grille : input $0.04 ; output $0.15 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Google","Gemma 3 4B / 12B",0.04,0.08,null,"n","Nouveau Grille : input $0.04 ; output $0.08-$0.13 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Meta","Llama 3.1 8B Instant",0.05,0.08,null,"n","Nouveau Grille : input $0.05 ; output $0.08 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Microsoft","Phi 4",0.065,0.14,null,"n","Nouveau Grille : input $0.065 ; output $0.14 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Baidu","ERNIE 4.5 21B A3B",0.07,0.28,null,"n","Nouveau Grille : input $0.07 ; output $0.28 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
 ["Z.ai","GLM-4.7-FlashX",0.07,0.4,0.01,"","Palier payant le moins cher de la gamme GLM [Z.ai]"],
-["Meta","Llama 4 Scout",0.08,0.3,null,"n","Nouveau"],
-["Alibaba","Qwen3.5-Flash (Intl)",0.1,0.4,null,"$","Correction vérifiée le 16/10, région International, 0–1M tokens ; ancien relevé $0.065/$0.26. Date de prise d’effet N/A ; cache disponible, prix non publié [Alibaba]"],
+["Meta","Llama 4 Scout",0.08,0.3,null,"n","Nouveau Grille : input $0.08 ; output $0.30 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Alibaba","Qwen3.5-Flash (Intl)",0.1,0.4,null,"$","Correction vérifiée le 16/10, région International, 0–1M tokens ; ancien relevé $0.065/$0.26. Date de prise d’effet N/A ; cache disponible, prix non publié [Alibaba] Grille : input $0.10 ; output $0.40 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
 ["Mistral AI","Ministral 3 – 3B",0.1,0.1,0.01,"n","Contexte 131K ; cache read confirmé le 09/10, sans date de changement publiée [Mistral]"],
 ["Google","Gemini 2.5 Flash-Lite",0.1,0.4,0.01,"","Accès restreint depuis le 18/09 aux utilisateurs l'ayant déjà utilisé, non déprécié [Google]"],
-["OpenAI","GPT-6 Luna",0.1,0.5,0.01,"n","Lancé le 22/09 ; contexte court : cache write $0.125. Long contexte >272K : $0.20/$0.75, cache read $0.02, write $0.25 ; Batch/Flex $0.05/$0.25 en contexte court [OpenAI]"],
-["Anthropic","Claude Haiku 5.5",0.1,0.5,0.01,"n","Nouveau le 07/10 — API claude-haiku-5-5, contexte 1M, sortie 128K, thinking adaptatif. Cache write 5 min $0.125/$0.625 et 1 h $0.20/$1.00 selon le palier d’entrée. Tarifs standard, pas une promotion [Anthropic] · grille input $0.10 (≤100K) / $0.50 (>100K) ; output $0.50 (≤100K) / $2.50 (>100K) ; cache read $0.01 / $0.05 ; le calculateur utilise la première valeur de chaque colonne"],
-["Mistral AI","Voxtral Small",0.1,0.4,null,"n","Nouveau, audio [Mistral]"],
-["NVIDIA","Nemotron 3.5 Super VL",0.1,0.4,0.08,"n","Via OpenRouter : nvidia/nemotron-3.5-super-vl, contexte 1 048 576 tokens. Catalogue du 15/10 contrôlé le 17/10 ; tarif hébergé, pas API NVIDIA. Score absent du relevé."],
+["OpenAI","GPT-6 Luna",0.1,0.5,0.01,"n","Lancé le 22/09 ; contexte court : cache write $0.125. Long contexte >272K : $0.20/$0.75, cache read $0.02, write $0.25 ; Batch/Flex $0.05/$0.25 en contexte court [OpenAI] Cache write 12 h depuis le 20/10 : 2.5× le prix input du palier/service tier concerné (30 min : 1.25×) ; cache read distinct [OpenAI]"],
+["Anthropic","Claude Haiku 5.5",0.1,0.5,0.01,"n","Nouveau le 07/10 — API claude-haiku-5-5, contexte 1M, sortie 128K, thinking adaptatif. Cache write 5 min $0.125/$0.625 et 1 h $0.20/$1.00 selon le palier d’entrée. Tarifs standard, pas une promotion [Anthropic] Grille : input $0.10 (≤100K) / $0.50 (>100K) ; output $0.50 (≤100K) / $2.50 (>100K) ; cache read $0.01 / $0.05. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Mistral AI","Voxtral Small",0.1,0.4,null,"n","Input texte $0.10/1M, output texte $0.40/1M ; audio $0.004/min, unité distincte confirmée sur la carte officielle le 23/10 [Mistral] Grille : input $0.10 ; output $0.40 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["NVIDIA","Nemotron 3.5 Super VL",0.1,0.4,0.08,"n","Via OpenRouter, nvidia/nemotron-3.5-super-vl, route Crusoe BF16 : contexte 262 144 tokens. Route CoreWeave NVFP4 : 1 048 576 tokens, $0.15/$0.50/cache $0.02 ; conditions de routes distinctes, contrôlées le 26/10, sans date de modification publiée. Pas un tarif direct NVIDIA ni une hausse générale ; une seule ligne API [OpenRouter]"],
 ["Alibaba","Qwen3.8-Flash (Global)",0.113,0.382,0.014,"n","Nouveau — contexte 1M ; International $0.15/$0.47, cache $0.016 [Alibaba]"],
 ["Alibaba","Qwen3.8-Omni-Flash (Global)",0.113,0.382,0.014,"n","Multimodal spécialisé ; tarifs de la grille Omni. Realtime International : entrée texte $0.23/audio $0.93, sortie texte $0.70/audio $1.87 [Alibaba]"],
 ["Mistral AI","Ministral 3 – 8B",0.15,0.15,0.015,"n","Contexte 262K ; cache read confirmé le 09/10, sans date de changement publiée [Mistral]"],
-["Z.ai","GLM-5.3-Flash",0.15,0.5,0.03,"$","Tarif standard depuis le 10/09 après la fin de la remise de lancement [Z.ai]"],
-["DeepSeek","DeepSeek-V4.1-Flash",0.15,0.6,0.003,"n","Révision DeepSeek-V4.1-Flash-1017 le 17/10, tarifs inchangés, API deepseek-flash, contexte 1M, sortie maximale 384K. API deepseek-flash, contexte 1M ; peak lundi-vendredi 01:00–04:00 et 06:00–10:00 UTC, hors jours fériés chinois ; autres horaires off-peak. Remplace V4-Flash et V4-Flash-Vision-Exp [DeepSeek] · grille input $0.15 off-peak / $0.30 peak ; output $0.60 / $1.20 ; cache read $0.003 / $0.006 ; le calculateur utilise la première valeur de chaque colonne Le score de famille ne certifie pas isolément la révision 1017."],
+["Z.ai","GLM-5.3-Flash",0.15,0.5,0.03,"$","Tarif standard depuis le 10/09 après la fin de la remise de lancement Également hébergé chez Mistral depuis le 22/10 (zai-glm-5-3-flash) à $0.15/$0.50, cache $0.03 ; la ligne reste au tarif direct Z.ai, sans doublon [Z.ai, Mistral]"],
+["DeepSeek","DeepSeek-V4.1-Flash",0.15,0.6,0.003,"n","Révision DeepSeek-V4.1-Flash-1017 le 17/10, tarifs inchangés. API deepseek-flash, contexte 1M, sortie maximale 384K ; peak lundi-vendredi 01:00–04:00 et 06:00–10:00 UTC, hors jours fériés chinois ; autres horaires off-peak. Remplace V4-Flash et V4-Flash-Vision-Exp [DeepSeek] Grille : input $0.15 off-peak / $0.30 peak ; output $0.60 / $1.20 ; cache read $0.003 / $0.006. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
 ["Mistral AI","Mistral Small 4",0.15,0.6,0.015,"$","Input/output inchangés ; cache read confirmé le 09/10, sans date de changement publiée [Mistral]"],
-["OpenAI","GPT-5.6-Luna",0.2,1.2,0.02,"$","Prix réduit -80% le 30/07/2026 (était $1.00/$6.00), cache write $0.25, contexte 1.05M [OpenAI]"],
+["MiniMax","MiniMax-M3.1-Flash",0.15,0.6,0.015,"n","Nouveau le 19/10/2026, API pay-as-you-go, contexte 1M, multimodal code/agents et profondeur de thinking réglable. Tarif standard, sans échéance promotionnelle affichée ; cache write N/A. Distinct de l’ancienne préversion réservée aux abonnements [MiniMax]"],
+["OpenAI","GPT-5.6-Luna",0.2,1.2,0.02,"$","Prix réduit -80% le 30/07/2026 (était $1.00/$6.00), cache write $0.25, contexte 1.05M [OpenAI] Cache write 12 h depuis le 20/10 : 2.5× le prix input du palier/service tier concerné (30 min : 1.25×) ; cache read distinct [OpenAI]"],
 ["Mistral AI","Ministral 3 – 14B",0.2,0.2,0.02,"n","Contexte 262K ; cache read confirmé le 09/10, sans date de changement publiée [Mistral]"],
-["Alibaba","Qwen3.6-flash",0.25,1.5,null,"n","Nouveau — prix double env. au-delà de 256K [Alibaba]"],
-["Google","Gemini 3.5 Flash-Lite",0.3,2.5,0.03,"n","Nouveau — remplace probablement Gemini 3.1 Flash-Lite, annoncé le 21/07/2026 [Google] · grille cache read $0.03 + $1.00/h stockage ; le calculateur utilise la première valeur de chaque colonne"],
+["Alibaba","Qwen3.6-flash",0.25,1.5,null,"n","Nouveau — prix double env. au-delà de 256K [Alibaba] Cache disponible, prix non publié (N/A)."],
+["Google","Gemini 3.5 Flash-Lite",0.3,2.5,0.03,"n","Nouveau — remplace probablement Gemini 3.1 Flash-Lite, annoncé le 21/07/2026 [Google] Grille : input $0.30 ; output $2.50 ; cache read $0.03 + $1.00/h stockage. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
 ["Google","Gemini 2.5 Flash",0.3,2.5,0.03,"","Prix modifié le 02/07/2026 ; accès restreint depuis le 18/09 aux utilisateurs existants, non déprécié [Google]"],
 ["MiniMax","MiniMax-M3",0.3,1.2,0.06,"$","Réduction permanente de 50 % ; au-delà de 512K : $0.60/$2.40, cache $0.12 [MiniMax]"],
-["Alibaba","Qwen3.5-27B",0.3,2.4,null,"",""],
-["Amazon","Nova 2 Lite",0.3,2.5,null,"",""],
+["Alibaba","Qwen3.5-27B",0.3,2.4,null,""," Grille : input $0.30 ; output $2.40 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Amazon","Nova 2 Lite",0.3,2.5,null,""," Grille : input $0.30 ; output $2.50 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
 ["Mistral AI","Codestral",0.3,0.9,0.03,"n","Cache read confirmé le 09/10, sans date de changement publiée [Mistral]"],
-["Alibaba","Qwen3.6-27B",0.32,3.2,null,"",""],
-["Alibaba","Qwen3.7-Plus",0.32,1.28,null,"m","Promotion International −20 %, observée le 16/10, échéance N/A. Jusqu’à 256K : standard $0.40/$1.60, promo $0.32/$1.28 ; >256K–1M : standard $1.20/$4.80, promo $0.96/$3.84. Remise de l’alias qwen3.7-plus, pas du snapshot qwen3.7-plus-2026-05-26. Cache N/A ; date de début N/A [Alibaba]"],
+["Alibaba","Qwen3.6-27B",0.32,3.2,null,""," Cache disponible, prix non publié (N/A)."],
+["Alibaba","Qwen3.7-Plus",0.32,1.28,null,"m","Promotion International −20 %, observée le 16/10, échéance N/A. Jusqu’à 256K : standard $0.40/$1.60, promo $0.32/$1.28 ; >256K–1M : standard $1.20/$4.80, promo $0.96/$3.84. Remise de l’alias qwen3.7-plus, pas du snapshot qwen3.7-plus-2026-05-26. Cache N/A ; date de début N/A [Alibaba] Grille : input $0.32 promo ; output $1.28 promo ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
 ["Z.ai","GLM-5.3-FlashX",0.37,1.25,0.075,"n","Nouveau le 18/09 - variante rapide de GLM-5.3-Flash (jusqu'à 200 tokens/s), contexte 1M [Z.ai]"],
-["Alibaba","Qwen3.5-Plus (Intl)",0.4,2.4,null,"",""],
-["Alibaba","Qwen3.5-Omni-Flash",0.4,2.2,null,"",""],
-["Alibaba","Qwen3.5-122B-A10B",0.4,3.2,null,"",""],
+["Z.ai","GLM-5.3-FlashX-Legal",0.37,1.25,0.075,"n","Ajout correctif le 23/10, variante Legal explicitement listée sur la grille officielle. Date de lancement et contexte N/A ; stockage du cache temporairement gratuit, échéance N/A. Aucun score général extrapolé [Z.ai]"],
+["Alibaba","Qwen3.5-Plus (Intl)",0.4,2.4,null,""," Cache disponible, prix non publié (N/A)."],
+["Alibaba","Qwen3.5-Omni-Flash",0.4,2.2,null,""," Grille : input $0.40 ; output $2.20 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Alibaba","Qwen3.5-122B-A10B",0.4,3.2,null,""," Grille : input $0.40 ; output $3.20 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
 ["MiniMax","MiniMax-M3 (Priority)",0.45,1.8,0.09,"$","Service tier prioritaire à 1,5× ; au-delà de 512K : $0.90/$3.60, cache $0.18 [MiniMax]"],
-["Mistral AI","Mistral Large 3",0.5,1.5,0.05,"","Contexte 262K ; cache read confirmé le 09/10, sans date de changement publiée [Mistral]"],
+["Mistral AI","Mistral Large 3",0.5,1.5,0.05,"","Contexte 262K ; dépréciation annoncée pour le 31/10/2026, retrait prévu le 30/04/2027, remplacement Large 4. La fiche affiche déjà DEPRECATED au contrôle du 30/10 mais sa date d’effet est le lendemain ; ne pas assimiler cette annonce à un arrêt actuel. Derniers tarifs relevés, absents de la grille générale actuelle [Mistral]"],
 ["Google","Gemini 3 Flash Preview",0.5,3.0,0.05,"",""],
-["Alibaba","Qwen3.6-Plus (Intl)",0.5,3.0,null,"",""],
+["Alibaba","Qwen3.6-Plus (Intl)",0.5,3.0,null,""," Cache disponible, prix non publié (N/A)."],
 ["Alibaba","Qwen3.8-27B (International)",0.5,3.0,0.1,"n","Nouveau le 01/09 - contexte 1M ; Chine $0.424/$1.696, cache $0.085 [Alibaba]"],
-["Alibaba","Qwen3-A17B",0.6,3.6,null,"",""],
-["DeepSeek","DeepSeek-V4-Pro-0813",0.66,1.98,0.022,"$","Contexte 1M, service maintenu ; peak lundi-vendredi 01:00–04:00 et 06:00–10:00 UTC, hors jours fériés chinois ; autres horaires off-peak [DeepSeek] · grille input $0.66 off-peak / $1.32 peak ; output $1.98 / $3.96 ; cache read $0.022 / $0.044 ; le calculateur utilise la première valeur de chaque colonne"],
-["Mistral AI","Mistral Large 4",0.68,2.09,0.07,"m","Nouveau le 06/10, Public Preview, API mistral-large-4, contexte 1M. Remise de lancement de 50 % pendant 2 semaines à compter du 06/10 ; échéance calculée au 20/10/2026, heure de fin N/A. Standard $1.36/$4.18, cache $0.14. Montants USD affichés sur la grille officielle ; poids annoncés mais pas encore publiés [Mistral]"],
+["Alibaba","Qwen3-A17B",0.6,3.6,null,""," Grille : input $0.60 ; output $3.60 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["DeepSeek","DeepSeek-V4-Pro-0813",0.66,1.98,0.022,"$","Contexte 1M, service maintenu ; peak lundi-vendredi 01:00–04:00 et 06:00–10:00 UTC, hors jours fériés chinois ; autres horaires off-peak [DeepSeek] Grille : input $0.66 off-peak / $1.32 peak ; output $1.98 / $3.96 ; cache read $0.022 / $0.044. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Mistral AI","Mistral Large 4",0.7,2.1,0.07,"$","Public Preview depuis le 06/10, API mistral-large-4, contexte 1M. Montants USD Standard affichés sur la grille et la fiche rendues le 30/10 ; ancien relevé $1.36/$4.18/cache $0.14 remplacé. Date effective N/A, pas de nouvelle remise ni échéance affichée ; ancienne promotion de lancement non reconduite par déduction. Le texte NotebookLM reste ancien ; relevé rendu primaire prioritaire. Poids annoncés, publication non reconfirmée [Mistral]"],
 ["OpenAI","GPT-5.4-mini",0.75,4.5,0.075,"n","Nouveau — contexte 400K [OpenAI]"],
-["Google","Gemini 3.8 Flash",0.75,3.75,0.075,"m","Nouveau le 02/09 - contexte 1.05M ; promotion jusqu'au 31/12/2026, puis $1.50/$7.50, cache $0.15 [Google] · grille cache read $0.075 + $0.50/h stockage ; le calculateur utilise la première valeur de chaque colonne"],
-["Google","Gemini 3.6 Flash",0.75,3.75,0.075,"m","Prix corrigé - promotion jusqu'au 31/12/2026, puis $1.50/$7.50, cache $0.15 et stockage $1.00/h [Google] · grille cache read $0.075 + $0.50/h stockage ; le calculateur utilise la première valeur de chaque colonne"],
-["Moonshot","Kimi K2.7 Code",0.95,4.0,0.19,"$","Spécialisé code, contexte 262K [Kimi]"],
-["Moonshot","Kimi K2.6",0.95,4.0,0.16,"","Ajout correctif - modèle généraliste multimodal toujours actif, modes standard et thinking, contexte 262K [Kimi]"],
+["Google","Gemini 3.8 Flash",0.75,3.75,0.075,"m","Nouveau le 02/09 - contexte 1.05M ; promotion jusqu'au 31/12/2026, puis $1.50/$7.50, cache $0.15 [Google] Grille : input $0.75 promo ; output $3.75 promo ; cache read $0.075 + $0.50/h stockage. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Google","Gemini 3.6 Flash",0.75,3.75,0.075,"m","Prix corrigé - promotion jusqu'au 31/12/2026, puis $1.50/$7.50, cache $0.15 et stockage $1.00/h [Google] Grille : input $0.75 promo ; output $3.75 promo ; cache read $0.075 + $0.50/h stockage. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Moonshot","Kimi K2.7 Code",0.95,4.0,0.19,"$","Spécialisé code, contexte 262K. Série K2 : fermeture aux nouveaux inscrits le 31/10/2026, utilisateurs existants non affectés par cette étape ; retrait prévu d’ici fin décembre 2026, non effectif au 26/10 [Kimi]"],
+["Moonshot","Kimi K2.6",0.95,4.0,0.16,"","Modèle généraliste multimodal toujours actif, modes standard et thinking, contexte 262K. Série K2 : fermeture aux nouveaux inscrits le 31/10/2026, utilisateurs existants non affectés par cette étape ; retrait prévu d’ici fin décembre 2026, non effectif au 26/10 [Kimi]"],
+["OpenAI","GPT-6.1 Terra",1.0,5.0,0.05,"n","Nouveau le 26/10/2026, API gpt-6.1-terra, contexte 1 050 000, sortie 128K ; entrée texte/image, sortie texte. Cache write 30 min $1.25, 12 h $2.50. Prompt >272K : input $2, output $7.50, cache read $0.10, write $2.50/$5 ; paliers appliqués à toute la requête. Batch/Flex −50 %, Fast ×2, régional +10 % si disponible. Tarif Standard, aucune échéance promotionnelle affichée ; score N/A [OpenAI]"],
 ["Z.ai","GLM-5",1.0,3.2,0.2,"",""],
-["xAI","Grok Build 0.1",1.0,2.0,0.2,"n","Nouveau — spécialisé code, contexte 256K [xAI]"],
+["xAI","Grok Build 0.1",1.0,2.0,0.2,"n","Spécialisé code, contexte 256K ; seuil de prompt cache compris, tarif long sur toute la requête. Précision du relevé le 26/10, pas une hausse datée [xAI] Grille : input $1.00 (<200K) / $2.00 (≥200K) ; output $2.00 (<200K) / $4.00 (≥200K) ; cache read $0.20 / $0.40. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
 ["Google","Gemini 2.5 Pro",1.25,10.0,0.125,"","Prix double au-delà de 200K tokens ; accès restreint depuis le 18/09 aux utilisateurs existants, non déprécié [Google]"],
 ["Meta","Muse Spark 1.1",1.25,4.25,0.15,"p","Génération précédente, toujours listée sur la page officielle Meta [Meta]"],
 ["Meta","Muse Spark 1.3",1.25,4.25,0.15,"n","Ajout correctif - lancé le 02/09, contexte 1M. Palier Contributor à $0.10/$0.20, cache $0.002, en échange de l'utilisation des données par Meta [Meta]"],
-["xAI","Grok 4.20",1.25,2.5,0.2,"n","Nouveau — variantes reasoning/non-reasoning/multi-agent, contexte 1M [xAI]"],
-["xAI","Grok 4.3",1.25,2.5,0.2,"","Contexte 1M [xAI]"],
-["Meta","Muse Spark Open",1.25,4.25,0.15,"n","Sortie officielle le 15/10 ; open-weight, MoE 816B/42B actifs, contexte 1M. Prix hébergés OpenRouter, pas coût d’auto-hébergement. Score absent du relevé."],
+["xAI","Grok 4.20",1.25,2.5,0.2,"n","Variantes reasoning/non-reasoning/multi-agent, contexte 1M ; seuil de prompt cache compris, tarif long sur toute la requête. Précision du relevé le 26/10, pas une hausse datée [xAI] Grille : input $1.25 (<200K) / $2.50 (≥200K) ; output $2.50 (<200K) / $5.00 (≥200K) ; cache read $0.20 / $0.40. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["xAI","Grok 4.3",1.25,2.5,0.2,"","Contexte 1M ; seuil de prompt cache compris, tarif long sur toute la requête. Précision du relevé le 26/10, pas une hausse datée [xAI] Grille : input $1.25 (<200K) / $2.50 (≥200K) ; output $2.50 (<200K) / $5.00 (≥200K) ; cache read $0.20 / $0.40. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Meta","Muse Spark Open",1.25,4.25,0.15,"n","Sortie officielle le 15/10 ; open-weight, MoE 816B/42B actifs, contexte 1M. Prix hébergés via OpenRouter, pas tarif d’auto-hébergement ; score non relevé [Meta, OpenRouter]"],
 ["Z.ai","GLM-5.1",1.4,4.4,0.26,"",""],
 ["Z.ai","GLM-5.2",1.4,4.4,0.26,"n","Nouveau — lancé le 13/06/2026, contexte 1M, open-weight MIT [Z.ai]"],
 ["Z.ai","GLM-5.3",1.4,4.4,0.26,"n","Nouveau le 14/08 - nouveau flagship code et agents, même prix que GLM-5.2 [Z.ai]"],
-["Alibaba","Qwen3.5-Omni-Plus",1.4,8.3,null,"",""],
-["Mistral AI","Mistral Medium 3.5",1.5,7.5,0.15,"","Contexte 262K ; cache read confirmé le 09/10, sans date de changement publiée [Mistral]"],
-["Moonshot","Kimi K2.7 Code HighSpeed",1.9,8.0,0.38,"n","Même modèle que K2.7 Code, débit supérieur, contexte 262K [Kimi]"],
-["xAI","Grok 4.5",2.0,6.0,0.3,"p","Génération précédente, contexte 500K [xAI] · grille input $2.00 (<200K) / $4.00 (≥200K) ; output $6.00 (<200K) / $12.00 (≥200K) ; cache read $0.30 / $0.60 ; le calculateur utilise la première valeur de chaque colonne"],
-["xAI","Grok 4.6",2.0,6.0,0.5,"p","Génération précédente depuis le 21/09, contexte 500K [xAI] · grille input $2.00 (<200K) / $4.00 (≥200K) ; output $6.00 (<200K) / $12.00 (≥200K) ; cache read $0.50 / $1.00 ; le calculateur utilise la première valeur de chaque colonne"],
-["xAI","Grok 4.7",2.0,6.0,0.5,"n","Nouveau flagship le 21/09 - même prix que Grok 4.6, contexte 500K, entrée texte et image. Grok 4.7 Fast réservé à Cursor et Grok Build [xAI] · grille input $2.00 (<200K) / $4.00 (≥200K) ; output $6.00 (<200K) / $12.00 (≥200K) ; cache read $0.50 / $1.00 ; le calculateur utilise la première valeur de chaque colonne"],
+["Alibaba","Qwen3.5-Omni-Plus",1.4,8.3,null,""," Grille : input $1.40 ; output $8.30 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Mistral AI","Mistral Medium 3.5",1.5,7.5,0.15,"","Contexte 262K ; dépréciation annoncée pour le 31/10/2026, retrait prévu le 30/04/2027, remplacement Large 4. La fiche affiche déjà DEPRECATED au contrôle du 30/10 mais sa date d’effet est le lendemain ; ne pas anticiper le retrait. Derniers tarifs relevés, absents de la grille générale actuelle [Mistral]"],
+["Google","Gemini Omni Flash GA",1.5,9.0,null,"n","Ajout correctif, API gemini-omni-1.1-flash, remplace gemini-omni-flash-preview arrêté le 22/10. Prix input multimodal et output texte ; output vidéo $17.50/1M, environ $0.10/s en 720p. Contexte N/A dans la grille consultée, aucun free tier ; pas une nouvelle promotion [Google] Grille : input $1.50 ; output $9.00 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["Moonshot","Kimi K2.7 Code HighSpeed",1.9,8.0,0.38,"n","Même modèle que K2.7 Code, débit supérieur, contexte 262K. Série K2 : fermeture aux nouveaux inscrits le 31/10/2026, utilisateurs existants non affectés par cette étape ; retrait prévu d’ici fin décembre 2026, non effectif au 26/10 [Kimi]"],
+["Moonshot","Kimi K3.1 Pro",2.0,10.0,0.2,"n","Lancement créateur le 24/10/2026, API kimi-k3.1-pro, contexte 1 048 576 tokens ; cache write 5 min $2.00, 1 h $4.00. API directe PAYG ; accès après recharge réussie d’au moins $1. Catalogue OpenRouter Pro créé le 23/10 à 17:56:28 UTC, événement distinct du billet créateur ; poids annoncés au plus tard le 04/11, publication non confirmée [Kimi, OpenRouter]"],
+["xAI","Grok 4.5",2.0,6.0,0.3,"p","Génération précédente, contexte 500K [xAI] Grille : input $2.00 (<200K) / $4.00 (≥200K) ; output $6.00 (<200K) / $12.00 (≥200K) ; cache read $0.30 / $0.60. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["xAI","Grok 4.6",2.0,6.0,0.5,"p","Génération précédente depuis le 21/09, contexte 500K [xAI] Grille : input $2.00 (<200K) / $4.00 (≥200K) ; output $6.00 (<200K) / $12.00 (≥200K) ; cache read $0.50 / $1.00. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["xAI","Grok 4.7",2.0,6.0,0.5,"n","Nouveau flagship le 21/09 - même prix que Grok 4.6, contexte 500K, entrée texte et image. Grok 4.7 Fast réservé à Cursor et Grok Build [xAI] Grille : input $2.00 (<200K) / $4.00 (≥200K) ; output $6.00 (<200K) / $12.00 (≥200K) ; cache read $0.50 / $1.00. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
 ["Alibaba","Qwen3.8-Max",2.0,6.0,0.25,"n","Confirmé officiellement - contexte 1M, cache implicite international $0.25, multimodal texte/image/vidéo [Alibaba]"],
-["Google","Gemini 3.1 Pro Preview",2.0,12.0,0.2,"","Précisé — au-delà de 200K : input ×2 ($4), output ×1.5 ($18) ; confirmé sur la page officielle [Google] · grille input $2.00 (≤200K) / $4.00 (>200K) ; output $12.00 (≤200K) / $18.00 (>200K) ; le calculateur utilise la première valeur de chaque colonne"],
-["OpenAI","GPT-5.6-Terra",2.0,12.0,0.2,"$","Prix réduit -20% le 30/07/2026 (était $2.50/$15.00), cache write $2.50, contexte 1.05M [OpenAI]"],
-["OpenAI","GPT-6.1 Sol",2.0,10.0,0.1,"n","Lancé le 29/09 ; contexte 1.05M, sortie 128K. Cache write $2.50 ; >272K : $4/$15, cache $0.20, write $5. Batch/Flex $1/$5, Fast $4/$20. Ultrafast depuis le 08/10 : $12/$60, cache $0.60, write $15 ; >272K : $24/$90, cache $1.20, write $30. T1 (54,0 au 17/10) [OpenAI]"],
-["OpenAI","GPT-6 Sol",2.0,10.0,0.2,"p","Génération précédente, toujours disponible ; lancé le 22/09 ; contexte court : cache write $2.50. Long contexte >272K : $4/$15, cache read $0.40, write $5 ; Batch/Flex $1/$5 en contexte court [OpenAI]"],
+["Google","Gemini 3.1 Pro Preview",2.0,12.0,0.2,"","Précisé — au-delà de 200K : input ×2 ($4), output ×1.5 ($18) ; confirmé sur la page officielle [Google] Grille : input $2.00 (≤200K) / $4.00 (>200K) ; output $12.00 (≤200K) / $18.00 (>200K) ; cache read $0.20. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."],
+["OpenAI","GPT-5.6-Terra",2.0,12.0,0.2,"$","Prix réduit -20% le 30/07/2026 (était $2.50/$15.00), cache write $2.50, contexte 1.05M [OpenAI] Cache write 12 h depuis le 20/10 : 2.5× le prix input du palier/service tier concerné (30 min : 1.25×) ; cache read distinct [OpenAI]"],
+["OpenAI","GPT-6.1 Sol",2.0,10.0,0.1,"n","Lancé le 29/09 ; contexte 1.05M, sortie 128K. Cache write $2.50 ; >272K : $4/$15, cache $0.20, write $5. Batch/Flex $1/$5, Fast $4/$20. Ultrafast depuis le 08/10 : $12/$60, cache $0.60, write $15 ; >272K : $24/$90, cache $1.20, write $30. [OpenAI] Cache write 12 h depuis le 20/10 : 2.5× le prix input du palier/service tier concerné (30 min : 1.25×) ; cache read distinct [OpenAI]"],
+["OpenAI","GPT-6 Sol",2.0,10.0,0.2,"p","Génération précédente, toujours disponible ; lancé le 22/09 ; contexte court : cache write $2.50. Long contexte >272K : $4/$15, cache read $0.40, write $5 ; Batch/Flex $1/$5 en contexte court [OpenAI] Cache write 12 h depuis le 20/10 : 2.5× le prix input du palier/service tier concerné (30 min : 1.25×) ; cache read distinct [OpenAI]"],
 ["Anthropic","Claude Sonnet 5.5",2.0,10.0,0.1,"n","Lancé le 28/09 ; API claude-sonnet-5-5, contexte 1M, sortie 128K. Cache read réduit de 50 % le 07/10 ($0.20 → $0.10) ; input/output et cache write inchangés : 5 min $2.50, 1 h $4 ; Batch $1/$5. Thinking adaptatif ; tool_choice any/tool refusé (erreur 400). Retrait non avant le 28/09/2027 [Anthropic]"],
-["Google","Gemini 4 Argon",2.0,10.0,0.1,"m","GA le 13/10/2026 — gemini-4-argon. Promotion jusqu’au 30/11/2026 inclus ; dès le 01/12, standard $4/$20, cache $0.20. Contexte unifié entrée + raisonnement + sortie 1 048 576 tokens ; sortie synchrone 65 536, long decode jusqu’au budget restant. Cache implicite uniquement, pas de cache explicite ni de free tier. LLM Stats 55,4, T1 au 17/10 ; MMLU N/A, sans mélange de variantes [Google]"],
-["Alibaba","Qwen3.7-Max",2.5,7.5,null,"m","Grille International actuelle ; ancienne promotion à $1.25/$3.75 non confirmée, écart rectifié le 25/09 [Alibaba]"],
+["Google","Gemini 4 Argon",2.0,10.0,0.1,"m","GA le 13/10/2026 — gemini-4-argon. Promotion jusqu’au 30/11/2026 inclus ; dès le 01/12, standard $4/$20, cache $0.20. Contexte unifié entrée + raisonnement + sortie 1 048 576 tokens ; sortie synchrone 65 536, long decode jusqu’au budget restant. Cache implicite uniquement, pas de cache explicite ni de free tier. [Google]"],
+["Alibaba","Qwen3.7-Max",2.5,7.5,null,"m","Grille International actuelle ; ancienne promotion à $1.25/$3.75 non confirmée, écart rectifié le 25/09 [Alibaba] Cache disponible, prix non publié (N/A)."],
 ["OpenAI","GPT-5.4",2.5,15.0,0.25,"n","Nouveau — contexte 1.05M, remplace GPT-4.1/GPT-4o [OpenAI]"],
-["Moonshot","Kimi K3",3.0,15.0,0.3,"n","Nouveau flagship — lancé le 16/07/2026, remplace Kimi K2 Thinking, MoE 2.8T paramètres, contexte 1M, natif multimodal, tarif plat quel que soit le contexte ; cache write TTL 5 min $3.00, TTL 1 h $6.00/1M [Kimi]"],
-["OpenAI","GPT-5.6-Sol",4.0,20.0,0.4,"m","Prix promo depuis le 21/08 - au moins jusqu'au 21/11/2026. Long contexte : $8/$30, cache $0.80 [OpenAI]"],
-["Anthropic","Claude Opus 5.5",4.0,20.0,0.2,"n","Nouveau le 22/09 — API claude-opus-5-5, contexte 1M, sortie 128K, cache write 5 min $5. Thinking adaptatif toujours actif. Fast mode $8/$40, sorti de research preview le 15/10, sans demande d’accès ni beta header ; disponible sur API Claude et Microsoft Foundry Azure. Opus 5 et 4.8 restent en research preview [Anthropic]"],
-["Meta","Muse Wonder",4.0,20.0,0.2,"n","API muse-wonder-1.0, contexte 1M, tarif direct Meta. Score 47,9 / T3 au 17/10 ; Wonder Full réservé à Muse Code, sans API tarifée."],
+["Moonshot","Kimi K3",3.0,15.0,0.3,"n","Lancé le 16/07/2026, toujours disponible après K3.1 Pro ; remplace Kimi K2 Thinking, MoE 2.8T paramètres, contexte 1M, natif multimodal, tarif plat quel que soit le contexte ; cache write TTL 5 min $3.00, TTL 1 h $6.00/1M [Kimi]"],
+["Moonshot","Kimi K3.1 Pro Highspeed",4.0,20.0,0.2,"n","Variante rapide, API kimi-k3.1-pro-highspeed, grille directe contrôlée le 26/10, contexte 1 048 576 tokens ; cache write 5 min $4.00, 1 h $8.00. Gamme K3.1 Pro annoncée le 24/10 ; aucune variante Highspeed observée dans le catalogue OpenRouter collecté, aucun score extrapolé [Kimi]"],
+["OpenAI","GPT-5.6-Sol",4.0,20.0,0.4,"m","Prix promo depuis le 21/08 - au moins jusqu'au 21/11/2026. Long contexte : $8/$30, cache $0.80 [OpenAI] Cache write 12 h depuis le 20/10 : 2.5× le prix input du palier/service tier concerné (30 min : 1.25×) ; cache read distinct [OpenAI]"],
+["Anthropic","Claude Opus 5.5",4.0,20.0,0.2,"n","Nouveau le 22/09 — API claude-opus-5-5, contexte 1M, sortie 128K, cache write 5 min $5. Thinking adaptatif toujours actif. Fast mode $8/$40, sorti de research preview le 15/10, sans demande d’accès ni beta header ; disponible sur API Claude et Microsoft Foundry Azure, ainsi que sur Claude Models on Google Cloud (Anthropic managed) depuis le 22/10. Opus 5 et 4.8 restent en research preview [Anthropic]"],
+["Meta","Muse Wonder",4.0,20.0,0.2,"n","API muse-wonder-1.0, contexte 1M ; tarif direct Meta. Ne pas confondre avec Wonder Full, réservé à Muse Code [Meta]"],
 ["OpenAI","GPT-5.5",5.0,30.0,0.5,"p","Génération précédente — remplacée par GPT-5.6 comme flagship [13, 27, OpenAI]"],
-["OpenAI","GPT-6 Astra",10.0,50.0,1.0,"n","Lancé le 03/09 ; cache write $12.50. Long contexte >272K : $20/$75, cache read $2, write $25 ; Batch/Flex $5/$25 en contexte court ; Fast $20/$100 ; Ultrafast depuis le 29/09 : $60/$300, cache $6, write $75 (long contexte $120/$450, cache $12, write $150) [OpenAI]"],
+["OpenAI","GPT-6 Astra",10.0,50.0,1.0,"n","Lancé le 03/09 ; cache write $12.50. Long contexte >272K : $20/$75, cache read $2, write $25 ; Batch/Flex $5/$25 en contexte court ; Fast $20/$100 ; Ultrafast depuis le 29/09 : $60/$300, cache $6, write $75 (long contexte $120/$450, cache $12, write $150) [OpenAI] Cache write 12 h depuis le 20/10 : 2.5× le prix input du palier/service tier concerné (30 min : 1.25×) ; cache read distinct [OpenAI]"],
 ["Anthropic","Claude Fable 5.1",10.0,50.0,0.25,"n","Nouveau le 01/09 — contexte 1M, cache write 5 min $12.50, 1 h $20 [Anthropic]"],
 ["Anthropic","Claude Mythos 5.1",10.0,50.0,0.25,"n","Nouveau le 01/09 — mêmes tarifs, accès sur invitation Project Glasswing [Anthropic]"],
-["OpenAI","GPT-5.6-Cyber",12.5,75.0,1.25,"n","Modèle Daybreak spécialisé cybersécurité, cache write $15.625 [OpenAI]"],
-["OpenAI (Azure)","GPT-5.5-Pro Global",30.0,180.0,null,"n","Nouveau — remplace GPT-5 Pro Global [OpenAI]"]
+["OpenAI","GPT-5.6-Cyber",12.5,75.0,1.25,"n","Modèle Daybreak spécialisé cybersécurité, cache write $15.625 [OpenAI] Cache write 12 h depuis le 20/10 : 2.5× le prix input du palier/service tier concerné (30 min : 1.25×) ; cache read distinct [OpenAI]"],
+["OpenAI (Azure)","GPT-5.5-Pro Global",30.0,180.0,null,"n","Nouveau — remplace GPT-5 Pro Global [OpenAI] Grille : input $30.00 ; output $180.00 ; cache read N/A. Le calculateur utilise le premier tarif de chaque colonne, hors stockage et autres frais."]
 ];
-// tier de performance : [tier, LLM Stats Score, note] · relevé du 17/10/2026
+// tier de performance : [tier, LLM Stats Score, note] · relevé du 30/10/2026
 const TIER={
   "Claude Opus 5.5": [
     1,
-    60.7
+    60.2
   ],
   "GPT-6 Astra": [
     1,
-    58.5
+    57.5
   ],
   "Claude Sonnet 5.5": [
     1,
-    58.7
+    57.9
   ],
   "GPT-5.6-Sol": [
     1,
-    53.5
+    52.7
   ],
   "Claude Fable 5.1": [
     1,
-    53.6
+    53.0
   ],
   "Muse Spark 1.3": [
-    1,
-    52.4
+    2,
+    51.9
   ],
   "Kimi K3": [
-    1,
-    52.2
-  ],
-  "GPT-6.1 Sol": [
-    1,
-    54.0
-  ],
-  "GLM-5.3": [
     2,
     51.3
   ],
+  "GPT-6.1 Sol": [
+    1,
+    53.3
+  ],
+  "GLM-5.3": [
+    2,
+    50.5
+  ],
   "Qwen3.8-Max": [
     2,
-    51.0
+    50.4
   ],
   "DeepSeek-V4.1-Flash": [
     2,
-    50.7
+    50.7,
+    "Score de la révision exacte DeepSeek-V4.1-Flash-1017 ; famille distincte à 49,4"
   ],
   "DeepSeek-V4-Pro-0813": [
     2,
-    50.8
+    49.8
   ],
   "GPT-5.6-Terra": [
     2,
-    49.4
+    49.0
   ],
   "Gemini 3.8 Flash": [
     2,
-    49.2
+    48.7
   ],
   "GLM-5.3-Flash": [
     2,
-    49.1
+    48.4
   ],
   "Muse Spark 1.1": [
     2,
-    48.7
+    48.0
   ],
   "GPT-6 Sol": [
-    2,
-    48.2
+    3,
+    47.4
   ],
   "Qwen3.8-Flash (Global)": [
-    2,
-    48.2
+    3,
+    47.8
   ],
   "Gemini 3.7 Flash": [
     3,
-    47.6
+    47.2
   ],
   "Grok 4.7": [
     3,
-    47.5
+    46.1
   ],
   "Grok 4.6": [
     3,
-    44.8
+    44.2
   ],
   "Qwen3.8-27B (International)": [
     3,
-    44.6
+    44.0
   ],
   "GPT-5.6-Luna": [
     3,
-    44.2
+    43.9
   ],
   "GPT-6 Luna": [
     3,
-    43.5
+    43.0
   ],
   "Kimi K2.6": [
     3,
-    43.4
+    43.1
   ],
   "Gemini 3.1 Pro Preview": [
     3,
-    43.0
+    42.8
   ],
   "Gemini 3.6 Flash": [
     3,
-    42.4
+    42.3
   ],
   "Qwen3.7-Plus": [
     3,
-    42.3
+    42.0
   ],
   "GPT-5.4": [
     3,
-    41.7
+    41.4
   ],
   "MiniMax-M3": [
     3,
-    40.9
+    40.6
   ],
   "GLM-5.1": [
     4,
-    38.9
+    38.6
   ],
   "GLM-5": [
     4,
-    37.0
+    36.6
   ],
   "Qwen3.6-27B": [
     4,
-    35.4
+    34.9
   ],
   "MiniMax-M2.7": [
     4,
-    35.1
+    35.2
   ],
   "Qwen3.5-27B": [
     4,
-    33.8
+    33.3
   ],
   "GPT-5.4-mini": [
     4,
-    29.9
+    29.5
   ],
   "Gemini 3.5 Flash-Lite": [
     4,
-    29.5
+    29.2
   ],
   "Mistral Medium 3.5": [
     4,
-    26.8
+    25.9
   ],
   "GPT-5.4-nano": [
     4,
-    26.5
+    26.1
   ],
   "Qwen3.5-9B": [
     4,
-    24.7
+    24.0
   ],
   "Mistral Small 4": [
     4,
-    18.9
+    18.1
   ],
   "GLM-5.3-FlashX": [
     2,
-    49.1,
+    48.4,
     "score du modèle de base, variante de vitesse"
   ],
   "MiniMax-M3 (Priority)": [
     3,
-    40.9,
+    40.6,
     "score du modèle de base, variante de vitesse"
   ],
   "MiniMax-M2.7-highspeed": [
     4,
-    35.1,
+    35.2,
     "score du modèle de base, variante de vitesse"
   ],
   "Gemini 4 Argon": [
     1,
-    55.4
+    54.4
   ],
   "Claude Haiku 5.5": [
     2,
-    50.1
+    49.3
   ],
   "Mistral Large 4": [
     3,
-    46.2
+    46.8
   ],
   "Muse Wonder": [
+    2,
+    49.0
+  ],
+  "Kimi K3.1 Pro": [
+    1,
+    55.5
+  ],
+  "GPT-6.1 Terra": [
     3,
-    47.9
+    47.5
+  ],
+  "Muse Spark Open": [
+    3,
+    45.0
   ]
 };
 const FREE=[
@@ -520,27 +539,34 @@ const FREE=[
 ];
 const SUBS=[
 ["Anthropic — Claude","Prix mensuels USD · contrôle du 09/10/2026",[["Free","$0","Limité · Chat web, iOS, Android, desktop. Web search, mémoire, MCP distant, Extended Thinking"],["Pro","$20/mo","Élevé (> Free) · + Claude Code, chat et tâches Cowork réunis dans Claude, Research, projets illimités ; Fable accessible via crédits d’usage, pas de quota Pro de 50 % confirmé · annuel : $200 ($17/mo)"],["Max 5x","$100/mo","5x Pro · Tout Pro + limites output plus élevées, accès prioritaire en cas de fort trafic ; $100/mois de crédits API Claude à réclamer (depuis le 07/10)"],["Max 20x","$200/mo","20x Pro · Idem Max 5x avec volume 20x ; $200/mois de crédits API Claude à réclamer (depuis le 07/10)"],["Team Standard","$25/siège/mo","> Pro · Admin centralisé, SSO, connecteurs, recherche sur docs org. Pas d'entraînement sur vos données ; $20/mois de crédits API par siège, mutualisés · annuel : $240/siège ($20/mo)"],["Team Premium","$125/siège/mo","5x Standard · Même fonctionnalités que Team Standard avec 5x le volume du siège standard ; $100/mois de crédits API par siège, mutualisés (plafond Team $500/mois) · annuel : $1 200/siège ($100/mo)"],["Enterprise","$20/siège + API/mo","Illimité (API) · SCIM, logs d'audit, API conformité, rétention personnalisée, HIPAA optionnel, whitelist IP · annuel : Annuel"]]],
-["OpenAI — ChatGPT","Pro 100 / 200 / 500 vérifiés ; autres montants conservés, non reconfirmés",[["Free","$0","GPT-5.6 Luna dans le chat ; accès limité à GPT-5.6 Terra dans Work et Codex desktop (grille du 30/09)"],["Go","$8/mo","GPT-5.6 Luna dans le chat ; accès limité à GPT-5.6 Terra dans Work et Codex desktop, davantage de messages, uploads de fichiers et génération d'images"],["Plus","$20/mo","GPT-5.6 Sol dans ChatGPT, GPT-6 Astra, Sol et Luna dans Work et Codex, Deep Research, Agent Mode (Sora retiré : application fermée le 26/04, API arrêtée le 24/09)"],["Pro 100","$100/mo","Modèles Pro, Codex, Deep Research ; Ultrafast non inclus. Quotas variables selon le modèle"],["Pro 200","$200/mo","Plus d’usage que Pro 100 ; Ultrafast non inclus. Nouvelles souscriptions rouvertes avec quota réduit ; maintien temporaire de l’ancien quota pour les abonnés éligibles jusqu’au 29/10/2026"],["Pro 500","$500/mo","Usage inclus le plus élevé ; Astra Ultrafast inclus. Ajouter des crédits à Pro 100/200 ne débloque pas Ultrafast au lancement"],["Business","$25/siège/mo","GPT-6 Pro pendant le déploiement, GPT-6 Sol et Luna dans Work et Codex, workspace partagé, SAML SSO, admin et intégrations. Données non utilisées pour l'entraînement · annuel : $240/siège ($20/mo)"],["Enterprise","Sur devis","GPT-6 Pro désactivé par défaut au lancement et activable par l'administrateur, stockage étendu, SLA dédié et conformité avancée · annuel : Sur devis (annuel)"]]],
+["OpenAI — ChatGPT","Crédits API annoncés le 28/10, contrôle du 30/10. Activation, abonnement payé ≥7 jours, même email/propriétaire et organisation liée. Première dotation au prorata, sans report ; fin de cycle mensuel. Business annuel payé d’avance : dotation annuelle, plafond $6 000/workspace/an. Codex par clé API exclu ; pas de hausse des limites applicatives. Free/Go/Plus/Enterprise non éligibles. Prix Free/Go/Plus/Business conservés, non reconfirmés.",[["Free","$0","GPT-5.6 Luna dans le chat ; accès limité à GPT-5.6 Terra dans Work et Codex desktop (grille du 30/09) · annuel : N/A"],["Go","$8/mo","GPT-5.6 Luna dans le chat ; accès limité à GPT-5.6 Terra dans Work et Codex desktop, davantage de messages, uploads de fichiers et génération d'images · annuel : N/A"],["Plus","$20/mo","GPT-5.6 Sol dans ChatGPT, GPT-6 Astra, Sol et Luna dans Work et Codex, Deep Research, Agent Mode (Sora retiré : application fermée le 26/04, API arrêtée le 24/09) · annuel : N/A"],["Pro 100","$100/mo","Modèles Pro, Codex, Deep Research ; Ultrafast non inclus. $100/mois de crédits API à réclamer depuis le 28/10 ; quotas variables selon le modèle · annuel : N/A"],["Pro 200","$200/mo","Plus d’usage que Pro 100 ; Ultrafast non inclus. $200/mois de crédits API à réclamer depuis le 28/10. Ancien maintien temporaire des quotas échu le 29/10 ; quotas actuels non reconfirmés · annuel : N/A"],["Pro 500","$500/mo","Usage inclus le plus élevé ; Astra Ultrafast inclus. $500/mois de crédits API à réclamer depuis le 28/10. Ajouter des crédits à Pro 100/200 ne débloque pas Ultrafast au lancement · annuel : N/A"],["Business","$25/siège/mo","Workspace partagé, SAML SSO, admin et intégrations ; données non utilisées pour l'entraînement. Crédits API : $20/siège Standard payé ou $100/siège Premium payé, mutualisés et plafonnés à $500/workspace/mois. Prix de l’option Premium N/A dans la page de crédits ; ne pas lui attribuer le prix Standard · annuel : $240/siège ($20/mo)"],["Enterprise","Sur devis","GPT-6 Pro désactivé par défaut au lancement et activable par l'administrateur, stockage étendu, SLA dédié et conformité avancée · annuel : Sur devis (annuel)"]]],
 ["Google — Google AI (ex-Gemini Advanced)","Tarifs mensuels US vérifiés le 16/10/2026 · dates de prise d’effet N/A",[["Google AI Plus","$4.99/mo","2× le niveau gratuit, modèle Flash, 400 Go, 200 crédits Flow ; correction de l’ancien relevé $9.99"],["Google AI Pro","$19.99/mo","Gemini 4 Argon dans l’application, 4× le niveau gratuit, 5 To, 1 000 crédits Flow, Deep Research, Notebook et intégration Workspace ; Argon non inclus via l’API AI Pro"],["Google AI Ultra 5x","$99.99/mo","Gemini 4 Argon, 5× les limites de Pro, stockage à partir de 20 To, YouTube Premium individuel, Project Genie et accès anticipé"],["Google AI Ultra 20x","$199.99/mo","Gemini 4 Argon, 20× les limites de Pro, mêmes avantages Ultra ; l’ancien montant unique $200 était incomplet"]]],
 ["Perplexity","Prix mensuels USD · contrôle du 02/10/2026",[["Free","$0","Recherches illimitées (modèle standard), citations, uploads limités"],["Pro","$20/mo","Pro Search illimité (Sonar Pro + reasoning), uploads de fichiers, $5/mo de crédits API inclus · annuel : $200 ($16.67/mo)"],["Max","$200/mo","Deep Research avancé, automatisation agentique, toutes les fonctionnalités Pro · annuel : $2 000 ($166/mo)"],["Education Pro","$10/mo","Plan Pro à tarif étudiant (institutions accréditées)"],["Enterprise Pro","$40/siège/mo","400 Pro Searches / semaine, 50 Deep Research / mois, SSO, admin, données isolées · annuel : $400/siège ($33/mo)"],["Enterprise Max","$325/siège/mo","4 000 Pro Searches / semaine, 500 Deep Research / mois, Labs illimité · annuel : $3 250/siège ($271/mo)"]]],
-["xAI — Grok","Prix mensuels USD · contrôle du 02/10/2026",[["X Premium","$8/mo","Accès Grok de base dans la plateforme X · annuel : $84"],["X Premium+","$40/mo","Accès Grok étendu dans X, sans publicités · annuel : $420"],["SuperGrok Lite","$10/mo","Accès Grok Imagine, usage léger. Abonnement autonome (sans X)"],["SuperGrok","$30/mo","Grok 4 et 4.1, contexte 128k, DeepSearch, Big Brain mode, voix, ~100 prompts / 2h · annuel : $300 ($25/mo)"],["SuperGrok Heavy","$300/mo","Grok 4.3, Grok 4 Heavy (multi-agent), contexte 256k, raisonnement parallèle"],["Grok Business","$30/siège/mo","Collaboration équipe, billing centralisé, admin workspace"]]],
-["Mistral AI — Le Chat","Prix mensuels USD · contrôle du 02/10/2026",[["Free","$0","Accès aux derniers modèles Mistral, génération d'images, interpréteur de code, 100+ connecteurs et $10/mois de crédits API"],["Pro","$14.99/mo","Messages et recherches web étendus, Mistral Vibe (coding CLI, IDE, web), support chat et email et $30/mois de crédits API"],["Education","$5.99/mo","Plan Pro à tarif étudiant, max 12 mois, institutions accréditées uniquement et $15/mois de crédits API"],["Team","$24.99/siège/mo","30 Go de stockage / utilisateur, vérification de domaine, export de données, workspace collaboratif"],["Enterprise","Sur devis","Déploiements privés, modèles et agents personnalisés, SAML SSO, white-label, logs d'audit"]]],
+["xAI — anciens plans conservables","Montants historiques non reconfirmés pour les nouvelles souscriptions ; migration volontaire vers The X Subscription, pas automatique.",[["X Premium","$8/mo","Accès Grok de base dans la plateforme X · annuel : $84"],["X Premium+","$40/mo","Accès Grok étendu dans X, sans publicités · annuel : $420"],["SuperGrok Lite","$10/mo","Accès Grok Imagine, usage léger. Abonnement autonome (sans X)"],["SuperGrok","$30/mo","Grok 4 et 4.1, contexte 128k, DeepSearch, Big Brain mode, voix, ~100 prompts / 2h · annuel : $300 ($25/mo)"],["SuperGrok Heavy","$300/mo","Grok 4.3, Grok 4 Heavy (multi-agent), contexte 256k, raisonnement parallèle"],["Grok Business","$30/siège/mo","Collaboration équipe, billing centralisé, admin workspace"]]],
+["Mistral AI — Le Chat","Crédits affichés le 23/10 ; date de prise d’effet N/A",[["Free","$0","Accès aux modèles Mistral, génération d’images, interpréteur de code et 100+ connecteurs ; crédits API actuels N/A, ancien montant de $10 non reconfirmé"],["Pro","$14.99/mo","Messages et recherches web étendus, Mistral Vibe (coding CLI, IDE, web), support chat et email et $25.50/mois de crédits API, montant affiché le 23/10 (date de prise d’effet N/A)"],["Education","$5.99/mo","Plan Pro à tarif étudiant, max 12 mois, institutions accréditées uniquement et $15/mois de crédits API"],["Team","$24.99/siège/mo","30 Go de stockage / utilisateur, vérification de domaine, export de données, workspace collaboratif"],["Enterprise","Sur devis","Déploiements privés, modèles et agents personnalisés, SAML SSO, white-label, logs d'audit"]]],
 ["MiniMax — Token Plan","Prix observés le 02/10 ; date de hausse inconnue · sans musique",[["Plus","$22/mo","Projets personnels et prototypage, quotas glissants sur 5 heures et hebdomadaires"],["Max","$55/mo","Usage quotidien avec agents et multimodal, quotas glissants sur 5 heures et hebdomadaires"],["Ultra","$132/mo","Workflows agents intensifs et sessions longues, quotas glissants sur 5 heures et hebdomadaires"]]],
-["MiniMax — M Plan","Tarifs standard contrôlés le 16/10 · aucune prolongation de la remise confirmée · sans musique",[["Go","$22/mo","Base ; M3.1 Flash Preview, image, audio, web et compréhension multimodale ; sans H3 · annuel $220"],["Explore","$55/mo","3× Go ; inclut H3 vidéo · annuel $550"],["Build","$132/mo","7.5× Go ; H3 vidéo et accès prioritaire aux heures de pointe · annuel $1 320"]]],
-["API uniquement","Facturation à l’usage distincte des abonnements",[["DeepSeek","Pay-as-you-go","Crédit prépayé, pas d'abonnement mensuel"],["MiniMax","Pay-as-you-go + Token Plan / M Plan","API à l’usage ou abonnements distincts ; M3.1 Flash Preview réservé à M Plan / MiniMax Code"],["Cohere","Pay-as-you-go + enterprise","Trial gratuit ; Model Vault : 2 500 $–6 500 $/mois (instances dédiées)"],["Together AI","Pay-as-you-go","Serverless + endpoints dédiés, pas d'abonnement"],["Groq","Pay-as-you-go","On-demand, offres entreprise sur devis"],["Fireworks AI","Pay-as-you-go","Serverless + GPU on-demand ($7/h H100), crédit $1 offert"],["Alibaba (Qwen)","Pay-as-you-go","Token Plan Team Edition (B2B), API uniquement"],["xAI (API)","Pay-as-you-go","API Grok distincte des abonnements X/SuperGrok"],["IBM, Meta, NVIDIA, Poolside","Pay-as-you-go","Pas de plan consumer public"]]],
-["Z.ai — GLM Coding Plan","Prix mensuels USD observés le 17/10/2026, distincts de l’API",[["Lite","$18/mo","10 000 crédits/semaine ; les abonnements historiques conservent leurs règles"],["Pro","$80/mo","6× Lite"],["Max","$168/mo","14× Lite"]]],
+["MiniMax — M Plan","Contrôle du 23/10 : −50 % le premier mois jusqu’au 31/10/2026 UTC+8, heure N/A ; puis standard. Sans musique.",[["Go","$22/mo","Base ; M3.1 Flash, image, audio, web et compréhension multimodale ; sans H3 · premier mois : $11 jusqu’au 31/10 (UTC+8) · annuel : $220"],["Explore","$55/mo","3× Go ; inclut H3 vidéo · premier mois : $27.50 jusqu’au 31/10 (UTC+8) · annuel : $550"],["Build","$132/mo","7.5× Go ; H3 vidéo et accès prioritaire aux heures de pointe · premier mois : $66 jusqu’au 31/10 (UTC+8) · annuel : $1 320"]]],
+["API uniquement","Facturation à l’usage distincte des abonnements · conditions documentées au 26/10, couverture partielle",[["DeepSeek","Pay-as-you-go","Crédit prépayé, pas d'abonnement mensuel"],["MiniMax","Pay-as-you-go + Token Plan / M Plan","API à l’usage ou abonnements distincts ; M3.1 Flash disponible en PAYG depuis le 19/10, ancienne Preview distincte."],["Cohere","Pay-as-you-go + enterprise","Trial gratuit ; Model Vault : $2 000–4 300/mois par instance dans la table visible contrôlée le 26/10 (Embed 5 Small à Parse 5 XL), pas une fourchette de tous les devis ; date de prise d’effet N/A"],["Together AI","Pay-as-you-go","Serverless + endpoints dédiés, pas d'abonnement"],["Groq","Pay-as-you-go","On-demand, offres entreprise sur devis"],["Fireworks AI","Pay-as-you-go","Serverless + GPU on-demand (H100 80 GB $8/h ; $0.134/min affiché séparément, taux arrondi), crédit $1 offert ; correction du relevé le 26/10, date de prise d’effet N/A"],["Alibaba (Qwen)","Pay-as-you-go + Token Plan","Éditions Personal et Team ; région Singapore"],["xAI (API)","Pay-as-you-go","API Grok distincte de The X Subscription et des anciens abonnements conservables"],["IBM, NVIDIA, Poolside","Pay-as-you-go","Pas de plan consumer public contrôlé dans ce relevé"],["Meta","API + Muse Code","Wonder Full par abonnement uniquement, voir ci-dessus"]]],
+["Z.ai — GLM Coding Plan","Prix mensuels USD observés le 17/10/2026, distincts de l’API ; équivalents mensuels annuels $12.60/$56/$117.60, pas les prix mensuels.",[["Lite","$18/mo","10 000 crédits/semaine ; les abonnements historiques conservent leurs règles"],["Pro","$80/mo","6× Lite"],["Max","$168/mo","14× Lite"]]],
 ["Alibaba — Token Plan Personal","Région Singapore · relevé du 17/10/2026 · fin de promotion N/A",[["Lite","$6/mo","Standard $8 ; 11 500 crédits/mois"],["Essential","$10/mo","Standard $16 ; 25 500 crédits/mois"],["Standard","$18/mo","Standard $25 ; 45 000 crédits/mois"],["Pro","$68/mo","Standard $80 ; 180 000 crédits/mois"]]],
-["Meta — Muse Code","Muse Wonder Full par abonnement uniquement · relevé du 17/10/2026",[["Power Usage","$50/mo","Accès à Wonder Full ; aucun tarif API par token publié"],["Maximum Usage","$200/mo","Accès à Wonder Full, quota supérieur ; distinct de l’API Muse Wonder"]]]
+["Meta — Muse Code","Muse Wonder Full par abonnement uniquement · relevé du 17/10/2026",[["Power Usage","$50/mo","Accès à Wonder Full ; aucun tarif API par token publié"],["Maximum Usage","$200/mo","Accès à Wonder Full, quota supérieur ; distinct de l’API Muse Wonder"]]],
+["xAI — The X Subscription","Annonce du 12/10 : bundle Grok, Grok Bot, Cursor et X. Annuels et promotions individuelles N/A. Équipes Premium/Super/Ultra au même prix par siège. Modèles tiers Cursor : top-ups séparés au prix API catalogue. Anciens abonnements conservables.",[["Plus","$8/mo","Base · annuel : N/A"],["Premium","$30/mo","4× Plus · annuel : N/A"],["Super","$100/mo","15× Plus · annuel : N/A"],["Ultra","$200/mo","50× Plus · annuel : N/A"]]]
 ];
 const CH_NEW=[
+["GPT-6.1 Terra","OpenAI — annoncé le 26/10 : Standard $1/$5/cache read $0.05 ; write 30 min $1.25, 12 h $2.50. >272K : $2/$7.50/cache $0.10 sur toute la requête ; contexte 1 050 000, sortie 128K. Fast ×2, Batch/Flex −50 %. Score et tier non extrapolés."],
+["Kimi K3.1 Pro / Highspeed","Créateur : lancement le 24/10 ; catalogue OpenRouter Pro daté du 23/10 17:56:28 UTC, événements distincts. API directe Pro $2/$10/cache $0.20, Highspeed $4/$20/cache $0.20 ; contexte 1 048 576. Write 5 min/1 h : Pro $2/$4, Highspeed $4/$8. K3 reste actif à $3/$15 ; poids annoncés au plus tard le 04/11, publication non confirmée. Scores N/A."],
+["GLM-5.3-Flash chez Mistral","Hébergé depuis le 22/10 à $0.15/$0.50/cache $0.03 ; pas de nouvelle ligne ni de changement du tarif direct Z.ai."],
+["MiniMax-M3.1-Flash","API PAYG lancée le 19/10 : $0.15/$0.60/cache read $0.015, contexte 1M, cache write N/A ; tarif standard, sans échéance promotionnelle affichée."],
+["GLM-5.3-FlashX-Legal","Ajout correctif le 23/10 : $0.37/$1.25/cache $0.075 ; lancement, contexte et score N/A. Stockage du cache temporairement gratuit, échéance N/A."],
+["Gemini Omni Flash GA","Ajout correctif : gemini-omni-1.1-flash remplace la Preview arrêtée le 22/10. $1.50 input/$9 output texte, cache N/A ; output vidéo $17.50/1M, environ $0.10/s en 720p, sans nouvelle promotion."],
 ["DeepSeek-V4.1-Flash-1017","17/10 : nouvelle révision via deepseek-flash, tarifs inchangés ; Search/Fetch autonomes à $0.75/1 000 requêtes réussies chacun, hors coût des tokens."],
 ["Muse Spark Open","Meta, sortie du 15/10 : open-weight, contexte 1M, hébergé OpenRouter $1.25/$4.25, cache $0.15 ; ajout correctif."],
-["Nemotron 3.5 Super VL","OpenRouter, catalogue du 15/10 : $0.10/$0.40, cache $0.08 et variante gratuite ; ajout correctif."],
-["Muse Wonder / Wonder Full","Muse Wonder API $4/$20, cache $0.20 et T3 (47,9). Wonder Full : score 52,1 mais abonnement Muse Code uniquement, pas de tarif API."],
-["Gemini 4 Argon","Google — GA 13/10, promo $2/$10 et cache implicite $0.10 jusqu’au 30/11 inclus ; standard dès le 01/12 $4/$20, cache $0.20 ; contexte unifié 1 048 576 tokens, pas de free tier, non classé"],
+["Nemotron 3.5 Super VL","Ajout correctif du 17/10 via OpenRouter. Conditions corrigées le 26/10 : Crusoe BF16 $0.10/$0.40/cache $0.08, contexte 262 144 ; CoreWeave NVFP4 $0.15/$0.50/cache $0.02, contexte 1 048 576. Une seule entrée payante et une gratuite, pas un tarif direct NVIDIA."],
+["Muse Wonder / Wonder Full","Muse Wonder API $4/$20, cache $0.20. Wonder Full : abonnement Muse Code uniquement, pas de tarif API par token ; ne pas confondre les variantes."],
+["Gemini 4 Argon","Google — GA 13/10, promo $2/$10 et cache implicite $0.10 jusqu’au 30/11 inclus ; standard dès le 01/12 $4/$20, cache $0.20 ; contexte unifié 1 048 576 tokens, pas de free tier"],
 ["Claude Haiku 5.5","Anthropic — 07/10, $0.10/$0.50 et cache read $0.01 jusqu'à 100K tokens d'entrée, puis $0.50/$2.50 et cache $0.05 ; contexte 1M, sortie 128K, thinking adaptatif ; tarifs standard, sans remise"],
-["Mistral Large 4","Mistral AI — Public Preview le 06/10, contexte 1M, $0.68/$2.09 et cache $0.07 avec remise de 50 % pendant deux semaines (échéance calculée au 20/10) ; standard $1.36/$4.18, cache $0.14"],
-["MiniMax M3.1 Flash Preview","Ajout au suivi le 02/10 — préversion réservée à M Plan et MiniMax Code ; aucun prix pay-as-you-go publié (N/A), hors total API"],
+["Mistral Large 4","Public Preview depuis le 06/10, contexte 1M. Historique : remise de lancement pendant deux semaines, puis grille du 23/10 $1.36/$4.18/cache $0.14. Relevé courant du 30/10 : $0.70/$2.10/cache $0.07 ; date effective N/A, pas de remise renouvelée déduite."],
+["MiniMax M3.1 Flash Preview","Historique du 02/10 : préversion réservée à M Plan/Code, sans prix PAYG. Depuis le 19/10, M3.1 Flash sans suffixe Preview est disponible en API ; voir nouvelle entrée, sans assimiler les deux offres."],
 ["GPT-6.1 Sol","OpenAI — 29/09, $2/$10, cache read $0.10 et write $2.50 ; >272K $4/$15, cache $0.20/write $5 ; Batch/Flex $1/$5"],
 ["GPT-6 Astra Ultrafast","OpenAI — mode du 29/09, $60/$300 en contexte court, $120/$450 au-delà de 272K ; cache $6/write $75 ; abonnement Ultrafast réservé à Pro 500"],
 ["Qwen3.8-Omni-Flash","Alibaba — ajout du 30/09, Global $0.113/$0.382, cache $0.014 ; Realtime International entrée texte $0.23/audio $0.93, sortie texte $0.70/audio $1.87 ; multimodal spécialisé"],
@@ -580,12 +606,16 @@ const CH_NEW=[
 ["GLM-5.2","Z.ai — 13/06, $1.40/$4.40, 1M, open-weight MIT"]
 ];
 const CH_DEL=[
+["Mistral Medium 3.5 / Large 3 — annonce future","Fiches déjà marquées DEPRECATED le 30/10, date d’effet le 31/10/2026 ; retrait prévu le 30/04/2027, remplacement Large 4. Lignes conservées actives au 30/10 ; derniers tarifs relevés, absents de la grille générale actuelle, pas reconfirmés."],
+["Kimi série K2 — échéances futures","K2.6, K2.7 Code et HighSpeed restent actifs. Fermeture aux nouveaux inscrits le 31/10/2026, utilisateurs existants non affectés par cette étape ; retrait prévu d’ici fin décembre, date/heure précises N/A."],
+["OpenAI direct — legacy du 23/10","Arrêt documentaire confirmé des alias/snapshots listés au 23/10, déjà hors sélection active ; pas de retrait supplémentaire. Ne pas étendre aux versions encore annoncées pour le 14/01/2027, ni à Azure (prix non revalidés)."],
+["Échéances hébergeurs, périmètres distincts","Mistral zai-glm-5-2 : 31/10, sans retrait déduit chez Z.ai direct. Laguna S/XS 2.1 OpenRouter : expiration_date 2026-10-31, sans assimiler à la ligne Poolside historique. Fireworks serverless : 07/11, dédié/Reserved Throughput exclus et endpoints globaux MiniMax M3/GLM Flash conservés."],
 ["DeepSeek V4 Flash — offre gratuite","Ancienne entrée gratuite retirée le 17/10 : modèle remplacé, gratuité actuelle non confirmée ; ne pas déduire un accès gratuit à Flash-1017."],
 ["Qwen3.6-max-preview & Qwen3 32B","Alibaba Model Studio — échéance officielle du 10/10 00:00 UTC+8, sous réserve de l’heure effective ; remplaçants Qwen3.7-Max/Plus. Listes primaires en images vérifiées. Pas de retrait global des poids déduit"],
-["MiniMax M2.7 & M2.7-highspeed","Dépréciés, hors sélection active ; fermeture aux nouveaux utilisateurs le 19/10, retrait PAYG le 18/11. Routage M Plan/Token Plan M2.5/M2.7 vers M3.1 Flash Preview le 19/10"],
+["MiniMax M2.7 & M2.7-highspeed","Hors sélection active selon le relevé officiel du 16/10 : nouveaux utilisateurs fermés le 19/10, retrait PAYG annoncé au 18/11 à recontrôler. La présence actuelle dans une grille ne prouve ni annulation ni nouvel arrêt ; ne pas rétablir automatiquement."],
 ["Gemini 3.7 Flash & 3.5 Flash","Google — correction du statut du 08/10 : dépréciés et non sélectionnables dans AI Studio ; endpoints ouverts mais routés vers 3.8/3.6 Flash. Hors sélection indépendante"],
 ["GPT-4o, GPT-4o mini, GPT-4.1 & mini","OpenAI — dépréciation du 14/10, arrêt des snapshots listés le 14/01/2027 ; versions fine-tunées incluses, remplacement GPT-6 Luna. Déjà absents du tableau actif"],
-["Deep Research Pro Preview 12-2025","Google — annonce du 08/10, arrêt le 23/10 ; migrer vers les agents Deep Research d’avril 2026"],
+["Deep Research Pro Preview 12-2025","Google — échéance du 23/10 passée ; remplacement deep-research-preview-04-2026. Ne pas attribuer cette date aux modèles Deep Research OpenAI."],
 ["Claude Haiku 4.5","Anthropic — passé en legacy le 09/10, remplacé par Haiku 5.5 ; API toujours active, aucun arrêt annoncé (« pas avant le 15/10/2026 » n'est pas une date d'arrêt). Hors sélection active"],
 ["GPT-5.3 Codex & GPT-5.4-nano","OpenAI — dépréciés le 01/10/2026 ; API disponible jusqu’au 01/04/2027. Sortis de la sélection active ; remplaçants GPT-6 Sol / GPT-6 Luna"],
 ["GPT-5.3 Chat","OpenAI — gpt-5.3-chat-latest retiré le 10/08/2026 ; ancien libellé Codex/Chat corrigé, sans assimiler son retrait à celui de Codex"],
@@ -597,9 +627,9 @@ const CH_DEL=[
 ["Claude Opus 5, Fable 5, Opus 4.8, Opus 4.7 & Sonnet 4.6","Anthropic — rangés dans les Legacy Models le 22/09, toujours disponibles aux tarifs archivés ; modèles courants : Fable 5.1, Opus 5.5, Sonnet 5.5 et Haiku 5.5"],
 ["Grok 4.6","xAI — devient génération précédente le 21/09, remplacé par Grok 4.7 au même tarif"],
 ["DeepSeek V4 Flash & V4 Flash Vision Exp","DeepSeek — endpoints retirés le 12/09 ; les anciens identifiants restent acceptés mais sont exécutés et facturés comme DeepSeek-V4.1-Flash"],
-["o3-deep-research & o4-mini-deep-research","OpenAI — désormais classés Deprecated dans le catalogue officiel ; retirés du comparateur actif le 08/09/2026"],
+["o3-deep-research & o4-mini-deep-research","OpenAI direct — retirés le 23/07/2026, remplacement GPT-5.6 Sol ; ancienne date de retrait du comparateur (08/09) distincte du retrait API."],
 ["Anciens modèles Mistral","Mistral Small 3, Mistral NeMo, Devstral 2, Devstral Small 2, Magistral Small/Medium, Mistral Large 2 et Voxtral Mini Transcribe sont désormais dépréciés ou retirés"],
-["Gemini Omni Flash Preview","Google — déprécié au profit de Gemini Omni 1.1 Flash ; arrêt indiqué au plus tôt le 22/10/2026 au contrôle du 16/10. Ancien relevé 30/09 corrigé, date du changement N/A"],
+["Gemini Omni Flash Preview","Google — gemini-omni-flash-preview retiré le 22/10/2026, remplacé par la GA gemini-omni-1.1-flash ; la GA reste active, pas de fin de promotion déduite."],
 ["MiniMax M2, M2.1 & M2.5","MiniMax — M2, M2.1, M2.1-highspeed, M2.5 et M2.5-highspeed sont classés Legacy ; M2.5 et sa variante HighSpeed ont été retirés du comparateur actif le 19/09/2026"],
 ["Moonshot V1 & kimi-k2.5","Moonshot — arrêt effectif le 31/08/2026 ; les appels renvoient désormais une erreur 404"],
 ["Kimi K2 Thinking","Moonshot — arrêt officiel le 25/05/2026 ; ligne retirée du tableau actif"],
@@ -611,6 +641,14 @@ const CH_DEL=[
 ["Grok 4 & Grok 4-fast","xAI — retirés le 15/05, remplacés par Grok 4.3"]
 ];
 const CH_PRI=[
+["Mistral Large 4 — correction du relevé 30/10","USD Standard affichés : $0.70/$2.10/cache $0.07, remplaçant le relevé $1.36/$4.18/cache $0.14. Date effective N/A ; pas de baisse datée ni promotion renouvelée présumée."],
+["ChatGPT Pro / Business — crédits API","Annonce du 28/10 : Pro $100/$200/$500 par mois ; Business $20/siège Standard ou $100/siège Premium, mutualisés et plafonnés à $500/workspace/mois. Activation et éligibilité requises ; annuel prépayé distinct. Prix Premium Business N/A, ne pas utiliser celui de Standard."],
+["xAI API — paliers précisés au 26/10","Grok Build : $1/$2/cache $0.20 sous 200K, puis $2/$4/cache $0.40 ; Grok 4.3/4.20 : $1.25/$2.50/cache $0.20, puis $2.50/$5/cache $0.40. Seuil ≥200K de prompt cache compris sur toute la requête ; régional US +10 %. Correction, pas hausse datée."],
+["Mistral Le Chat — crédits","Pro $14.99 avec $25.50/mois de crédits affichés le 23/10 ; Education $5.99 avec $15 ; Free : crédits actuels N/A, ancien $10 non reconfirmé. Date effective N/A."],
+["OpenAI — cache write 12 h","Depuis le 20/10 : Responses API, GPT-5.6 et suivants, 12 h = 2.5× le prix input du palier/service tier ; 30 min = 1.25×. Cache read et input/output distincts et inchangés."],
+["DeepSeek Search / Fetch","Autonomes : $0.75/1 000 requêtes réussies chacun, hors tokens. Recherche intégrée gratuite jusqu’au 31/10 inclus, payante le 01/11/2026 à 00:00 Beijing, pas le 31/10."],
+["Google — stockage, pas prix","Depuis le 26/10, store=true par défaut pour les nouveaux projets paid Generate Content API. Projets existants : réglage conservé ; opt-out store=false ou Settings Logs and Datasets. Ni hausse tarifaire ni autorisation générale d’entraînement."],
+["Fireworks / Cohere — corrections du relevé","Fireworks H100 80 GB $8/h, $0.134/min affiché séparément (arrondi). Cohere Model Vault : table visible $2 000–4 300/mois par instance, pas tous les devis. Dates effectives N/A."],
 ["Qwen3.5-Flash International","Correction au 16/10 : $0.10/$0.40 jusqu’à 1M, contre ancien relevé $0.065/$0.26 ; date d’effet N/A"],
 ["Qwen3.7-Plus International","Remise limitée −20 % sur alias, pas sur snapshot : $0.32/$1.28 ≤256K, $0.96/$3.84 au-delà ; standard $0.40/$1.60 et $1.20/$4.80 ; échéance N/A"],
 ["Google AI — tarifs US","Correction au 16/10 : Plus $4.99, Pro $19.99, Ultra 5x $99.99 et 20x $199.99/mois ; date d’effet N/A. Argon dans l’application Pro/Ultra, pas dans l’API AI Pro"],
@@ -619,11 +657,11 @@ const CH_PRI=[
 ["Mistral — cache read","Cache read documenté pour Large 3 ($0.05), Medium 3.5 ($0.15), Small 4 ($0.015), Ministral 3 3B/8B/14B ($0.01/$0.015/$0.02) et Codestral ($0.03) ; input/output inchangés"],
 ["Claude Max & Team — crédits API","Depuis le 07/10 : $100/$200 par mois (Max 5x/20x), $20/$100 par siège (Team Standard/Premium), mutualisés, plafond Team $500/mois ; prix des plans inchangés"],
 ["MiniMax Token Plan","Correction observée le 02/10 : Plus $22, Max $55, Ultra $132/mo contre $20/$50/$120 (+10 %) ; date de prise d’effet inconnue"],
-["MiniMax M Plan","Standard au 16/10 : Go/Explore/Build $22/$55/$132 par mois, annuel $220/$550/$1 320 ; ancienne remise premier mois plus affichée, aucun prolongement confirmé au-delà du 14/10"],
-["ChatGPT Pro","Pro 100/200/500 à $100/$200/$500/mo ; Ultrafast uniquement Pro 500. Pro 200 rouvert avec quota réduit ; maintien transitoire de l’ancien quota éligible jusqu’au 29/10"],
+["MiniMax M Plan","Remise affichée au 23/10 : premier mois Go $11, Explore $27.50, Build $66 jusqu’au 31/10/2026 UTC+8 (heure N/A), puis $22/$55/$132 ; annuels $220/$550/$1 320. M3.1 Flash sans suffixe Preview. Ancienne échéance du 14/10 distincte."],
+["ChatGPT Pro","Pro 100/200/500 à $100/$200/$500/mo ; crédits API correspondants à réclamer depuis le 28/10. Ultrafast uniquement Pro 500 au lancement. Pro 200 : ancien maintien temporaire échu le 29/10, quotas actuels non reconfirmés."],
 ["Kimi K3 & MiniMax M2.7 — cache write","Précision du 02/10, sans variation datée revendiquée : K3 $3 (TTL 5 min)/$6 (1 h) ; M2.7 et highspeed $0.375/1M"],
 ["Google AI & Claude — fonctionnalités","Google Pro 5 To, Ultra à partir de 20 To ; montants US actualisés au 16/10 dans les abonnements. Chat et Cowork réunis dans Claude, Fable Pro via crédits d’usage"],
-["Claude Opus 5.5 — fast mode","GA depuis le 15/10, sans demande d’accès ni beta header, API Claude et Foundry Azure ; tarif $8/$40 inchangé. Opus 5 et 4.8 restent en research preview"],
+["Claude Opus 5.5 — fast mode","GA depuis le 15/10, sans demande d’accès ni beta header, API Claude et Foundry Azure ; tarif $8/$40 inchangé. Opus 5 et 4.8 restent en research preview Également sur Claude Models on Google Cloud (Anthropic managed) depuis le 22/10."],
 ["Qwen3.7-Max","Alibaba — correction du 25/09 : $2.50/$7.50 en région International ; ancienne promotion à $1.25/$3.75 non confirmée sur la grille officielle, échéance inconnue"],
 ["MiniMax-M3 Priority","MiniMax — correction du 19/09 : l'ancien libellé M3-highspeed correspond au service tier Priority à 1.5×, soit $0.45/$1.80 et cache $0.09 jusqu'à 512K ; $0.90/$3.60 et cache $0.18 au-delà"],
 ["GLM-5.3-Flash","Z.ai — fin de la remise de lancement le 09/09 : tarif standard $0.15/$0.50, cache read $0.03"],
@@ -689,7 +727,7 @@ function render(){
     const note=r.note?` <span class="note-ic" title="${r.note.replace(/"/g,"&quot;")}">ⓘ</span>`:"";
     return `<tr>
       <td><span class="mdl">${r.model}</span>${bd}${note}<span class="prov">${r.prov}</span></td>
-      <td class="tc">${r.t?`<span class="tier t${r.t[0]}" title="${r.t[2]?r.t[2].replace(/"/g,"&quot;"):"LLM Stats Score au 30/09/2026"}">T${r.t[0]}</span><span class="tier-sc">${r.t[1].toFixed(1).replace(".",",")}${r.t[2]?"*":""}</span>`:`<span class="tier-sc">—</span>`}</td>
+      <td class="tc">${r.t?`<span class="tier t${r.t[0]}" title="${r.t[2]?r.t[2].replace(/"/g,"&quot;"):"LLM Stats Score au 30/10/2026"}">T${r.t[0]}</span><span class="tier-sc">${r.t[1].toFixed(1).replace(".",",")}${r.t[2]?"*":""}</span>`:`<span class="tier-sc">—</span>`}</td>
       <td class="num">${r.free?"gratuit":fmt(r.input)}</td>
       <td class="num">${r.free?"gratuit":fmt(r.output)}</td>
       <td class="num">${fmt(r.cache)}</td>
