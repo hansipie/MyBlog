@@ -23,21 +23,25 @@ uglyURLs = false
     name = "Posts"
     weight = 1
   [[menu.main]]
+    pageref = "/projets/"
+    name = "Projets"
+    weight = 2
+  [[menu.main]]
     pageref = "/labs/"
     name = "Labs"
-    weight = 2
+    weight = 3
   [[menu.main]]
     pageref = "/categories/"
     name = "Catégories"
-    weight = 3
+    weight = 4
   [[menu.main]]
     pageref = "/tags/"
     name = "Tags"
-    weight = 4
+    weight = 5
   [[menu.main]]
     pageref = "/about/"
     name = "À propos"
-    weight = 5
+    weight = 6
 
 [taxonomies]
   category = "categories"
