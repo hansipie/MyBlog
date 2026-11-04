@@ -14,21 +14,27 @@ params:
 
 ![Aperçu de ecotokens-panel](/images/projets/ecotokens-panel.webp)
 
-ecotokens-panel ajoute un bouton **◧ ecotokens-panel** dans le pied de page de Claude Code et un panneau latéral à onglets.
+**ecotokens-panel** est un plugin pour **Claude Code** qui ajoute un bouton **◧ ecotokens-panel** dans le pied de page et un panneau latéral à onglets. Il rend visibles, dans l'interface, des informations que l'on ne voit d'ordinaire qu'en ligne de commande, autour d'[ecotokens](/projets/ecotokens/).
 
-## Contenu du panneau
+## Les onglets
+- **Session** : modèle et effort, fenêtre de contexte, quota de l'abonnement, coût équivalent API et handoff.
+- **Contexte** : le détail de la fenêtre comme `/context` (grille, répartition, cache de la dernière requête, fichiers mémoire, serveurs MCP, skills, agents).
+- **Ecotokens** : les économies de la session, avec les 5 dernières sorties filtrées et les 5 derniers appels à Jev.
+- **Gains**, **Watch** et d'autres vues autour de l'index et des agents.
 
-- Modèle et effort de la session
-- Contexte et quota consommés
-- Handoff et économies de tokens
-- Watcher d'index et agents
+On ouvre ou ferme le panneau avec le bouton ou la commande `/panel`. Les touches `1` à `6` changent d'onglet.
 
 ## Installation
-
+Dans un terminal Claude Code :
 ```
 /plugin install ecotokens-panel --marketplace hansipie/ecotokens-panel
 ```
+Installé en portée `user`, il fonctionne aussi dans l'onglet Code de l'application desktop.
 
-Prérequis : Claude Code et ecotokens 0.30.0 ou plus récent.
+## Prérequis et limites
+- Claude Code, avec la prise en charge des plugins à hooks.
+- ecotokens 0.30.0 ou plus récent, hooks installés (`ecotokens install`).
+- `sqlite3` dans le `PATH` : le panneau lit en lecture seule les bases d'ecotokens.
+- Le plugin est fait pour Claude Code uniquement : il ne fonctionne ni seul ni dans d'autres outils, même si ecotokens les prend en charge.
 
 [GitHub →](https://github.com/hansipie/ecotokens-panel)

@@ -15,13 +15,28 @@ params:
 
 ![Aperçu de Frontrise](/images/projets/frontrise.webp)
 
-Frontrise affiche des vidéos et des scènes GLSL comme fonds d'écran animés sur GNOME (Shell 50, Wayland).
+**Frontrise** affiche des vidéos et des scènes de shaders comme fonds d'écran animés sur **GNOME Shell 50** en session **Wayland**. Il se compose d'une application en Rust (GTK 4, libadwaita, GStreamer) et d'une extension GNOME Shell.
 
-## Points clés
+## Fonctionnalités
+- **Vidéos** sur chaque écran, synchronisées ou une par écran.
+- **Scènes** : shaders GLSL de type Shadertoy (`mainImage`), trois fournis (Aurora, Pulse, Nebula). Les scènes peuvent **réagir au son** (`iSpectrum[32]`, `iLevel`, `iBass`) : seule la puissance par bande est utilisée, rien n'est enregistré.
+- **Bibliothèque** avec recherche, favoris, miniatures et import par glisser-déposer.
+- **Playlists** : intervalle, lecture aléatoire, ordre, précédent/suivant.
+- **Écrans** : fond par écran, mode « comme l'écran X », remplir ou ajuster, mémorisation des réglages des écrans débranchés.
+- **Bureau, Vue d'ensemble et écran de verrouillage**.
+- **Pause automatique** sur batterie, en économie d'énergie ou quand une application est en plein écran.
+- Menu dans la barre supérieure, démarrage à l'ouverture de session, contrôle en ligne de commande.
 
-- Vidéos sur chaque écran, synchronisées ou indépendantes
-- Scènes shaders de type Shadertoy, réactives au son (seul le niveau par bande est utilisé, rien n'est enregistré)
-- Bibliothèque avec recherche, favoris, miniatures, import par glisser-déposer
-- Playlists, pause automatique sur batterie ou en plein écran
+## Comment ça marche
+L'application ouvre des fenêtres de rendu que l'extension garde réduites (absentes d'Alt+Tab et de la Vue d'ensemble), puis peint un clone en direct dans les acteurs de fond de GNOME. L'extension signale aussi les applications en plein écran pour mettre en pause.
+
+## Installation
+Le script `install.sh` place le binaire dans `~/.local/bin/frontrise`, le fichier desktop et l'icône, et l'extension dans `~/.local/share/gnome-shell/extensions/`. Il faut les paquets de développement de GTK 4, libadwaita et GStreamer, un compilateur C et la chaîne Rust stable.
+
+## Limites
+- GNOME Shell 50 uniquement (testé dans un GNOME Shell 50.6 imbriqué sans affichage).
+- Pas de réglage de la vitesse de lecture.
+- Les fonds ne reçoivent pas les clics (GNOME ne transmet aucune entrée au fond d'écran).
+- Les fenêtres de rendu sont reconnues par leur titre.
 
 [GitHub →](https://github.com/hansipie/Frontrise)

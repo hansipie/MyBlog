@@ -14,12 +14,25 @@ params:
 
 ![Aperçu de viztokens](/images/projets/viztokens.webp)
 
-viztokens lit les fichiers de session JSONL natifs de Claude Code et affiche en direct chaque message harnais ↔ modèle : prompts, réponses, appels d'outils et résultats, sans troncature.
+**viztokens** est une interface terminal (TUI) en Rust qui affiche en temps réel tout ce qui s'échange entre Claude Code et le modèle : invites, réponses, appels d'outils et résultats, avec leur contenu complet et sans troncature.
 
-## Points clés
+## Pourquoi
+Quand on travaille avec un assistant de code, on voit rarement ce qui part réellement vers le modèle. viztokens rend ces échanges lisibles, ce qui aide à comprendre où partent les tokens et à déboguer un comportement inattendu.
 
-- Aucune configuration à modifier côté Claude Code
-- Lit les mêmes fichiers que ccusage
-- Interface terminal (TUI) en Rust
+## Comment ça marche
+- Il suit les fichiers de session JSONL natifs de Claude Code, les mêmes que ceux utilisés par [ccusage](https://github.com/ryoppippi/ccusage) : **aucune configuration à modifier côté Claude Code**.
+- Les sessions sont cherchées dans `$CLAUDE_CONFIG_DIR/projects/` puis `~/.claude/projects/`, et la plus récente est sélectionnée automatiquement.
+- L'historique est conservé dans une base SQLite locale pour remonter dans des sessions démarrées avant le lancement de viztokens.
+
+## Ce qu'on voit
+- Des blocs colorés par type : USER, ASSISTANT (avec le modèle et les tokens d'entrée/sortie), TOOL CALL, TOOL RESULT et SYSTEM.
+- Les totaux cumulés dans le pied de page, selon les messages visibles.
+- Des filtres au clavier (`f` pour parcourir les types, `1` à `4` pour les activer, `F` pour tout afficher) et un suivi automatique du dernier message.
+
+## Installation
+```bash
+cargo install viztokens
+```
+Version actuelle : 0.3.0, licence MIT.
 
 [GitHub →](https://github.com/hansipie/viztokens)
