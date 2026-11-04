@@ -14,7 +14,7 @@
   <div class="pf-cards-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px">
     {{ range .Pages.ByDate.Reverse }}{{ $page := . }}
     <a class="pf-card" href="{{ .RelPermalink }}" style="text-decoration:none;display:flex;flex-direction:column;gap:12px">
-      {{ with .Params.image }}<img src="{{ . }}" alt="Aperçu de {{ $page.Title }}" loading="lazy" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:8px;display:block">{{ end }}
+      {{ with .Params.image }}{{ $fp := path.Join "static" (strings.TrimPrefix "/" .) }}<img src="{{ . }}"{{ with imageConfig $fp }} width="{{ .Width }}" height="{{ .Height }}"{{ end }} alt="Aperçu de {{ $page.Title }}" loading="lazy" decoding="async" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:8px;display:block">{{ end }}
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
         <span class="pf-status pf-status-running"><span class="pf-status-dot"></span>{{ .Params.statusLabel | default "ACTIVE" }}</span>
         {{ with .Params.kind }}<span class="pf-version">{{ . }}</span>{{ end }}

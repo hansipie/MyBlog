@@ -4,6 +4,7 @@ description: "Interface terminal qui suit en temps réel les échanges entre Cla
 date: 2026-06-24T14:29:13+03:00
 tags: [Rust, TUI, Claude Code]
 params:
+  appCategory: DeveloperApplication
   image: "/images/projets/viztokens.webp"
   statusLabel: ACTIVE
   kind: Rust

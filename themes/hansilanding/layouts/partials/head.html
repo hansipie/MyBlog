@@ -2,25 +2,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 {{- $title := printf "%s · %s" .Title .Site.Title -}}
 {{- if .IsHome }}{{ $title = .Site.Params.homeTitle | default .Site.Title }}{{ end -}}
+{{- if eq .Kind "term" }}{{ $title = printf "%s : %s · %s" (cond (eq .Data.Plural "tags") "Tag" "Catégorie") .Title .Site.Title }}{{ end -}}
+{{- with .Params.seoTitle }}{{ $title = printf "%s · %s" . $.Site.Title }}{{ end -}}
 {{- $description := .Description | default .Site.Params.description | plainify | htmlUnescape -}}
-{{- $image := .Params.preview | default .Site.Params.author.photo -}}
+{{- if and (eq .Kind "term") (not .Description) }}{{ $description = printf "Tous les articles et projets du blog ansicode %s « %s » : %d contenu(s) à découvrir, du plus récent au plus ancien." (cond (eq .Data.Plural "tags") "associés au tag" "classés dans la catégorie") .Title (len .Pages) }}{{ end -}}
+{{- if and (eq .Kind "taxonomy") (not .Description) }}{{ $description = printf "Parcourir tous les %s du blog ansicode pour retrouver les articles et projets par sujet." (cond (eq .Data.Plural "tags") "tags" "catégories") }}{{ end -}}
+{{- $permalink := .Permalink -}}
+{{- if .IsHome -}}
+  {{- $homePosts := where .Site.RegularPages "Section" "posts" -}}
+  {{- $homePager := .Paginate $homePosts.ByDate.Reverse -}}
+  {{- $permalink = $homePager.URL | absURL -}}
+  {{- if gt $homePager.PageNumber 1 -}}
+    {{- $title = printf "%s – page %d" $title $homePager.PageNumber -}}
+    {{- $description = printf "%s (page %d)" $description $homePager.PageNumber -}}
+  {{- end -}}
+{{- end -}}
+{{- $image := .Params.preview | default .Params.image | default .Site.Params.author.photo -}}
 {{- $imagePath := path.Join "static" (strings.TrimPrefix "/" $image) -}}
-{{ if ne .Kind "404" }}<link rel="canonical" href="{{ .Permalink }}" />{{ end }}
+{{ if ne .Kind "404" }}<link rel="canonical" href="{{ $permalink }}" />{{ end }}
+{{ if partial "seo-noindex.html" . }}<meta name="robots" content="noindex, follow" />{{ end }}
 <meta name="description" content="{{ $description }}" />
 <meta name="theme-color" content="#07091a" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:locale" content="{{ if eq .Params.lang "en" }}en_US{{ else }}fr_FR{{ end }}" />
-{{ with .Params.langAlt }}<link rel="alternate" hreflang="{{ if eq $.Params.lang "en" }}fr{{ else }}en{{ end }}" href="{{ . | absURL }}" />{{ end }}
+{{ with .Params.langAlt }}{{ $selfLang := cond (eq $.Params.lang "en") "en" "fr" }}{{ $altLang := cond (eq $selfLang "en") "fr" "en" }}{{ $frURL := cond (eq $selfLang "fr") $.Permalink (. | absURL) }}
+<link rel="alternate" hreflang="{{ $selfLang }}" href="{{ $.Permalink }}" />
+<link rel="alternate" hreflang="{{ $altLang }}" href="{{ . | absURL }}" />
+<link rel="alternate" hreflang="x-default" href="{{ $frURL }}" />{{ end }}
 <meta property="og:type" content="{{ if eq .Section "posts" }}article{{ else }}website{{ end }}" />
 <meta property="og:title" content="{{ $title }}" />
 <meta property="og:description" content="{{ $description }}" />
-<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:url" content="{{ $permalink }}" />
 {{ with $image }}<meta property="og:image" content="{{ . | absURL }}" />{{ end }}
 {{ if os.FileExists $imagePath }}{{ with imageConfig $imagePath }}
 <meta property="og:image:width" content="{{ .Width }}" />
 <meta property="og:image:height" content="{{ .Height }}" />
 {{ end }}{{ end }}
-<meta name="twitter:card" content="{{ if .Params.preview }}summary_large_image{{ else }}summary{{ end }}" />
+<meta name="twitter:card" content="{{ if or .Params.preview .Params.image }}summary_large_image{{ else }}summary{{ end }}" />
 <meta name="twitter:title" content="{{ $title }}" />
 <meta name="twitter:description" content="{{ $description }}" />
 {{ with $image }}<meta name="twitter:image" content="{{ . | absURL }}" />{{ end }}
@@ -29,6 +47,7 @@
 <meta name="twitter:creator" content="@{{ . }}" />
 {{ end }}
 <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "rss.xml" | absURL }}" />
+{{ if eq .Section "projets" }}{{ with .Site.GetPage "/projets" }}{{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }} — Projets" href="{{ .Permalink }}" />{{ end }}{{ end }}{{ end }}
 <title>{{ $title }}</title>
 {{ partial "structured-data.html" . }}
 

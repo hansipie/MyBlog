@@ -42,17 +42,34 @@
   -}}
   {{- with .Params.tags }}{{ $article = merge $article (dict "keywords" (delimit . ", ")) }}{{ end -}}
   {{- $schema = dict "@context" "https://schema.org" "@graph" (slice $article $person) -}}
-{{- else if eq .RelPermalink "/about/" -}}
+{{- else if in (slice "/about/" "/en/about/") .RelPermalink -}}
   {{- $profile := dict
     "@type" "ProfilePage"
     "@id" (printf "%s#profile" .Permalink)
     "url" .Permalink
     "name" .Title
     "description" (.Description | default .Site.Params.description | plainify | htmlUnescape)
-    "inLanguage" "fr-FR"
+    "inLanguage" (cond (eq .Params.lang "en") "en" "fr-FR")
     "mainEntity" (dict "@id" (printf "%s#hansi-pierre" .Site.BaseURL))
   -}}
   {{- $schema = dict "@context" "https://schema.org" "@graph" (slice $profile $person) -}}
+{{- else if and (eq .Section "projets") .IsPage -}}
+  {{- $app := dict
+    "@type" "SoftwareApplication"
+    "@id" (printf "%s#application" .Permalink)
+    "url" .Permalink
+    "name" .Title
+    "description" (.Description | default .Site.Params.description | plainify | htmlUnescape)
+    "applicationCategory" (.Params.appCategory | default "DeveloperApplication")
+    "inLanguage" "fr-FR"
+    "datePublished" (.Date.Format "2006-01-02")
+    "author" (dict "@id" (printf "%s#hansi-pierre" .Site.BaseURL))
+    "mainEntityOfPage" .Permalink
+  -}}
+  {{- with .Params.image }}{{ $app = merge $app (dict "image" (. | absURL)) }}{{ end -}}
+  {{- with .Params.os }}{{ $app = merge $app (dict "operatingSystem" .) }}{{ end -}}
+  {{- with .Params.link }}{{ $app = merge $app (dict "sameAs" (slice .)) }}{{ end -}}
+  {{- $schema = dict "@context" "https://schema.org" "@graph" (slice $app $person) -}}
 {{- else if and (eq .Section "labs") .IsPage -}}
   {{- $app := dict
     "@type" "WebApplication"

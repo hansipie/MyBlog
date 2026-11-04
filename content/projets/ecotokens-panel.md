@@ -4,6 +4,7 @@ description: "Plugin Claude Code : un panneau latéral à onglets autour d'ecoto
 date: 2026-10-06T14:49:33+03:00
 tags: [Claude Code, Plugin, ecotokens]
 params:
+  appCategory: DeveloperApplication
   image: "/images/projets/ecotokens-panel.webp"
   statusLabel: ACTIVE
   kind: Plugin

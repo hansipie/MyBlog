@@ -62,6 +62,8 @@ uglyURLs = false
   description = "Analyses, tutoriels et retours d’expérience de Hansi PIERRE sur le développement logiciel, Linux, l’auto-hébergement et l’intelligence artificielle."
   brandName = "ansicode"
   goatcounter = "https://stats.ansicode.fr"
+  # Archives de tags comptant moins de pages que ce seuil : noindex + hors sitemap
+  taxonomyMinIndexable = 2
   status = "Open to targeted missions"
   region = "France, remote friendly"
   faviconSmall = "/favicon-32.png"

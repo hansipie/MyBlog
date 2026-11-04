@@ -4,6 +4,7 @@ description: "Éditeur 3D de hacks IKEA qui génère le guide pas à pas (achats
 date: 2026-10-28T12:52:16+02:00
 tags: [3D, TypeScript, Open source]
 params:
+  appCategory: DesignApplication
   image: "/images/projets/hackea.webp"
   statusLabel: ACTIVE
   kind: 3D

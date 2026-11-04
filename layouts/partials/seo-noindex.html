@@ -1,0 +1,3 @@
+{{- /* Archives de tags peu fournies : exclues de l'index et du sitemap (seuil : params.taxonomyMinIndexable, 3 par défaut). */ -}}
+{{- $min := .Site.Params.taxonomyMinIndexable | default 3 -}}
+{{- return (and (eq .Kind "term") (eq .Data.Plural "tags") (lt (len .Pages) $min)) -}}

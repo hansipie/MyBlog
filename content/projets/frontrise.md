@@ -4,6 +4,8 @@ description: "Fonds d'écran animés (vidéos et shaders GLSL) pour GNOME Shell 
 date: 2026-11-04T00:21:52+02:00
 tags: [Rust, GNOME, Wayland, GLSL]
 params:
+  appCategory: MultimediaApplication
+  os: "Linux (GNOME, Wayland)"
   image: "/images/projets/frontrise.webp"
   statusLabel: ACTIVE
   kind: Rust

@@ -4,6 +4,7 @@ description: "Outil Rust de réduction de contexte et d'analyse pour workflows L
 date: 2026-02-21T22:33:27+02:00
 tags: [Rust, LLM, CLI, Open source]
 params:
+  appCategory: DeveloperApplication
   image: "/images/projets/ecotokens.webp"
   statusLabel: ACTIVE
   kind: Rust

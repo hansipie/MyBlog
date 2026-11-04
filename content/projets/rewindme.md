@@ -4,6 +4,8 @@ description: "Rewind Me: A Robot Love Story, jeu de puzzle à timing où seul le
 date: 2026-07-15T01:35:42+02:00
 tags: [Jeu, Puzzle, Android, iOS, Godot]
 params:
+  appCategory: GameApplication
+  os: "Android, iOS"
   image: "/images/projets/rewindme.webp"
   statusLabel: ACTIVE
   kind: Jeu

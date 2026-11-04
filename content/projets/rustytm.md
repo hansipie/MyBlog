@@ -4,6 +4,8 @@ description: "Gestionnaire de tâches pour Linux en interface terminal (ratatui)
 date: 2026-10-26T23:35:07+02:00
 tags: [Rust, Linux, TUI]
 params:
+  appCategory: DeveloperApplication
+  os: "Linux"
   image: "/images/projets/rustytm.webp"
   statusLabel: ACTIVE
   kind: Rust

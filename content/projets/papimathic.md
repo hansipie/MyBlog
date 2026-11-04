@@ -4,6 +4,8 @@ description: "Application éducative de calcul mental en React Native / Expo, di
 date: 2025-05-10T18:56:36+03:00
 tags: [React Native, Expo, Éducation]
 params:
+  appCategory: EducationalApplication
+  os: "Android"
   image: "/images/projets/papimathic.webp"
   statusLabel: RUNNING
   kind: Mobile

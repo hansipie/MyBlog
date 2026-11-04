@@ -12,5 +12,7 @@
   {{- end -}}
 <img{{ with $class }} class="{{ . }}"{{ end }} src="{{ $metadata.src }}" srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}" width="{{ $metadata.width }}" height="{{ $metadata.height }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async"{{ if ne $fetchpriority "auto" }} fetchpriority="{{ $fetchpriority }}"{{ end }}{{ with .title }} title="{{ . }}"{{ end }}>
 {{- else -}}
-<img{{ with $class }} class="{{ . }}"{{ end }} src="{{ $src }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async"{{ if ne $fetchpriority "auto" }} fetchpriority="{{ $fetchpriority }}"{{ end }}{{ with .title }} title="{{ . }}"{{ end }}>
+{{- $w := 0 -}}{{- $h := 0 -}}
+{{- if hasPrefix $src "/" -}}{{- $fp := path.Join "static" (strings.TrimPrefix "/" $src) -}}{{- if and (os.FileExists $fp) (findRE `(?i)\.(png|jpe?g|gif|webp)$` $fp) -}}{{- with imageConfig $fp -}}{{- $w = .Width -}}{{- $h = .Height -}}{{- end -}}{{- end -}}{{- end -}}
+<img{{ with $class }} class="{{ . }}"{{ end }} src="{{ $src }}"{{ if gt $w 0 }} width="{{ $w }}" height="{{ $h }}"{{ end }} alt="{{ $alt }}" loading="{{ $loading }}" decoding="async"{{ if ne $fetchpriority "auto" }} fetchpriority="{{ $fetchpriority }}"{{ end }}{{ with .title }} title="{{ . }}"{{ end }}>
 {{- end -}}

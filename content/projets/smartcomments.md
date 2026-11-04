@@ -4,6 +4,7 @@ description: "Application mobile qui génère des appréciations scolaires perso
 date: 2025-04-18T23:36:17+03:00
 tags: [Expo, React Native, IA, Éducation]
 params:
+  appCategory: EducationalApplication
   image: "/images/projets/smartcomments.webp"
   statusLabel: ACTIVE
   kind: Mobile
