@@ -1,6 +1,7 @@
 ---
 title: "La Mort de YggTorrent : quand un site de pirates se fait pirater"
-description: Le 4 mars 2026, YggTorrent ferme définitivement après un hack massif. Retour sur neuf ans d'histoire, une dérive commerciale et la chute d'un géant du torrent francophone.
+seoTitle: "La mort de YggTorrent : un site de pirates piraté"
+description: "Le 4 mars 2026, YggTorrent ferme après un hack massif. Retour sur neuf ans d'histoire et la chute d'un géant du torrent francophone."
 date: 2026-03-04T17:35:15.304Z
 draft: false
 tags:

@@ -1,5 +1,6 @@
 +++
 title = "GPT-6 Astra : OpenAI n'abandonne pas les développeurs, il change leur rôle"
+seoTitle = "GPT-6 Astra : OpenAI change le rôle des développeurs"
 date = "2026-09-08T13:00:00+02:00"
 draft = false
 description = "GPT-6 Astra mise sur les agents autonomes et le computer use. OpenAI délaisse-t-il les développeurs ou redéfinit-il leur travail ?"

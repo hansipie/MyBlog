@@ -1,5 +1,6 @@
 +++
 title = "Héberger Vaultwarden sur Coolify et le protéger avec Tailscale"
+seoTitle = "Héberger Vaultwarden sur Coolify avec Tailscale"
 date = "2026-08-03T14:07:00+01:00"
 draft = false
 description = "Tutoriel pour héberger Vaultwarden avec Coolify, limiter son accès au réseau Tailscale et obtenir un certificat Let's Encrypt par DNS-01 Cloudflare."

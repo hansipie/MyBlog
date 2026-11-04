@@ -1,5 +1,6 @@
 +++
 title = "Gérer les secrets de ses agents IA avec Bitwarden et Hermes"
+seoTitle = "Gérer les secrets de ses agents IA : Bitwarden, Hermes"
 date = 2026-06-08T21:20:00+02:00
 draft = false
 description = "Comment centraliser, limiter et injecter les secrets d'agents IA locaux avec Bitwarden Secrets Manager et Hermes, sans multiplier les fichiers .env exposés."

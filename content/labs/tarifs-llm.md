@@ -1,6 +1,6 @@
 ---
 title: "Comparateur de tarifs LLM"
-description: "111 entrées API comparées auprès de 20 fournisseurs : prix par million de tokens, calculateur mensuel, abonnements et évolutions. 100 sources indexées, dont 12 relevés importés ; contrôle tarifaire du 30 octobre 2026. Benchmarks datés séparément."
+description: "111 tarifs d'API LLM comparés auprès de 20 fournisseurs : prix par million de tokens, calculateur mensuel, abonnements. Contrôle tarifaire du 30 octobre 2026."
 date: 2026-07-10T00:30:00+02:00
 layout: llm-pricing
 tags: [LLM, IA, pricing, API]

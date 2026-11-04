@@ -1,5 +1,6 @@
 ---
 title: "Claude Code + Obsidian : comment j'ai transformé mon vault en système de travail augmenté"
+seoTitle: "Claude Code + Obsidian : un vault en système augmenté"
 description: Connecter Claude Code directement à son vault Obsidian transforme un second cerveau passif en collaborateur actif. Voici comment, et ce que ça change vraiment.
 date: 2026-03-17T10:00:00Z
 draft: false

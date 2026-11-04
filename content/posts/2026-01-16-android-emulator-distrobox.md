@@ -1,5 +1,6 @@
 ---
 title: "Android Emulator sur Bazzite : Quand Linux met des bâtons dans les roues (et comment s'en sortir)"
+seoTitle: "Android Emulator sur Bazzite : s'en sortir avec Linux"
 description: L'histoire d'une migration de Windows vers Linux et des défis inattendus pour faire tourner l'émulateur Android
 date: 2026-01-16T10:00:00Z
 preview: "/bannerbazziteandro.png"

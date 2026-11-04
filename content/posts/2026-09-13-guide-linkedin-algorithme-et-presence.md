@@ -1,5 +1,6 @@
 +++
 title = "Guide LinkedIn : algorithme, présence professionnelle et bonnes pratiques"
+seoTitle = "Guide LinkedIn : algorithme et présence pro"
 date = "2026-09-13T12:32:00+03:00"
 draft = false
 description = "Ce que l'on sait réellement de l'algorithme LinkedIn et les pratiques utiles pour construire une présence professionnelle technique, crédible et durable."

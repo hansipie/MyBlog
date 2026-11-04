@@ -1,6 +1,7 @@
 ---
 title: "Les Fabriques de Code : Quand l'IA Redéfinit le Développement Logiciel"
-description: "En 2026, l'IA générative redéfinit le développement logiciel. Vibe coding, propriété intellectuelle, impact sur les développeurs : tour d'horizon des nouvelles fabriques de code."
+seoTitle: "Les Fabriques de Code : l'IA redéfinit le logiciel"
+description: "En 2026, l'IA générative redéfinit le développement logiciel : vibe coding, propriété intellectuelle et impact sur les développeurs."
 date: 2026-01-16T10:00:00+01:00
 draft: true
 tags:

@@ -1,8 +1,9 @@
 +++
 title = "Bitwarden 2026.7.0 bloqué sur Loading avec Vaultwarden, la cause et la solution"
+seoTitle = "Bitwarden 2026.7.0 bloqué sur Loading avec Vaultwarden"
 date = "2026-07-28T23:29:56.081Z"
 draft = false
-description = "L'extension Bitwarden 2026.7.0 peut rester bloquée sur Loading avec Vaultwarden 1.36.0. Voici l'origine du problème et la procédure pour le corriger sans perdre son coffre."
+description = "L'extension Bitwarden 2026.7.0 reste bloquée sur Loading avec Vaultwarden 1.36.0 : l'origine du problème et la correction, sans perdre son coffre."
 tags = [
   "Bitwarden",
   "Vaultwarden",

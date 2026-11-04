@@ -1,8 +1,9 @@
 +++
 title = "Nouveaux modèles IA : les bonnes pratiques qui émergent en 2026"
+seoTitle = "Nouveaux modèles IA : les bonnes pratiques de 2026"
 date = "2026-07-29T15:00:00+02:00"
 draft = false
-description = "Les nouveaux modèles travaillent plus longtemps, se vérifient mieux et délèguent davantage. Voici six pratiques concrètes pour gagner en qualité sans multiplier les prompts, les agents et les coûts."
+description = "Les nouveaux modèles IA travaillent plus longtemps et délèguent plus : six pratiques concrètes pour gagner en qualité sans multiplier prompts et coûts."
 tags = [
   "IA",
   "Agents IA",

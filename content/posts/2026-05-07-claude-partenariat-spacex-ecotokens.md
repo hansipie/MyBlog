@@ -1,8 +1,9 @@
 +++
 title = "Claude passe à la vitesse supérieure : Le partenariat SpaceX et l'explosion des limites d'utilisation"
+seoTitle = "Claude × SpaceX : partenariat et limites d'usage"
 date = 2026-05-07T13:26:00+02:00
 draft = false
-description = "Anthropic scelle un partenariat massif avec SpaceX pour doubler les limites Claude Code, exploser les quotas API Opus, et transformer Claude en infrastructure de classe entreprise. Et pendant ce temps, ecotokens optimise ce qu'on envoie réellement."
+description = "Anthropic s'associe à SpaceX pour doubler les limites de Claude Code et d'Opus. Et pendant ce temps, ecotokens optimise ce qu'on envoie vraiment."
 tags = ["IA", "Claude", "Actu Tech"]
 categories = ["IA"]
 preview = "/20260507-spacex-ecotokens/anthropic-spacex-intro.png"

@@ -2,7 +2,7 @@
 title = "Quand l'Europe apprend à préserver les jeux vidéo"
 date = 2026-06-06T09:22:00+02:00
 draft = false
-description = "La fermeture de The Crew a mis en lumière la fragilité du patrimoine numérique. Avec l'Initiative Citoyenne Européenne Stop Destroying Videogames, l'Union européenne commence à traiter la disparition des jeux vidéo comme un sujet culturel, juridique et démocratique."
+description = "La fermeture de The Crew a révélé la fragilité du patrimoine numérique : l'initiative européenne Stop Destroying Videogames change le débat."
 tags = ["Jeux vidéo", "Union européenne", "Numérique", "Préservation"]
 categories = ["Société"]
 preview = "/20260606-europe-preservation-jeux-video/01-declic-the-crew.png"
