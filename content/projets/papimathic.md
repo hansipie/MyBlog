@@ -20,6 +20,14 @@ params:
 ## Le principe
 Le joueur choisit un mode, un niveau et une opération. L'application génère les problèmes, vérifie les réponses, compte les essais et conserve les records.
 
+## Dans le jeu
+- **Mode Entraînement** : des problèmes aléatoires, sur **5 niveaux** de difficulté.
+- **Mode Table** : les tables d'une opération pour un nombre de base de 0 à 9.
+- **Opération aléatoire** : en réappuyant sur l'opération active, on passe en mode « ? » qui alterne addition, soustraction, multiplication et division.
+- **Séries de 5 problèmes**, avec 2 essais par problème. Après deux échecs, la bonne réponse est montrée.
+- **Records chronométrés**, conservés par mode, opération et niveau.
+- Sons et vibrations (désactivables), application bilingue français / anglais et rappels quotidiens par notification.
+
 ## Pensée pour les enfants
 - Conçue pour un public jeune et conforme aux exigences COPPA.
 - Publicités supprimables par un achat intégré.
@@ -32,6 +40,9 @@ Le joueur choisit un mode, un niveau et une opération. L'application génère l
 - Achats intégrés gérés avec RevenueCat.
 
 ## Disponibilité
-L'application est utilisée en conditions réelles via le **Play Store**. Un blog dédié, Papimathic, publie des contenus pédagogiques autour du calcul mental.
+L'application est utilisée en conditions réelles via le **Play Store**. Version actuelle de l'application Expo : 1.16.0. Un blog dédié, Papimathic, publie des contenus pédagogiques autour du calcul mental.
+
+## Portage Godot
+Le dépôt contient aussi un portage de l'application sous **Godot 4.6** (GDScript, version 1.11.0), avec fonds animés selon l'humeur du professeur, parallaxe (accéléromètre sur mobile, souris sur ordinateur) et smiley dessiné par le code. Les fonctions propres aux stores mobiles n'y sont pas portées.
 
 [Voir le site →](https://papimathic.ansicode.fr/)

@@ -32,12 +32,21 @@ La boucle de jeu est simple : observer les trajectoires, se synchroniser, échou
 - Saisons, lumière et météo changeantes
 - Identité sonore centrée sur la manivelle, musique évolutive
 
+## Contrôles
+Sur ordinateur : `→` / `D` fait avancer la timeline du robot, `←` / `A` la rembobine, `+` / `-` accélèrent ou ralentissent le monde par paliers (de ×1/16 à ×1), `P` ouvre le menu pause et `Espace` / `Entrée` démarre ou passe à la suite.
+
+## Score et partage
+- Un **compte à rebours** proportionnel à la distance s'applique à chaque niveau, réglé par la difficulté (Easy ×6, Normal ×4, Hard ×2).
+- Un panneau `TIMING` donne, après chaque niveau, le temps de la tentative réussie, le cumul et le nombre total d'échecs.
+- Les **10 meilleurs résultats** de chaque difficulté sont conservés séparément, avec un bouton `BEST TIMES` sur l'écran-titre.
+- Le bouton `SHARE` génère une image du score et l'envoie à la feuille de partage native sur Android et iOS (hashtag `#RewindMe`).
+
 ## Disponibilité
 - **Android** : jeu complet sur Google Play, démo gratuite de 5 niveaux
 - **iOS** : jeu complet sur l'App Store
 - **PC** : annoncé, page Steam en préparation
 
 ## Coulisses
-Le jeu est développé avec le moteur **Godot**. Un site vitrine présente le jeu, ses captures et sa politique de confidentialité.
+Le jeu est développé avec le moteur **Godot** (version actuelle : 3.7.1). Un site vitrine présente le jeu, ses captures et sa politique de confidentialité.
 
 [Voir le site →](https://rewindme.ansicode.fr)

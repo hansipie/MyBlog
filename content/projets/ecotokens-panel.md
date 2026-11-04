@@ -20,9 +20,19 @@ params:
 - **Session** : modèle et effort, fenêtre de contexte, quota de l'abonnement, coût équivalent API et handoff.
 - **Contexte** : le détail de la fenêtre comme `/context` (grille, répartition, cache de la dernière requête, fichiers mémoire, serveurs MCP, skills, agents).
 - **Ecotokens** : les économies de la session, avec les 5 dernières sorties filtrées et les 5 derniers appels à Jev.
-- **Gains**, **Watch** et d'autres vues autour de l'index et des agents.
+- **Gains** : pour le workspace courant, les tokens économisés, le coût évité et le détail par famille, ainsi que l'usage de Jev (appels, coût, latence, erreurs). La période se choisit : jour, semaine, mois ou tout.
+- **Watch** : l'état du watcher d'index du dossier (PID, sessions, journal) et les autres dossiers surveillés. La touche `w` le démarre ou l'arrête.
+- **Background** : les agents et coéquipiers de la session (statut, modèle, temps écoulé, nombre d'outils, tokens et coût estimé) et les tâches lancées en arrière-plan (Bash, Monitor, workflows, agents distants).
 
-On ouvre ou ferme le panneau avec le bouton ou la commande `/panel`. Les touches `1` à `6` changent d'onglet.
+On ouvre ou ferme le panneau avec le bouton ou la commande `/panel`. Les touches `1` à `6` changent d'onglet, `↻` relit tout et `✕` ferme.
+
+## Dans la conversation
+Sans ouvrir le panneau, le plugin écrit aussi des lignes grises dans la conversation :
+- sous un appel d'outil sur lequel ecotokens a économisé des tokens, par exemple `ecotokens · −11.3k tokens (−91 %) · ≈ $0.02` ;
+- à la fin de chaque tour, l'économie du tour puis le cumul de la session ;
+- quand un sous-agent délégué par le routeur ecotokens (`router-tiny`, `router-everyday`, `router-large`, `router-hardest`) termine, ses tokens et son coût estimé.
+
+Ces lignes ne sont que de l'affichage : elles ne sont pas envoyées au modèle. Elles se désactivent dans `/config`, avec l'option « Lignes ecotokens dans la conversation » (activée par défaut).
 
 ## Installation
 Dans un terminal Claude Code :
