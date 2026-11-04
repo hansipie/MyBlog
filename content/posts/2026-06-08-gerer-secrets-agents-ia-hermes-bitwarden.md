@@ -36,7 +36,7 @@ Le danger vient aussi du mode d'exécution. Un agent manipule des fichiers, lanc
 
 ## Le piège du `.env` permanent
 
-![](/20260608-secrets-hermes-bitwarden/01-env-vs-bitwarden.png)
+![Infographie en cinq étapes : abandonner les secrets en clair dans un fichier .env pour les centraliser dans Bitwarden Secrets Manager, avec un jeton machine unique et une rotation instantanée.](/20260608-secrets-hermes-bitwarden/01-env-vs-bitwarden.png)
 
 Le fichier `.env` est pratique. Il est aussi facile à oublier.
 
@@ -59,7 +59,7 @@ Avec Bitwarden Secrets Manager, la réponse devient : un token d'accès machine,
 
 ## Bitwarden Secrets Manager en deux idées
 
-![](/20260608-secrets-hermes-bitwarden/02-bootstrap-token.png)
+![Schéma du mécanisme « bootstrap » entre Hermes et Bitwarden : un jeton unique, stocké localement, permet de récupérer au démarrage tous les secrets du projet et de les injecter dans l'environnement.](/20260608-secrets-hermes-bitwarden/02-bootstrap-token.png)
 
 Bitwarden est connu comme gestionnaire de mots de passe. Secrets Manager est son pendant pour les usages techniques : API keys, tokens, identifiants applicatifs, secrets CI/CD, credentials d'agents ou de scripts.
 
@@ -77,7 +77,7 @@ L'intérêt est opérationnel : vous pouvez remplacer, révoquer ou déplacer le
 
 ## L'architecture recommandée
 
-![](/20260608-secrets-hermes-bitwarden/03-defense-en-profondeur.png)
+![Infographie de défense en profondeur en quatre murailles : token protégé, accès limité par projet, chiffrement côté client et audit avec révocation instantanée.](/20260608-secrets-hermes-bitwarden/03-defense-en-profondeur.png)
 
 L'architecture cible est simple.
 
@@ -141,7 +141,7 @@ Ce token devient le seul secret local réellement nécessaire. Il faut le traite
 
 ### 5. Configurer Hermes
 
-![](/20260608-secrets-hermes-bitwarden/05-cheatsheet-cli.png)
+![Aide-mémoire des commandes Hermes et Bitwarden : configuration (hermes secrets bitwarden setup), synchronisation, application dynamique, exécution isolée avec bws run et rotation centralisée.](/20260608-secrets-hermes-bitwarden/05-cheatsheet-cli.png)
 
 La documentation Hermes indique une commande d'assistant dédiée :
 
@@ -185,7 +185,7 @@ Hermes a l'avantage d'avoir une intégration pensée pour ce cas. Pour d'autres 
 
 ## Bonnes pratiques pour un agent harness
 
-![](/20260608-secrets-hermes-bitwarden/04-rotation-flotte-agents.png)
+![Illustration en phare et navires de la rotation centralisée : Bitwarden diffuse un changement de clé à toute une flotte d'agents Hermes connectés, sans intervention manuelle.](/20260608-secrets-hermes-bitwarden/04-rotation-flotte-agents.png)
 
 La première bonne pratique est de séparer les périmètres. Un projet Bitwarden pour le développement local, un autre pour la production, un autre pour les tests. Si un token fuit, il ne doit pas ouvrir tout votre monde numérique.
 

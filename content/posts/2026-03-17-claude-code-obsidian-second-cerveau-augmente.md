@@ -21,7 +21,7 @@ J'utilise Obsidian et Claude Code depuis plusieurs mois. Ce qui a changé ma fa�
 
 ## 🧠 Le problème du second cerveau passif
 
-![](/claude-code-obsidian/chapitre-1.png)
+![Infographie « Le piège du second cerveau passif » : des notes qui s'accumulent sans être exploitées et l'IA contextuelle comme maillon manquant.](/claude-code-obsidian/chapitre-1.png)
 
 Obsidian excelle à structurer la pensée. Les notes s'organisent, les liens se créent, les projets prennent forme. Mais ça reste passif : c'est toi qui interroges le système, pas le système qui t'aide à avancer.
 
@@ -33,7 +33,7 @@ Le résultat : tu passes ton temps à réexpliquer. À chaque nouvelle conversat
 
 ## 💡 Le déclic : l'IA qui vit dans les fichiers
 
-![](/claude-code-obsidian/chapitre-2.png)
+![Infographie de l'écosystème Claude Code et Obsidian : coffre-fort local en Markdown, Claude Code en ligne de commande, fichier CLAUDE.md, workflows et analyse de motifs latents.](/claude-code-obsidian/chapitre-2.png)
 
 Claude Code, c'est Claude accessible depuis le terminal, avec accès direct au système de fichiers. La différence fondamentale avec "chatter avec une IA" tient à sa capacité d'action. Claude peut lire, créer et modifier des fichiers. Il peut naviguer dans ta structure de dossiers, comprendre l'organisation de ton vault et agir dessus.
 
@@ -43,7 +43,7 @@ Mais l'accès aux fichiers seul ne suffit pas. Ce qui fait vraiment la différen
 
 ## ⚙️ La mise en place concrète
 
-![](/claude-code-obsidian/chapitre-3.png)
+![Schéma de l'architecture du système : Obsidian comme fondation, Claude Code comme moteur, terminal intégré, CLAUDE.md comme contrat, skills et commandes, extension par MCP.](/claude-code-obsidian/chapitre-3.png)
 
 ### Le `CLAUDE.md` à la racine
 
@@ -82,7 +82,7 @@ Autre exemple concret : l'open data public français. [data.gouv.fr](https://www
 
 ## 🔄 Ce que ça change vraiment
 
-![](/claude-code-obsidian/chapitre-4.png)
+![Comparaison avant et après : de l'administration manuelle des notes à une boucle d'intelligence automatisée avec capture sans friction, CLAUDE.md et commandes comme /review-dump.](/claude-code-obsidian/chapitre-4.png)
 
 **Gérer un projet avec un seul point d'entrée.** J'ai un dashboard Obsidian pour un side project, une page avec les priorités, l'état du déploiement et les prochaines étapes. Claude connaît ce fichier, connaît les conventions du projet. Quand j'arrive le matin et que je veux avancer, je dis simplement "qu'est-ce que je devrais faire aujourd'hui sur ce projet ?". Il lit le dashboard, comprend le contexte et propose. Je n'ai pas réexpliqué le projet depuis des semaines.
 
@@ -94,7 +94,7 @@ Autre exemple concret : l'open data public français. [data.gouv.fr](https://www
 
 ## ⚠️ Les limites et ce qu'on apprend
 
-![](/claude-code-obsidian/chapitre-5.png)
+![Infographie de mise en place : abonnement Pro ou Max, installation de la CLI, terminal intégré à Obsidian, CLAUDE.md, commandes /review-dump et /trace, et tableau comparatif avec la recherche classique.](/claude-code-obsidian/chapitre-5.png)
 
 **La qualité du `CLAUDE.md` détermine tout.** Avec un fichier mal rédigé, trop vague ou pas à jour, Claude travaille dans le flou. L'investissement initial de documentation est réel. Ce n'est pas "installer un plugin et ça marche".
 
@@ -108,7 +108,7 @@ Autre exemple concret : l'open data public français. [data.gouv.fr](https://www
 
 ## 🎯 Conclusion
 
-![](/claude-code-obsidian/chapitre-6.png)
+![Infographie de synthèse : fondations du système, capacités et cas d'usage, avec un tableau comparant Obsidian classique et Obsidian avec Claude Code.](/claude-code-obsidian/chapitre-6.png)
 
 La solution demande un vrai investissement de configuration, avec quelques jours de mise en place sérieuse. La différence entre un vault Obsidian et un vault Obsidian + Claude Code bien configuré ressemble à celle entre une bibliothèque et un collaborateur qui a lu tous les livres de cette bibliothèque et comprend comment tu travailles.
 

@@ -15,7 +15,7 @@ Les bots de trading font fantasmer. L'image est séduisante : un programme qui t
 
 ## Ce qu'est vraiment un bot de trading
 
-![](/trading-bot-banner-1-pipeline.png)
+![Schéma de l'architecture d'un bot de trading en cinq étapes : données, stratégie, signal, risque et ordre.](/trading-bot-banner-1-pipeline.png)
 
 Un bot de trading, c'est un programme qui automatise une décision d'investissement. Rien de magique. Il repose sur quatre briques fondamentales, sans lesquelles rien ne fonctionne.
 
@@ -35,7 +35,7 @@ Données → Indicateurs → Signal → Filtre risque → Ordre → Suivi de pos
 
 ## Les familles de stratégies
 
-![](/trading-bot-banner-2-strategies.png)
+![Deux familles de stratégies de trading : suivi de tendance (momentum, cassure, croisement de moyennes) et retour à la moyenne (RSI, bandes de Bollinger, z-score), représentées par leurs courbes.](/trading-bot-banner-2-strategies.png)
 
 Il n'existe pas une bonne stratégie universelle. Il en existe plusieurs familles, chacune reposant sur une hypothèse différente sur le comportement des marchés.
 
@@ -73,7 +73,7 @@ Quant au machine learning appliqué au trading, la réalité est décevante. Une
 
 ## La règle d'or : la simplicité gagne
 
-![](/trading-bot-banner-3-simplicite.png)
+![Comparaison d'une stratégie simple à deux paramètres, avec croisement de moyennes mobiles, et d'une stratégie complexe à douze paramètres, truffée de conditions.](/trading-bot-banner-3-simplicite.png)
 
 Il y a un paradoxe contre-intuitif dans le trading algorithmique : les stratégies simples battent presque toujours les stratégies complexes. Pas parce que les marchés sont simples, mais pour une raison purement statistique.
 
@@ -92,7 +92,7 @@ Le bon test mental tient en une question. Est-ce que la stratégie fonctionne su
 
 ## Le backtest : nécessaire et traître
 
-![](/trading-bot-banner-4-backtest.png)
+![Graphique comparant une courbe de capital parfaite en backtest à la chute de 72 % constatée après le déploiement en conditions réelles.](/trading-bot-banner-4-backtest.png)
 
 Avant de risquer un euro, on valide la stratégie sur des données historiques. C'est le backtest. C'est l'étape la plus importante et, ironiquement, la plus dangereuse si elle est mal faite. Un mauvais backtest donne une fausse confiance, ce qui est bien plus dangereux qu'aucun backtest du tout.
 
@@ -156,7 +156,7 @@ Trois principes d'architecture à ne jamais oublier :
 
 ## La réalité brutale
 
-![](/trading-bot-banner-5-realite.png)
+![Un petit robot en erreur devant un graphique en chandeliers : les marchés ne sont pas stationnaires.](/trading-bot-banner-5-realite.png)
 
 La majorité des bots amateurs perdent de l'argent. Les marchés sont efficaces, les frais grignotent les marges et ce qui marche en backtest échoue souvent en live.
 

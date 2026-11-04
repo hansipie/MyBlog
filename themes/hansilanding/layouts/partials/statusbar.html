@@ -43,7 +43,7 @@
 <button class="pf-chat-bubble" id="chatToggle" type="button" aria-controls="chatWidget" aria-expanded="false" aria-label="Ouvrir l'assistant">
   <span class="pf-chat-bubble-avatar">
     {{ with $p.author.photo }}
-    <img src="{{ . }}" alt="{{ $p.author.name }}" draggable="false" />
+    {{ partial "responsive-image.html" (dict "page" $ "src" . "alt" $p.author.name "sizes" "56px" "loading" "lazy") }}
     {{ end }}
     <span class="pf-chat-bubble-initials" aria-hidden="true">
       {{ $p.author.initials | default "HP" }}

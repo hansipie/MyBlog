@@ -9,7 +9,7 @@ categories = ["Actu Tech"]
 preview = "/20260427-ram/01-flambee-prix.png"
 +++
 
-![](/20260427-ram/01-flambee-prix.png)
+![Infographie sur la flambée des prix de la RAM : les prix des contrats DRAM ont augmenté de 171,8 % en un an et un kit DDR5 de 32 Go est passé d'environ 200 à plus de 500 euros.](/20260427-ram/01-flambee-prix.png)
 
 Si vous avez voulu upgrader votre PC ces derniers mois, vous avez sans doute eu un choc en caisse : un kit DDR5 32 Go qui coûtait 150 à 200 euros en Europe avant septembre 2025 dépasse désormais les 500 euros. Certains kits haute fréquence franchissent même les 600 euros. La PS5 a officiellement augmenté de 100 euros au 2 avril 2026. Les smartphones haut de gamme suivent la même tendance. Ce n'est pas l'inflation classique. C'est le contrecoup d'un pari industriel à 500 milliards de dollars qui s'est révélé partiellement creux.
 
@@ -27,7 +27,7 @@ Les fabricants signent. Mais ils signent des LOI : des *letters of intent*, des 
 
 ## Pourquoi les fabricants ont tout basculé
 
-![](/20260427-ram/02-mecanisme-stargate.png)
+![Schéma du mécanisme Stargate : le projet d'OpenAI mobilise 40 % de la production mondiale de wafers, et Samsung et SK Hynix pivotent vers la mémoire HBM au détriment de la DDR5 grand public.](/20260427-ram/02-mecanisme-stargate.png)
 
 Pour comprendre ce qui suit, une brève explication technique s'impose. La mémoire DDR5 que l'on trouve dans nos PC fonctionne sur des interfaces de 64 à 128 bits et délivre au maximum environ 51 Go par seconde par barrette. La HBM4, la dernière génération, utilise une interface de 2 048 bits et délivre 3 300 Go par seconde : un rapport de 64 pour 1.
 
@@ -39,7 +39,7 @@ Face à la demande d'OpenAI et aux marges bien supérieures de la HBM, Samsung e
 
 ## L'effet domino
 
-![](/20260427-ram/03-effet-domino.png)
+![Frise en dominos de la crise de la RAM : SK Hynix sold out, fermeture de la marque Crucial par Micron en décembre 2025, seulement 50 % de la demande satisfaite en 2026 et pénurie jusqu'en 2028.](/20260427-ram/03-effet-domino.png)
 
 Les conséquences arrivent vite et fort.
 
@@ -55,7 +55,7 @@ Micron prévient que la pénurie de DRAM durera au moins jusqu'en 2028.
 
 ## Le bluff
 
-![](/20260427-ram/04-bluff-loi.png)
+![Infographie sur les promesses sans valeur juridique des lettres d'intention : OpenAI réduit ses exigences, l'investissement de Nvidia recule et des projets Stargate sont suspendus.](/20260427-ram/04-bluff-loi.png)
 
 C'est là que l'histoire prend un tournant ironique.
 
@@ -71,7 +71,7 @@ Les fabricants de mémoire, eux, ont déjà réorganisé leurs lignes de product
 
 ## Ce que ça change vraiment
 
-![](/20260427-ram/05-ddr5-vs-hbm4.png)
+![Comparaison de la DDR5 (interface de 128 bits, 51 Go/s) et de la HBM4 (2 048 bits, 3 300 Go/s), soit un rapport de puissance de 64.](/20260427-ram/05-ddr5-vs-hbm4.png)
 
 L'écart de performance entre HBM et DDR5 est tel qu'il ne s'agit pas d'une simple question de prix. Ce sont deux marchés qui divergent structurellement.
 

@@ -91,7 +91,7 @@
         </header>
         <div class="pf-portrait-frame">
           {{ with $p.author.photo }}
-          <img class="pf-portrait-img" src="{{ . }}" alt="{{ if eq $.Params.lang "en" }}Portrait of{{ else }}Portrait de{{ end }} {{ $p.author.name }}" width="768" height="768" />
+          {{ partial "responsive-image.html" (dict "page" $ "src" . "class" "pf-portrait-img" "alt" (printf "%s %s" (cond (eq $.Params.lang "en") "Portrait of" "Portrait de") $p.author.name) "sizes" "(max-width: 768px) 100vw, 480px" "loading" "eager" "fetchpriority" "high") }}
           {{ end }}
           <span class="pf-portrait-grid"></span>
           <span class="pf-portrait-fallback" aria-hidden="true">

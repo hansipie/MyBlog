@@ -9,7 +9,7 @@ categories = ["IA"]
 preview = "/20260507-spacex-ecotokens/anthropic-spacex-intro.png"
 +++
 
-![](/20260507-spacex-ecotokens/anthropic-spacex-intro.png)
+![Infographie sur la fin des limites de session de Claude : l'alliance Anthropic et SpaceX apporte 220 000 GPU NVIDIA et fait passer les limites de 30 000 à 500 000 tokens d'entrée et de 8 000 à 80 000 en sortie par minute.](/20260507-spacex-ecotokens/anthropic-spacex-intro.png)
 
 Pour les utilisateurs intensifs de Claude, le dernier trimestre a été une épreuve de patience. Entre les pannes itératives et les limitations de débit (*rate limits*) de plus en plus contraignantes, l'expérience a souvent été freinée par une infrastructure saturée face à une demande mondiale sans précédent. La frustration était palpable : comment construire l'avenir de l'IA avec un outil dont la disponibilité restait incertaine ?
 
@@ -19,7 +19,7 @@ L'annonce d'Anthropic change radicalement la donne. En scellant un partenariat s
 
 ## L'infrastructure du futur : Le partenariat Anthropic x SpaceX
 
-![](/20260507-spacex-ecotokens/anthropic-spacex-partenariat.png)
+![Infographie du partenariat Anthropic et SpaceX : le centre de calcul Colossus 1, le réseau multi-cloud (Amazon, Google, Microsoft, Fluidstack) et l'impact sur les limites d'utilisation de Claude.](/20260507-spacex-ecotokens/anthropic-spacex-partenariat.png)
 
 Pour briser le goulot d'étranglement de sa capacité de calcul, Anthropic a choisi l'accélération brutale. L'accord avec SpaceX donne à Anthropic l'accès exclusif à l'intégralité de la capacité de calcul du centre de données **Colossus 1**.
 
@@ -37,7 +37,7 @@ Voici les piliers techniques de cette montée en puissance :
 
 ## Ce qui change aujourd'hui : Nouvelles limites pour Claude Code et Pro/Max
 
-![](/20260507-spacex-ecotokens/anthropic-spacex-impact.png)
+![Infographie de ce qui change pour les utilisateurs de Claude : limites doublées sur Claude Code, suppression du bridage aux heures de pointe, limites API Opus multipliées et agents en parallèle.](/20260507-spacex-ecotokens/anthropic-spacex-impact.png)
 
 Grâce à cet afflux massif de ressources, Anthropic lève les barrières qui entravaient les flux de travail critiques. Trois changements majeurs sont effectifs immédiatement :
 
@@ -86,7 +86,7 @@ En tant qu'experts, nous vous recommandons de revoir vos architectures IA à la 
 
 ## Plus de tokens disponibles, mais une gestion intelligente reste indispensable
 
-![](/20260507-spacex-ecotokens/banner.png)
+![Logo d'ecotokens : une pièce verte ornée d'une feuille, suivie du mot EcoTokens.](/20260507-spacex-ecotokens/banner.png)
 
 L'explosion des limites est une excellente nouvelle. Mais attention au piège symétrique : quand les quotas sont généreux, la tentation est de consommer sans compter. Multiplier les agents Opus en parallèle, industrialiser la fenêtre de contexte d'un million de tokens, enchaîner les sessions Claude Code sans interruption... tout cela a un coût réel, qui s'accumule silencieusement.
 

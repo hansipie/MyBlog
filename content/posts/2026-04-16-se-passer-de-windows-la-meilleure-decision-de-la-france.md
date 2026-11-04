@@ -9,7 +9,7 @@ categories = [ "Linux" ]
 preview = "/france-linux/francelinux0.png"
 +++
 
-![](/france-linux/francelinux0_old.png)
+![Extrait d'infographie : transition ministérielle 2026, avec l'abandon progressif de Windows annoncé par la DINUM, et un réseau de 7 000 adhérents mutualisés autour de l'ADULLACT.](/france-linux/francelinux0_old.png)
 
 En 2026, la Gendarmerie nationale française fait tourner **plus de 100 000 postes de travail sous Linux**. Soit 97 % de son parc informatique. Coût des licences Microsoft sur ces postes : zéro euro.
 
@@ -19,7 +19,7 @@ Cette décision n'est pas récente. Elle n'est pas spectaculaire. Elle n'a fait 
 
 ## 2004-2015 : La Gendarmerie montre la voie
 
-![](/france-linux/francelinux1.png)
+![Infographie de l'implémentation au ministère des Armées : projet Internet Poste Libre (Windows remplacé par Ubuntu sur 30 000 postes), priorité à la formation et convergence civil-militaire avec openDesk.](/france-linux/francelinux1.png)
 
 ### L'amorce discrète
 
@@ -63,7 +63,7 @@ Deux produits symbolisent cette politique mieux que n'importe quel discours.
 
 Le **SILL** (Socle Interministériel des Logiciels Libres) complète le dispositif : un catalogue officiel des logiciels libres recommandés pour l'ensemble de l'administration française, maintenu par la communauté **BlueHats** (les agents publics impliqués dans l'open source). Plusieurs centaines de logiciels référencés, mis à jour en continu.
 
-![](/france-linux/francelinux4.png)
+![Infographie de la suite numérique interministérielle (Tchap, Visio, FranceTransfert) et de la certification SecNumCloud 3.2 avec OVHcloud et Outscale.](/france-linux/francelinux4.png)
 
 ---
 
@@ -81,7 +81,7 @@ La différence est fondamentale.
 
 ### Les nouvelles raisons de migrer
 
-![](/france-linux/francelinux3.png)
+![Infographie sur le « pourquoi » : l'impératif de souveraineté face aux lois étrangères et le poids de la dépendance financière, avec des hausses de tarifs Microsoft annoncées.](/france-linux/francelinux3.png)
 
 En 2025, le contexte géopolitique donne une urgence nouvelle à ces questions.
 
@@ -99,7 +99,7 @@ Les commandes cloud de l'État ont atteint **84 millions d'euros en 2025** (+62 
 
 ### Sécurix et Bureautix : le passage à l'acte
 
-![](/france-linux/francelinux0.png)
+![Infographie de l'architecture du changement (2002-2028) : le succès pionnier de la Gendarmerie, puis le mandat de migration vers Linux, la DINUM quittant Windows.](/france-linux/francelinux0.png)
 
 Le **8 avril 2026**, la DINUM franchit une nouvelle étape. Elle annonce officiellement l'abandon de Windows au profit de Linux pour ses propres agents et publie deux projets open source qui concrétisent cette ambition.
 
@@ -113,7 +113,7 @@ Le déploiement immédiat concerne les **250 agents de la DINUM**. Mais l'horizo
 
 ## Post-scriptum : et moi dans tout ça ?
 
-![](/france-linux/francelinux5.png)
+![Un manchot Tux clin d'œil derrière un grand écran affichant des terminaux de code, sur fond de ville nocturne.](/france-linux/francelinux5.png)
 
 J'ai effectué [ma propre migration Windows vers Linux](/posts/2026-02-26-quitter-windows-bilan-complet/) en ce début d'année 2026. Ces initiatives, je les connaissais. GendBuntu, la DINUM, le SILL : autant de signaux que j'avais suivis au fil des années, avec l'intérêt du dev qui regarde ce que font les grands comptes avant de se décider.
 
